@@ -1,574 +1,46 @@
 [
   {
-    "objectID": "slides/53_vision-transformers.html#slide",
-    "href": "slides/53_vision-transformers.html#slide",
-    "title": "53. Vision Transformers",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section IX: Multimodal Models",
-      "53. Vision Transformers"
-    ]
-  },
-  {
-    "objectID": "slides/53_vision-transformers.html#slide-1",
-    "href": "slides/53_vision-transformers.html#slide-1",
-    "title": "53. Vision Transformers",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section IX: Multimodal Models",
-      "53. Vision Transformers"
-    ]
-  },
-  {
-    "objectID": "slides/53_vision-transformers.html#slide-2",
-    "href": "slides/53_vision-transformers.html#slide-2",
-    "title": "53. Vision Transformers",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section IX: Multimodal Models",
-      "53. Vision Transformers"
-    ]
-  },
-  {
-    "objectID": "slides/53_vision-transformers.html#slide-3",
-    "href": "slides/53_vision-transformers.html#slide-3",
-    "title": "53. Vision Transformers",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section IX: Multimodal Models",
-      "53. Vision Transformers"
-    ]
-  },
-  {
-    "objectID": "slides/51_tokenization-beyond-text.html#slide",
-    "href": "slides/51_tokenization-beyond-text.html#slide",
-    "title": "51. Tokenization Beyond Text",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section IX: Multimodal Models",
-      "51. Tokenization Beyond Text"
-    ]
-  },
-  {
-    "objectID": "slides/51_tokenization-beyond-text.html#slide-1",
-    "href": "slides/51_tokenization-beyond-text.html#slide-1",
-    "title": "51. Tokenization Beyond Text",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section IX: Multimodal Models",
-      "51. Tokenization Beyond Text"
-    ]
-  },
-  {
-    "objectID": "slides/51_tokenization-beyond-text.html#slide-2",
-    "href": "slides/51_tokenization-beyond-text.html#slide-2",
-    "title": "51. Tokenization Beyond Text",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section IX: Multimodal Models",
-      "51. Tokenization Beyond Text"
-    ]
-  },
-  {
-    "objectID": "slides/51_tokenization-beyond-text.html#slide-3",
-    "href": "slides/51_tokenization-beyond-text.html#slide-3",
-    "title": "51. Tokenization Beyond Text",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section IX: Multimodal Models",
-      "51. Tokenization Beyond Text"
-    ]
-  },
-  {
-    "objectID": "slides/49_normalizing-flows.html#slide",
-    "href": "slides/49_normalizing-flows.html#slide",
-    "title": "49. Normalizing Flows",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section VIII: Generative Modeling Beyond Sequences",
-      "49. Normalizing Flows"
-    ]
-  },
-  {
-    "objectID": "slides/49_normalizing-flows.html#slide-1",
-    "href": "slides/49_normalizing-flows.html#slide-1",
-    "title": "49. Normalizing Flows",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section VIII: Generative Modeling Beyond Sequences",
-      "49. Normalizing Flows"
-    ]
-  },
-  {
-    "objectID": "slides/49_normalizing-flows.html#slide-2",
-    "href": "slides/49_normalizing-flows.html#slide-2",
-    "title": "49. Normalizing Flows",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section VIII: Generative Modeling Beyond Sequences",
-      "49. Normalizing Flows"
-    ]
-  },
-  {
-    "objectID": "slides/49_normalizing-flows.html#slide-3",
-    "href": "slides/49_normalizing-flows.html#slide-3",
-    "title": "49. Normalizing Flows",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section VIII: Generative Modeling Beyond Sequences",
-      "49. Normalizing Flows"
-    ]
-  },
-  {
-    "objectID": "slides/47_generative-adversarial-nets.html#slide",
-    "href": "slides/47_generative-adversarial-nets.html#slide",
-    "title": "47. Generative Adversarial Nets",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section VIII: Generative Modeling Beyond Sequences",
-      "47. Generative Adversarial Nets"
-    ]
-  },
-  {
-    "objectID": "slides/47_generative-adversarial-nets.html#slide-1",
-    "href": "slides/47_generative-adversarial-nets.html#slide-1",
-    "title": "47. Generative Adversarial Nets",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section VIII: Generative Modeling Beyond Sequences",
-      "47. Generative Adversarial Nets"
-    ]
-  },
-  {
-    "objectID": "slides/47_generative-adversarial-nets.html#slide-2",
-    "href": "slides/47_generative-adversarial-nets.html#slide-2",
-    "title": "47. Generative Adversarial Nets",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section VIII: Generative Modeling Beyond Sequences",
-      "47. Generative Adversarial Nets"
-    ]
-  },
-  {
-    "objectID": "slides/47_generative-adversarial-nets.html#slide-3",
-    "href": "slides/47_generative-adversarial-nets.html#slide-3",
-    "title": "47. Generative Adversarial Nets",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section VIII: Generative Modeling Beyond Sequences",
-      "47. Generative Adversarial Nets"
-    ]
-  },
-  {
-    "objectID": "slides/45_distribution-modeling.html#slide",
-    "href": "slides/45_distribution-modeling.html#slide",
-    "title": "45. Distribution Modeling",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section VIII: Generative Modeling Beyond Sequences",
-      "45. Distribution Modeling"
-    ]
-  },
-  {
-    "objectID": "slides/45_distribution-modeling.html#slide-1",
-    "href": "slides/45_distribution-modeling.html#slide-1",
-    "title": "45. Distribution Modeling",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section VIII: Generative Modeling Beyond Sequences",
-      "45. Distribution Modeling"
-    ]
-  },
-  {
-    "objectID": "slides/45_distribution-modeling.html#slide-2",
-    "href": "slides/45_distribution-modeling.html#slide-2",
-    "title": "45. Distribution Modeling",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section VIII: Generative Modeling Beyond Sequences",
-      "45. Distribution Modeling"
-    ]
-  },
-  {
-    "objectID": "slides/45_distribution-modeling.html#slide-3",
-    "href": "slides/45_distribution-modeling.html#slide-3",
-    "title": "45. Distribution Modeling",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section VIII: Generative Modeling Beyond Sequences",
-      "45. Distribution Modeling"
-    ]
-  },
-  {
-    "objectID": "slides/43_structured-state-space-models.html#slide",
-    "href": "slides/43_structured-state-space-models.html#slide",
-    "title": "43. Structured State Space Models",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section VII: Sub-Quadratic Context Scaling",
-      "43. Structured State Space Models"
-    ]
-  },
-  {
-    "objectID": "slides/43_structured-state-space-models.html#slide-1",
-    "href": "slides/43_structured-state-space-models.html#slide-1",
-    "title": "43. Structured State Space Models",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section VII: Sub-Quadratic Context Scaling",
-      "43. Structured State Space Models"
-    ]
-  },
-  {
-    "objectID": "slides/43_structured-state-space-models.html#slide-2",
-    "href": "slides/43_structured-state-space-models.html#slide-2",
-    "title": "43. Structured State Space Models",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section VII: Sub-Quadratic Context Scaling",
-      "43. Structured State Space Models"
-    ]
-  },
-  {
-    "objectID": "slides/43_structured-state-space-models.html#slide-3",
-    "href": "slides/43_structured-state-space-models.html#slide-3",
-    "title": "43. Structured State Space Models",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section VII: Sub-Quadratic Context Scaling",
-      "43. Structured State Space Models"
-    ]
-  },
-  {
-    "objectID": "slides/41_ring-attention.html#slide",
-    "href": "slides/41_ring-attention.html#slide",
-    "title": "41. Ring Attention",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section VII: Sub-Quadratic Context Scaling",
-      "41. Ring Attention"
-    ]
-  },
-  {
-    "objectID": "slides/41_ring-attention.html#slide-1",
-    "href": "slides/41_ring-attention.html#slide-1",
-    "title": "41. Ring Attention",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section VII: Sub-Quadratic Context Scaling",
-      "41. Ring Attention"
-    ]
-  },
-  {
-    "objectID": "slides/41_ring-attention.html#slide-2",
-    "href": "slides/41_ring-attention.html#slide-2",
-    "title": "41. Ring Attention",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section VII: Sub-Quadratic Context Scaling",
-      "41. Ring Attention"
-    ]
-  },
-  {
-    "objectID": "slides/41_ring-attention.html#slide-3",
-    "href": "slides/41_ring-attention.html#slide-3",
-    "title": "41. Ring Attention",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section VII: Sub-Quadratic Context Scaling",
-      "41. Ring Attention"
-    ]
-  },
-  {
-    "objectID": "slides/39_cpu-offloading.html#slide",
-    "href": "slides/39_cpu-offloading.html#slide",
-    "title": "39. CPU Offloading",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section VI: Performance Optimizations for Efficient Inference",
-      "39. CPU Offloading"
-    ]
-  },
-  {
-    "objectID": "slides/39_cpu-offloading.html#slide-1",
-    "href": "slides/39_cpu-offloading.html#slide-1",
-    "title": "39. CPU Offloading",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section VI: Performance Optimizations for Efficient Inference",
-      "39. CPU Offloading"
-    ]
-  },
-  {
-    "objectID": "slides/39_cpu-offloading.html#slide-2",
-    "href": "slides/39_cpu-offloading.html#slide-2",
-    "title": "39. CPU Offloading",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section VI: Performance Optimizations for Efficient Inference",
-      "39. CPU Offloading"
-    ]
-  },
-  {
-    "objectID": "slides/39_cpu-offloading.html#slide-3",
-    "href": "slides/39_cpu-offloading.html#slide-3",
-    "title": "39. CPU Offloading",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section VI: Performance Optimizations for Efficient Inference",
-      "39. CPU Offloading"
-    ]
-  },
-  {
-    "objectID": "slides/37_flashattention.html#slide",
-    "href": "slides/37_flashattention.html#slide",
-    "title": "37. FlashAttention",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section VI: Performance Optimizations for Efficient Inference",
-      "37. FlashAttention"
-    ]
-  },
-  {
-    "objectID": "slides/37_flashattention.html#slide-1",
-    "href": "slides/37_flashattention.html#slide-1",
-    "title": "37. FlashAttention",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section VI: Performance Optimizations for Efficient Inference",
-      "37. FlashAttention"
-    ]
-  },
-  {
-    "objectID": "slides/37_flashattention.html#slide-2",
-    "href": "slides/37_flashattention.html#slide-2",
-    "title": "37. FlashAttention",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section VI: Performance Optimizations for Efficient Inference",
-      "37. FlashAttention"
-    ]
-  },
-  {
-    "objectID": "slides/37_flashattention.html#slide-3",
-    "href": "slides/37_flashattention.html#slide-3",
-    "title": "37. FlashAttention",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section VI: Performance Optimizations for Efficient Inference",
-      "37. FlashAttention"
-    ]
-  },
-  {
-    "objectID": "slides/35_parameter-quantization.html#slide",
-    "href": "slides/35_parameter-quantization.html#slide",
-    "title": "35. Parameter Quantization",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section VI: Performance Optimizations for Efficient Inference",
-      "35. Parameter Quantization"
-    ]
-  },
-  {
-    "objectID": "slides/35_parameter-quantization.html#slide-1",
-    "href": "slides/35_parameter-quantization.html#slide-1",
-    "title": "35. Parameter Quantization",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section VI: Performance Optimizations for Efficient Inference",
-      "35. Parameter Quantization"
-    ]
-  },
-  {
-    "objectID": "slides/35_parameter-quantization.html#slide-2",
-    "href": "slides/35_parameter-quantization.html#slide-2",
-    "title": "35. Parameter Quantization",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section VI: Performance Optimizations for Efficient Inference",
-      "35. Parameter Quantization"
-    ]
-  },
-  {
-    "objectID": "slides/35_parameter-quantization.html#slide-3",
-    "href": "slides/35_parameter-quantization.html#slide-3",
-    "title": "35. Parameter Quantization",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section VI: Performance Optimizations for Efficient Inference",
-      "35. Parameter Quantization"
-    ]
-  },
-  {
-    "objectID": "slides/33_mechanistic-interpretability.html#slide",
-    "href": "slides/33_mechanistic-interpretability.html#slide",
-    "title": "33. Mechanistic Interpretability",
+    "objectID": "slides/26_sampling-and-structured-outputs.html#slide",
+    "href": "slides/26_sampling-and-structured-outputs.html#slide",
+    "title": "26. Sampling and Structured Outputs",
     "section": "SLIDE",
     "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
     "crumbs": [
       "Section V: LLM Evaluations and Applications",
-      "33. Mechanistic Interpretability"
+      "26. Sampling and Structured Outputs"
     ]
   },
   {
-    "objectID": "slides/33_mechanistic-interpretability.html#slide-1",
-    "href": "slides/33_mechanistic-interpretability.html#slide-1",
-    "title": "33. Mechanistic Interpretability",
+    "objectID": "slides/26_sampling-and-structured-outputs.html#slide-1",
+    "href": "slides/26_sampling-and-structured-outputs.html#slide-1",
+    "title": "26. Sampling and Structured Outputs",
     "section": "SLIDE",
     "text": "SLIDE",
     "crumbs": [
       "Section V: LLM Evaluations and Applications",
-      "33. Mechanistic Interpretability"
+      "26. Sampling and Structured Outputs"
     ]
   },
   {
-    "objectID": "slides/33_mechanistic-interpretability.html#slide-2",
-    "href": "slides/33_mechanistic-interpretability.html#slide-2",
-    "title": "33. Mechanistic Interpretability",
+    "objectID": "slides/26_sampling-and-structured-outputs.html#slide-2",
+    "href": "slides/26_sampling-and-structured-outputs.html#slide-2",
+    "title": "26. Sampling and Structured Outputs",
     "section": "SLIDE",
     "text": "SLIDE",
     "crumbs": [
       "Section V: LLM Evaluations and Applications",
-      "33. Mechanistic Interpretability"
+      "26. Sampling and Structured Outputs"
     ]
   },
   {
-    "objectID": "slides/33_mechanistic-interpretability.html#slide-3",
-    "href": "slides/33_mechanistic-interpretability.html#slide-3",
-    "title": "33. Mechanistic Interpretability",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "33. Mechanistic Interpretability"
-    ]
-  },
-  {
-    "objectID": "slides/31_llms-for-synthetic-data.html#slide",
-    "href": "slides/31_llms-for-synthetic-data.html#slide",
-    "title": "31. LLMs for Synthetic Data",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "31. LLMs for Synthetic Data"
-    ]
-  },
-  {
-    "objectID": "slides/31_llms-for-synthetic-data.html#slide-1",
-    "href": "slides/31_llms-for-synthetic-data.html#slide-1",
-    "title": "31. LLMs for Synthetic Data",
+    "objectID": "slides/26_sampling-and-structured-outputs.html#slide-3",
+    "href": "slides/26_sampling-and-structured-outputs.html#slide-3",
+    "title": "26. Sampling and Structured Outputs",
     "section": "SLIDE",
     "text": "SLIDE",
     "crumbs": [
       "Section V: LLM Evaluations and Applications",
-      "31. LLMs for Synthetic Data"
-    ]
-  },
-  {
-    "objectID": "slides/31_llms-for-synthetic-data.html#slide-2",
-    "href": "slides/31_llms-for-synthetic-data.html#slide-2",
-    "title": "31. LLMs for Synthetic Data",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "31. LLMs for Synthetic Data"
-    ]
-  },
-  {
-    "objectID": "slides/31_llms-for-synthetic-data.html#slide-3",
-    "href": "slides/31_llms-for-synthetic-data.html#slide-3",
-    "title": "31. LLMs for Synthetic Data",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "31. LLMs for Synthetic Data"
-    ]
-  },
-  {
-    "objectID": "slides/29_retrieval-augmented-generation.html#slide",
-    "href": "slides/29_retrieval-augmented-generation.html#slide",
-    "title": "29. Retrieval-Augmented Generation",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "29. Retrieval-Augmented Generation"
-    ]
-  },
-  {
-    "objectID": "slides/29_retrieval-augmented-generation.html#slide-1",
-    "href": "slides/29_retrieval-augmented-generation.html#slide-1",
-    "title": "29. Retrieval-Augmented Generation",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "29. Retrieval-Augmented Generation"
-    ]
-  },
-  {
-    "objectID": "slides/29_retrieval-augmented-generation.html#slide-2",
-    "href": "slides/29_retrieval-augmented-generation.html#slide-2",
-    "title": "29. Retrieval-Augmented Generation",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "29. Retrieval-Augmented Generation"
-    ]
-  },
-  {
-    "objectID": "slides/29_retrieval-augmented-generation.html#slide-3",
-    "href": "slides/29_retrieval-augmented-generation.html#slide-3",
-    "title": "29. Retrieval-Augmented Generation",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "29. Retrieval-Augmented Generation"
+      "26. Sampling and Structured Outputs"
     ]
   },
   {
@@ -609,1370 +81,10 @@
     "href": "slides/27_prompting-techniques.html#slide-3",
     "title": "27. Prompting Techniques",
     "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
+    "text": "SLIDE",
     "crumbs": [
       "Section V: LLM Evaluations and Applications",
       "27. Prompting Techniques"
-    ]
-  },
-  {
-    "objectID": "slides/25_benchmarking.html#slide",
-    "href": "slides/25_benchmarking.html#slide",
-    "title": "25. Benchmarking",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "25. Benchmarking"
-    ]
-  },
-  {
-    "objectID": "slides/25_benchmarking.html#slide-1",
-    "href": "slides/25_benchmarking.html#slide-1",
-    "title": "25. Benchmarking",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "25. Benchmarking"
-    ]
-  },
-  {
-    "objectID": "slides/25_benchmarking.html#slide-2",
-    "href": "slides/25_benchmarking.html#slide-2",
-    "title": "25. Benchmarking",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "25. Benchmarking"
-    ]
-  },
-  {
-    "objectID": "slides/25_benchmarking.html#slide-3",
-    "href": "slides/25_benchmarking.html#slide-3",
-    "title": "25. Benchmarking",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "25. Benchmarking"
-    ]
-  },
-  {
-    "objectID": "slides/23_context-scaling.html#slide",
-    "href": "slides/23_context-scaling.html#slide",
-    "title": "23. Context Scaling",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section IV: Finetuning Methods for LLMs",
-      "23. Context Scaling"
-    ]
-  },
-  {
-    "objectID": "slides/23_context-scaling.html#slide-1",
-    "href": "slides/23_context-scaling.html#slide-1",
-    "title": "23. Context Scaling",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section IV: Finetuning Methods for LLMs",
-      "23. Context Scaling"
-    ]
-  },
-  {
-    "objectID": "slides/23_context-scaling.html#slide-2",
-    "href": "slides/23_context-scaling.html#slide-2",
-    "title": "23. Context Scaling",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section IV: Finetuning Methods for LLMs",
-      "23. Context Scaling"
-    ]
-  },
-  {
-    "objectID": "slides/23_context-scaling.html#slide-3",
-    "href": "slides/23_context-scaling.html#slide-3",
-    "title": "23. Context Scaling",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section IV: Finetuning Methods for LLMs",
-      "23. Context Scaling"
-    ]
-  },
-  {
-    "objectID": "slides/21_reward-models-and-rlhf.html#slide",
-    "href": "slides/21_reward-models-and-rlhf.html#slide",
-    "title": "21. Reward Models and RLHF",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section IV: Finetuning Methods for LLMs",
-      "21. Reward Models and RLHF"
-    ]
-  },
-  {
-    "objectID": "slides/21_reward-models-and-rlhf.html#slide-1",
-    "href": "slides/21_reward-models-and-rlhf.html#slide-1",
-    "title": "21. Reward Models and RLHF",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section IV: Finetuning Methods for LLMs",
-      "21. Reward Models and RLHF"
-    ]
-  },
-  {
-    "objectID": "slides/21_reward-models-and-rlhf.html#slide-2",
-    "href": "slides/21_reward-models-and-rlhf.html#slide-2",
-    "title": "21. Reward Models and RLHF",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section IV: Finetuning Methods for LLMs",
-      "21. Reward Models and RLHF"
-    ]
-  },
-  {
-    "objectID": "slides/21_reward-models-and-rlhf.html#slide-3",
-    "href": "slides/21_reward-models-and-rlhf.html#slide-3",
-    "title": "21. Reward Models and RLHF",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section IV: Finetuning Methods for LLMs",
-      "21. Reward Models and RLHF"
-    ]
-  },
-  {
-    "objectID": "slides/19_instruct-fine-tuning.html#slide",
-    "href": "slides/19_instruct-fine-tuning.html#slide",
-    "title": "19. Instruct Fine-Tuning",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section IV: Finetuning Methods for LLMs",
-      "19. Instruct Fine-Tuning"
-    ]
-  },
-  {
-    "objectID": "slides/19_instruct-fine-tuning.html#slide-1",
-    "href": "slides/19_instruct-fine-tuning.html#slide-1",
-    "title": "19. Instruct Fine-Tuning",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section IV: Finetuning Methods for LLMs",
-      "19. Instruct Fine-Tuning"
-    ]
-  },
-  {
-    "objectID": "slides/19_instruct-fine-tuning.html#slide-2",
-    "href": "slides/19_instruct-fine-tuning.html#slide-2",
-    "title": "19. Instruct Fine-Tuning",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section IV: Finetuning Methods for LLMs",
-      "19. Instruct Fine-Tuning"
-    ]
-  },
-  {
-    "objectID": "slides/19_instruct-fine-tuning.html#slide-3",
-    "href": "slides/19_instruct-fine-tuning.html#slide-3",
-    "title": "19. Instruct Fine-Tuning",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section IV: Finetuning Methods for LLMs",
-      "19. Instruct Fine-Tuning"
-    ]
-  },
-  {
-    "objectID": "slides/17_scaling-laws.html#slide",
-    "href": "slides/17_scaling-laws.html#slide",
-    "title": "17. Scaling Laws",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section III: Foundations for Modern Language Modeling",
-      "17. Scaling Laws"
-    ]
-  },
-  {
-    "objectID": "slides/17_scaling-laws.html#slide-1",
-    "href": "slides/17_scaling-laws.html#slide-1",
-    "title": "17. Scaling Laws",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section III: Foundations for Modern Language Modeling",
-      "17. Scaling Laws"
-    ]
-  },
-  {
-    "objectID": "slides/17_scaling-laws.html#slide-2",
-    "href": "slides/17_scaling-laws.html#slide-2",
-    "title": "17. Scaling Laws",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section III: Foundations for Modern Language Modeling",
-      "17. Scaling Laws"
-    ]
-  },
-  {
-    "objectID": "slides/17_scaling-laws.html#slide-3",
-    "href": "slides/17_scaling-laws.html#slide-3",
-    "title": "17. Scaling Laws",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section III: Foundations for Modern Language Modeling",
-      "17. Scaling Laws"
-    ]
-  },
-  {
-    "objectID": "slides/15_pretraining-recipes.html#slide",
-    "href": "slides/15_pretraining-recipes.html#slide",
-    "title": "15. Pretraining Recipes",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section III: Foundations for Modern Language Modeling",
-      "15. Pretraining Recipes"
-    ]
-  },
-  {
-    "objectID": "slides/15_pretraining-recipes.html#slide-1",
-    "href": "slides/15_pretraining-recipes.html#slide-1",
-    "title": "15. Pretraining Recipes",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section III: Foundations for Modern Language Modeling",
-      "15. Pretraining Recipes"
-    ]
-  },
-  {
-    "objectID": "slides/15_pretraining-recipes.html#slide-2",
-    "href": "slides/15_pretraining-recipes.html#slide-2",
-    "title": "15. Pretraining Recipes",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section III: Foundations for Modern Language Modeling",
-      "15. Pretraining Recipes"
-    ]
-  },
-  {
-    "objectID": "slides/15_pretraining-recipes.html#slide-3",
-    "href": "slides/15_pretraining-recipes.html#slide-3",
-    "title": "15. Pretraining Recipes",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section III: Foundations for Modern Language Modeling",
-      "15. Pretraining Recipes"
-    ]
-  },
-  {
-    "objectID": "slides/13_tokenization.html#slide",
-    "href": "slides/13_tokenization.html#slide",
-    "title": "13. Tokenization",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section III: Foundations for Modern Language Modeling",
-      "13. Tokenization"
-    ]
-  },
-  {
-    "objectID": "slides/13_tokenization.html#slide-1",
-    "href": "slides/13_tokenization.html#slide-1",
-    "title": "13. Tokenization",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section III: Foundations for Modern Language Modeling",
-      "13. Tokenization"
-    ]
-  },
-  {
-    "objectID": "slides/13_tokenization.html#slide-2",
-    "href": "slides/13_tokenization.html#slide-2",
-    "title": "13. Tokenization",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section III: Foundations for Modern Language Modeling",
-      "13. Tokenization"
-    ]
-  },
-  {
-    "objectID": "slides/13_tokenization.html#slide-3",
-    "href": "slides/13_tokenization.html#slide-3",
-    "title": "13. Tokenization",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section III: Foundations for Modern Language Modeling",
-      "13. Tokenization"
-    ]
-  },
-  {
-    "objectID": "slides/11_encoders-and-decoders.html#slide",
-    "href": "slides/11_encoders-and-decoders.html#slide",
-    "title": "11. Encoders and Decoders",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section II: Neural Sequential Prediction",
-      "11. Encoders and Decoders"
-    ]
-  },
-  {
-    "objectID": "slides/11_encoders-and-decoders.html#slide-1",
-    "href": "slides/11_encoders-and-decoders.html#slide-1",
-    "title": "11. Encoders and Decoders",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section II: Neural Sequential Prediction",
-      "11. Encoders and Decoders"
-    ]
-  },
-  {
-    "objectID": "slides/11_encoders-and-decoders.html#slide-2",
-    "href": "slides/11_encoders-and-decoders.html#slide-2",
-    "title": "11. Encoders and Decoders",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section II: Neural Sequential Prediction",
-      "11. Encoders and Decoders"
-    ]
-  },
-  {
-    "objectID": "slides/11_encoders-and-decoders.html#slide-3",
-    "href": "slides/11_encoders-and-decoders.html#slide-3",
-    "title": "11. Encoders and Decoders",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section II: Neural Sequential Prediction",
-      "11. Encoders and Decoders"
-    ]
-  },
-  {
-    "objectID": "slides/09_lstms-and-grus.html#slide",
-    "href": "slides/09_lstms-and-grus.html#slide",
-    "title": "9. LSTMs and GRUs",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section II: Neural Sequential Prediction",
-      "9. LSTMs and GRUs"
-    ]
-  },
-  {
-    "objectID": "slides/09_lstms-and-grus.html#slide-1",
-    "href": "slides/09_lstms-and-grus.html#slide-1",
-    "title": "9. LSTMs and GRUs",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section II: Neural Sequential Prediction",
-      "9. LSTMs and GRUs"
-    ]
-  },
-  {
-    "objectID": "slides/09_lstms-and-grus.html#slide-2",
-    "href": "slides/09_lstms-and-grus.html#slide-2",
-    "title": "9. LSTMs and GRUs",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section II: Neural Sequential Prediction",
-      "9. LSTMs and GRUs"
-    ]
-  },
-  {
-    "objectID": "slides/09_lstms-and-grus.html#slide-3",
-    "href": "slides/09_lstms-and-grus.html#slide-3",
-    "title": "9. LSTMs and GRUs",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section II: Neural Sequential Prediction",
-      "9. LSTMs and GRUs"
-    ]
-  },
-  {
-    "objectID": "slides/07_statistical-prediction-with-neural-networks.html#slide",
-    "href": "slides/07_statistical-prediction-with-neural-networks.html#slide",
-    "title": "7. Statistical Prediction with Neural Networks",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section II: Neural Sequential Prediction",
-      "7. Statistical Prediction with Neural Networks"
-    ]
-  },
-  {
-    "objectID": "slides/07_statistical-prediction-with-neural-networks.html#slide-1",
-    "href": "slides/07_statistical-prediction-with-neural-networks.html#slide-1",
-    "title": "7. Statistical Prediction with Neural Networks",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section II: Neural Sequential Prediction",
-      "7. Statistical Prediction with Neural Networks"
-    ]
-  },
-  {
-    "objectID": "slides/07_statistical-prediction-with-neural-networks.html#slide-2",
-    "href": "slides/07_statistical-prediction-with-neural-networks.html#slide-2",
-    "title": "7. Statistical Prediction with Neural Networks",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section II: Neural Sequential Prediction",
-      "7. Statistical Prediction with Neural Networks"
-    ]
-  },
-  {
-    "objectID": "slides/07_statistical-prediction-with-neural-networks.html#slide-3",
-    "href": "slides/07_statistical-prediction-with-neural-networks.html#slide-3",
-    "title": "7. Statistical Prediction with Neural Networks",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section II: Neural Sequential Prediction",
-      "7. Statistical Prediction with Neural Networks"
-    ]
-  },
-  {
-    "objectID": "slides/05_reinforcement-learning.html#slide",
-    "href": "slides/05_reinforcement-learning.html#slide",
-    "title": "5. Reinforcement Learning",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section I: Foundations of Sequential Prediction",
-      "5. Reinforcement Learning"
-    ]
-  },
-  {
-    "objectID": "slides/05_reinforcement-learning.html#slide-1",
-    "href": "slides/05_reinforcement-learning.html#slide-1",
-    "title": "5. Reinforcement Learning",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section I: Foundations of Sequential Prediction",
-      "5. Reinforcement Learning"
-    ]
-  },
-  {
-    "objectID": "slides/05_reinforcement-learning.html#slide-2",
-    "href": "slides/05_reinforcement-learning.html#slide-2",
-    "title": "5. Reinforcement Learning",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section I: Foundations of Sequential Prediction",
-      "5. Reinforcement Learning"
-    ]
-  },
-  {
-    "objectID": "slides/05_reinforcement-learning.html#slide-3",
-    "href": "slides/05_reinforcement-learning.html#slide-3",
-    "title": "5. Reinforcement Learning",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section I: Foundations of Sequential Prediction",
-      "5. Reinforcement Learning"
-    ]
-  },
-  {
-    "objectID": "slides/03_time-series-analysis.html#slide",
-    "href": "slides/03_time-series-analysis.html#slide",
-    "title": "3. Time-Series Analysis",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section I: Foundations of Sequential Prediction",
-      "3. Time-Series Analysis"
-    ]
-  },
-  {
-    "objectID": "slides/03_time-series-analysis.html#slide-1",
-    "href": "slides/03_time-series-analysis.html#slide-1",
-    "title": "3. Time-Series Analysis",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section I: Foundations of Sequential Prediction",
-      "3. Time-Series Analysis"
-    ]
-  },
-  {
-    "objectID": "slides/03_time-series-analysis.html#slide-2",
-    "href": "slides/03_time-series-analysis.html#slide-2",
-    "title": "3. Time-Series Analysis",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section I: Foundations of Sequential Prediction",
-      "3. Time-Series Analysis"
-    ]
-  },
-  {
-    "objectID": "slides/03_time-series-analysis.html#slide-3",
-    "href": "slides/03_time-series-analysis.html#slide-3",
-    "title": "3. Time-Series Analysis",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section I: Foundations of Sequential Prediction",
-      "3. Time-Series Analysis"
-    ]
-  },
-  {
-    "objectID": "slides/01_preliminaries.html#slide",
-    "href": "slides/01_preliminaries.html#slide",
-    "title": "1. Preliminaries",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Introduction",
-      "1. Preliminaries"
-    ]
-  },
-  {
-    "objectID": "slides/01_preliminaries.html#slide-1",
-    "href": "slides/01_preliminaries.html#slide-1",
-    "title": "1. Preliminaries",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Introduction",
-      "1. Preliminaries"
-    ]
-  },
-  {
-    "objectID": "slides/01_preliminaries.html#slide-2",
-    "href": "slides/01_preliminaries.html#slide-2",
-    "title": "1. Preliminaries",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Introduction",
-      "1. Preliminaries"
-    ]
-  },
-  {
-    "objectID": "slides/01_preliminaries.html#slide-3",
-    "href": "slides/01_preliminaries.html#slide-3",
-    "title": "1. Preliminaries",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Introduction",
-      "1. Preliminaries"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome",
-    "section": "",
-    "text": "This is a companion for the book Generative AI Handbook by William Brown (copyright June 5, 2024).\nEach chapter title to the left is a link to a slide deck.\n\nThese slides are being developed by this club.\nEach deck will open in its own tab.\nYou may want to type “s” at the start of each deck to open the speaker notes.\nJoin the Data Science Learning Community to participate in the discussion!\n\nWe follow the Data Science Learning Community Code of Conduct.",
-    "crumbs": [
-      "Welcome"
-    ]
-  },
-  {
-    "objectID": "slides/00-club_intro.html#book-club-meetings",
-    "href": "slides/00-club_intro.html#book-club-meetings",
-    "title": "Club Meetings",
-    "section": "Book club meetings",
-    "text": "Book club meetings\n\nVolunteer leads discussion of a chapter\n\nThis is the best way to learn the material.\n\nPresentations:\n\nReview of material\nQuestions you have\nMaybe live demo\n\nMore info about editing: this github repo.\nRecorded, available on the Data Science Learning Community YouTube Channel (DSLC.video).",
-    "crumbs": [
-      "Club Meetings"
-    ]
-  },
-  {
-    "objectID": "slides/00-club_intro.html#pace",
-    "href": "slides/00-club_intro.html#pace",
-    "title": "Club Meetings",
-    "section": "Pace",
-    "text": "Pace\n\nGoal: 3 chapters/week\nOk to split overwhelming chapters\nOk to combine short chapters\nMeet every week except holidays, etc\n\nIdeally can discuss even if presenter unavailable",
-    "crumbs": [
-      "Club Meetings"
-    ]
-  },
-  {
-    "objectID": "slides/00-club_intro.html#learning-objectives-los",
-    "href": "slides/00-club_intro.html#learning-objectives-los",
-    "title": "Club Meetings",
-    "section": "Learning objectives (LOs)",
-    "text": "Learning objectives (LOs)\n\nStudents who study with LOs in mind retain more.\nTips:\n\n“After today’s session, you will be able to…”\nVery roughly 1 per section.\n\n\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Club Meetings"
-    ]
-  },
-  {
-    "objectID": "slides/02_statistical-prediction-and-supervised-learning.html#slide",
-    "href": "slides/02_statistical-prediction-and-supervised-learning.html#slide",
-    "title": "2. Statistical Prediction and Supervised Learning",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section I: Foundations of Sequential Prediction",
-      "2. Statistical Prediction and Supervised Learning"
-    ]
-  },
-  {
-    "objectID": "slides/02_statistical-prediction-and-supervised-learning.html#slide-1",
-    "href": "slides/02_statistical-prediction-and-supervised-learning.html#slide-1",
-    "title": "2. Statistical Prediction and Supervised Learning",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section I: Foundations of Sequential Prediction",
-      "2. Statistical Prediction and Supervised Learning"
-    ]
-  },
-  {
-    "objectID": "slides/02_statistical-prediction-and-supervised-learning.html#slide-2",
-    "href": "slides/02_statistical-prediction-and-supervised-learning.html#slide-2",
-    "title": "2. Statistical Prediction and Supervised Learning",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section I: Foundations of Sequential Prediction",
-      "2. Statistical Prediction and Supervised Learning"
-    ]
-  },
-  {
-    "objectID": "slides/02_statistical-prediction-and-supervised-learning.html#slide-3",
-    "href": "slides/02_statistical-prediction-and-supervised-learning.html#slide-3",
-    "title": "2. Statistical Prediction and Supervised Learning",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section I: Foundations of Sequential Prediction",
-      "2. Statistical Prediction and Supervised Learning"
-    ]
-  },
-  {
-    "objectID": "slides/04_online-learning-and-regret-minimization.html#slide",
-    "href": "slides/04_online-learning-and-regret-minimization.html#slide",
-    "title": "4. Online Learning and Regret Minimization",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section I: Foundations of Sequential Prediction",
-      "4. Online Learning and Regret Minimization"
-    ]
-  },
-  {
-    "objectID": "slides/04_online-learning-and-regret-minimization.html#slide-1",
-    "href": "slides/04_online-learning-and-regret-minimization.html#slide-1",
-    "title": "4. Online Learning and Regret Minimization",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section I: Foundations of Sequential Prediction",
-      "4. Online Learning and Regret Minimization"
-    ]
-  },
-  {
-    "objectID": "slides/04_online-learning-and-regret-minimization.html#slide-2",
-    "href": "slides/04_online-learning-and-regret-minimization.html#slide-2",
-    "title": "4. Online Learning and Regret Minimization",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section I: Foundations of Sequential Prediction",
-      "4. Online Learning and Regret Minimization"
-    ]
-  },
-  {
-    "objectID": "slides/04_online-learning-and-regret-minimization.html#slide-3",
-    "href": "slides/04_online-learning-and-regret-minimization.html#slide-3",
-    "title": "4. Online Learning and Regret Minimization",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section I: Foundations of Sequential Prediction",
-      "4. Online Learning and Regret Minimization"
-    ]
-  },
-  {
-    "objectID": "slides/06_markov-models.html#slide",
-    "href": "slides/06_markov-models.html#slide",
-    "title": "6. Markov Models",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section I: Foundations of Sequential Prediction",
-      "6. Markov Models"
-    ]
-  },
-  {
-    "objectID": "slides/06_markov-models.html#slide-1",
-    "href": "slides/06_markov-models.html#slide-1",
-    "title": "6. Markov Models",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section I: Foundations of Sequential Prediction",
-      "6. Markov Models"
-    ]
-  },
-  {
-    "objectID": "slides/06_markov-models.html#slide-2",
-    "href": "slides/06_markov-models.html#slide-2",
-    "title": "6. Markov Models",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section I: Foundations of Sequential Prediction",
-      "6. Markov Models"
-    ]
-  },
-  {
-    "objectID": "slides/06_markov-models.html#slide-3",
-    "href": "slides/06_markov-models.html#slide-3",
-    "title": "6. Markov Models",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section I: Foundations of Sequential Prediction",
-      "6. Markov Models"
-    ]
-  },
-  {
-    "objectID": "slides/08_recurrent-neural-networks.html#slide",
-    "href": "slides/08_recurrent-neural-networks.html#slide",
-    "title": "8. Recurrent Neural Networks",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section II: Neural Sequential Prediction",
-      "8. Recurrent Neural Networks"
-    ]
-  },
-  {
-    "objectID": "slides/08_recurrent-neural-networks.html#slide-1",
-    "href": "slides/08_recurrent-neural-networks.html#slide-1",
-    "title": "8. Recurrent Neural Networks",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section II: Neural Sequential Prediction",
-      "8. Recurrent Neural Networks"
-    ]
-  },
-  {
-    "objectID": "slides/08_recurrent-neural-networks.html#slide-2",
-    "href": "slides/08_recurrent-neural-networks.html#slide-2",
-    "title": "8. Recurrent Neural Networks",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section II: Neural Sequential Prediction",
-      "8. Recurrent Neural Networks"
-    ]
-  },
-  {
-    "objectID": "slides/08_recurrent-neural-networks.html#slide-3",
-    "href": "slides/08_recurrent-neural-networks.html#slide-3",
-    "title": "8. Recurrent Neural Networks",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section II: Neural Sequential Prediction",
-      "8. Recurrent Neural Networks"
-    ]
-  },
-  {
-    "objectID": "slides/10_embeddings-and-topic-modeling.html#slide",
-    "href": "slides/10_embeddings-and-topic-modeling.html#slide",
-    "title": "10. Embeddings and Topic Modeling",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section II: Neural Sequential Prediction",
-      "10. Embeddings and Topic Modeling"
-    ]
-  },
-  {
-    "objectID": "slides/10_embeddings-and-topic-modeling.html#slide-1",
-    "href": "slides/10_embeddings-and-topic-modeling.html#slide-1",
-    "title": "10. Embeddings and Topic Modeling",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section II: Neural Sequential Prediction",
-      "10. Embeddings and Topic Modeling"
-    ]
-  },
-  {
-    "objectID": "slides/10_embeddings-and-topic-modeling.html#slide-2",
-    "href": "slides/10_embeddings-and-topic-modeling.html#slide-2",
-    "title": "10. Embeddings and Topic Modeling",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section II: Neural Sequential Prediction",
-      "10. Embeddings and Topic Modeling"
-    ]
-  },
-  {
-    "objectID": "slides/10_embeddings-and-topic-modeling.html#slide-3",
-    "href": "slides/10_embeddings-and-topic-modeling.html#slide-3",
-    "title": "10. Embeddings and Topic Modeling",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section II: Neural Sequential Prediction",
-      "10. Embeddings and Topic Modeling"
-    ]
-  },
-  {
-    "objectID": "slides/12_decoder-only-transformers.html#slide",
-    "href": "slides/12_decoder-only-transformers.html#slide",
-    "title": "12. Decoder-Only Transformers",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section II: Neural Sequential Prediction",
-      "12. Decoder-Only Transformers"
-    ]
-  },
-  {
-    "objectID": "slides/12_decoder-only-transformers.html#slide-1",
-    "href": "slides/12_decoder-only-transformers.html#slide-1",
-    "title": "12. Decoder-Only Transformers",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section II: Neural Sequential Prediction",
-      "12. Decoder-Only Transformers"
-    ]
-  },
-  {
-    "objectID": "slides/12_decoder-only-transformers.html#slide-2",
-    "href": "slides/12_decoder-only-transformers.html#slide-2",
-    "title": "12. Decoder-Only Transformers",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section II: Neural Sequential Prediction",
-      "12. Decoder-Only Transformers"
-    ]
-  },
-  {
-    "objectID": "slides/12_decoder-only-transformers.html#slide-3",
-    "href": "slides/12_decoder-only-transformers.html#slide-3",
-    "title": "12. Decoder-Only Transformers",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section II: Neural Sequential Prediction",
-      "12. Decoder-Only Transformers"
-    ]
-  },
-  {
-    "objectID": "slides/14_positional-encoding.html#slide",
-    "href": "slides/14_positional-encoding.html#slide",
-    "title": "14. Positional Encoding",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section III: Foundations for Modern Language Modeling",
-      "14. Positional Encoding"
-    ]
-  },
-  {
-    "objectID": "slides/14_positional-encoding.html#slide-1",
-    "href": "slides/14_positional-encoding.html#slide-1",
-    "title": "14. Positional Encoding",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section III: Foundations for Modern Language Modeling",
-      "14. Positional Encoding"
-    ]
-  },
-  {
-    "objectID": "slides/14_positional-encoding.html#slide-2",
-    "href": "slides/14_positional-encoding.html#slide-2",
-    "title": "14. Positional Encoding",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section III: Foundations for Modern Language Modeling",
-      "14. Positional Encoding"
-    ]
-  },
-  {
-    "objectID": "slides/14_positional-encoding.html#slide-3",
-    "href": "slides/14_positional-encoding.html#slide-3",
-    "title": "14. Positional Encoding",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section III: Foundations for Modern Language Modeling",
-      "14. Positional Encoding"
-    ]
-  },
-  {
-    "objectID": "slides/16_distributed-training-and-fsdp.html#slide",
-    "href": "slides/16_distributed-training-and-fsdp.html#slide",
-    "title": "16. Distributed Training and FSDP",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section III: Foundations for Modern Language Modeling",
-      "16. Distributed Training and FSDP"
-    ]
-  },
-  {
-    "objectID": "slides/16_distributed-training-and-fsdp.html#slide-1",
-    "href": "slides/16_distributed-training-and-fsdp.html#slide-1",
-    "title": "16. Distributed Training and FSDP",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section III: Foundations for Modern Language Modeling",
-      "16. Distributed Training and FSDP"
-    ]
-  },
-  {
-    "objectID": "slides/16_distributed-training-and-fsdp.html#slide-2",
-    "href": "slides/16_distributed-training-and-fsdp.html#slide-2",
-    "title": "16. Distributed Training and FSDP",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section III: Foundations for Modern Language Modeling",
-      "16. Distributed Training and FSDP"
-    ]
-  },
-  {
-    "objectID": "slides/16_distributed-training-and-fsdp.html#slide-3",
-    "href": "slides/16_distributed-training-and-fsdp.html#slide-3",
-    "title": "16. Distributed Training and FSDP",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section III: Foundations for Modern Language Modeling",
-      "16. Distributed Training and FSDP"
-    ]
-  },
-  {
-    "objectID": "slides/18_mixture-of-experts.html#slide",
-    "href": "slides/18_mixture-of-experts.html#slide",
-    "title": "18. Mixture-of-Experts",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section III: Foundations for Modern Language Modeling",
-      "18. Mixture-of-Experts"
-    ]
-  },
-  {
-    "objectID": "slides/18_mixture-of-experts.html#slide-1",
-    "href": "slides/18_mixture-of-experts.html#slide-1",
-    "title": "18. Mixture-of-Experts",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section III: Foundations for Modern Language Modeling",
-      "18. Mixture-of-Experts"
-    ]
-  },
-  {
-    "objectID": "slides/18_mixture-of-experts.html#slide-2",
-    "href": "slides/18_mixture-of-experts.html#slide-2",
-    "title": "18. Mixture-of-Experts",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section III: Foundations for Modern Language Modeling",
-      "18. Mixture-of-Experts"
-    ]
-  },
-  {
-    "objectID": "slides/18_mixture-of-experts.html#slide-3",
-    "href": "slides/18_mixture-of-experts.html#slide-3",
-    "title": "18. Mixture-of-Experts",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section III: Foundations for Modern Language Modeling",
-      "18. Mixture-of-Experts"
-    ]
-  },
-  {
-    "objectID": "slides/20_low-rank-adapters-lora.html#slide",
-    "href": "slides/20_low-rank-adapters-lora.html#slide",
-    "title": "20. Low-Rank Adapters (LoRA)",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section IV: Finetuning Methods for LLMs",
-      "20. Low-Rank Adapters (LoRA)"
-    ]
-  },
-  {
-    "objectID": "slides/20_low-rank-adapters-lora.html#slide-1",
-    "href": "slides/20_low-rank-adapters-lora.html#slide-1",
-    "title": "20. Low-Rank Adapters (LoRA)",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section IV: Finetuning Methods for LLMs",
-      "20. Low-Rank Adapters (LoRA)"
-    ]
-  },
-  {
-    "objectID": "slides/20_low-rank-adapters-lora.html#slide-2",
-    "href": "slides/20_low-rank-adapters-lora.html#slide-2",
-    "title": "20. Low-Rank Adapters (LoRA)",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section IV: Finetuning Methods for LLMs",
-      "20. Low-Rank Adapters (LoRA)"
-    ]
-  },
-  {
-    "objectID": "slides/20_low-rank-adapters-lora.html#slide-3",
-    "href": "slides/20_low-rank-adapters-lora.html#slide-3",
-    "title": "20. Low-Rank Adapters (LoRA)",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section IV: Finetuning Methods for LLMs",
-      "20. Low-Rank Adapters (LoRA)"
-    ]
-  },
-  {
-    "objectID": "slides/22_direct-preference-optimization-methods.html#slide",
-    "href": "slides/22_direct-preference-optimization-methods.html#slide",
-    "title": "22. Direct Preference Optimization Methods",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section IV: Finetuning Methods for LLMs",
-      "22. Direct Preference Optimization Methods"
-    ]
-  },
-  {
-    "objectID": "slides/22_direct-preference-optimization-methods.html#slide-1",
-    "href": "slides/22_direct-preference-optimization-methods.html#slide-1",
-    "title": "22. Direct Preference Optimization Methods",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section IV: Finetuning Methods for LLMs",
-      "22. Direct Preference Optimization Methods"
-    ]
-  },
-  {
-    "objectID": "slides/22_direct-preference-optimization-methods.html#slide-2",
-    "href": "slides/22_direct-preference-optimization-methods.html#slide-2",
-    "title": "22. Direct Preference Optimization Methods",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section IV: Finetuning Methods for LLMs",
-      "22. Direct Preference Optimization Methods"
-    ]
-  },
-  {
-    "objectID": "slides/22_direct-preference-optimization-methods.html#slide-3",
-    "href": "slides/22_direct-preference-optimization-methods.html#slide-3",
-    "title": "22. Direct Preference Optimization Methods",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section IV: Finetuning Methods for LLMs",
-      "22. Direct Preference Optimization Methods"
-    ]
-  },
-  {
-    "objectID": "slides/24_distillation-and-merging.html#slide",
-    "href": "slides/24_distillation-and-merging.html#slide",
-    "title": "24. Distillation and Merging",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section IV: Finetuning Methods for LLMs",
-      "24. Distillation and Merging"
-    ]
-  },
-  {
-    "objectID": "slides/24_distillation-and-merging.html#slide-1",
-    "href": "slides/24_distillation-and-merging.html#slide-1",
-    "title": "24. Distillation and Merging",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section IV: Finetuning Methods for LLMs",
-      "24. Distillation and Merging"
-    ]
-  },
-  {
-    "objectID": "slides/24_distillation-and-merging.html#slide-2",
-    "href": "slides/24_distillation-and-merging.html#slide-2",
-    "title": "24. Distillation and Merging",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section IV: Finetuning Methods for LLMs",
-      "24. Distillation and Merging"
-    ]
-  },
-  {
-    "objectID": "slides/24_distillation-and-merging.html#slide-3",
-    "href": "slides/24_distillation-and-merging.html#slide-3",
-    "title": "24. Distillation and Merging",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section IV: Finetuning Methods for LLMs",
-      "24. Distillation and Merging"
-    ]
-  },
-  {
-    "objectID": "slides/26_sampling-and-structured-outputs.html#slide",
-    "href": "slides/26_sampling-and-structured-outputs.html#slide",
-    "title": "26. Sampling and Structured Outputs",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "26. Sampling and Structured Outputs"
-    ]
-  },
-  {
-    "objectID": "slides/26_sampling-and-structured-outputs.html#slide-1",
-    "href": "slides/26_sampling-and-structured-outputs.html#slide-1",
-    "title": "26. Sampling and Structured Outputs",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "26. Sampling and Structured Outputs"
-    ]
-  },
-  {
-    "objectID": "slides/26_sampling-and-structured-outputs.html#slide-2",
-    "href": "slides/26_sampling-and-structured-outputs.html#slide-2",
-    "title": "26. Sampling and Structured Outputs",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "26. Sampling and Structured Outputs"
-    ]
-  },
-  {
-    "objectID": "slides/26_sampling-and-structured-outputs.html#slide-3",
-    "href": "slides/26_sampling-and-structured-outputs.html#slide-3",
-    "title": "26. Sampling and Structured Outputs",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "26. Sampling and Structured Outputs"
-    ]
-  },
-  {
-    "objectID": "slides/28_vector-databases-and-reranking.html#slide",
-    "href": "slides/28_vector-databases-and-reranking.html#slide",
-    "title": "28. Vector Databases and Reranking",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "28. Vector Databases and Reranking"
-    ]
-  },
-  {
-    "objectID": "slides/28_vector-databases-and-reranking.html#slide-1",
-    "href": "slides/28_vector-databases-and-reranking.html#slide-1",
-    "title": "28. Vector Databases and Reranking",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "28. Vector Databases and Reranking"
-    ]
-  },
-  {
-    "objectID": "slides/28_vector-databases-and-reranking.html#slide-2",
-    "href": "slides/28_vector-databases-and-reranking.html#slide-2",
-    "title": "28. Vector Databases and Reranking",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "28. Vector Databases and Reranking"
-    ]
-  },
-  {
-    "objectID": "slides/28_vector-databases-and-reranking.html#slide-3",
-    "href": "slides/28_vector-databases-and-reranking.html#slide-3",
-    "title": "28. Vector Databases and Reranking",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "28. Vector Databases and Reranking"
-    ]
-  },
-  {
-    "objectID": "slides/30_tool-use-and-agents.html#slide",
-    "href": "slides/30_tool-use-and-agents.html#slide",
-    "title": "30. Tool Use and ‘Agents’",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "30. Tool Use and 'Agents'"
-    ]
-  },
-  {
-    "objectID": "slides/30_tool-use-and-agents.html#slide-1",
-    "href": "slides/30_tool-use-and-agents.html#slide-1",
-    "title": "30. Tool Use and ‘Agents’",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "30. Tool Use and 'Agents'"
-    ]
-  },
-  {
-    "objectID": "slides/30_tool-use-and-agents.html#slide-2",
-    "href": "slides/30_tool-use-and-agents.html#slide-2",
-    "title": "30. Tool Use and ‘Agents’",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "30. Tool Use and 'Agents'"
-    ]
-  },
-  {
-    "objectID": "slides/30_tool-use-and-agents.html#slide-3",
-    "href": "slides/30_tool-use-and-agents.html#slide-3",
-    "title": "30. Tool Use and ‘Agents’",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "30. Tool Use and 'Agents'"
-    ]
-  },
-  {
-    "objectID": "slides/32_representation-engineering.html#slide",
-    "href": "slides/32_representation-engineering.html#slide",
-    "title": "32. Representation Engineering",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "32. Representation Engineering"
-    ]
-  },
-  {
-    "objectID": "slides/32_representation-engineering.html#slide-1",
-    "href": "slides/32_representation-engineering.html#slide-1",
-    "title": "32. Representation Engineering",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "32. Representation Engineering"
-    ]
-  },
-  {
-    "objectID": "slides/32_representation-engineering.html#slide-2",
-    "href": "slides/32_representation-engineering.html#slide-2",
-    "title": "32. Representation Engineering",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "32. Representation Engineering"
-    ]
-  },
-  {
-    "objectID": "slides/32_representation-engineering.html#slide-3",
-    "href": "slides/32_representation-engineering.html#slide-3",
-    "title": "32. Representation Engineering",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "32. Representation Engineering"
-    ]
-  },
-  {
-    "objectID": "slides/34_linear-representation-hypotheses.html#slide",
-    "href": "slides/34_linear-representation-hypotheses.html#slide",
-    "title": "34. Linear Representation Hypotheses",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "34. Linear Representation Hypotheses"
-    ]
-  },
-  {
-    "objectID": "slides/34_linear-representation-hypotheses.html#slide-1",
-    "href": "slides/34_linear-representation-hypotheses.html#slide-1",
-    "title": "34. Linear Representation Hypotheses",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "34. Linear Representation Hypotheses"
-    ]
-  },
-  {
-    "objectID": "slides/34_linear-representation-hypotheses.html#slide-2",
-    "href": "slides/34_linear-representation-hypotheses.html#slide-2",
-    "title": "34. Linear Representation Hypotheses",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "34. Linear Representation Hypotheses"
-    ]
-  },
-  {
-    "objectID": "slides/34_linear-representation-hypotheses.html#slide-3",
-    "href": "slides/34_linear-representation-hypotheses.html#slide-3",
-    "title": "34. Linear Representation Hypotheses",
-    "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
-    "crumbs": [
-      "Section V: LLM Evaluations and Applications",
-      "34. Linear Representation Hypotheses"
     ]
   },
   {
@@ -2013,54 +125,230 @@
     "href": "slides/36_speculative-decoding.html#slide-3",
     "title": "36. Speculative Decoding",
     "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
+    "text": "SLIDE",
     "crumbs": [
       "Section VI: Performance Optimizations for Efficient Inference",
       "36. Speculative Decoding"
     ]
   },
   {
-    "objectID": "slides/38_key-value-caching-and-paged-attention.html#slide",
-    "href": "slides/38_key-value-caching-and-paged-attention.html#slide",
-    "title": "38. Key-Value Caching and Paged Attention",
+    "objectID": "slides/16_distributed-training-and-fsdp.html#slide",
+    "href": "slides/16_distributed-training-and-fsdp.html#slide",
+    "title": "16. Distributed Training and FSDP",
     "section": "SLIDE",
     "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
     "crumbs": [
-      "Section VI: Performance Optimizations for Efficient Inference",
-      "38. Key-Value Caching and Paged Attention"
+      "Section III: Foundations for Modern Language Modeling",
+      "16. Distributed Training and FSDP"
     ]
   },
   {
-    "objectID": "slides/38_key-value-caching-and-paged-attention.html#slide-1",
-    "href": "slides/38_key-value-caching-and-paged-attention.html#slide-1",
-    "title": "38. Key-Value Caching and Paged Attention",
+    "objectID": "slides/16_distributed-training-and-fsdp.html#slide-1",
+    "href": "slides/16_distributed-training-and-fsdp.html#slide-1",
+    "title": "16. Distributed Training and FSDP",
     "section": "SLIDE",
     "text": "SLIDE",
     "crumbs": [
-      "Section VI: Performance Optimizations for Efficient Inference",
-      "38. Key-Value Caching and Paged Attention"
+      "Section III: Foundations for Modern Language Modeling",
+      "16. Distributed Training and FSDP"
     ]
   },
   {
-    "objectID": "slides/38_key-value-caching-and-paged-attention.html#slide-2",
-    "href": "slides/38_key-value-caching-and-paged-attention.html#slide-2",
-    "title": "38. Key-Value Caching and Paged Attention",
+    "objectID": "slides/16_distributed-training-and-fsdp.html#slide-2",
+    "href": "slides/16_distributed-training-and-fsdp.html#slide-2",
+    "title": "16. Distributed Training and FSDP",
     "section": "SLIDE",
     "text": "SLIDE",
     "crumbs": [
-      "Section VI: Performance Optimizations for Efficient Inference",
-      "38. Key-Value Caching and Paged Attention"
+      "Section III: Foundations for Modern Language Modeling",
+      "16. Distributed Training and FSDP"
     ]
   },
   {
-    "objectID": "slides/38_key-value-caching-and-paged-attention.html#slide-3",
-    "href": "slides/38_key-value-caching-and-paged-attention.html#slide-3",
-    "title": "38. Key-Value Caching and Paged Attention",
+    "objectID": "slides/16_distributed-training-and-fsdp.html#slide-3",
+    "href": "slides/16_distributed-training-and-fsdp.html#slide-3",
+    "title": "16. Distributed Training and FSDP",
     "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
+    "text": "SLIDE",
     "crumbs": [
-      "Section VI: Performance Optimizations for Efficient Inference",
-      "38. Key-Value Caching and Paged Attention"
+      "Section III: Foundations for Modern Language Modeling",
+      "16. Distributed Training and FSDP"
+    ]
+  },
+  {
+    "objectID": "slides/22_direct-preference-optimization-methods.html#slide",
+    "href": "slides/22_direct-preference-optimization-methods.html#slide",
+    "title": "22. Direct Preference Optimization Methods",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section IV: Finetuning Methods for LLMs",
+      "22. Direct Preference Optimization Methods"
+    ]
+  },
+  {
+    "objectID": "slides/22_direct-preference-optimization-methods.html#slide-1",
+    "href": "slides/22_direct-preference-optimization-methods.html#slide-1",
+    "title": "22. Direct Preference Optimization Methods",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section IV: Finetuning Methods for LLMs",
+      "22. Direct Preference Optimization Methods"
+    ]
+  },
+  {
+    "objectID": "slides/22_direct-preference-optimization-methods.html#slide-2",
+    "href": "slides/22_direct-preference-optimization-methods.html#slide-2",
+    "title": "22. Direct Preference Optimization Methods",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section IV: Finetuning Methods for LLMs",
+      "22. Direct Preference Optimization Methods"
+    ]
+  },
+  {
+    "objectID": "slides/22_direct-preference-optimization-methods.html#slide-3",
+    "href": "slides/22_direct-preference-optimization-methods.html#slide-3",
+    "title": "22. Direct Preference Optimization Methods",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section IV: Finetuning Methods for LLMs",
+      "22. Direct Preference Optimization Methods"
+    ]
+  },
+  {
+    "objectID": "slides/31_llms-for-synthetic-data.html#slide",
+    "href": "slides/31_llms-for-synthetic-data.html#slide",
+    "title": "31. LLMs for Synthetic Data",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "31. LLMs for Synthetic Data"
+    ]
+  },
+  {
+    "objectID": "slides/31_llms-for-synthetic-data.html#slide-1",
+    "href": "slides/31_llms-for-synthetic-data.html#slide-1",
+    "title": "31. LLMs for Synthetic Data",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "31. LLMs for Synthetic Data"
+    ]
+  },
+  {
+    "objectID": "slides/31_llms-for-synthetic-data.html#slide-2",
+    "href": "slides/31_llms-for-synthetic-data.html#slide-2",
+    "title": "31. LLMs for Synthetic Data",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "31. LLMs for Synthetic Data"
+    ]
+  },
+  {
+    "objectID": "slides/31_llms-for-synthetic-data.html#slide-3",
+    "href": "slides/31_llms-for-synthetic-data.html#slide-3",
+    "title": "31. LLMs for Synthetic Data",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "31. LLMs for Synthetic Data"
+    ]
+  },
+  {
+    "objectID": "slides/10_embeddings-and-topic-modeling.html#slide",
+    "href": "slides/10_embeddings-and-topic-modeling.html#slide",
+    "title": "10. Embeddings and Topic Modeling",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section II: Neural Sequential Prediction",
+      "10. Embeddings and Topic Modeling"
+    ]
+  },
+  {
+    "objectID": "slides/10_embeddings-and-topic-modeling.html#slide-1",
+    "href": "slides/10_embeddings-and-topic-modeling.html#slide-1",
+    "title": "10. Embeddings and Topic Modeling",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section II: Neural Sequential Prediction",
+      "10. Embeddings and Topic Modeling"
+    ]
+  },
+  {
+    "objectID": "slides/10_embeddings-and-topic-modeling.html#slide-2",
+    "href": "slides/10_embeddings-and-topic-modeling.html#slide-2",
+    "title": "10. Embeddings and Topic Modeling",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section II: Neural Sequential Prediction",
+      "10. Embeddings and Topic Modeling"
+    ]
+  },
+  {
+    "objectID": "slides/10_embeddings-and-topic-modeling.html#slide-3",
+    "href": "slides/10_embeddings-and-topic-modeling.html#slide-3",
+    "title": "10. Embeddings and Topic Modeling",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section II: Neural Sequential Prediction",
+      "10. Embeddings and Topic Modeling"
+    ]
+  },
+  {
+    "objectID": "slides/11_encoders-and-decoders.html#slide",
+    "href": "slides/11_encoders-and-decoders.html#slide",
+    "title": "11. Encoders and Decoders",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section II: Neural Sequential Prediction",
+      "11. Encoders and Decoders"
+    ]
+  },
+  {
+    "objectID": "slides/11_encoders-and-decoders.html#slide-1",
+    "href": "slides/11_encoders-and-decoders.html#slide-1",
+    "title": "11. Encoders and Decoders",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section II: Neural Sequential Prediction",
+      "11. Encoders and Decoders"
+    ]
+  },
+  {
+    "objectID": "slides/11_encoders-and-decoders.html#slide-2",
+    "href": "slides/11_encoders-and-decoders.html#slide-2",
+    "title": "11. Encoders and Decoders",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section II: Neural Sequential Prediction",
+      "11. Encoders and Decoders"
+    ]
+  },
+  {
+    "objectID": "slides/11_encoders-and-decoders.html#slide-3",
+    "href": "slides/11_encoders-and-decoders.html#slide-3",
+    "title": "11. Encoders and Decoders",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section II: Neural Sequential Prediction",
+      "11. Encoders and Decoders"
     ]
   },
   {
@@ -2101,142 +389,230 @@
     "href": "slides/40_sliding-window-attention.html#slide-3",
     "title": "40. Sliding Window Attention",
     "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
+    "text": "SLIDE",
     "crumbs": [
       "Section VII: Sub-Quadratic Context Scaling",
       "40. Sliding Window Attention"
     ]
   },
   {
-    "objectID": "slides/42_linear-attention-rwkv.html#slide",
-    "href": "slides/42_linear-attention-rwkv.html#slide",
-    "title": "42. Linear Attention (RWKV)",
+    "objectID": "slides/53_vision-transformers.html#slide",
+    "href": "slides/53_vision-transformers.html#slide",
+    "title": "53. Vision Transformers",
     "section": "SLIDE",
     "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
     "crumbs": [
-      "Section VII: Sub-Quadratic Context Scaling",
-      "42. Linear Attention (RWKV)"
+      "Section IX: Multimodal Models",
+      "53. Vision Transformers"
     ]
   },
   {
-    "objectID": "slides/42_linear-attention-rwkv.html#slide-1",
-    "href": "slides/42_linear-attention-rwkv.html#slide-1",
-    "title": "42. Linear Attention (RWKV)",
+    "objectID": "slides/53_vision-transformers.html#slide-1",
+    "href": "slides/53_vision-transformers.html#slide-1",
+    "title": "53. Vision Transformers",
     "section": "SLIDE",
     "text": "SLIDE",
     "crumbs": [
-      "Section VII: Sub-Quadratic Context Scaling",
-      "42. Linear Attention (RWKV)"
+      "Section IX: Multimodal Models",
+      "53. Vision Transformers"
     ]
   },
   {
-    "objectID": "slides/42_linear-attention-rwkv.html#slide-2",
-    "href": "slides/42_linear-attention-rwkv.html#slide-2",
-    "title": "42. Linear Attention (RWKV)",
+    "objectID": "slides/53_vision-transformers.html#slide-2",
+    "href": "slides/53_vision-transformers.html#slide-2",
+    "title": "53. Vision Transformers",
     "section": "SLIDE",
     "text": "SLIDE",
     "crumbs": [
-      "Section VII: Sub-Quadratic Context Scaling",
-      "42. Linear Attention (RWKV)"
+      "Section IX: Multimodal Models",
+      "53. Vision Transformers"
     ]
   },
   {
-    "objectID": "slides/42_linear-attention-rwkv.html#slide-3",
-    "href": "slides/42_linear-attention-rwkv.html#slide-3",
-    "title": "42. Linear Attention (RWKV)",
+    "objectID": "slides/53_vision-transformers.html#slide-3",
+    "href": "slides/53_vision-transformers.html#slide-3",
+    "title": "53. Vision Transformers",
     "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
+    "text": "SLIDE",
     "crumbs": [
-      "Section VII: Sub-Quadratic Context Scaling",
-      "42. Linear Attention (RWKV)"
+      "Section IX: Multimodal Models",
+      "53. Vision Transformers"
     ]
   },
   {
-    "objectID": "slides/44_hyperattention.html#slide",
-    "href": "slides/44_hyperattention.html#slide",
-    "title": "44. HyperAttention",
+    "objectID": "slides/17_scaling-laws.html#slide",
+    "href": "slides/17_scaling-laws.html#slide",
+    "title": "17. Scaling Laws",
     "section": "SLIDE",
     "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
     "crumbs": [
-      "Section VII: Sub-Quadratic Context Scaling",
-      "44. HyperAttention"
+      "Section III: Foundations for Modern Language Modeling",
+      "17. Scaling Laws"
     ]
   },
   {
-    "objectID": "slides/44_hyperattention.html#slide-1",
-    "href": "slides/44_hyperattention.html#slide-1",
-    "title": "44. HyperAttention",
+    "objectID": "slides/17_scaling-laws.html#slide-1",
+    "href": "slides/17_scaling-laws.html#slide-1",
+    "title": "17. Scaling Laws",
     "section": "SLIDE",
     "text": "SLIDE",
     "crumbs": [
-      "Section VII: Sub-Quadratic Context Scaling",
-      "44. HyperAttention"
+      "Section III: Foundations for Modern Language Modeling",
+      "17. Scaling Laws"
     ]
   },
   {
-    "objectID": "slides/44_hyperattention.html#slide-2",
-    "href": "slides/44_hyperattention.html#slide-2",
-    "title": "44. HyperAttention",
+    "objectID": "slides/17_scaling-laws.html#slide-2",
+    "href": "slides/17_scaling-laws.html#slide-2",
+    "title": "17. Scaling Laws",
     "section": "SLIDE",
     "text": "SLIDE",
     "crumbs": [
-      "Section VII: Sub-Quadratic Context Scaling",
-      "44. HyperAttention"
+      "Section III: Foundations for Modern Language Modeling",
+      "17. Scaling Laws"
     ]
   },
   {
-    "objectID": "slides/44_hyperattention.html#slide-3",
-    "href": "slides/44_hyperattention.html#slide-3",
-    "title": "44. HyperAttention",
+    "objectID": "slides/17_scaling-laws.html#slide-3",
+    "href": "slides/17_scaling-laws.html#slide-3",
+    "title": "17. Scaling Laws",
     "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
+    "text": "SLIDE",
     "crumbs": [
-      "Section VII: Sub-Quadratic Context Scaling",
-      "44. HyperAttention"
+      "Section III: Foundations for Modern Language Modeling",
+      "17. Scaling Laws"
     ]
   },
   {
-    "objectID": "slides/46_variational-auto-encoders.html#slide",
-    "href": "slides/46_variational-auto-encoders.html#slide",
-    "title": "46. Variational Auto-Encoders",
+    "objectID": "slides/02_statistical-prediction-and-supervised-learning.html#slide",
+    "href": "slides/02_statistical-prediction-and-supervised-learning.html#slide",
+    "title": "2. Statistical Prediction and Supervised Learning",
     "section": "SLIDE",
     "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
     "crumbs": [
-      "Section VIII: Generative Modeling Beyond Sequences",
-      "46. Variational Auto-Encoders"
+      "Section I: Foundations of Sequential Prediction",
+      "2. Statistical Prediction and Supervised Learning"
     ]
   },
   {
-    "objectID": "slides/46_variational-auto-encoders.html#slide-1",
-    "href": "slides/46_variational-auto-encoders.html#slide-1",
-    "title": "46. Variational Auto-Encoders",
+    "objectID": "slides/02_statistical-prediction-and-supervised-learning.html#slide-1",
+    "href": "slides/02_statistical-prediction-and-supervised-learning.html#slide-1",
+    "title": "2. Statistical Prediction and Supervised Learning",
     "section": "SLIDE",
     "text": "SLIDE",
     "crumbs": [
-      "Section VIII: Generative Modeling Beyond Sequences",
-      "46. Variational Auto-Encoders"
+      "Section I: Foundations of Sequential Prediction",
+      "2. Statistical Prediction and Supervised Learning"
     ]
   },
   {
-    "objectID": "slides/46_variational-auto-encoders.html#slide-2",
-    "href": "slides/46_variational-auto-encoders.html#slide-2",
-    "title": "46. Variational Auto-Encoders",
+    "objectID": "slides/02_statistical-prediction-and-supervised-learning.html#slide-2",
+    "href": "slides/02_statistical-prediction-and-supervised-learning.html#slide-2",
+    "title": "2. Statistical Prediction and Supervised Learning",
     "section": "SLIDE",
     "text": "SLIDE",
     "crumbs": [
-      "Section VIII: Generative Modeling Beyond Sequences",
-      "46. Variational Auto-Encoders"
+      "Section I: Foundations of Sequential Prediction",
+      "2. Statistical Prediction and Supervised Learning"
     ]
   },
   {
-    "objectID": "slides/46_variational-auto-encoders.html#slide-3",
-    "href": "slides/46_variational-auto-encoders.html#slide-3",
-    "title": "46. Variational Auto-Encoders",
+    "objectID": "slides/02_statistical-prediction-and-supervised-learning.html#slide-3",
+    "href": "slides/02_statistical-prediction-and-supervised-learning.html#slide-3",
+    "title": "2. Statistical Prediction and Supervised Learning",
     "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
+    "text": "SLIDE",
     "crumbs": [
-      "Section VIII: Generative Modeling Beyond Sequences",
-      "46. Variational Auto-Encoders"
+      "Section I: Foundations of Sequential Prediction",
+      "2. Statistical Prediction and Supervised Learning"
+    ]
+  },
+  {
+    "objectID": "slides/13_tokenization.html#slide",
+    "href": "slides/13_tokenization.html#slide",
+    "title": "13. Tokenization",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "13. Tokenization"
+    ]
+  },
+  {
+    "objectID": "slides/13_tokenization.html#slide-1",
+    "href": "slides/13_tokenization.html#slide-1",
+    "title": "13. Tokenization",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "13. Tokenization"
+    ]
+  },
+  {
+    "objectID": "slides/13_tokenization.html#slide-2",
+    "href": "slides/13_tokenization.html#slide-2",
+    "title": "13. Tokenization",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "13. Tokenization"
+    ]
+  },
+  {
+    "objectID": "slides/13_tokenization.html#slide-3",
+    "href": "slides/13_tokenization.html#slide-3",
+    "title": "13. Tokenization",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "13. Tokenization"
+    ]
+  },
+  {
+    "objectID": "slides/30_tool-use-and-agents.html#slide",
+    "href": "slides/30_tool-use-and-agents.html#slide",
+    "title": "30. Tool Use and ‘Agents’",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "30. Tool Use and 'Agents'"
+    ]
+  },
+  {
+    "objectID": "slides/30_tool-use-and-agents.html#slide-1",
+    "href": "slides/30_tool-use-and-agents.html#slide-1",
+    "title": "30. Tool Use and ‘Agents’",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "30. Tool Use and 'Agents'"
+    ]
+  },
+  {
+    "objectID": "slides/30_tool-use-and-agents.html#slide-2",
+    "href": "slides/30_tool-use-and-agents.html#slide-2",
+    "title": "30. Tool Use and ‘Agents’",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "30. Tool Use and 'Agents'"
+    ]
+  },
+  {
+    "objectID": "slides/30_tool-use-and-agents.html#slide-3",
+    "href": "slides/30_tool-use-and-agents.html#slide-3",
+    "title": "30. Tool Use and ‘Agents’",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "30. Tool Use and 'Agents'"
     ]
   },
   {
@@ -2277,54 +653,230 @@
     "href": "slides/48_conditional-gans.html#slide-3",
     "title": "48. Conditional GANs",
     "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
+    "text": "SLIDE",
     "crumbs": [
       "Section VIII: Generative Modeling Beyond Sequences",
       "48. Conditional GANs"
     ]
   },
   {
-    "objectID": "slides/50_diffusion-models.html#slide",
-    "href": "slides/50_diffusion-models.html#slide",
-    "title": "50. Diffusion Models",
+    "objectID": "slides/15_pretraining-recipes.html#slide",
+    "href": "slides/15_pretraining-recipes.html#slide",
+    "title": "15. Pretraining Recipes",
     "section": "SLIDE",
     "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
     "crumbs": [
-      "Section VIII: Generative Modeling Beyond Sequences",
-      "50. Diffusion Models"
+      "Section III: Foundations for Modern Language Modeling",
+      "15. Pretraining Recipes"
     ]
   },
   {
-    "objectID": "slides/50_diffusion-models.html#slide-1",
-    "href": "slides/50_diffusion-models.html#slide-1",
-    "title": "50. Diffusion Models",
+    "objectID": "slides/15_pretraining-recipes.html#slide-1",
+    "href": "slides/15_pretraining-recipes.html#slide-1",
+    "title": "15. Pretraining Recipes",
     "section": "SLIDE",
     "text": "SLIDE",
     "crumbs": [
-      "Section VIII: Generative Modeling Beyond Sequences",
-      "50. Diffusion Models"
+      "Section III: Foundations for Modern Language Modeling",
+      "15. Pretraining Recipes"
     ]
   },
   {
-    "objectID": "slides/50_diffusion-models.html#slide-2",
-    "href": "slides/50_diffusion-models.html#slide-2",
-    "title": "50. Diffusion Models",
+    "objectID": "slides/15_pretraining-recipes.html#slide-2",
+    "href": "slides/15_pretraining-recipes.html#slide-2",
+    "title": "15. Pretraining Recipes",
     "section": "SLIDE",
     "text": "SLIDE",
     "crumbs": [
-      "Section VIII: Generative Modeling Beyond Sequences",
-      "50. Diffusion Models"
+      "Section III: Foundations for Modern Language Modeling",
+      "15. Pretraining Recipes"
     ]
   },
   {
-    "objectID": "slides/50_diffusion-models.html#slide-3",
-    "href": "slides/50_diffusion-models.html#slide-3",
-    "title": "50. Diffusion Models",
+    "objectID": "slides/15_pretraining-recipes.html#slide-3",
+    "href": "slides/15_pretraining-recipes.html#slide-3",
+    "title": "15. Pretraining Recipes",
     "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
+    "text": "SLIDE",
     "crumbs": [
-      "Section VIII: Generative Modeling Beyond Sequences",
-      "50. Diffusion Models"
+      "Section III: Foundations for Modern Language Modeling",
+      "15. Pretraining Recipes"
+    ]
+  },
+  {
+    "objectID": "slides/09_lstms-and-grus.html#slide",
+    "href": "slides/09_lstms-and-grus.html#slide",
+    "title": "9. LSTMs and GRUs",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section II: Neural Sequential Prediction",
+      "9. LSTMs and GRUs"
+    ]
+  },
+  {
+    "objectID": "slides/09_lstms-and-grus.html#slide-1",
+    "href": "slides/09_lstms-and-grus.html#slide-1",
+    "title": "9. LSTMs and GRUs",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section II: Neural Sequential Prediction",
+      "9. LSTMs and GRUs"
+    ]
+  },
+  {
+    "objectID": "slides/09_lstms-and-grus.html#slide-2",
+    "href": "slides/09_lstms-and-grus.html#slide-2",
+    "title": "9. LSTMs and GRUs",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section II: Neural Sequential Prediction",
+      "9. LSTMs and GRUs"
+    ]
+  },
+  {
+    "objectID": "slides/09_lstms-and-grus.html#slide-3",
+    "href": "slides/09_lstms-and-grus.html#slide-3",
+    "title": "9. LSTMs and GRUs",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section II: Neural Sequential Prediction",
+      "9. LSTMs and GRUs"
+    ]
+  },
+  {
+    "objectID": "slides/32_representation-engineering.html#slide",
+    "href": "slides/32_representation-engineering.html#slide",
+    "title": "32. Representation Engineering",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "32. Representation Engineering"
+    ]
+  },
+  {
+    "objectID": "slides/32_representation-engineering.html#slide-1",
+    "href": "slides/32_representation-engineering.html#slide-1",
+    "title": "32. Representation Engineering",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "32. Representation Engineering"
+    ]
+  },
+  {
+    "objectID": "slides/32_representation-engineering.html#slide-2",
+    "href": "slides/32_representation-engineering.html#slide-2",
+    "title": "32. Representation Engineering",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "32. Representation Engineering"
+    ]
+  },
+  {
+    "objectID": "slides/32_representation-engineering.html#slide-3",
+    "href": "slides/32_representation-engineering.html#slide-3",
+    "title": "32. Representation Engineering",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "32. Representation Engineering"
+    ]
+  },
+  {
+    "objectID": "slides/19_instruct-fine-tuning.html#slide",
+    "href": "slides/19_instruct-fine-tuning.html#slide",
+    "title": "19. Instruct Fine-Tuning",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section IV: Finetuning Methods for LLMs",
+      "19. Instruct Fine-Tuning"
+    ]
+  },
+  {
+    "objectID": "slides/19_instruct-fine-tuning.html#slide-1",
+    "href": "slides/19_instruct-fine-tuning.html#slide-1",
+    "title": "19. Instruct Fine-Tuning",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section IV: Finetuning Methods for LLMs",
+      "19. Instruct Fine-Tuning"
+    ]
+  },
+  {
+    "objectID": "slides/19_instruct-fine-tuning.html#slide-2",
+    "href": "slides/19_instruct-fine-tuning.html#slide-2",
+    "title": "19. Instruct Fine-Tuning",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section IV: Finetuning Methods for LLMs",
+      "19. Instruct Fine-Tuning"
+    ]
+  },
+  {
+    "objectID": "slides/19_instruct-fine-tuning.html#slide-3",
+    "href": "slides/19_instruct-fine-tuning.html#slide-3",
+    "title": "19. Instruct Fine-Tuning",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section IV: Finetuning Methods for LLMs",
+      "19. Instruct Fine-Tuning"
+    ]
+  },
+  {
+    "objectID": "slides/44_hyperattention.html#slide",
+    "href": "slides/44_hyperattention.html#slide",
+    "title": "44. HyperAttention",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section VII: Sub-Quadratic Context Scaling",
+      "44. HyperAttention"
+    ]
+  },
+  {
+    "objectID": "slides/44_hyperattention.html#slide-1",
+    "href": "slides/44_hyperattention.html#slide-1",
+    "title": "44. HyperAttention",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VII: Sub-Quadratic Context Scaling",
+      "44. HyperAttention"
+    ]
+  },
+  {
+    "objectID": "slides/44_hyperattention.html#slide-2",
+    "href": "slides/44_hyperattention.html#slide-2",
+    "title": "44. HyperAttention",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VII: Sub-Quadratic Context Scaling",
+      "44. HyperAttention"
+    ]
+  },
+  {
+    "objectID": "slides/44_hyperattention.html#slide-3",
+    "href": "slides/44_hyperattention.html#slide-3",
+    "title": "44. HyperAttention",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VII: Sub-Quadratic Context Scaling",
+      "44. HyperAttention"
     ]
   },
   {
@@ -2365,10 +917,1458 @@
     "href": "slides/52_vq-vae.html#slide-3",
     "title": "52. VQ-VAE",
     "section": "SLIDE",
-    "text": "SLIDE\n\n\n\nDSLC.io/genai | DSLC.io",
+    "text": "SLIDE",
     "crumbs": [
       "Section IX: Multimodal Models",
       "52. VQ-VAE"
+    ]
+  },
+  {
+    "objectID": "slides/37_flashattention.html#slide",
+    "href": "slides/37_flashattention.html#slide",
+    "title": "37. FlashAttention",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section VI: Performance Optimizations for Efficient Inference",
+      "37. FlashAttention"
+    ]
+  },
+  {
+    "objectID": "slides/37_flashattention.html#slide-1",
+    "href": "slides/37_flashattention.html#slide-1",
+    "title": "37. FlashAttention",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VI: Performance Optimizations for Efficient Inference",
+      "37. FlashAttention"
+    ]
+  },
+  {
+    "objectID": "slides/37_flashattention.html#slide-2",
+    "href": "slides/37_flashattention.html#slide-2",
+    "title": "37. FlashAttention",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VI: Performance Optimizations for Efficient Inference",
+      "37. FlashAttention"
+    ]
+  },
+  {
+    "objectID": "slides/37_flashattention.html#slide-3",
+    "href": "slides/37_flashattention.html#slide-3",
+    "title": "37. FlashAttention",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VI: Performance Optimizations for Efficient Inference",
+      "37. FlashAttention"
+    ]
+  },
+  {
+    "objectID": "slides/03_time-series-analysis.html#slide",
+    "href": "slides/03_time-series-analysis.html#slide",
+    "title": "3. Time-Series Analysis",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "3. Time-Series Analysis"
+    ]
+  },
+  {
+    "objectID": "slides/03_time-series-analysis.html#slide-1",
+    "href": "slides/03_time-series-analysis.html#slide-1",
+    "title": "3. Time-Series Analysis",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "3. Time-Series Analysis"
+    ]
+  },
+  {
+    "objectID": "slides/03_time-series-analysis.html#slide-2",
+    "href": "slides/03_time-series-analysis.html#slide-2",
+    "title": "3. Time-Series Analysis",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "3. Time-Series Analysis"
+    ]
+  },
+  {
+    "objectID": "slides/03_time-series-analysis.html#slide-3",
+    "href": "slides/03_time-series-analysis.html#slide-3",
+    "title": "3. Time-Series Analysis",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "3. Time-Series Analysis"
+    ]
+  },
+  {
+    "objectID": "slides/38_key-value-caching-and-paged-attention.html#slide",
+    "href": "slides/38_key-value-caching-and-paged-attention.html#slide",
+    "title": "38. Key-Value Caching and Paged Attention",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section VI: Performance Optimizations for Efficient Inference",
+      "38. Key-Value Caching and Paged Attention"
+    ]
+  },
+  {
+    "objectID": "slides/38_key-value-caching-and-paged-attention.html#slide-1",
+    "href": "slides/38_key-value-caching-and-paged-attention.html#slide-1",
+    "title": "38. Key-Value Caching and Paged Attention",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VI: Performance Optimizations for Efficient Inference",
+      "38. Key-Value Caching and Paged Attention"
+    ]
+  },
+  {
+    "objectID": "slides/38_key-value-caching-and-paged-attention.html#slide-2",
+    "href": "slides/38_key-value-caching-and-paged-attention.html#slide-2",
+    "title": "38. Key-Value Caching and Paged Attention",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VI: Performance Optimizations for Efficient Inference",
+      "38. Key-Value Caching and Paged Attention"
+    ]
+  },
+  {
+    "objectID": "slides/38_key-value-caching-and-paged-attention.html#slide-3",
+    "href": "slides/38_key-value-caching-and-paged-attention.html#slide-3",
+    "title": "38. Key-Value Caching and Paged Attention",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VI: Performance Optimizations for Efficient Inference",
+      "38. Key-Value Caching and Paged Attention"
+    ]
+  },
+  {
+    "objectID": "slides/12_decoder-only-transformers.html#slide",
+    "href": "slides/12_decoder-only-transformers.html#slide",
+    "title": "12. Decoder-Only Transformers",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section II: Neural Sequential Prediction",
+      "12. Decoder-Only Transformers"
+    ]
+  },
+  {
+    "objectID": "slides/12_decoder-only-transformers.html#slide-1",
+    "href": "slides/12_decoder-only-transformers.html#slide-1",
+    "title": "12. Decoder-Only Transformers",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section II: Neural Sequential Prediction",
+      "12. Decoder-Only Transformers"
+    ]
+  },
+  {
+    "objectID": "slides/12_decoder-only-transformers.html#slide-2",
+    "href": "slides/12_decoder-only-transformers.html#slide-2",
+    "title": "12. Decoder-Only Transformers",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section II: Neural Sequential Prediction",
+      "12. Decoder-Only Transformers"
+    ]
+  },
+  {
+    "objectID": "slides/12_decoder-only-transformers.html#slide-3",
+    "href": "slides/12_decoder-only-transformers.html#slide-3",
+    "title": "12. Decoder-Only Transformers",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section II: Neural Sequential Prediction",
+      "12. Decoder-Only Transformers"
+    ]
+  },
+  {
+    "objectID": "slides/50_diffusion-models.html#slide",
+    "href": "slides/50_diffusion-models.html#slide",
+    "title": "50. Diffusion Models",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section VIII: Generative Modeling Beyond Sequences",
+      "50. Diffusion Models"
+    ]
+  },
+  {
+    "objectID": "slides/50_diffusion-models.html#slide-1",
+    "href": "slides/50_diffusion-models.html#slide-1",
+    "title": "50. Diffusion Models",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VIII: Generative Modeling Beyond Sequences",
+      "50. Diffusion Models"
+    ]
+  },
+  {
+    "objectID": "slides/50_diffusion-models.html#slide-2",
+    "href": "slides/50_diffusion-models.html#slide-2",
+    "title": "50. Diffusion Models",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VIII: Generative Modeling Beyond Sequences",
+      "50. Diffusion Models"
+    ]
+  },
+  {
+    "objectID": "slides/50_diffusion-models.html#slide-3",
+    "href": "slides/50_diffusion-models.html#slide-3",
+    "title": "50. Diffusion Models",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VIII: Generative Modeling Beyond Sequences",
+      "50. Diffusion Models"
+    ]
+  },
+  {
+    "objectID": "slides/01_preliminaries.html#slide",
+    "href": "slides/01_preliminaries.html#slide",
+    "title": "1. Preliminaries",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Introduction",
+      "1. Preliminaries"
+    ]
+  },
+  {
+    "objectID": "slides/01_preliminaries.html#slide-1",
+    "href": "slides/01_preliminaries.html#slide-1",
+    "title": "1. Preliminaries",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Introduction",
+      "1. Preliminaries"
+    ]
+  },
+  {
+    "objectID": "slides/01_preliminaries.html#slide-2",
+    "href": "slides/01_preliminaries.html#slide-2",
+    "title": "1. Preliminaries",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Introduction",
+      "1. Preliminaries"
+    ]
+  },
+  {
+    "objectID": "slides/01_preliminaries.html#slide-3",
+    "href": "slides/01_preliminaries.html#slide-3",
+    "title": "1. Preliminaries",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Introduction",
+      "1. Preliminaries"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "This is a companion for the book Generative AI Handbook by William Brown (copyright June 5, 2024).\nEach chapter title to the left is a link to a slide deck.\n\nThese slides are being developed by this club.\nEach deck will open in its own tab.\nYou may want to type “s” at the start of each deck to open the speaker notes.\nJoin the Data Science Learning Community to participate in the discussion!\n\nWe follow the Data Science Learning Community Code of Conduct.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "slides/47_generative-adversarial-nets.html#slide",
+    "href": "slides/47_generative-adversarial-nets.html#slide",
+    "title": "47. Generative Adversarial Nets",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section VIII: Generative Modeling Beyond Sequences",
+      "47. Generative Adversarial Nets"
+    ]
+  },
+  {
+    "objectID": "slides/47_generative-adversarial-nets.html#slide-1",
+    "href": "slides/47_generative-adversarial-nets.html#slide-1",
+    "title": "47. Generative Adversarial Nets",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VIII: Generative Modeling Beyond Sequences",
+      "47. Generative Adversarial Nets"
+    ]
+  },
+  {
+    "objectID": "slides/47_generative-adversarial-nets.html#slide-2",
+    "href": "slides/47_generative-adversarial-nets.html#slide-2",
+    "title": "47. Generative Adversarial Nets",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VIII: Generative Modeling Beyond Sequences",
+      "47. Generative Adversarial Nets"
+    ]
+  },
+  {
+    "objectID": "slides/47_generative-adversarial-nets.html#slide-3",
+    "href": "slides/47_generative-adversarial-nets.html#slide-3",
+    "title": "47. Generative Adversarial Nets",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VIII: Generative Modeling Beyond Sequences",
+      "47. Generative Adversarial Nets"
+    ]
+  },
+  {
+    "objectID": "slides/28_vector-databases-and-reranking.html#slide",
+    "href": "slides/28_vector-databases-and-reranking.html#slide",
+    "title": "28. Vector Databases and Reranking",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "28. Vector Databases and Reranking"
+    ]
+  },
+  {
+    "objectID": "slides/28_vector-databases-and-reranking.html#slide-1",
+    "href": "slides/28_vector-databases-and-reranking.html#slide-1",
+    "title": "28. Vector Databases and Reranking",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "28. Vector Databases and Reranking"
+    ]
+  },
+  {
+    "objectID": "slides/28_vector-databases-and-reranking.html#slide-2",
+    "href": "slides/28_vector-databases-and-reranking.html#slide-2",
+    "title": "28. Vector Databases and Reranking",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "28. Vector Databases and Reranking"
+    ]
+  },
+  {
+    "objectID": "slides/28_vector-databases-and-reranking.html#slide-3",
+    "href": "slides/28_vector-databases-and-reranking.html#slide-3",
+    "title": "28. Vector Databases and Reranking",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "28. Vector Databases and Reranking"
+    ]
+  },
+  {
+    "objectID": "slides/04_online-learning-and-regret-minimization.html#slide",
+    "href": "slides/04_online-learning-and-regret-minimization.html#slide",
+    "title": "4. Online Learning and Regret Minimization",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "4. Online Learning and Regret Minimization"
+    ]
+  },
+  {
+    "objectID": "slides/04_online-learning-and-regret-minimization.html#slide-1",
+    "href": "slides/04_online-learning-and-regret-minimization.html#slide-1",
+    "title": "4. Online Learning and Regret Minimization",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "4. Online Learning and Regret Minimization"
+    ]
+  },
+  {
+    "objectID": "slides/04_online-learning-and-regret-minimization.html#slide-2",
+    "href": "slides/04_online-learning-and-regret-minimization.html#slide-2",
+    "title": "4. Online Learning and Regret Minimization",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "4. Online Learning and Regret Minimization"
+    ]
+  },
+  {
+    "objectID": "slides/04_online-learning-and-regret-minimization.html#slide-3",
+    "href": "slides/04_online-learning-and-regret-minimization.html#slide-3",
+    "title": "4. Online Learning and Regret Minimization",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "4. Online Learning and Regret Minimization"
+    ]
+  },
+  {
+    "objectID": "slides/21_reward-models-and-rlhf.html#slide",
+    "href": "slides/21_reward-models-and-rlhf.html#slide",
+    "title": "21. Reward Models and RLHF",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section IV: Finetuning Methods for LLMs",
+      "21. Reward Models and RLHF"
+    ]
+  },
+  {
+    "objectID": "slides/21_reward-models-and-rlhf.html#slide-1",
+    "href": "slides/21_reward-models-and-rlhf.html#slide-1",
+    "title": "21. Reward Models and RLHF",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section IV: Finetuning Methods for LLMs",
+      "21. Reward Models and RLHF"
+    ]
+  },
+  {
+    "objectID": "slides/21_reward-models-and-rlhf.html#slide-2",
+    "href": "slides/21_reward-models-and-rlhf.html#slide-2",
+    "title": "21. Reward Models and RLHF",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section IV: Finetuning Methods for LLMs",
+      "21. Reward Models and RLHF"
+    ]
+  },
+  {
+    "objectID": "slides/21_reward-models-and-rlhf.html#slide-3",
+    "href": "slides/21_reward-models-and-rlhf.html#slide-3",
+    "title": "21. Reward Models and RLHF",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section IV: Finetuning Methods for LLMs",
+      "21. Reward Models and RLHF"
+    ]
+  },
+  {
+    "objectID": "slides/14_positional-encoding.html#slide",
+    "href": "slides/14_positional-encoding.html#slide",
+    "title": "14. Positional Encoding",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "14. Positional Encoding"
+    ]
+  },
+  {
+    "objectID": "slides/14_positional-encoding.html#slide-1",
+    "href": "slides/14_positional-encoding.html#slide-1",
+    "title": "14. Positional Encoding",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "14. Positional Encoding"
+    ]
+  },
+  {
+    "objectID": "slides/14_positional-encoding.html#slide-2",
+    "href": "slides/14_positional-encoding.html#slide-2",
+    "title": "14. Positional Encoding",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "14. Positional Encoding"
+    ]
+  },
+  {
+    "objectID": "slides/14_positional-encoding.html#slide-3",
+    "href": "slides/14_positional-encoding.html#slide-3",
+    "title": "14. Positional Encoding",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "14. Positional Encoding"
+    ]
+  },
+  {
+    "objectID": "slides/06_markov-models.html#slide",
+    "href": "slides/06_markov-models.html#slide",
+    "title": "6. Markov Models",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "6. Markov Models"
+    ]
+  },
+  {
+    "objectID": "slides/06_markov-models.html#slide-1",
+    "href": "slides/06_markov-models.html#slide-1",
+    "title": "6. Markov Models",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "6. Markov Models"
+    ]
+  },
+  {
+    "objectID": "slides/06_markov-models.html#slide-2",
+    "href": "slides/06_markov-models.html#slide-2",
+    "title": "6. Markov Models",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "6. Markov Models"
+    ]
+  },
+  {
+    "objectID": "slides/06_markov-models.html#slide-3",
+    "href": "slides/06_markov-models.html#slide-3",
+    "title": "6. Markov Models",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "6. Markov Models"
+    ]
+  },
+  {
+    "objectID": "slides/45_distribution-modeling.html#slide",
+    "href": "slides/45_distribution-modeling.html#slide",
+    "title": "45. Distribution Modeling",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section VIII: Generative Modeling Beyond Sequences",
+      "45. Distribution Modeling"
+    ]
+  },
+  {
+    "objectID": "slides/45_distribution-modeling.html#slide-1",
+    "href": "slides/45_distribution-modeling.html#slide-1",
+    "title": "45. Distribution Modeling",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VIII: Generative Modeling Beyond Sequences",
+      "45. Distribution Modeling"
+    ]
+  },
+  {
+    "objectID": "slides/45_distribution-modeling.html#slide-2",
+    "href": "slides/45_distribution-modeling.html#slide-2",
+    "title": "45. Distribution Modeling",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VIII: Generative Modeling Beyond Sequences",
+      "45. Distribution Modeling"
+    ]
+  },
+  {
+    "objectID": "slides/45_distribution-modeling.html#slide-3",
+    "href": "slides/45_distribution-modeling.html#slide-3",
+    "title": "45. Distribution Modeling",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VIII: Generative Modeling Beyond Sequences",
+      "45. Distribution Modeling"
+    ]
+  },
+  {
+    "objectID": "slides/08_recurrent-neural-networks.html#slide",
+    "href": "slides/08_recurrent-neural-networks.html#slide",
+    "title": "8. Recurrent Neural Networks",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section II: Neural Sequential Prediction",
+      "8. Recurrent Neural Networks"
+    ]
+  },
+  {
+    "objectID": "slides/08_recurrent-neural-networks.html#slide-1",
+    "href": "slides/08_recurrent-neural-networks.html#slide-1",
+    "title": "8. Recurrent Neural Networks",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section II: Neural Sequential Prediction",
+      "8. Recurrent Neural Networks"
+    ]
+  },
+  {
+    "objectID": "slides/08_recurrent-neural-networks.html#slide-2",
+    "href": "slides/08_recurrent-neural-networks.html#slide-2",
+    "title": "8. Recurrent Neural Networks",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section II: Neural Sequential Prediction",
+      "8. Recurrent Neural Networks"
+    ]
+  },
+  {
+    "objectID": "slides/08_recurrent-neural-networks.html#slide-3",
+    "href": "slides/08_recurrent-neural-networks.html#slide-3",
+    "title": "8. Recurrent Neural Networks",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section II: Neural Sequential Prediction",
+      "8. Recurrent Neural Networks"
+    ]
+  },
+  {
+    "objectID": "slides/33_mechanistic-interpretability.html#slide",
+    "href": "slides/33_mechanistic-interpretability.html#slide",
+    "title": "33. Mechanistic Interpretability",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "33. Mechanistic Interpretability"
+    ]
+  },
+  {
+    "objectID": "slides/33_mechanistic-interpretability.html#slide-1",
+    "href": "slides/33_mechanistic-interpretability.html#slide-1",
+    "title": "33. Mechanistic Interpretability",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "33. Mechanistic Interpretability"
+    ]
+  },
+  {
+    "objectID": "slides/33_mechanistic-interpretability.html#slide-2",
+    "href": "slides/33_mechanistic-interpretability.html#slide-2",
+    "title": "33. Mechanistic Interpretability",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "33. Mechanistic Interpretability"
+    ]
+  },
+  {
+    "objectID": "slides/33_mechanistic-interpretability.html#slide-3",
+    "href": "slides/33_mechanistic-interpretability.html#slide-3",
+    "title": "33. Mechanistic Interpretability",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "33. Mechanistic Interpretability"
+    ]
+  },
+  {
+    "objectID": "slides/00-club_intro.html#book-club-meetings",
+    "href": "slides/00-club_intro.html#book-club-meetings",
+    "title": "Club Meetings",
+    "section": "Book club meetings",
+    "text": "Book club meetings\n\nVolunteer leads discussion of a chapter\n\nThis is the best way to learn the material.\n\nPresentations:\n\nReview of material\nQuestions you have\nMaybe live demo\n\nMore info about editing: this github repo.\nRecorded, available on the Data Science Learning Community YouTube Channel (DSLC.video).",
+    "crumbs": [
+      "Club Meetings"
+    ]
+  },
+  {
+    "objectID": "slides/00-club_intro.html#pace",
+    "href": "slides/00-club_intro.html#pace",
+    "title": "Club Meetings",
+    "section": "Pace",
+    "text": "Pace\n\nGoal: 3 chapters/week\nOk to split overwhelming chapters\nOk to combine short chapters\nMeet every week except holidays, etc\n\nIdeally can discuss even if presenter unavailable",
+    "crumbs": [
+      "Club Meetings"
+    ]
+  },
+  {
+    "objectID": "slides/00-club_intro.html#learning-objectives-los",
+    "href": "slides/00-club_intro.html#learning-objectives-los",
+    "title": "Club Meetings",
+    "section": "Learning objectives (LOs)",
+    "text": "Learning objectives (LOs)\n\nStudents who study with LOs in mind retain more.\nTips:\n\n“After today’s session, you will be able to…”\nVery roughly 1 per section.",
+    "crumbs": [
+      "Club Meetings"
+    ]
+  },
+  {
+    "objectID": "slides/43_structured-state-space-models.html#slide",
+    "href": "slides/43_structured-state-space-models.html#slide",
+    "title": "43. Structured State Space Models",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section VII: Sub-Quadratic Context Scaling",
+      "43. Structured State Space Models"
+    ]
+  },
+  {
+    "objectID": "slides/43_structured-state-space-models.html#slide-1",
+    "href": "slides/43_structured-state-space-models.html#slide-1",
+    "title": "43. Structured State Space Models",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VII: Sub-Quadratic Context Scaling",
+      "43. Structured State Space Models"
+    ]
+  },
+  {
+    "objectID": "slides/43_structured-state-space-models.html#slide-2",
+    "href": "slides/43_structured-state-space-models.html#slide-2",
+    "title": "43. Structured State Space Models",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VII: Sub-Quadratic Context Scaling",
+      "43. Structured State Space Models"
+    ]
+  },
+  {
+    "objectID": "slides/43_structured-state-space-models.html#slide-3",
+    "href": "slides/43_structured-state-space-models.html#slide-3",
+    "title": "43. Structured State Space Models",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VII: Sub-Quadratic Context Scaling",
+      "43. Structured State Space Models"
+    ]
+  },
+  {
+    "objectID": "slides/25_benchmarking.html#slide",
+    "href": "slides/25_benchmarking.html#slide",
+    "title": "25. Benchmarking",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "25. Benchmarking"
+    ]
+  },
+  {
+    "objectID": "slides/25_benchmarking.html#slide-1",
+    "href": "slides/25_benchmarking.html#slide-1",
+    "title": "25. Benchmarking",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "25. Benchmarking"
+    ]
+  },
+  {
+    "objectID": "slides/25_benchmarking.html#slide-2",
+    "href": "slides/25_benchmarking.html#slide-2",
+    "title": "25. Benchmarking",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "25. Benchmarking"
+    ]
+  },
+  {
+    "objectID": "slides/25_benchmarking.html#slide-3",
+    "href": "slides/25_benchmarking.html#slide-3",
+    "title": "25. Benchmarking",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "25. Benchmarking"
+    ]
+  },
+  {
+    "objectID": "slides/41_ring-attention.html#slide",
+    "href": "slides/41_ring-attention.html#slide",
+    "title": "41. Ring Attention",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section VII: Sub-Quadratic Context Scaling",
+      "41. Ring Attention"
+    ]
+  },
+  {
+    "objectID": "slides/41_ring-attention.html#slide-1",
+    "href": "slides/41_ring-attention.html#slide-1",
+    "title": "41. Ring Attention",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VII: Sub-Quadratic Context Scaling",
+      "41. Ring Attention"
+    ]
+  },
+  {
+    "objectID": "slides/41_ring-attention.html#slide-2",
+    "href": "slides/41_ring-attention.html#slide-2",
+    "title": "41. Ring Attention",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VII: Sub-Quadratic Context Scaling",
+      "41. Ring Attention"
+    ]
+  },
+  {
+    "objectID": "slides/41_ring-attention.html#slide-3",
+    "href": "slides/41_ring-attention.html#slide-3",
+    "title": "41. Ring Attention",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VII: Sub-Quadratic Context Scaling",
+      "41. Ring Attention"
+    ]
+  },
+  {
+    "objectID": "slides/46_variational-auto-encoders.html#slide",
+    "href": "slides/46_variational-auto-encoders.html#slide",
+    "title": "46. Variational Auto-Encoders",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section VIII: Generative Modeling Beyond Sequences",
+      "46. Variational Auto-Encoders"
+    ]
+  },
+  {
+    "objectID": "slides/46_variational-auto-encoders.html#slide-1",
+    "href": "slides/46_variational-auto-encoders.html#slide-1",
+    "title": "46. Variational Auto-Encoders",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VIII: Generative Modeling Beyond Sequences",
+      "46. Variational Auto-Encoders"
+    ]
+  },
+  {
+    "objectID": "slides/46_variational-auto-encoders.html#slide-2",
+    "href": "slides/46_variational-auto-encoders.html#slide-2",
+    "title": "46. Variational Auto-Encoders",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VIII: Generative Modeling Beyond Sequences",
+      "46. Variational Auto-Encoders"
+    ]
+  },
+  {
+    "objectID": "slides/46_variational-auto-encoders.html#slide-3",
+    "href": "slides/46_variational-auto-encoders.html#slide-3",
+    "title": "46. Variational Auto-Encoders",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VIII: Generative Modeling Beyond Sequences",
+      "46. Variational Auto-Encoders"
+    ]
+  },
+  {
+    "objectID": "slides/24_distillation-and-merging.html#slide",
+    "href": "slides/24_distillation-and-merging.html#slide",
+    "title": "24. Distillation and Merging",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section IV: Finetuning Methods for LLMs",
+      "24. Distillation and Merging"
+    ]
+  },
+  {
+    "objectID": "slides/24_distillation-and-merging.html#slide-1",
+    "href": "slides/24_distillation-and-merging.html#slide-1",
+    "title": "24. Distillation and Merging",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section IV: Finetuning Methods for LLMs",
+      "24. Distillation and Merging"
+    ]
+  },
+  {
+    "objectID": "slides/24_distillation-and-merging.html#slide-2",
+    "href": "slides/24_distillation-and-merging.html#slide-2",
+    "title": "24. Distillation and Merging",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section IV: Finetuning Methods for LLMs",
+      "24. Distillation and Merging"
+    ]
+  },
+  {
+    "objectID": "slides/24_distillation-and-merging.html#slide-3",
+    "href": "slides/24_distillation-and-merging.html#slide-3",
+    "title": "24. Distillation and Merging",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section IV: Finetuning Methods for LLMs",
+      "24. Distillation and Merging"
+    ]
+  },
+  {
+    "objectID": "slides/51_tokenization-beyond-text.html#slide",
+    "href": "slides/51_tokenization-beyond-text.html#slide",
+    "title": "51. Tokenization Beyond Text",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section IX: Multimodal Models",
+      "51. Tokenization Beyond Text"
+    ]
+  },
+  {
+    "objectID": "slides/51_tokenization-beyond-text.html#slide-1",
+    "href": "slides/51_tokenization-beyond-text.html#slide-1",
+    "title": "51. Tokenization Beyond Text",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section IX: Multimodal Models",
+      "51. Tokenization Beyond Text"
+    ]
+  },
+  {
+    "objectID": "slides/51_tokenization-beyond-text.html#slide-2",
+    "href": "slides/51_tokenization-beyond-text.html#slide-2",
+    "title": "51. Tokenization Beyond Text",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section IX: Multimodal Models",
+      "51. Tokenization Beyond Text"
+    ]
+  },
+  {
+    "objectID": "slides/51_tokenization-beyond-text.html#slide-3",
+    "href": "slides/51_tokenization-beyond-text.html#slide-3",
+    "title": "51. Tokenization Beyond Text",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section IX: Multimodal Models",
+      "51. Tokenization Beyond Text"
+    ]
+  },
+  {
+    "objectID": "slides/39_cpu-offloading.html#slide",
+    "href": "slides/39_cpu-offloading.html#slide",
+    "title": "39. CPU Offloading",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section VI: Performance Optimizations for Efficient Inference",
+      "39. CPU Offloading"
+    ]
+  },
+  {
+    "objectID": "slides/39_cpu-offloading.html#slide-1",
+    "href": "slides/39_cpu-offloading.html#slide-1",
+    "title": "39. CPU Offloading",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VI: Performance Optimizations for Efficient Inference",
+      "39. CPU Offloading"
+    ]
+  },
+  {
+    "objectID": "slides/39_cpu-offloading.html#slide-2",
+    "href": "slides/39_cpu-offloading.html#slide-2",
+    "title": "39. CPU Offloading",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VI: Performance Optimizations for Efficient Inference",
+      "39. CPU Offloading"
+    ]
+  },
+  {
+    "objectID": "slides/39_cpu-offloading.html#slide-3",
+    "href": "slides/39_cpu-offloading.html#slide-3",
+    "title": "39. CPU Offloading",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VI: Performance Optimizations for Efficient Inference",
+      "39. CPU Offloading"
+    ]
+  },
+  {
+    "objectID": "slides/35_parameter-quantization.html#slide",
+    "href": "slides/35_parameter-quantization.html#slide",
+    "title": "35. Parameter Quantization",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section VI: Performance Optimizations for Efficient Inference",
+      "35. Parameter Quantization"
+    ]
+  },
+  {
+    "objectID": "slides/35_parameter-quantization.html#slide-1",
+    "href": "slides/35_parameter-quantization.html#slide-1",
+    "title": "35. Parameter Quantization",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VI: Performance Optimizations for Efficient Inference",
+      "35. Parameter Quantization"
+    ]
+  },
+  {
+    "objectID": "slides/35_parameter-quantization.html#slide-2",
+    "href": "slides/35_parameter-quantization.html#slide-2",
+    "title": "35. Parameter Quantization",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VI: Performance Optimizations for Efficient Inference",
+      "35. Parameter Quantization"
+    ]
+  },
+  {
+    "objectID": "slides/35_parameter-quantization.html#slide-3",
+    "href": "slides/35_parameter-quantization.html#slide-3",
+    "title": "35. Parameter Quantization",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VI: Performance Optimizations for Efficient Inference",
+      "35. Parameter Quantization"
+    ]
+  },
+  {
+    "objectID": "slides/42_linear-attention-rwkv.html#slide",
+    "href": "slides/42_linear-attention-rwkv.html#slide",
+    "title": "42. Linear Attention (RWKV)",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section VII: Sub-Quadratic Context Scaling",
+      "42. Linear Attention (RWKV)"
+    ]
+  },
+  {
+    "objectID": "slides/42_linear-attention-rwkv.html#slide-1",
+    "href": "slides/42_linear-attention-rwkv.html#slide-1",
+    "title": "42. Linear Attention (RWKV)",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VII: Sub-Quadratic Context Scaling",
+      "42. Linear Attention (RWKV)"
+    ]
+  },
+  {
+    "objectID": "slides/42_linear-attention-rwkv.html#slide-2",
+    "href": "slides/42_linear-attention-rwkv.html#slide-2",
+    "title": "42. Linear Attention (RWKV)",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VII: Sub-Quadratic Context Scaling",
+      "42. Linear Attention (RWKV)"
+    ]
+  },
+  {
+    "objectID": "slides/42_linear-attention-rwkv.html#slide-3",
+    "href": "slides/42_linear-attention-rwkv.html#slide-3",
+    "title": "42. Linear Attention (RWKV)",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VII: Sub-Quadratic Context Scaling",
+      "42. Linear Attention (RWKV)"
+    ]
+  },
+  {
+    "objectID": "slides/34_linear-representation-hypotheses.html#slide",
+    "href": "slides/34_linear-representation-hypotheses.html#slide",
+    "title": "34. Linear Representation Hypotheses",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "34. Linear Representation Hypotheses"
+    ]
+  },
+  {
+    "objectID": "slides/34_linear-representation-hypotheses.html#slide-1",
+    "href": "slides/34_linear-representation-hypotheses.html#slide-1",
+    "title": "34. Linear Representation Hypotheses",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "34. Linear Representation Hypotheses"
+    ]
+  },
+  {
+    "objectID": "slides/34_linear-representation-hypotheses.html#slide-2",
+    "href": "slides/34_linear-representation-hypotheses.html#slide-2",
+    "title": "34. Linear Representation Hypotheses",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "34. Linear Representation Hypotheses"
+    ]
+  },
+  {
+    "objectID": "slides/34_linear-representation-hypotheses.html#slide-3",
+    "href": "slides/34_linear-representation-hypotheses.html#slide-3",
+    "title": "34. Linear Representation Hypotheses",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "34. Linear Representation Hypotheses"
+    ]
+  },
+  {
+    "objectID": "slides/29_retrieval-augmented-generation.html#slide",
+    "href": "slides/29_retrieval-augmented-generation.html#slide",
+    "title": "29. Retrieval-Augmented Generation",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "29. Retrieval-Augmented Generation"
+    ]
+  },
+  {
+    "objectID": "slides/29_retrieval-augmented-generation.html#slide-1",
+    "href": "slides/29_retrieval-augmented-generation.html#slide-1",
+    "title": "29. Retrieval-Augmented Generation",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "29. Retrieval-Augmented Generation"
+    ]
+  },
+  {
+    "objectID": "slides/29_retrieval-augmented-generation.html#slide-2",
+    "href": "slides/29_retrieval-augmented-generation.html#slide-2",
+    "title": "29. Retrieval-Augmented Generation",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "29. Retrieval-Augmented Generation"
+    ]
+  },
+  {
+    "objectID": "slides/29_retrieval-augmented-generation.html#slide-3",
+    "href": "slides/29_retrieval-augmented-generation.html#slide-3",
+    "title": "29. Retrieval-Augmented Generation",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "29. Retrieval-Augmented Generation"
+    ]
+  },
+  {
+    "objectID": "slides/49_normalizing-flows.html#slide",
+    "href": "slides/49_normalizing-flows.html#slide",
+    "title": "49. Normalizing Flows",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section VIII: Generative Modeling Beyond Sequences",
+      "49. Normalizing Flows"
+    ]
+  },
+  {
+    "objectID": "slides/49_normalizing-flows.html#slide-1",
+    "href": "slides/49_normalizing-flows.html#slide-1",
+    "title": "49. Normalizing Flows",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VIII: Generative Modeling Beyond Sequences",
+      "49. Normalizing Flows"
+    ]
+  },
+  {
+    "objectID": "slides/49_normalizing-flows.html#slide-2",
+    "href": "slides/49_normalizing-flows.html#slide-2",
+    "title": "49. Normalizing Flows",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VIII: Generative Modeling Beyond Sequences",
+      "49. Normalizing Flows"
+    ]
+  },
+  {
+    "objectID": "slides/49_normalizing-flows.html#slide-3",
+    "href": "slides/49_normalizing-flows.html#slide-3",
+    "title": "49. Normalizing Flows",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section VIII: Generative Modeling Beyond Sequences",
+      "49. Normalizing Flows"
+    ]
+  },
+  {
+    "objectID": "slides/23_context-scaling.html#slide",
+    "href": "slides/23_context-scaling.html#slide",
+    "title": "23. Context Scaling",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section IV: Finetuning Methods for LLMs",
+      "23. Context Scaling"
+    ]
+  },
+  {
+    "objectID": "slides/23_context-scaling.html#slide-1",
+    "href": "slides/23_context-scaling.html#slide-1",
+    "title": "23. Context Scaling",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section IV: Finetuning Methods for LLMs",
+      "23. Context Scaling"
+    ]
+  },
+  {
+    "objectID": "slides/23_context-scaling.html#slide-2",
+    "href": "slides/23_context-scaling.html#slide-2",
+    "title": "23. Context Scaling",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section IV: Finetuning Methods for LLMs",
+      "23. Context Scaling"
+    ]
+  },
+  {
+    "objectID": "slides/23_context-scaling.html#slide-3",
+    "href": "slides/23_context-scaling.html#slide-3",
+    "title": "23. Context Scaling",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section IV: Finetuning Methods for LLMs",
+      "23. Context Scaling"
+    ]
+  },
+  {
+    "objectID": "slides/07_statistical-prediction-with-neural-networks.html#slide",
+    "href": "slides/07_statistical-prediction-with-neural-networks.html#slide",
+    "title": "7. Statistical Prediction with Neural Networks",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section II: Neural Sequential Prediction",
+      "7. Statistical Prediction with Neural Networks"
+    ]
+  },
+  {
+    "objectID": "slides/07_statistical-prediction-with-neural-networks.html#slide-1",
+    "href": "slides/07_statistical-prediction-with-neural-networks.html#slide-1",
+    "title": "7. Statistical Prediction with Neural Networks",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section II: Neural Sequential Prediction",
+      "7. Statistical Prediction with Neural Networks"
+    ]
+  },
+  {
+    "objectID": "slides/07_statistical-prediction-with-neural-networks.html#slide-2",
+    "href": "slides/07_statistical-prediction-with-neural-networks.html#slide-2",
+    "title": "7. Statistical Prediction with Neural Networks",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section II: Neural Sequential Prediction",
+      "7. Statistical Prediction with Neural Networks"
+    ]
+  },
+  {
+    "objectID": "slides/07_statistical-prediction-with-neural-networks.html#slide-3",
+    "href": "slides/07_statistical-prediction-with-neural-networks.html#slide-3",
+    "title": "7. Statistical Prediction with Neural Networks",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section II: Neural Sequential Prediction",
+      "7. Statistical Prediction with Neural Networks"
+    ]
+  },
+  {
+    "objectID": "slides/20_low-rank-adapters-lora.html#slide",
+    "href": "slides/20_low-rank-adapters-lora.html#slide",
+    "title": "20. Low-Rank Adapters (LoRA)",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section IV: Finetuning Methods for LLMs",
+      "20. Low-Rank Adapters (LoRA)"
+    ]
+  },
+  {
+    "objectID": "slides/20_low-rank-adapters-lora.html#slide-1",
+    "href": "slides/20_low-rank-adapters-lora.html#slide-1",
+    "title": "20. Low-Rank Adapters (LoRA)",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section IV: Finetuning Methods for LLMs",
+      "20. Low-Rank Adapters (LoRA)"
+    ]
+  },
+  {
+    "objectID": "slides/20_low-rank-adapters-lora.html#slide-2",
+    "href": "slides/20_low-rank-adapters-lora.html#slide-2",
+    "title": "20. Low-Rank Adapters (LoRA)",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section IV: Finetuning Methods for LLMs",
+      "20. Low-Rank Adapters (LoRA)"
+    ]
+  },
+  {
+    "objectID": "slides/20_low-rank-adapters-lora.html#slide-3",
+    "href": "slides/20_low-rank-adapters-lora.html#slide-3",
+    "title": "20. Low-Rank Adapters (LoRA)",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section IV: Finetuning Methods for LLMs",
+      "20. Low-Rank Adapters (LoRA)"
+    ]
+  },
+  {
+    "objectID": "slides/18_mixture-of-experts.html#slide",
+    "href": "slides/18_mixture-of-experts.html#slide",
+    "title": "18. Mixture-of-Experts",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "18. Mixture-of-Experts"
+    ]
+  },
+  {
+    "objectID": "slides/18_mixture-of-experts.html#slide-1",
+    "href": "slides/18_mixture-of-experts.html#slide-1",
+    "title": "18. Mixture-of-Experts",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "18. Mixture-of-Experts"
+    ]
+  },
+  {
+    "objectID": "slides/18_mixture-of-experts.html#slide-2",
+    "href": "slides/18_mixture-of-experts.html#slide-2",
+    "title": "18. Mixture-of-Experts",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "18. Mixture-of-Experts"
+    ]
+  },
+  {
+    "objectID": "slides/18_mixture-of-experts.html#slide-3",
+    "href": "slides/18_mixture-of-experts.html#slide-3",
+    "title": "18. Mixture-of-Experts",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "18. Mixture-of-Experts"
+    ]
+  },
+  {
+    "objectID": "slides/05_reinforcement-learning.html#slide",
+    "href": "slides/05_reinforcement-learning.html#slide",
+    "title": "5. Reinforcement Learning",
+    "section": "SLIDE",
+    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "5. Reinforcement Learning"
+    ]
+  },
+  {
+    "objectID": "slides/05_reinforcement-learning.html#slide-1",
+    "href": "slides/05_reinforcement-learning.html#slide-1",
+    "title": "5. Reinforcement Learning",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "5. Reinforcement Learning"
+    ]
+  },
+  {
+    "objectID": "slides/05_reinforcement-learning.html#slide-2",
+    "href": "slides/05_reinforcement-learning.html#slide-2",
+    "title": "5. Reinforcement Learning",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "5. Reinforcement Learning"
+    ]
+  },
+  {
+    "objectID": "slides/05_reinforcement-learning.html#slide-3",
+    "href": "slides/05_reinforcement-learning.html#slide-3",
+    "title": "5. Reinforcement Learning",
+    "section": "SLIDE",
+    "text": "SLIDE",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "5. Reinforcement Learning"
     ]
   }
 ]

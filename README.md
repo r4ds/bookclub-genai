@@ -5,7 +5,7 @@ Welcome to the DSLC Generative AI Handbook Book Club!
 We are working together to read [_Generative AI Handbook_](https://genai-handbook.github.io/) by William Brown (copyright June 5, 2024).
 
 Join the [#book_club-genai](https://dslcio.slack.com/archives/C086ZN9P58X) channel on the [DSLC Slack](https://dslc.io/join) to participate.
-As we read, we are producing [notes about the book](https://dslc.io/genai).
+As we read, we are producing [slides for the book](https://dslc.io/genai).
 
 ## Meeting Schedule
 
@@ -18,7 +18,7 @@ If you would like to present, please see the sign-up sheet for your cohort (link
 
 ## How to Present
 
-This repository is structured as a [{bookdown}](https://CRAN.R-project.org/package=bookdown) site.
+This repository is structured as a Quarto website.
 To present, follow these instructions:
 
 Do these steps once:
@@ -31,9 +31,9 @@ Do these steps each time you present another chapter:
 1. Open your project for this book.
 2. `usethis::pr_init("my-chapter")` (creates a branch for your work, to avoid confusion, making sure that you have the latest changes from other contributors; replace `my-chapter` with a descriptive name, ideally).
 3. `devtools::install_dev_deps()` (installs any packages used by the book that you don't already have installed).
-4. Edit the appropriate chapter file, if necessary. Use `##` to indicate new slides (new sections).
+4. Edit the appropriate chapter file (in `slides/`). Use `#` and `##` to indicate new slides.
 5. If you use any packages that are not already in the `DESCRIPTION`, add them. You can use `usethis::use_package("myCoolPackage")` to add them quickly!
-6. Build the book! ctrl-shift-b (or command-shift-b) will render the full book, or ctrl-shift-k (command-shift-k) to render just your slide. Please do this to make sure it works before you push your changes up to the main repo!
+6. Build the book! ctrl-shift-b (or command-shift-b) will render the full book, or ctrl-shift-k (command-shift-k) to render just your slides. Please do this to make sure it works before you push your changes up to the main repo!
 7. Commit your changes (either through the command line or using Rstudio's Git tab).
 8. `usethis::pr_push()` (pushes the changes up to github, and opens a "pull request" (PR) to let us know your work is ready).
 9. (If we request changes, make them)

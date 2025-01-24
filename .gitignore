@@ -3,10 +3,10 @@
 .Rdata
 .httr-oauth
 .DS_Store
-_book
-_bookdown_files
-bookclub-genai.Rmd
-bookclub-genai.knit.md
-bookclub-genai_files
-libs
+
+# Ignore things during render.
 *.html
+*.rmarkdown
+/.quarto/
+/_site/
+/site_libs/

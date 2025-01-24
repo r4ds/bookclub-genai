@@ -1,0 +1,13 @@
+format:
+  revealjs:
+    theme: [dark, custom.scss]
+    footer: <a href="/" target="genai_club-index">DSLC.io/genai</a> | <a href="https://DSLC.io" target="_blank">DSLC.io</a>
+    link-external-newwindow: true
+    transition: slide
+    incremental: true
+execute:
+  eval: false
+  echo: true
+knitr:
+  opts_chunk:
+    comment: "#>"

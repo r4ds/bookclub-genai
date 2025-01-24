@@ -1,0 +1,157 @@
+project:
+  type: website
+
+website:
+  title: "Generative AI Handbook Book Club"
+  sidebar:
+    style: "docked"
+    search: true
+    tools:
+      - icon: github
+        href: https://github.com/r4ds/bookclub-genai
+      - icon: youtube
+        href: https://www.youtube.com/playlist?list=PL3x6DOfs2NGivdWYQXgxTuAY6P5rFLmYH
+      - icon: mastodon
+        href: https://fosstodon.org/@DSLC
+      - icon: linkedin
+        href: https://www.linkedin.com/company/dslc-io
+    contents:
+      - index.qmd
+      - file: slides/00-club_intro.qmd
+        target: genai_club-club_intro
+
+      - section: "Introduction"
+        contents:
+          - file: slides/01_preliminaries.qmd
+            target: genai_club-preliminaries
+      - section: "Section I: Foundations of Sequential Prediction"
+        contents:
+          - file: slides/02_statistical-prediction-and-supervised-learning.qmd
+            target: genai_club-statistical-prediction-and-supervised-learning
+          - file: slides/03_time-series-analysis.qmd
+            target: genai_club-time-series-analysis
+          - file: slides/04_online-learning-and-regret-minimization.qmd
+            target: genai_club-online-learning-and-regret-minimization
+          - file: slides/05_reinforcement-learning.qmd
+            target: genai_club-reinforcement-learning
+          - file: slides/06_markov-models.qmd
+            target: genai_club-markov-models
+      - section: "Section II: Neural Sequential Prediction"
+        contents:
+          - file: slides/07_statistical-prediction-with-neural-networks.qmd
+            target: genai_club-statistical-prediction-with-neural-networks
+          - file: slides/08_recurrent-neural-networks.qmd
+            target: genai_club-recurrent-neural-networks
+          - file: slides/09_lstms-and-grus.qmd
+            target: genai_club-lstms-and-grus
+          - file: slides/10_embeddings-and-topic-modeling.qmd
+            target: genai_club-embeddings-and-topic-modeling
+          - file: slides/11_encoders-and-decoders.qmd
+            target: genai_club-encoders-and-decoders
+          - file: slides/12_decoder-only-transformers.qmd
+            target: genai_club-decoder-only-transformers
+      - section: "Section III: Foundations for Modern Language Modeling"
+        contents:
+          - file: slides/13_tokenization.qmd
+            target: genai_club-tokenization
+          - file: slides/14_positional-encoding.qmd
+            target: genai_club-positional-encoding
+          - file: slides/15_pretraining-recipes.qmd
+            target: genai_club-pretraining-recipes
+          - file: slides/16_distributed-training-and-fsdp.qmd
+            target: genai_club-distributed-training-and-fsdp
+          - file: slides/17_scaling-laws.qmd
+            target: genai_club-scaling-laws
+          - file: slides/18_mixture-of-experts.qmd
+            target: genai_club-mixture-of-experts
+      - section: "Section IV: Finetuning Methods for LLMs"
+        contents:
+          - file: slides/19_instruct-fine-tuning.qmd
+            target: genai_club-instruct-fine-tuning
+          - file: slides/20_low-rank-adapters-lora.qmd
+            target: genai_club-low-rank-adapters-lora
+          - file: slides/21_reward-models-and-rlhf.qmd
+            target: genai_club-reward-models-and-rlhf
+          - file: slides/22_direct-preference-optimization-methods.qmd
+            target: genai_club-direct-preference-optimization-methods
+          - file: slides/23_context-scaling.qmd
+            target: genai_club-context-scaling
+          - file: slides/24_distillation-and-merging.qmd
+            target: genai_club-distillation-and-merging
+      - section: "Section V: LLM Evaluations and Applications"
+        contents:
+          - file: slides/25_benchmarking.qmd
+            target: genai_club-benchmarking
+          - file: slides/26_sampling-and-structured-outputs.qmd
+            target: genai_club-sampling-and-structured-outputs
+          - file: slides/27_prompting-techniques.qmd
+            target: genai_club-prompting-techniques
+          - file: slides/28_vector-databases-and-reranking.qmd
+            target: genai_club-vector-databases-and-reranking
+          - file: slides/29_retrieval-augmented-generation.qmd
+            target: genai_club-retrieval-augmented-generation
+          - file: slides/30_tool-use-and-agents.qmd
+            target: genai_club-tool-use-and-agents
+          - file: slides/31_llms-for-synthetic-data.qmd
+            target: genai_club-llms-for-synthetic-data
+          - file: slides/32_representation-engineering.qmd
+            target: genai_club-representation-engineering
+          - file: slides/33_mechanistic-interpretability.qmd
+            target: genai_club-mechanistic-interpretability
+          - file: slides/34_linear-representation-hypotheses.qmd
+            target: genai_club-linear-representation-hypotheses
+      - section: "Section VI: Performance Optimizations for Efficient Inference"
+        contents:
+          - file: slides/35_parameter-quantization.qmd
+            target: genai_club-parameter-quantization
+          - file: slides/36_speculative-decoding.qmd
+            target: genai_club-speculative-decoding
+          - file: slides/37_flashattention.qmd
+            target: genai_club-flashattention
+          - file: slides/38_key-value-caching-and-paged-attention.qmd
+            target: genai_club-key-value-caching-and-paged-attention
+          - file: slides/39_cpu-offloading.qmd
+            target: genai_club-cpu-offloading
+      - section: "Section VII: Sub-Quadratic Context Scaling"
+        contents:
+          - file: slides/40_sliding-window-attention.qmd
+            target: genai_club-sliding-window-attention
+          - file: slides/41_ring-attention.qmd
+            target: genai_club-ring-attention
+          - file: slides/42_linear-attention-rwkv.qmd
+            target: genai_club-linear-attention-rwkv
+          - file: slides/43_structured-state-space-models.qmd
+            target: genai_club-structured-state-space-models
+          - file: slides/44_hyperattention.qmd
+            target: genai_club-hyperattention
+      - section: "Section VIII: Generative Modeling Beyond Sequences"
+        contents:
+          - file: slides/45_distribution-modeling.qmd
+            target: genai_club-distribution-modeling
+          - file: slides/46_variational-auto-encoders.qmd
+            target: genai_club-variational-auto-encoders
+          - file: slides/47_generative-adversarial-nets.qmd
+            target: genai_club-generative-adversarial-nets
+          - file: slides/48_conditional-gans.qmd
+            target: genai_club-conditional-gans
+          - file: slides/49_normalizing-flows.qmd
+            target: genai_club-normalizing-flows
+          - file: slides/50_diffusion-models.qmd
+            target: genai_club-diffusion-models
+      - section: "Section IX: Multimodal Models"
+        contents:
+          - file: slides/51_tokenization-beyond-text.qmd
+            target: genai_club-tokenization-beyond-text
+          - file: slides/52_vq-vae.qmd
+            target: genai_club-vq-vae
+          - file: slides/53_vision-transformers.qmd
+            target: genai_club-vision-transformers
+
+format:
+  html:
+    theme:
+      dark: darkly
+      light: flatly
+    css: styles.css
+    toc: false
+    link-external-newwindow: true

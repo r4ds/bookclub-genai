@@ -1,0 +1,41 @@
+---
+engine: knitr
+title: Club Meetings
+---
+
+# Welcome
+
+- Welcome to the The Rust Programming Language book club! 
+- These slides are available at [dslc.io/genai](https://dslc.io/genai).
+- We follow the [Data Science Learning Community Code of Conduct](https://dslc.io/code_of_conduct.html).
+
+::: notes
+- You can add notes on each slide with blocks like this!
+- Load a deck in the browser and type "s" to see these notes.
+:::
+
+## Book club meetings
+
+-   Volunteer leads discussion of a chapter
+    -   **This is the best way to learn the material.**
+-   Presentations: 
+    -   Review of material
+    -   Questions you have
+    -   Maybe live demo
+-   More info about editing: [this github repo](https://github.com/r4ds/bookclub-genai).
+-   Recorded, available on the [Data Science Learning Community YouTube Channel (DSLC.video)](http://dslc.video).
+
+## Pace
+
+-   **Goal:** 3 chapters/week
+-   Ok to split overwhelming chapters
+-   Ok to combine short chapters
+-   Meet ***every*** week except holidays, etc
+    -   Ideally can discuss even if presenter unavailable
+
+## Learning objectives (LOs)
+
+-   Students who study with LOs in mind ***retain more.***
+-   **Tips:**
+    -   "After today's session, you will be able to..."
+    -   *Very* roughly **1 per section.**

@@ -5,27 +5,82 @@ title: "2. Statistical Prediction and Supervised Learning"
 
 # Learning objectives
 
-::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+:::: {.columns}
+
+::: {.column width="30%"}
+Review statistics terms
+
+Discuss machine learning ideas
 :::
 
-::: notes
-- You can add notes on each slide with blocks like this!
-- Load a deck in the browser and type "s" to see these notes.
+::: {.column width="10%"}
+	
 :::
 
-# SLIDE SECTION
+::: {.column width="60%"}
+![Machine Learning](images/machine_learning_web.png)
 
-## SLIDE
+image source: [Sankalp Salve](https://medium.com/@xsankalp13/advanced-topics-in-machine-learning-e55d8b0dc7f9)
+:::
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+::::
 
-## SLIDE
+# Statistics and Probability
 
-# SLIDE SECTION
+[![Random Variables](images/random_variables_3Blue1Brown.png)](https://www.youtube.com/watch?v=zeJD6dqJ5lo)
 
-## SLIDE
+# Machine Learning
 
-## SLIDE
+## Regression vs Classification
+
+![Regression or Classification](images/regression-vs-classification_simple-comparison-image_v3.png)
+
+image source: [Sharp Sight Labs](https://www.sharpsightlabs.com/blog/regression-vs-classification/)
+
+## Supervised Learning vs Unsupervised Learning
+
+![Supervised or Unsupervised](images/Supervised-learning-and-unsupervised-learning-Supervised-learning-uses-annotation.png)
+
+image source: [Ma Yan, et al](https://www.researchgate.net/figure/Supervised-learning-and-unsupervised-learning-Supervised-learning-uses-annotation_fig1_329533120)
+
+## Regularization
+
+::: incremental
+
+* Loss function $$L(\vec{\beta}) = \text{argmin}_{\vec{\beta}} \sum_{i=1}^{N} \left(y_{i} - \beta_{0} - \sum_{j=1}^{k} \beta_{j}x_{ij}\right)^{2}$$
+
+* L1 Regularization $$L(\vec{\beta}, \lambda) = \text{argmin}_{\vec{\beta}} \left[\sum_{i=1}^{N} \left(y_{i} - \beta_{0} - \sum_{j=1}^{k} \beta_{j}x_{ij}\right)^{2} + \lambda\sum_{j=i}^{k}|\beta_{j}|\right]$$
+
+* L2 Regularization $$L(\vec{\beta}, \lambda) = \text{argmin}_{\vec{\beta}} \left[\sum_{i=1}^{N} \left(y_{i} - \beta_{0} - \sum_{j=1}^{k} \beta_{j}x_{ij}\right)^{2} + \lambda\sum_{j=i}^{k}\beta_{j}^{2}\right]$$
+
+:::
+
+## Empirical Risk Minimization
+
+We can approximate the *expected risk* over a loss function, data set, and hypothesis model $h$ 
+
+$$\text{E}\left[L((\vec{x}, \vec{y}), h)\right]$$
+by taking the average over the training data
+
+$$\frac{1}{n}\displaystyle\sum_{i=1}^{n} L((x_{i}, y_{i}), h)$$
+* formulas outlined by [Professor Alexander Jung](https://www.youtube.com/watch?v=8fsJCyBOizQ)
+
+## Bias-Variance Tradeoff
+
+Within a *hypothesis class* of similar modeling functions, we are concerned with the **bias-variance tradeoff** in model selection.
+
+![bias-variance tradeoff](images/biasvariance.png)
+
+image source: [Scott Fortmann-Roe ](http://scott.fortmann-roe.com/docs/BiasVariance.html)
+
+
+## Linear Foundations
+
+"For more complex and high-dimensional problems with potential nonlinear dependencies between features, it’s often useful to ask:
+
+* What’s a linear model for the problem?
+* Why does the linear model fail?
+* What’s the best way to add nonlinearity, given the semantic structure of the problem?
+
+
+

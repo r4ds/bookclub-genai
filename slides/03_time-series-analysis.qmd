@@ -6,26 +6,72 @@ title: "3. Time-Series Analysis"
 # Learning objectives
 
 ::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+- Mention time series
 :::
 
-::: notes
-- You can add notes on each slide with blocks like this!
-- Load a deck in the browser and type "s" to see these notes.
+::: {.callout-note collapse="true"}
+## Package Libraries
+
+```{r}
+#| message: false
+#| warning: false
+
+library("DiagrammeR")
+```
 :::
 
-# SLIDE SECTION
 
-## SLIDE
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+## Stepping Forward
 
-## SLIDE
+```{r}
+#| echo: false
+#| eval: true
+DiagrammeR::mermaid("
+graph LR
 
-# SLIDE SECTION
+TS[time<br />series]
+ARIMA[autoregressive<br />models]
+TIS[time<br />invariant<br />systems]
+CT[control<br />theory]
+NSSM[neural<br />state space<br />models]
 
-## SLIDE
+TS --> ARIMA
 
-## SLIDE
+ARIMA --> diffusion
+ARIMA --> LLMs
+
+diffusion --> SDEs
+diffusion --> NSSM
+TIS --> NSSM
+CT --> NSSM
+")
+```
+
+::: {.callout-note collapse="true"}
+## Mermaid code
+
+```{r}
+#| echo: true
+#| eval: false
+DiagrammeR::mermaid("
+graph LR
+
+TS[time<br />series]
+ARIMA[autoregressive<br />models]
+TIS[time<br />invariant<br />systems]
+CT[control<br />theory]
+NSSM[neural<br />state space<br />models]
+
+TS --> ARIMA
+
+ARIMA --> diffusion
+ARIMA --> LLMs
+
+diffusion --> SDEs
+diffusion --> NSSM
+TIS --> NSSM
+CT --> NSSM
+")
+```
+:::

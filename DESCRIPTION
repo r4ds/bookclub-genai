@@ -4,6 +4,7 @@ Title: Generative AI Handbook Book Club
 Version: 0.0.1
 Authors@R: 
     person("Data Science Learning Community", , , "jon@dslc.io", role = c("aut", "cre", "cph"))
+Description: This is only here for GHA dependencies.
 URL: https://r4ds.github.io/bookclub-genai,
     https://github.com/r4ds/bookclub-genai
 Depends:

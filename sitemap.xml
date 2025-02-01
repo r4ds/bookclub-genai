@@ -2,222 +2,222 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/26_sampling-and-structured-outputs.html</loc>
-    <lastmod>2025-01-31T11:57:19.874Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.535Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/27_prompting-techniques.html</loc>
-    <lastmod>2025-01-31T11:57:19.875Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.535Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/36_speculative-decoding.html</loc>
-    <lastmod>2025-01-31T11:57:19.875Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.536Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/16_distributed-training-and-fsdp.html</loc>
-    <lastmod>2025-01-31T11:57:19.874Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.535Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/22_direct-preference-optimization-methods.html</loc>
-    <lastmod>2025-01-31T11:57:19.874Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.535Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/31_llms-for-synthetic-data.html</loc>
-    <lastmod>2025-01-31T11:57:19.875Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.536Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/10_embeddings-and-topic-modeling.html</loc>
-    <lastmod>2025-01-31T11:57:19.874Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.534Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/11_encoders-and-decoders.html</loc>
-    <lastmod>2025-01-31T11:57:19.874Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.534Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/40_sliding-window-attention.html</loc>
-    <lastmod>2025-01-31T11:57:19.875Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.536Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/53_vision-transformers.html</loc>
-    <lastmod>2025-01-31T11:57:19.876Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.537Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/17_scaling-laws.html</loc>
-    <lastmod>2025-01-31T11:57:19.874Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.535Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/02_statistical-prediction-and-supervised-learning.html</loc>
-    <lastmod>2025-01-31T11:57:19.873Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.534Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/13_tokenization.html</loc>
-    <lastmod>2025-01-31T11:57:19.874Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.535Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/30_tool-use-and-agents.html</loc>
-    <lastmod>2025-01-31T11:57:19.875Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.536Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/48_conditional-gans.html</loc>
-    <lastmod>2025-01-31T11:57:19.876Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.537Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/15_pretraining-recipes.html</loc>
-    <lastmod>2025-01-31T11:57:19.874Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.535Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/09_lstms-and-grus.html</loc>
-    <lastmod>2025-01-31T11:57:19.874Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.534Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/32_representation-engineering.html</loc>
-    <lastmod>2025-01-31T11:57:19.875Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.536Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/19_instruct-fine-tuning.html</loc>
-    <lastmod>2025-01-31T11:57:19.874Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.535Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/44_hyperattention.html</loc>
-    <lastmod>2025-01-31T11:57:19.876Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.536Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/52_vq-vae.html</loc>
-    <lastmod>2025-01-31T11:57:19.876Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.537Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/37_flashattention.html</loc>
-    <lastmod>2025-01-31T11:57:19.875Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.536Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/03_time-series-analysis.html</loc>
-    <lastmod>2025-01-31T11:57:19.873Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.534Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/38_key-value-caching-and-paged-attention.html</loc>
-    <lastmod>2025-01-31T11:57:19.875Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.536Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/12_decoder-only-transformers.html</loc>
-    <lastmod>2025-01-31T11:57:19.874Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.534Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/50_diffusion-models.html</loc>
-    <lastmod>2025-01-31T11:57:19.876Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.537Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/01_preliminaries.html</loc>
-    <lastmod>2025-01-31T11:57:19.873Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.534Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/index.html</loc>
-    <lastmod>2025-01-31T11:57:19.873Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.534Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/47_generative-adversarial-nets.html</loc>
-    <lastmod>2025-01-31T11:57:19.876Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.537Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/28_vector-databases-and-reranking.html</loc>
-    <lastmod>2025-01-31T11:57:19.875Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.535Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/04_online-learning-and-regret-minimization.html</loc>
-    <lastmod>2025-01-31T11:57:19.873Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.534Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/21_reward-models-and-rlhf.html</loc>
-    <lastmod>2025-01-31T11:57:19.874Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.535Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/14_positional-encoding.html</loc>
-    <lastmod>2025-01-31T11:57:19.874Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.535Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/06_markov-models.html</loc>
-    <lastmod>2025-01-31T11:57:19.873Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.534Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/45_distribution-modeling.html</loc>
-    <lastmod>2025-01-31T11:57:19.876Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.536Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/08_recurrent-neural-networks.html</loc>
-    <lastmod>2025-01-31T11:57:19.873Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.534Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/33_mechanistic-interpretability.html</loc>
-    <lastmod>2025-01-31T11:57:19.875Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.536Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/00-club_intro.html</loc>
-    <lastmod>2025-01-31T11:57:19.873Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.534Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/43_structured-state-space-models.html</loc>
-    <lastmod>2025-01-31T11:57:19.875Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.536Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/25_benchmarking.html</loc>
-    <lastmod>2025-01-31T11:57:19.874Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.535Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/41_ring-attention.html</loc>
-    <lastmod>2025-01-31T11:57:19.875Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.536Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/46_variational-auto-encoders.html</loc>
-    <lastmod>2025-01-31T11:57:19.876Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.536Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/24_distillation-and-merging.html</loc>
-    <lastmod>2025-01-31T11:57:19.874Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.535Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/51_tokenization-beyond-text.html</loc>
-    <lastmod>2025-01-31T11:57:19.876Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.537Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/39_cpu-offloading.html</loc>
-    <lastmod>2025-01-31T11:57:19.875Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.536Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/35_parameter-quantization.html</loc>
-    <lastmod>2025-01-31T11:57:19.875Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.536Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/42_linear-attention-rwkv.html</loc>
-    <lastmod>2025-01-31T11:57:19.875Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.536Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/34_linear-representation-hypotheses.html</loc>
-    <lastmod>2025-01-31T11:57:19.875Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.536Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/29_retrieval-augmented-generation.html</loc>
-    <lastmod>2025-01-31T11:57:19.875Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.535Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/49_normalizing-flows.html</loc>
-    <lastmod>2025-01-31T11:57:19.876Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.537Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/23_context-scaling.html</loc>
-    <lastmod>2025-01-31T11:57:19.874Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.535Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/07_statistical-prediction-with-neural-networks.html</loc>
-    <lastmod>2025-01-31T11:57:19.873Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.534Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/20_low-rank-adapters-lora.html</loc>
-    <lastmod>2025-01-31T11:57:19.874Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.535Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/18_mixture-of-experts.html</loc>
-    <lastmod>2025-01-31T11:57:19.874Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.535Z</lastmod>
   </url>
   <url>
     <loc>https://r4ds.github.io/bookclub-genai/slides/05_reinforcement-learning.html</loc>
-    <lastmod>2025-01-31T11:57:19.873Z</lastmod>
+    <lastmod>2025-02-01T19:23:12.534Z</lastmod>
   </url>
 </urlset>

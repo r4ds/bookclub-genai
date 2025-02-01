@@ -134,55 +134,78 @@
 </section>
 <section id="learning-objectives" class="title-slide slide level1 center">
 <h1>Learning objectives</h1>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p>Review statistics terms</p>
+<p>Discuss machine learning ideas</p>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/machine_learning_web.png"></p>
+<figcaption>Machine Learning</figcaption>
+</figure>
+</div>
+<p>image source: <a href="https://medium.com/@xsankalp13/advanced-topics-in-machine-learning-e55d8b0dc7f9">Sankalp Salve</a></p>
+</div></div>
+</section>
+
+<section id="statistics-and-probability" class="title-slide slide level1 center">
+<h1>Statistics and Probability</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="https://www.youtube.com/watch?v=zeJD6dqJ5lo"><img data-src="images/random_variables_3Blue1Brown.png" alt="Random Variables"></a></p>
+<figcaption>Random Variables</figcaption>
+</figure>
+</div>
+</section>
+
+<section>
+<section id="machine-learning" class="title-slide slide level1 center">
+<h1>Machine Learning</h1>
+
+</section>
+<section id="regression-vs-classification" class="slide level2">
+<h2>Regression vs Classification</h2>
+
+<img data-src="images/regression-vs-classification_simple-comparison-image_v3.png" class="r-stretch quarto-figure-center"><p class="caption">Regression or Classification</p><p>image source: <a href="https://www.sharpsightlabs.com/blog/regression-vs-classification/">Sharp Sight Labs</a></p>
+</section>
+<section id="supervised-learning-vs-unsupervised-learning" class="slide level2">
+<h2>Supervised Learning vs Unsupervised Learning</h2>
+
+<img data-src="images/Supervised-learning-and-unsupervised-learning-Supervised-learning-uses-annotation.png" class="r-stretch quarto-figure-center"><p class="caption">Supervised or Unsupervised</p><p>image source: <a href="https://www.researchgate.net/figure/Supervised-learning-and-unsupervised-learning-Supervised-learning-uses-annotation_fig1_329533120">Ma Yan, et al</a></p>
+</section>
+<section id="regularization" class="slide level2">
+<h2>Regularization</h2>
 <div>
 <ul>
-<li>THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY</li>
+<li class="fragment"><p>Loss function <span class="math display">\[L(\vec{\beta}) = \text{argmin}_{\vec{\beta}} \sum_{i=1}^{N} \left(y_{i} - \beta_{0} - \sum_{j=1}^{k} \beta_{j}x_{ij}\right)^{2}\]</span></p></li>
+<li class="fragment"><p>L1 Regularization <span class="math display">\[L(\vec{\beta}, \lambda) = \text{argmin}_{\vec{\beta}} \left[\sum_{i=1}^{N} \left(y_{i} - \beta_{0} - \sum_{j=1}^{k} \beta_{j}x_{ij}\right)^{2} + \lambda\sum_{j=i}^{k}|\beta_{j}|\right]\]</span></p></li>
+<li class="fragment"><p>L2 Regularization <span class="math display">\[L(\vec{\beta}, \lambda) = \text{argmin}_{\vec{\beta}} \left[\sum_{i=1}^{N} \left(y_{i} - \beta_{0} - \sum_{j=1}^{k} \beta_{j}x_{ij}\right)^{2} + \lambda\sum_{j=i}^{k}\beta_{j}^{2}\right]\]</span></p></li>
 </ul>
 </div>
-<aside class="notes">
+</section>
+<section id="empirical-risk-minimization" class="slide level2">
+<h2>Empirical Risk Minimization</h2>
+<p>We can approximate the <em>expected risk</em> over a loss function, data set, and hypothesis model <span class="math inline">\(h\)</span></p>
+<p><span class="math display">\[\text{E}\left[L((\vec{x}, \vec{y}), h)\right]\]</span> by taking the average over the training data</p>
+<p><span class="math display">\[\frac{1}{n}\displaystyle\sum_{i=1}^{n} L((x_{i}, y_{i}), h)\]</span> * formulas outlined by <a href="https://www.youtube.com/watch?v=8fsJCyBOizQ">Professor Alexander Jung</a></p>
+</section>
+<section id="bias-variance-tradeoff" class="slide level2">
+<h2>Bias-Variance Tradeoff</h2>
+<p>Within a <em>hypothesis class</em> of similar modeling functions, we are concerned with the <strong>bias-variance tradeoff</strong> in model selection.</p>
+
+<img data-src="images/biasvariance.png" class="r-stretch quarto-figure-center"><p class="caption">bias-variance tradeoff</p><p>image source: <a href="http://scott.fortmann-roe.com/docs/BiasVariance.html">Scott Fortmann-Roe</a></p>
+</section>
+<section id="linear-foundations" class="slide level2">
+<h2>Linear Foundations</h2>
+<p>“For more complex and high-dimensional problems with potential nonlinear dependencies between features, it’s often useful to ask:</p>
 <ul>
-<li>You can add notes on each slide with blocks like this!</li>
-<li>Load a deck in the browser and type “s” to see these notes.</li>
+<li>What’s a linear model for the problem?</li>
+<li>Why does the linear model fail?</li>
+<li>What’s the best way to add nonlinearity, given the semantic structure of the problem?</li>
 </ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-
-<section>
-<section id="slide-section" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
-
-</section>
-<section id="slide" class="slide level2">
-<h2>SLIDE</h2>
-<ul>
-<li class="fragment">DENOTE MAJOR SECTIONS WITH <code># TITLE</code> (eg <code># Installation</code>)</li>
-<li class="fragment">ADD INDIVIDUAL SLIDES WITH <code>##</code> (eg <code>## rustup on Linux/macOS</code>)</li>
-<li class="fragment">KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
-</ul>
-</section>
-<section id="slide-1" class="slide level2">
-<h2>SLIDE</h2>
-</section></section>
-<section>
-<section id="slide-section-1" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
-
-</section>
-<section id="slide-2" class="slide level2">
-<h2>SLIDE</h2>
-</section>
-<section id="slide-3" class="slide level2">
-<h2>SLIDE</h2>
 
 
 </section></section>

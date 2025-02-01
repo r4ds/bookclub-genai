@@ -484,44 +484,66 @@
     ]
   },
   {
-    "objectID": "slides/02_statistical-prediction-and-supervised-learning.html#slide",
-    "href": "slides/02_statistical-prediction-and-supervised-learning.html#slide",
+    "objectID": "slides/02_statistical-prediction-and-supervised-learning.html#regression-vs-classification",
+    "href": "slides/02_statistical-prediction-and-supervised-learning.html#regression-vs-classification",
     "title": "2. Statistical Prediction and Supervised Learning",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "section": "Regression vs Classification",
+    "text": "Regression vs Classification\n\nRegression or Classificationimage source: Sharp Sight Labs",
     "crumbs": [
       "Section I: Foundations of Sequential Prediction",
       "2. Statistical Prediction and Supervised Learning"
     ]
   },
   {
-    "objectID": "slides/02_statistical-prediction-and-supervised-learning.html#slide-1",
-    "href": "slides/02_statistical-prediction-and-supervised-learning.html#slide-1",
+    "objectID": "slides/02_statistical-prediction-and-supervised-learning.html#supervised-learning-vs-unsupervised-learning",
+    "href": "slides/02_statistical-prediction-and-supervised-learning.html#supervised-learning-vs-unsupervised-learning",
     "title": "2. Statistical Prediction and Supervised Learning",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Supervised Learning vs Unsupervised Learning",
+    "text": "Supervised Learning vs Unsupervised Learning\n\nSupervised or Unsupervisedimage source: Ma Yan, et al",
     "crumbs": [
       "Section I: Foundations of Sequential Prediction",
       "2. Statistical Prediction and Supervised Learning"
     ]
   },
   {
-    "objectID": "slides/02_statistical-prediction-and-supervised-learning.html#slide-2",
-    "href": "slides/02_statistical-prediction-and-supervised-learning.html#slide-2",
+    "objectID": "slides/02_statistical-prediction-and-supervised-learning.html#regularization",
+    "href": "slides/02_statistical-prediction-and-supervised-learning.html#regularization",
     "title": "2. Statistical Prediction and Supervised Learning",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Regularization",
+    "text": "Regularization\n\n\nLoss function \\[L(\\vec{\\beta}) = \\text{argmin}_{\\vec{\\beta}} \\sum_{i=1}^{N} \\left(y_{i} - \\beta_{0} - \\sum_{j=1}^{k} \\beta_{j}x_{ij}\\right)^{2}\\]\nL1 Regularization \\[L(\\vec{\\beta}, \\lambda) = \\text{argmin}_{\\vec{\\beta}} \\left[\\sum_{i=1}^{N} \\left(y_{i} - \\beta_{0} - \\sum_{j=1}^{k} \\beta_{j}x_{ij}\\right)^{2} + \\lambda\\sum_{j=i}^{k}|\\beta_{j}|\\right]\\]\nL2 Regularization \\[L(\\vec{\\beta}, \\lambda) = \\text{argmin}_{\\vec{\\beta}} \\left[\\sum_{i=1}^{N} \\left(y_{i} - \\beta_{0} - \\sum_{j=1}^{k} \\beta_{j}x_{ij}\\right)^{2} + \\lambda\\sum_{j=i}^{k}\\beta_{j}^{2}\\right]\\]",
     "crumbs": [
       "Section I: Foundations of Sequential Prediction",
       "2. Statistical Prediction and Supervised Learning"
     ]
   },
   {
-    "objectID": "slides/02_statistical-prediction-and-supervised-learning.html#slide-3",
-    "href": "slides/02_statistical-prediction-and-supervised-learning.html#slide-3",
+    "objectID": "slides/02_statistical-prediction-and-supervised-learning.html#empirical-risk-minimization",
+    "href": "slides/02_statistical-prediction-and-supervised-learning.html#empirical-risk-minimization",
     "title": "2. Statistical Prediction and Supervised Learning",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Empirical Risk Minimization",
+    "text": "Empirical Risk Minimization\nWe can approximate the expected risk over a loss function, data set, and hypothesis model \\(h\\)\n\\[\\text{E}\\left[L((\\vec{x}, \\vec{y}), h)\\right]\\] by taking the average over the training data\n\\[\\frac{1}{n}\\displaystyle\\sum_{i=1}^{n} L((x_{i}, y_{i}), h)\\] * formulas outlined by Professor Alexander Jung",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "2. Statistical Prediction and Supervised Learning"
+    ]
+  },
+  {
+    "objectID": "slides/02_statistical-prediction-and-supervised-learning.html#bias-variance-tradeoff",
+    "href": "slides/02_statistical-prediction-and-supervised-learning.html#bias-variance-tradeoff",
+    "title": "2. Statistical Prediction and Supervised Learning",
+    "section": "Bias-Variance Tradeoff",
+    "text": "Bias-Variance Tradeoff\nWithin a hypothesis class of similar modeling functions, we are concerned with the bias-variance tradeoff in model selection.\n\nbias-variance tradeoffimage source: Scott Fortmann-Roe",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "2. Statistical Prediction and Supervised Learning"
+    ]
+  },
+  {
+    "objectID": "slides/02_statistical-prediction-and-supervised-learning.html#linear-foundations",
+    "href": "slides/02_statistical-prediction-and-supervised-learning.html#linear-foundations",
+    "title": "2. Statistical Prediction and Supervised Learning",
+    "section": "Linear Foundations",
+    "text": "Linear Foundations\n“For more complex and high-dimensional problems with potential nonlinear dependencies between features, it’s often useful to ask:\n\nWhat’s a linear model for the problem?\nWhy does the linear model fail?\nWhat’s the best way to add nonlinearity, given the semantic structure of the problem?",
     "crumbs": [
       "Section I: Foundations of Sequential Prediction",
       "2. Statistical Prediction and Supervised Learning"
@@ -968,44 +990,33 @@
     ]
   },
   {
-    "objectID": "slides/03_time-series-analysis.html#slide",
-    "href": "slides/03_time-series-analysis.html#slide",
+    "objectID": "slides/03_time-series-analysis.html#package-libraries",
+    "href": "slides/03_time-series-analysis.html#package-libraries",
     "title": "3. Time-Series Analysis",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "section": "Package Libraries",
+    "text": "Package Libraries\n\nlibrary(\"DiagrammeR\")",
     "crumbs": [
       "Section I: Foundations of Sequential Prediction",
       "3. Time-Series Analysis"
     ]
   },
   {
-    "objectID": "slides/03_time-series-analysis.html#slide-1",
-    "href": "slides/03_time-series-analysis.html#slide-1",
+    "objectID": "slides/03_time-series-analysis.html#stepping-forward",
+    "href": "slides/03_time-series-analysis.html#stepping-forward",
     "title": "3. Time-Series Analysis",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Stepping Forward",
+    "text": "Stepping Forward",
     "crumbs": [
       "Section I: Foundations of Sequential Prediction",
       "3. Time-Series Analysis"
     ]
   },
   {
-    "objectID": "slides/03_time-series-analysis.html#slide-2",
-    "href": "slides/03_time-series-analysis.html#slide-2",
+    "objectID": "slides/03_time-series-analysis.html#mermaid-code",
+    "href": "slides/03_time-series-analysis.html#mermaid-code",
     "title": "3. Time-Series Analysis",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Section I: Foundations of Sequential Prediction",
-      "3. Time-Series Analysis"
-    ]
-  },
-  {
-    "objectID": "slides/03_time-series-analysis.html#slide-3",
-    "href": "slides/03_time-series-analysis.html#slide-3",
-    "title": "3. Time-Series Analysis",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Mermaid code",
+    "text": "Mermaid code\n\nDiagrammeR::mermaid(\"\ngraph LR\n\nTS[time&lt;br /&gt;series]\nARIMA[autoregressive&lt;br /&gt;models]\nTIS[time&lt;br /&gt;invariant&lt;br /&gt;systems]\nCT[control&lt;br /&gt;theory]\nNSSM[neural&lt;br /&gt;state space&lt;br /&gt;models]\n\nTS --&gt; ARIMA\n\nARIMA --&gt; diffusion\nARIMA --&gt; LLMs\n\ndiffusion --&gt; SDEs\ndiffusion --&gt; NSSM\nTIS --&gt; NSSM\nCT --&gt; NSSM\n\")",
     "crumbs": [
       "Section I: Foundations of Sequential Prediction",
       "3. Time-Series Analysis"
@@ -1144,44 +1155,22 @@
     ]
   },
   {
-    "objectID": "slides/01_preliminaries.html#slide",
-    "href": "slides/01_preliminaries.html#slide",
+    "objectID": "slides/01_preliminaries.html#ai-landscape",
+    "href": "slides/01_preliminaries.html#ai-landscape",
     "title": "1. Preliminaries",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "section": "AI Landscape",
+    "text": "AI Landscape\n\nareas for artificial intelligenceimage source: RapidOps",
     "crumbs": [
       "Introduction",
       "1. Preliminaries"
     ]
   },
   {
-    "objectID": "slides/01_preliminaries.html#slide-1",
-    "href": "slides/01_preliminaries.html#slide-1",
+    "objectID": "slides/01_preliminaries.html#math-topics",
+    "href": "slides/01_preliminaries.html#math-topics",
     "title": "1. Preliminaries",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Introduction",
-      "1. Preliminaries"
-    ]
-  },
-  {
-    "objectID": "slides/01_preliminaries.html#slide-2",
-    "href": "slides/01_preliminaries.html#slide-2",
-    "title": "1. Preliminaries",
-    "section": "SLIDE",
-    "text": "SLIDE",
-    "crumbs": [
-      "Introduction",
-      "1. Preliminaries"
-    ]
-  },
-  {
-    "objectID": "slides/01_preliminaries.html#slide-3",
-    "href": "slides/01_preliminaries.html#slide-3",
-    "title": "1. Preliminaries",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Math Topics",
+    "text": "Math Topics\n\n\nGradients and their relation to local minima/maxima\nThe chain rule for differentiation\nMatrices as linear transformations for vectors\nNotions of basis/rank/span/independence/etc.\n\n\n\ncalculus\nlinear algebra",
     "crumbs": [
       "Introduction",
       "1. Preliminaries"

@@ -3,29 +3,91 @@ engine: knitr
 title: "1. Preliminaries"
 ---
 
-# Learning objectives
+# Learning Objectives
 
-::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+:::: {.columns}
+
+::: {.column width="45%"}
+Talk about recent history in artificial intelligence
+
+Mention mathematics prerequisites
+
+Pick a programming language
 :::
 
-::: notes
-- You can add notes on each slide with blocks like this!
-- Load a deck in the browser and type "s" to see these notes.
+::: {.column width="10%"}
+	
 :::
 
-# SLIDE SECTION
+::: {.column width="45%"}
+![Generative AI](images/gen_ai_splash.png)
 
-## SLIDE
+image source: [Georgetown Journal of International Affairs](https://gjia.georgetown.edu/2023/05/24/should-the-united-states-or-the-european-union-follow-chinas-lead-and-require-watermarks-for-generative-ai/)
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+:::
 
-## SLIDE
+::::
 
-# SLIDE SECTION
+## AI Landscape
 
-## SLIDE
+![areas for artificial intelligence](images/ai_landscape.png)
 
-## SLIDE
+image source: [RapidOps](https://www.rapidops.com/blog/generative-ai-tools/)
+
+# Math
+
+## Math Topics
+
+:::: {.columns}
+
+::: {.column width="45%"}
+**Gradients** and their relation to local minima/maxima
+
+The **chain rule** for differentiation
+
+Matrices as **linear transformations** for vectors
+
+Notions of **basis**/rank/span/independence/etc.
+:::
+
+::: {.column width="10%"}
+	
+:::
+
+::: {.column width="45%"}
+[calculus](https://www.youtube.com/watch?v=WUvTyaaNkzM&list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr)
+
+[linear algebra](https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab)
+:::
+
+::::
+
+
+# Programming
+
+:::: {.columns}
+
+::: {.column width="45%"}
+Python
+
+C++
+
+CUDA
+:::
+
+::: {.column width="10%"}
+	
+:::
+
+::: {.column width="45%"}
+![Python](images/python-logo-only.png)
+
+image source: [Python Software Foundation](https://www.python.org/community/logos/)
+:::
+
+::::
+
+
+
+
+

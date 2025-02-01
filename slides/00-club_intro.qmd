@@ -5,7 +5,8 @@ title: Club Meetings
 
 # Welcome
 
-- Welcome to the The Rust Programming Language book club! 
+- Welcome to the Generative AI book club! 
+- "book: [Generative AI Handbook: A Roadmap for Learning Resources](https://genai-handbook.github.io/) by William Brown
 - These slides are available at [dslc.io/genai](https://dslc.io/genai).
 - We follow the [Data Science Learning Community Code of Conduct](https://dslc.io/code_of_conduct.html).
 

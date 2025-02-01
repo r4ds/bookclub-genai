@@ -3,9 +3,7 @@ engine: knitr
 title: "1. Preliminaries"
 ---
 
-# Chapter One: Preliminaries
-
-## Learning Objectives
+# Learning Objectives
 
 :::: {.columns}
 

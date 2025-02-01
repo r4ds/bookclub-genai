@@ -9,7 +9,6 @@ title: "3. Time-Series Analysis"
 - Mention time series
 :::
 
-::: {.callout-note collapse="true"}
 ## Package Libraries
 
 ```{r}
@@ -18,8 +17,6 @@ title: "3. Time-Series Analysis"
 
 library("DiagrammeR")
 ```
-:::
-
 
 
 ## Stepping Forward
@@ -48,7 +45,6 @@ CT --> NSSM
 ")
 ```
 
-::: {.callout-note collapse="true"}
 ## Mermaid code
 
 ```{r}
@@ -74,4 +70,3 @@ TIS --> NSSM
 CT --> NSSM
 ")
 ```
-:::

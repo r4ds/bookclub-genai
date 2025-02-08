@@ -132,18 +132,16 @@
 </div>
 
 </section>
+<section>
 <section id="learning-objectives" class="title-slide slide level1 center">
 <h1>Learning objectives</h1>
 <div>
 <ul>
-<li>THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY</li>
+<li>Introduce terminology about optimization</li>
 </ul>
 </div>
 <aside class="notes">
-<ul>
-<li>You can add notes on each slide with blocks like this!</li>
-<li>Load a deck in the browser and type “s” to see these notes.</li>
-</ul>
+<p>I hope that you like math</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -156,33 +154,53 @@
           display:block!important;
       }</style></aside>
 </section>
+<section id="online-convex-optimization" class="slide level2">
+<h2>Online Convex Optimization</h2>
 
-<section>
-<section id="slide-section" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
-
-</section>
-<section id="slide" class="slide level2">
-<h2>SLIDE</h2>
+<img data-src="images/online_convex_optimization.png" class="r-stretch quarto-figure-center"><p class="caption">OCO</p></section>
+<section id="regret" class="slide level2">
+<h2>Regret</h2>
+<p><span class="math display">\[\text{Regret}_{T}(A) = \text{sup}\left[\sum_{t=1}^{T}f_{t}(x_{t}^{A}) - \text{min}_{x}\sum_{t=1}^{T}f_{t}(x)\right]\]</span></p>
 <ul>
-<li>DENOTE MAJOR SECTIONS WITH <code># TITLE</code> (eg <code># Installation</code>)</li>
-<li>ADD INDIVIDUAL SLIDES WITH <code>##</code> (eg <code>## rustup on Linux/macOS</code>)</li>
-<li>KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
+<li><span class="math inline">\(\vec{x}_{t}^{A}\)</span>: player actions of an algorithm in a decision set</li>
+<li><span class="math inline">\(T\)</span>: number of game iterations</li>
 </ul>
 </section>
-<section id="slide-1" class="slide level2">
-<h2>SLIDE</h2>
-</section></section>
-<section>
-<section id="slide-section-1" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
-
+<section id="applications" class="slide level2">
+<h2>Applications</h2>
+<ul>
+<li>spam filtering</li>
+<li>path finding</li>
+<li>portfolio selection</li>
+<li>recommendation systems</li>
+</ul>
 </section>
-<section id="slide-2" class="slide level2">
-<h2>SLIDE</h2>
+<section id="experts-and-adversaries" class="slide level2">
+<h2>Experts and Adversaries</h2>
+<p><strong>Theorem 1.2</strong> Let <span class="math inline">\(\epsilon\in(0,0.5)\)</span>. Suppose that the best expert makes <span class="math inline">\(L\)</span> mistakes. Then:</p>
+<ul>
+<li><span class="math inline">\(\exists\)</span> an efficient <em>deterministic</em> algorithm <span class="math inline">\(&lt; 2(1+\epsilon)L + \frac{2\log N}{\epsilon}\)</span> mistakes</li>
+<li><span class="math inline">\(\exists\)</span> an efficient <em>randomized</em> algorithm <span class="math inline">\(\leq (1+\epsilon)L + \frac{\log N}{\epsilon}\)</span> mistakes</li>
+</ul>
 </section>
-<section id="slide-3" class="slide level2">
-<h2>SLIDE</h2>
+<section id="weighted-majority-algorithm" class="slide level2">
+<h2>Weighted Majority Algorithm</h2>
+<ul>
+<li>predict according to <em>majority</em> of experts</li>
+</ul>
+<p><span class="math display">\[a_{t} = \begin{cases} A, &amp; W_{t}(A) \geq W_{t}(B) \\ B, &amp; \text{otherwise}\end{cases}\]</span></p>
+<ul>
+<li><em>update</em> weights</li>
+</ul>
+<p><span class="math display">\[W_{t+1}(i) = \begin{cases}W_{t}(i), &amp; \text{if expert i was correct} \\ W_{t}(i)(1-\epsilon), &amp; \text{if expert i was wrong}\end{cases}\]</span></p>
+</section>
+<section id="hedging" class="slide level2">
+<h2>Hedging</h2>
+<p><span class="math display">\[W_{t+1}(i) = W_{t}(i)e^{-\epsilon \ell_{t}(i)}\]</span></p>
+<ul>
+<li><span class="math inline">\(\epsilon\)</span>: learning rate</li>
+<li><span class="math inline">\(\ell_{t}(i)\)</span>: loss by expert <span class="math inline">\(i\)</span> at iteration <span class="math inline">\(t\)</span></li>
+</ul>
 
 
 </section></section>

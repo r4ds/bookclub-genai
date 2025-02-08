@@ -132,18 +132,16 @@
 </div>
 
 </section>
+<section>
 <section id="learning-objectives" class="title-slide slide level1 center">
 <h1>Learning objectives</h1>
 <div>
 <ul>
-<li>THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY</li>
+<li>Give an overview of reinforcement learning</li>
 </ul>
 </div>
 <aside class="notes">
-<ul>
-<li>You can add notes on each slide with blocks like this!</li>
-<li>Load a deck in the browser and type “s” to see these notes.</li>
-</ul>
+<p>should talk about this after chapter 6 (markov models)</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -156,33 +154,175 @@
           display:block!important;
       }</style></aside>
 </section>
+<section id="textbook" class="slide level2">
+<h2>Textbook</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/Sutton_Barto.png"></p>
+<figcaption>Sutton and Barto</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:10%;">
 
-<section>
-<section id="slide-section" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
-
+</div><div class="column" style="width:45%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/Mutual_Information.png"></p>
+<figcaption>Mutual Information</figcaption>
+</figure>
+</div>
+</div></div>
 </section>
-<section id="slide" class="slide level2">
-<h2>SLIDE</h2>
+<section id="markov-decision-process" class="slide level2">
+<h2>Markov Decision Process</h2>
+
+<img data-src="images/Markov_decision_process.png" class="r-stretch quarto-figure-center"><p class="caption">MDP</p></section>
+<section id="objective" class="slide level2">
+<h2>Objective</h2>
 <ul>
-<li>DENOTE MAJOR SECTIONS WITH <code># TITLE</code> (eg <code># Installation</code>)</li>
-<li>ADD INDIVIDUAL SLIDES WITH <code>##</code> (eg <code>## rustup on Linux/macOS</code>)</li>
-<li>KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
+<li>policy: <span class="math inline">\(\pi(a|s)\)</span></li>
+<li>return: <span class="math inline">\(G_{t} = \sum_{k=t+1}^{T} \gamma^{k-t-1}R_{k}\)</span></li>
+<li><em>maximize expected return</em> over all policies</li>
+</ul>
+<p><span class="math display">\[\text{max}_{\pi} \text{E}_{\pi}[G_{t}]\]</span></p>
+</section>
+<section id="coupled-equations" class="slide level2">
+<h2>Coupled Equations</h2>
+<ul>
+<li>state value function</li>
+</ul>
+<p><span class="math display">\[v_{\pi}(s) = \text{E}_{\pi}[G_{t}|S_{t} = s]\]</span></p>
+<ul>
+<li>action value function</li>
+</ul>
+<p><span class="math display">\[q_{\pi}(s,a) = \text{E}_{\pi}[G_{t}|S_{t} = s, A_{t} = a]\]</span></p>
+</section>
+<section id="bellman-equations" class="slide level2">
+<h2>Bellman Equations</h2>
+<blockquote>
+<p>connect all state values</p>
+</blockquote>
+<p><span class="math display">\[\begin{array}{rcl}
+  v_{\pi}(s^{i}) &amp; = &amp; \text{E}_{\pi}[G_{t}|s^{i}] \\
+  ~ &amp; = &amp; \sum_{\{a\}} \pi(a|s^{i}) \cdot q(s^{i},a) \\
+  ~ &amp; = &amp; \sum_{\{a\}} \pi(a|s^{i}) \cdot \text{E}_{\pi}[G_{t}|s^{i}, a] \\
+\end{array}\]</span></p>
+</section>
+<section id="bellman-optimality-equations" class="slide level2">
+<h2>Bellman Optimality Equations</h2>
+<p>For any optimal <span class="math inline">\(\pi_{*}\)</span>, <span class="math inline">\(\forall s \in S\)</span>, <span class="math inline">\(\forall a \in A\)</span></p>
+<p><span class="math display">\[\begin{array}{rcl}
+  v_{*}(s) &amp; = &amp; \text{max}_{a} q_{*}(s,a) \\
+  q_{*}(s,a) &amp; = &amp; \sum_{s,r} p(s'r|s,a)[r + \gamma v_{*}(s')] \\
+\end{array}\]</span></p>
+</section>
+<section id="monte-carlo-methods" class="slide level2">
+<h2>Monte Carlo Methods</h2>
+<p>We do not know <span class="math inline">\(p(s'r|s,a)\)</span></p>
+<ul>
+<li>generate samples: <span class="math inline">\(S_{0}, A_{0}, R_{1}, S_{1}, A_{1}, R_{2}, ...\)</span></li>
+<li>obtain averages <span class="math inline">\(\approx\)</span> expected values</li>
+<li><em>generalized policy iteration</em> to obtain</li>
+</ul>
+<p><span class="math display">\[\pi \approx \pi_{*}\]</span></p>
+</section>
+<section id="monte-carlo-evaluation" class="slide level2">
+<h2>Monte Carlo Evaluation</h2>
+<ul>
+<li>approx <span class="math inline">\(v_{\pi}(s)\)</span></li>
+</ul>
+<p><span class="math display">\[\text{E}_{\pi}[G_{t}|S_{t} = s] \approx \frac{1}{C(s)}\sum_{m=1}^{M}\sum_{\tau=0}^{T_{m}-1} I(s_{\tau}^{m} = s)g_{\tau}^{m}\]</span> * <strong>step size</strong> <span class="math inline">\(\alpha\)</span> for update rule</p>
+<p><span class="math display">\[V(s_{t}^{m}) \leftarrow V(s_{t}^{m}) + \alpha\left(g_{t}^{m} - V(s_{t}^{m})\right)\]</span></p>
+</section>
+<section id="exploration-exploitation-trade-off" class="slide level2">
+<h2>Exploration-Exploitation Trade-Off</h2>
+<ul>
+<li>to discover optimal policies</li>
+</ul>
+<blockquote>
+<p>we must explroe all state-action pairs</p>
+</blockquote>
+<ul>
+<li>to get high returns</li>
+</ul>
+<blockquote>
+<p>we must exploit known high-value pairs</p>
+</blockquote>
+</section>
+<section id="example-blackjack" class="slide level2">
+<h2>Example: Blackjack</h2>
+
+<img data-src="images/MC_blackjack.png" class="r-stretch quarto-figure-center"><p class="caption">MCMC solving blackjack game</p><p>image credit: <a href="https://www.youtube.com/watch?v=bpUszPiWM7o&amp;">Mutual Information</a></p>
+<blockquote>
+<p>10 million games played</p>
+</blockquote>
+</section>
+<section id="temporal-difference-learning" class="slide level2">
+<h2>Temporal Difference Learning</h2>
+<ul>
+<li><p><strong>Markov Reward Process</strong>: A Markov decision process, but w/o actions</p></li>
+<li><p>MCMC requires an episode to complete before updating</p></li>
+</ul>
+<blockquote>
+<p>but what if an episode is long?</p>
+</blockquote>
+</section>
+<section id="n-step-td" class="slide level2">
+<h2>n-step TD</h2>
+<p>Replace <span class="math inline">\(g_{t}^{m}\)</span> with</p>
+<p><span class="math display">\[g_{t:t+n}^{m} = r_{t+1}^{m} + \gamma r_{t+2}^{m} + \cdots + \gamma^{n-1} r_{t+n}^{m} + \gamma_{n}V(s_{t+n}^{m})\]</span></p>
+<blockquote>
+<p>updates are applied during the episoes with an n-step delay</p>
+</blockquote>
+</section>
+<section id="advantages" class="slide level2">
+<h2>Advantages</h2>
+<p>Compared to MC, TD has</p>
+<ul>
+<li>batch training</li>
+<li><span class="math inline">\(V(s)\)</span> do not depend on stepsize <span class="math inline">\(\alpha\)</span></li>
+<li>max likelihood of MRP (instead of min MSE)</li>
 </ul>
 </section>
-<section id="slide-1" class="slide level2">
-<h2>SLIDE</h2>
-</section></section>
-<section>
-<section id="slide-section-1" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
-
+<section id="q-learning" class="slide level2">
+<h2>Q-Learning</h2>
+<p><span class="math display">\[r_{t+1}^{m} + \gamma \text{max}_{a} Q(s_{t+1}^{m},a)\]</span></p>
+<p>updates <span class="math inline">\(Q\)</span> after each <em>sarsa</em> tuple (each n-step delay)</p>
 </section>
-<section id="slide-2" class="slide level2">
-<h2>SLIDE</h2>
+<section id="toward-continuity" class="slide level2">
+<h2>Toward Continuity</h2>
+<ul>
+<li>previous methods assumed tabular (discrete) and finite state spaces</li>
+<li>without “infinite data”, can we still generalize?</li>
+<li><strong>function approximation</strong>: supervised learning + reinforcement learning</li>
+</ul>
 </section>
-<section id="slide-3" class="slide level2">
-<h2>SLIDE</h2>
+<section id="parameter-space" class="slide level2">
+<h2>Parameter Space</h2>
+<p><span class="math display">\[v_{\pi}(s) \approx \hat{v}(s,w), \quad w \in \mathbb{R}^{d}\]</span> * caution: updating <span class="math inline">\(w\)</span> updates many values of <span class="math inline">\(s\)</span></p>
+<blockquote>
+<p>not just the “visited states”</p>
+</blockquote>
+</section>
+<section id="value-error" class="slide level2">
+<h2>Value Error</h2>
+<p><span class="math display">\[\text{VE}(w) = \sum_{s \in S} \mu(s)\left[v_{\pi}(s) - \hat{v}(s,w)\right]^{2}\]</span></p>
+<ul>
+<li><span class="math inline">\(\mu\)</span>: distribution of states</li>
+<li>solve with <strong>stochastic gradient descent</strong></li>
+</ul>
+<p><span class="math display">\[w \leftarrow w + \alpha\left[U_{t} - \hat{v}(S_{t},w)\right] \nabla \hat{v}(S_{t},w)\]</span></p>
+</section>
+<section id="target-selection" class="slide level2">
+<h2>Target Selection</h2>
+<p>To find target <span class="math inline">\(U_{t}\)</span></p>
+<ul>
+<li>may have multiple local minima</li>
+<li>estimates for state values may be biased</li>
+<li>employ <strong>Semi-Gradient Temporal Difference</strong></li>
+</ul>
 
 
 </section></section>

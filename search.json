@@ -990,22 +990,11 @@
     ]
   },
   {
-    "objectID": "slides/03_time-series-analysis.html#package-libraries",
-    "href": "slides/03_time-series-analysis.html#package-libraries",
-    "title": "3. Time-Series Analysis",
-    "section": "Package Libraries",
-    "text": "Package Libraries\n\nlibrary(\"DiagrammeR\")",
-    "crumbs": [
-      "Section I: Foundations of Sequential Prediction",
-      "3. Time-Series Analysis"
-    ]
-  },
-  {
     "objectID": "slides/03_time-series-analysis.html#stepping-forward",
     "href": "slides/03_time-series-analysis.html#stepping-forward",
     "title": "3. Time-Series Analysis",
     "section": "Stepping Forward",
-    "text": "Stepping Forward",
+    "text": "Stepping Forward\n\ntime series knowledge",
     "crumbs": [
       "Section I: Foundations of Sequential Prediction",
       "3. Time-Series Analysis"
@@ -1016,7 +1005,7 @@
     "href": "slides/03_time-series-analysis.html#mermaid-code",
     "title": "3. Time-Series Analysis",
     "section": "Mermaid code",
-    "text": "Mermaid code\n\nDiagrammeR::mermaid(\"\ngraph LR\n\nTS[time&lt;br /&gt;series]\nARIMA[autoregressive&lt;br /&gt;models]\nTIS[time&lt;br /&gt;invariant&lt;br /&gt;systems]\nCT[control&lt;br /&gt;theory]\nNSSM[neural&lt;br /&gt;state space&lt;br /&gt;models]\n\nTS --&gt; ARIMA\n\nARIMA --&gt; diffusion\nARIMA --&gt; LLMs\n\ndiffusion --&gt; SDEs\ndiffusion --&gt; NSSM\nTIS --&gt; NSSM\nCT --&gt; NSSM\n\")",
+    "text": "Mermaid code",
     "crumbs": [
       "Section I: Foundations of Sequential Prediction",
       "3. Time-Series Analysis"
@@ -1275,44 +1264,66 @@
     ]
   },
   {
-    "objectID": "slides/04_online-learning-and-regret-minimization.html#slide",
-    "href": "slides/04_online-learning-and-regret-minimization.html#slide",
+    "objectID": "slides/04_online-learning-and-regret-minimization.html#online-convex-optimization",
+    "href": "slides/04_online-learning-and-regret-minimization.html#online-convex-optimization",
     "title": "4. Online Learning and Regret Minimization",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "section": "Online Convex Optimization",
+    "text": "Online Convex Optimization\n\nOCO",
     "crumbs": [
       "Section I: Foundations of Sequential Prediction",
       "4. Online Learning and Regret Minimization"
     ]
   },
   {
-    "objectID": "slides/04_online-learning-and-regret-minimization.html#slide-1",
-    "href": "slides/04_online-learning-and-regret-minimization.html#slide-1",
+    "objectID": "slides/04_online-learning-and-regret-minimization.html#regret",
+    "href": "slides/04_online-learning-and-regret-minimization.html#regret",
     "title": "4. Online Learning and Regret Minimization",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Regret",
+    "text": "Regret\n\\[\\text{Regret}_{T}(A) = \\text{sup}\\left[\\sum_{t=1}^{T}f_{t}(x_{t}^{A}) - \\text{min}_{x}\\sum_{t=1}^{T}f_{t}(x)\\right]\\]\n\n\\(\\vec{x}_{t}^{A}\\): player actions of an algorithm in a decision set\n\\(T\\): number of game iterations",
     "crumbs": [
       "Section I: Foundations of Sequential Prediction",
       "4. Online Learning and Regret Minimization"
     ]
   },
   {
-    "objectID": "slides/04_online-learning-and-regret-minimization.html#slide-2",
-    "href": "slides/04_online-learning-and-regret-minimization.html#slide-2",
+    "objectID": "slides/04_online-learning-and-regret-minimization.html#applications",
+    "href": "slides/04_online-learning-and-regret-minimization.html#applications",
     "title": "4. Online Learning and Regret Minimization",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Applications",
+    "text": "Applications\n\nspam filtering\npath finding\nportfolio selection\nrecommendation systems",
     "crumbs": [
       "Section I: Foundations of Sequential Prediction",
       "4. Online Learning and Regret Minimization"
     ]
   },
   {
-    "objectID": "slides/04_online-learning-and-regret-minimization.html#slide-3",
-    "href": "slides/04_online-learning-and-regret-minimization.html#slide-3",
+    "objectID": "slides/04_online-learning-and-regret-minimization.html#experts-and-adversaries",
+    "href": "slides/04_online-learning-and-regret-minimization.html#experts-and-adversaries",
     "title": "4. Online Learning and Regret Minimization",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Experts and Adversaries",
+    "text": "Experts and Adversaries\nTheorem 1.2 Let \\(\\epsilon\\in(0,0.5)\\). Suppose that the best expert makes \\(L\\) mistakes. Then:\n\n\\(\\exists\\) an efficient deterministic algorithm \\(&lt; 2(1+\\epsilon)L + \\frac{2\\log N}{\\epsilon}\\) mistakes\n\\(\\exists\\) an efficient randomized algorithm \\(\\leq (1+\\epsilon)L + \\frac{\\log N}{\\epsilon}\\) mistakes",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "4. Online Learning and Regret Minimization"
+    ]
+  },
+  {
+    "objectID": "slides/04_online-learning-and-regret-minimization.html#weighted-majority-algorithm",
+    "href": "slides/04_online-learning-and-regret-minimization.html#weighted-majority-algorithm",
+    "title": "4. Online Learning and Regret Minimization",
+    "section": "Weighted Majority Algorithm",
+    "text": "Weighted Majority Algorithm\n\npredict according to majority of experts\n\n\\[a_{t} = \\begin{cases} A, & W_{t}(A) \\geq W_{t}(B) \\\\ B, & \\text{otherwise}\\end{cases}\\]\n\nupdate weights\n\n\\[W_{t+1}(i) = \\begin{cases}W_{t}(i), & \\text{if expert i was correct} \\\\ W_{t}(i)(1-\\epsilon), & \\text{if expert i was wrong}\\end{cases}\\]",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "4. Online Learning and Regret Minimization"
+    ]
+  },
+  {
+    "objectID": "slides/04_online-learning-and-regret-minimization.html#hedging",
+    "href": "slides/04_online-learning-and-regret-minimization.html#hedging",
+    "title": "4. Online Learning and Regret Minimization",
+    "section": "Hedging",
+    "text": "Hedging\n\\[W_{t+1}(i) = W_{t}(i)e^{-\\epsilon \\ell_{t}(i)}\\]\n\n\\(\\epsilon\\): learning rate\n\\(\\ell_{t}(i)\\): loss by expert \\(i\\) at iteration \\(t\\)",
     "crumbs": [
       "Section I: Foundations of Sequential Prediction",
       "4. Online Learning and Regret Minimization"
@@ -1407,44 +1418,55 @@
     ]
   },
   {
-    "objectID": "slides/06_markov-models.html#slide",
-    "href": "slides/06_markov-models.html#slide",
+    "objectID": "slides/06_markov-models.html#tabular-state-space",
+    "href": "slides/06_markov-models.html#tabular-state-space",
     "title": "6. Markov Models",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "section": "Tabular State Space",
+    "text": "Tabular State Space\n\nfairy tale generatorimage credit: Aja Hammerly",
     "crumbs": [
       "Section I: Foundations of Sequential Prediction",
       "6. Markov Models"
     ]
   },
   {
-    "objectID": "slides/06_markov-models.html#slide-1",
-    "href": "slides/06_markov-models.html#slide-1",
+    "objectID": "slides/06_markov-models.html#trajectories",
+    "href": "slides/06_markov-models.html#trajectories",
     "title": "6. Markov Models",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Trajectories",
+    "text": "Trajectories\n\nonce, upon, a, time, a, bird, and, a, mouse\n\n\na, sausage, entered, into, a, partnership, and, set\n\n\nbird, a, and, set, up, house, together",
     "crumbs": [
       "Section I: Foundations of Sequential Prediction",
       "6. Markov Models"
     ]
   },
   {
-    "objectID": "slides/06_markov-models.html#slide-2",
-    "href": "slides/06_markov-models.html#slide-2",
+    "objectID": "slides/06_markov-models.html#markov-property",
+    "href": "slides/06_markov-models.html#markov-property",
     "title": "6. Markov Models",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Markov Property",
+    "text": "Markov Property\nThe future of a stochastic process is independent of its past\n\\[P(X_{t+1} = x|X_{t}, X_{t-1}, ..., X_{t-k}) = P(X_{t+1} = x|X_{t})\\] * memoryless property",
     "crumbs": [
       "Section I: Foundations of Sequential Prediction",
       "6. Markov Models"
     ]
   },
   {
-    "objectID": "slides/06_markov-models.html#slide-3",
-    "href": "slides/06_markov-models.html#slide-3",
+    "objectID": "slides/06_markov-models.html#metropolis-hastings",
+    "href": "slides/06_markov-models.html#metropolis-hastings",
     "title": "6. Markov Models",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Metropolis-Hastings",
+    "text": "Metropolis-Hastings\n\nMetropolis-Hastings Algorithm",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "6. Markov Models"
+    ]
+  },
+  {
+    "objectID": "slides/06_markov-models.html#markov-chain-monte-carlo",
+    "href": "slides/06_markov-models.html#markov-chain-monte-carlo",
+    "title": "6. Markov Models",
+    "section": "Markov Chain Monte Carlo",
+    "text": "Markov Chain Monte Carlo\n\n\n\nMCMC to posterior dist",
     "crumbs": [
       "Section I: Foundations of Sequential Prediction",
       "6. Markov Models"
@@ -2317,44 +2339,198 @@
     ]
   },
   {
-    "objectID": "slides/05_reinforcement-learning.html#slide",
-    "href": "slides/05_reinforcement-learning.html#slide",
+    "objectID": "slides/05_reinforcement-learning.html#textbook",
+    "href": "slides/05_reinforcement-learning.html#textbook",
     "title": "5. Reinforcement Learning",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "section": "Textbook",
+    "text": "Textbook\n\n\n\n\n\nSutton and Barto\n\n\n\n\n\n\n\n\nMutual Information",
     "crumbs": [
       "Section I: Foundations of Sequential Prediction",
       "5. Reinforcement Learning"
     ]
   },
   {
-    "objectID": "slides/05_reinforcement-learning.html#slide-1",
-    "href": "slides/05_reinforcement-learning.html#slide-1",
+    "objectID": "slides/05_reinforcement-learning.html#markov-decision-process",
+    "href": "slides/05_reinforcement-learning.html#markov-decision-process",
     "title": "5. Reinforcement Learning",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Markov Decision Process",
+    "text": "Markov Decision Process\n\nMDP",
     "crumbs": [
       "Section I: Foundations of Sequential Prediction",
       "5. Reinforcement Learning"
     ]
   },
   {
-    "objectID": "slides/05_reinforcement-learning.html#slide-2",
-    "href": "slides/05_reinforcement-learning.html#slide-2",
+    "objectID": "slides/05_reinforcement-learning.html#objective",
+    "href": "slides/05_reinforcement-learning.html#objective",
     "title": "5. Reinforcement Learning",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Objective",
+    "text": "Objective\n\npolicy: \\(\\pi(a|s)\\)\nreturn: \\(G_{t} = \\sum_{k=t+1}^{T} \\gamma^{k-t-1}R_{k}\\)\nmaximize expected return over all policies\n\n\\[\\text{max}_{\\pi} \\text{E}_{\\pi}[G_{t}]\\]",
     "crumbs": [
       "Section I: Foundations of Sequential Prediction",
       "5. Reinforcement Learning"
     ]
   },
   {
-    "objectID": "slides/05_reinforcement-learning.html#slide-3",
-    "href": "slides/05_reinforcement-learning.html#slide-3",
+    "objectID": "slides/05_reinforcement-learning.html#coupled-equations",
+    "href": "slides/05_reinforcement-learning.html#coupled-equations",
     "title": "5. Reinforcement Learning",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Coupled Equations",
+    "text": "Coupled Equations\n\nstate value function\n\n\\[v_{\\pi}(s) = \\text{E}_{\\pi}[G_{t}|S_{t} = s]\\]\n\naction value function\n\n\\[q_{\\pi}(s,a) = \\text{E}_{\\pi}[G_{t}|S_{t} = s, A_{t} = a]\\]",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "5. Reinforcement Learning"
+    ]
+  },
+  {
+    "objectID": "slides/05_reinforcement-learning.html#bellman-equations",
+    "href": "slides/05_reinforcement-learning.html#bellman-equations",
+    "title": "5. Reinforcement Learning",
+    "section": "Bellman Equations",
+    "text": "Bellman Equations\n\nconnect all state values\n\n\\[\\begin{array}{rcl}\n  v_{\\pi}(s^{i}) & = & \\text{E}_{\\pi}[G_{t}|s^{i}] \\\\\n  ~ & = & \\sum_{\\{a\\}} \\pi(a|s^{i}) \\cdot q(s^{i},a) \\\\\n  ~ & = & \\sum_{\\{a\\}} \\pi(a|s^{i}) \\cdot \\text{E}_{\\pi}[G_{t}|s^{i}, a] \\\\\n\\end{array}\\]",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "5. Reinforcement Learning"
+    ]
+  },
+  {
+    "objectID": "slides/05_reinforcement-learning.html#bellman-optimality-equations",
+    "href": "slides/05_reinforcement-learning.html#bellman-optimality-equations",
+    "title": "5. Reinforcement Learning",
+    "section": "Bellman Optimality Equations",
+    "text": "Bellman Optimality Equations\nFor any optimal \\(\\pi_{*}\\), \\(\\forall s \\in S\\), \\(\\forall a \\in A\\)\n\\[\\begin{array}{rcl}\n  v_{*}(s) & = & \\text{max}_{a} q_{*}(s,a) \\\\\n  q_{*}(s,a) & = & \\sum_{s,r} p(s'r|s,a)[r + \\gamma v_{*}(s')] \\\\\n\\end{array}\\]",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "5. Reinforcement Learning"
+    ]
+  },
+  {
+    "objectID": "slides/05_reinforcement-learning.html#monte-carlo-methods",
+    "href": "slides/05_reinforcement-learning.html#monte-carlo-methods",
+    "title": "5. Reinforcement Learning",
+    "section": "Monte Carlo Methods",
+    "text": "Monte Carlo Methods\nWe do not know \\(p(s'r|s,a)\\)\n\ngenerate samples: \\(S_{0}, A_{0}, R_{1}, S_{1}, A_{1}, R_{2}, ...\\)\nobtain averages \\(\\approx\\) expected values\ngeneralized policy iteration to obtain\n\n\\[\\pi \\approx \\pi_{*}\\]",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "5. Reinforcement Learning"
+    ]
+  },
+  {
+    "objectID": "slides/05_reinforcement-learning.html#monte-carlo-evaluation",
+    "href": "slides/05_reinforcement-learning.html#monte-carlo-evaluation",
+    "title": "5. Reinforcement Learning",
+    "section": "Monte Carlo Evaluation",
+    "text": "Monte Carlo Evaluation\n\napprox \\(v_{\\pi}(s)\\)\n\n\\[\\text{E}_{\\pi}[G_{t}|S_{t} = s] \\approx \\frac{1}{C(s)}\\sum_{m=1}^{M}\\sum_{\\tau=0}^{T_{m}-1} I(s_{\\tau}^{m} = s)g_{\\tau}^{m}\\] * step size \\(\\alpha\\) for update rule\n\\[V(s_{t}^{m}) \\leftarrow V(s_{t}^{m}) + \\alpha\\left(g_{t}^{m} - V(s_{t}^{m})\\right)\\]",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "5. Reinforcement Learning"
+    ]
+  },
+  {
+    "objectID": "slides/05_reinforcement-learning.html#exploration-exploitation-trade-off",
+    "href": "slides/05_reinforcement-learning.html#exploration-exploitation-trade-off",
+    "title": "5. Reinforcement Learning",
+    "section": "Exploration-Exploitation Trade-Off",
+    "text": "Exploration-Exploitation Trade-Off\n\nto discover optimal policies\n\n\nwe must explroe all state-action pairs\n\n\nto get high returns\n\n\nwe must exploit known high-value pairs",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "5. Reinforcement Learning"
+    ]
+  },
+  {
+    "objectID": "slides/05_reinforcement-learning.html#example-blackjack",
+    "href": "slides/05_reinforcement-learning.html#example-blackjack",
+    "title": "5. Reinforcement Learning",
+    "section": "Example: Blackjack",
+    "text": "Example: Blackjack\n\nMCMC solving blackjack gameimage credit: Mutual Information\n\n10 million games played",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "5. Reinforcement Learning"
+    ]
+  },
+  {
+    "objectID": "slides/05_reinforcement-learning.html#temporal-difference-learning",
+    "href": "slides/05_reinforcement-learning.html#temporal-difference-learning",
+    "title": "5. Reinforcement Learning",
+    "section": "Temporal Difference Learning",
+    "text": "Temporal Difference Learning\n\nMarkov Reward Process: A Markov decision process, but w/o actions\nMCMC requires an episode to complete before updating\n\n\nbut what if an episode is long?",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "5. Reinforcement Learning"
+    ]
+  },
+  {
+    "objectID": "slides/05_reinforcement-learning.html#n-step-td",
+    "href": "slides/05_reinforcement-learning.html#n-step-td",
+    "title": "5. Reinforcement Learning",
+    "section": "n-step TD",
+    "text": "n-step TD\nReplace \\(g_{t}^{m}\\) with\n\\[g_{t:t+n}^{m} = r_{t+1}^{m} + \\gamma r_{t+2}^{m} + \\cdots + \\gamma^{n-1} r_{t+n}^{m} + \\gamma_{n}V(s_{t+n}^{m})\\]\n\nupdates are applied during the episoes with an n-step delay",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "5. Reinforcement Learning"
+    ]
+  },
+  {
+    "objectID": "slides/05_reinforcement-learning.html#advantages",
+    "href": "slides/05_reinforcement-learning.html#advantages",
+    "title": "5. Reinforcement Learning",
+    "section": "Advantages",
+    "text": "Advantages\nCompared to MC, TD has\n\nbatch training\n\\(V(s)\\) do not depend on stepsize \\(\\alpha\\)\nmax likelihood of MRP (instead of min MSE)",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "5. Reinforcement Learning"
+    ]
+  },
+  {
+    "objectID": "slides/05_reinforcement-learning.html#q-learning",
+    "href": "slides/05_reinforcement-learning.html#q-learning",
+    "title": "5. Reinforcement Learning",
+    "section": "Q-Learning",
+    "text": "Q-Learning\n\\[r_{t+1}^{m} + \\gamma \\text{max}_{a} Q(s_{t+1}^{m},a)\\]\nupdates \\(Q\\) after each sarsa tuple (each n-step delay)",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "5. Reinforcement Learning"
+    ]
+  },
+  {
+    "objectID": "slides/05_reinforcement-learning.html#toward-continuity",
+    "href": "slides/05_reinforcement-learning.html#toward-continuity",
+    "title": "5. Reinforcement Learning",
+    "section": "Toward Continuity",
+    "text": "Toward Continuity\n\nprevious methods assumed tabular (discrete) and finite state spaces\nwithout “infinite data”, can we still generalize?\nfunction approximation: supervised learning + reinforcement learning",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "5. Reinforcement Learning"
+    ]
+  },
+  {
+    "objectID": "slides/05_reinforcement-learning.html#parameter-space",
+    "href": "slides/05_reinforcement-learning.html#parameter-space",
+    "title": "5. Reinforcement Learning",
+    "section": "Parameter Space",
+    "text": "Parameter Space\n\\[v_{\\pi}(s) \\approx \\hat{v}(s,w), \\quad w \\in \\mathbb{R}^{d}\\] * caution: updating \\(w\\) updates many values of \\(s\\)\n\nnot just the “visited states”",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "5. Reinforcement Learning"
+    ]
+  },
+  {
+    "objectID": "slides/05_reinforcement-learning.html#value-error",
+    "href": "slides/05_reinforcement-learning.html#value-error",
+    "title": "5. Reinforcement Learning",
+    "section": "Value Error",
+    "text": "Value Error\n\\[\\text{VE}(w) = \\sum_{s \\in S} \\mu(s)\\left[v_{\\pi}(s) - \\hat{v}(s,w)\\right]^{2}\\]\n\n\\(\\mu\\): distribution of states\nsolve with stochastic gradient descent\n\n\\[w \\leftarrow w + \\alpha\\left[U_{t} - \\hat{v}(S_{t},w)\\right] \\nabla \\hat{v}(S_{t},w)\\]",
+    "crumbs": [
+      "Section I: Foundations of Sequential Prediction",
+      "5. Reinforcement Learning"
+    ]
+  },
+  {
+    "objectID": "slides/05_reinforcement-learning.html#target-selection",
+    "href": "slides/05_reinforcement-learning.html#target-selection",
+    "title": "5. Reinforcement Learning",
+    "section": "Target Selection",
+    "text": "Target Selection\nTo find target \\(U_{t}\\)\n\nmay have multiple local minima\nestimates for state values may be biased\nemploy Semi-Gradient Temporal Difference",
     "crumbs": [
       "Section I: Foundations of Sequential Prediction",
       "5. Reinforcement Learning"

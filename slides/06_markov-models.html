@@ -132,18 +132,17 @@
 </div>
 
 </section>
+<section>
 <section id="learning-objectives" class="title-slide slide level1 center">
 <h1>Learning objectives</h1>
 <div>
 <ul>
-<li>THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY</li>
+<li>Discuss the Markov Property</li>
+<li>Introduce MCMC</li>
 </ul>
 </div>
 <aside class="notes">
-<ul>
-<li>You can add notes on each slide with blocks like this!</li>
-<li>Load a deck in the browser and type “s” to see these notes.</li>
-</ul>
+<p>should talk about this before chapter 5 (reinforcement learning)</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -156,36 +155,38 @@
           display:block!important;
       }</style></aside>
 </section>
+<section id="tabular-state-space" class="slide level2">
+<h2>Tabular State Space</h2>
 
-<section>
-<section id="slide-section" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
-
+<img data-src="images/state_machine_fairy_tale.png" class="r-stretch quarto-figure-center"><p class="caption">fairy tale generator</p><p>image credit: Aja Hammerly</p>
 </section>
-<section id="slide" class="slide level2">
-<h2>SLIDE</h2>
-<ul>
-<li>DENOTE MAJOR SECTIONS WITH <code># TITLE</code> (eg <code># Installation</code>)</li>
-<li>ADD INDIVIDUAL SLIDES WITH <code>##</code> (eg <code>## rustup on Linux/macOS</code>)</li>
-<li>KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
-</ul>
+<section id="trajectories" class="slide level2">
+<h2>Trajectories</h2>
+<blockquote>
+<p>once, upon, a, time, a, bird, and, a, mouse</p>
+</blockquote>
+<blockquote>
+<p>a, sausage, entered, into, a, partnership, and, set</p>
+</blockquote>
+<blockquote>
+<p>bird, a, and, set, up, house, together</p>
+</blockquote>
 </section>
-<section id="slide-1" class="slide level2">
-<h2>SLIDE</h2>
-</section></section>
-<section>
-<section id="slide-section-1" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
-
+<section id="markov-property" class="slide level2">
+<h2>Markov Property</h2>
+<p>The future of a stochastic process is independent of its past</p>
+<p><span class="math display">\[P(X_{t+1} = x|X_{t}, X_{t-1}, ..., X_{t-k}) = P(X_{t+1} = x|X_{t})\]</span> * memoryless property</p>
 </section>
-<section id="slide-2" class="slide level2">
-<h2>SLIDE</h2>
-</section>
-<section id="slide-3" class="slide level2">
-<h2>SLIDE</h2>
+<section id="metropolis-hastings" class="slide level2">
+<h2>Metropolis-Hastings</h2>
+
+<img data-src="images/Metropolis_Hastings.png" class="r-stretch quarto-figure-center"><p class="caption">Metropolis-Hastings Algorithm</p></section>
+<section id="markov-chain-monte-carlo" class="slide level2">
+<h2>Markov Chain Monte Carlo</h2>
 
 
-</section></section>
+
+<img data-src="images/MCMC_posterior.png" class="r-stretch quarto-figure-center"><p class="caption">MCMC to posterior dist</p></section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

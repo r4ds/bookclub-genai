@@ -6,26 +6,59 @@ title: "4. Online Learning and Regret Minimization"
 # Learning objectives
 
 ::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+- Introduce terminology about optimization
 :::
 
 ::: notes
-- You can add notes on each slide with blocks like this!
-- Load a deck in the browser and type "s" to see these notes.
+I hope that you like math
 :::
 
-# SLIDE SECTION
+## Online Convex Optimization
 
-## SLIDE
+![OCO](images/online_convex_optimization.png)
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+## Regret
 
-## SLIDE
+$$\text{Regret}_{T}(A) = \text{sup}\left[\sum_{t=1}^{T}f_{t}(x_{t}^{A}) - \text{min}_{x}\sum_{t=1}^{T}f_{t}(x)\right]$$
 
-# SLIDE SECTION
+* $\vec{x}_{t}^{A}$: player actions of an algorithm in a decision set
+* $T$: number of game iterations
 
-## SLIDE
+## Applications
 
-## SLIDE
+* spam filtering
+* path finding
+* portfolio selection
+* recommendation systems
+
+## Experts and Adversaries
+
+**Theorem 1.2** Let $\epsilon\in(0,0.5)$.  Suppose that the best expert makes $L$ mistakes.  Then:
+
+* $\exists$ an efficient *deterministic* algorithm $< 2(1+\epsilon)L + \frac{2\log N}{\epsilon}$ mistakes
+* $\exists$ an efficient *randomized* algorithm $\leq (1+\epsilon)L + \frac{\log N}{\epsilon}$ mistakes
+
+## Weighted Majority Algorithm
+
+* predict according to *majority* of experts
+
+$$a_{t} = \begin{cases} A, & W_{t}(A) \geq W_{t}(B) \\ B, & \text{otherwise}\end{cases}$$
+
+* *update* weights
+
+$$W_{t+1}(i) = \begin{cases}W_{t}(i), & \text{if expert i was correct} \\ W_{t}(i)(1-\epsilon), & \text{if expert i was wrong}\end{cases}$$
+
+## Hedging
+
+$$W_{t+1}(i) = W_{t}(i)e^{-\epsilon \ell_{t}(i)}$$
+
+* $\epsilon$: learning rate
+* $\ell_{t}(i)$: loss by expert $i$ at iteration $t$
+
+
+
+
+
+
+
+

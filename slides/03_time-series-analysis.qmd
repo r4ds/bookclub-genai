@@ -9,9 +9,9 @@ title: "3. Time-Series Analysis"
 - Mention time series
 :::
 
-## Package Libraries
-
 ```{r}
+#| echo: false
+#| eval: false
 #| message: false
 #| warning: false
 
@@ -21,34 +21,12 @@ library("DiagrammeR")
 
 ## Stepping Forward
 
-```{r}
-#| echo: false
-#| eval: true
-DiagrammeR::mermaid("
-graph LR
-
-TS[time<br />series]
-ARIMA[autoregressive<br />models]
-TIS[time<br />invariant<br />systems]
-CT[control<br />theory]
-NSSM[neural<br />state space<br />models]
-
-TS --> ARIMA
-
-ARIMA --> diffusion
-ARIMA --> LLMs
-
-diffusion --> SDEs
-diffusion --> NSSM
-TIS --> NSSM
-CT --> NSSM
-")
-```
+![time series knowledge](images/ch_3_time_series_flowchart.png)
 
 ## Mermaid code
 
 ```{r}
-#| echo: true
+#| echo: false
 #| eval: false
 DiagrammeR::mermaid("
 graph LR

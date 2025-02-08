@@ -6,26 +6,45 @@ title: "6. Markov Models"
 # Learning objectives
 
 ::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+- Discuss the Markov Property
+- Introduce MCMC
 :::
 
 ::: notes
-- You can add notes on each slide with blocks like this!
-- Load a deck in the browser and type "s" to see these notes.
+should talk about this before chapter 5 (reinforcement learning)
 :::
 
-# SLIDE SECTION
+## Tabular State Space
 
-## SLIDE
+![fairy tale generator](images/state_machine_fairy_tale.png)
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+image credit: Aja Hammerly
 
-## SLIDE
+## Trajectories
 
-# SLIDE SECTION
+> once, upon, a, time, a, bird, and, a, mouse
 
-## SLIDE
+> a, sausage, entered, into, a, partnership, and, set
 
-## SLIDE
+> bird, a, and, set, up, house, together
+
+## Markov Property
+
+The future of a stochastic process is independent of its past
+
+$$P(X_{t+1} = x|X_{t}, X_{t-1}, ..., X_{t-k}) = P(X_{t+1} = x|X_{t})$$
+* memoryless property
+
+## Metropolis-Hastings
+
+![Metropolis-Hastings Algorithm](images/Metropolis_Hastings.png)
+
+## Markov Chain Monte Carlo
+
+![MCMC to posterior dist](images/MCMC_posterior.png)
+
+
+
+
+
+

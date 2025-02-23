@@ -1,31 +1,105 @@
 ---
 engine: knitr
 title: "9. LSTMs and GRUs"
+format: revealjs
 ---
 
-# Learning objectives
 
-::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+# LSTMs
+From: [Understanding LSTM Networks](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+
+## Long Short-Term Memory nets {style="font-size:80%"}
+
+- A special kind of RNNs capable of learning long-term dependencies (no vanishing gradient)
+
+- Invented by Hochreiter and Schmidhuber in 1995. LSTMs became the default choice for RNN architecture.
+
+If we would like to predict the words in orange: 
+
+> Alice is allergic to nuts. (...). She can’t eat `peanut butter`.
+
+If there were many sentences in (...), the context might get lost in a standard RNN.
+
+## LSTMs structure
+
+:::{style="font-size:90%"}
+A chain-like structure just like RNNs.
+
+4 modules instead of a single hidden layer: the cell state, the forget gate layer, the input gate layer, and the output gate.
+
 :::
+![LSTM structure](images/LSTM3-chain.png){.nostretch width="7
+0%"}
 
-::: notes
-- You can add notes on each slide with blocks like this!
-- Load a deck in the browser and type "s" to see these notes.
+
+## Sigmoid and tanh
+
+![Sigmoid and tanh](images/sigmoid_tan.png){.nostretch width="40%"}
+
+::::{.columns}
+:::{.column width="50%"}
+$$\sigma(z)=\frac{1}{1+e^{-z}}$$
 :::
+:::{.column width="50%"}
+$$\text{tanh}(z)=\frac{e^z-e^{-z}}{e^z+e^{-z}}$$
+:::
+::::
 
-# SLIDE SECTION
+## The cell state
 
-## SLIDE
+The cell state represents the Long-Term Memory
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+It passes vectors without weights.
 
-## SLIDE
+LSTM can remove or add information to the cell state
 
-# SLIDE SECTION
+![LSTM cell state](images/LSTM3-C-line.png)
 
-## SLIDE
+## The forget gate layer
 
-## SLIDE
+![LSTM forget gate](images/LSTM3-focus-f.png)
+
+To decide what information we're keeping from the **previous output**. It uses a *sigmoid* function:
+
+  - 0 completely forget this
+  - 1 completely keep this. 
+
+## Input gate layer
+
+It decides which values we'll update:
+
+- The `tanh` layer creates a vector of new candidate values, a **potential memory** to add to the long-term memory
+- The [$\sigma$]{style="color:#ffa07a"} layer decides the percentage of the potential memory to be added to the state.
+
+![LSTM input gate](images/LSTM3-focus-i.png)
+
+## Update the cell state
+
+- We forget the things we decided to forget and add the candidate values, scaled by how much we decided to update each state value.
+
+![LSTM update cell state](images/LSTM3-focus-C.png)
+
+## The output gate
+
+It is based on our cell state, but with a filtered version to create a potential new short term memory
+
+Again, a `tanh` and a [$\sigma$]{style="color:#ffa07a"} to decide what to update and by how much. 
+
+![LSTM output gate](images/LSTM3-focus-o.png)
+
+# GRUs
+
+## Gated Recurrent Unit
+
+:::{style='font-size:70%'}
+- A variation of the LSTM with two gates: 
+
+  - **reset gate**: how much of the previous state we want to remember
+  - **update gate**: how much of the new state we'll copy to the old one
+
+![GRUs](images/LSTM3-var-GRU.png){.nostretch width="60%"}
+
+- Introduced in 2014, as a simplification of LSTMs, with fewer parameters. 
+
+- No performance difference between SLTM and GRU
+:::

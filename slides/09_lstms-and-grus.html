@@ -6,8 +6,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.40">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.42">
 
   <title>Generative AI Handbook Book Club – 9. LSTMs and GRUs</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -28,7 +28,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-f77ede3f8df5db7b2f50cc1693ca0955.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-dee71f6781de2a28e7bddad0eace46de.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -132,57 +132,115 @@
 </div>
 
 </section>
-<section id="learning-objectives" class="title-slide slide level1 center">
-<h1>Learning objectives</h1>
-<div>
+<section>
+<section id="lstms" class="title-slide slide level1 center">
+<h1>LSTMs</h1>
+<p>From: <a href="https://colah.github.io/posts/2015-08-Understanding-LSTMs/">Understanding LSTM Networks</a></p>
+</section>
+<section id="long-short-term-memory-nets" class="slide level2" style="font-size:80%">
+<h2>Long Short-Term Memory nets</h2>
 <ul>
-<li>THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY</li>
+<li><p>A special kind of RNNs capable of learning long-term dependencies (no vanishing gradient)</p></li>
+<li><p>Invented by Hochreiter and Schmidhuber in 1995. LSTMs became the default choice for RNN architecture.</p></li>
+</ul>
+<p>If we would like to predict the words in orange:</p>
+<blockquote>
+<p>Alice is allergic to nuts. (…). She can’t eat <code>peanut butter</code>.</p>
+</blockquote>
+<p>If there were many sentences in (…), the context might get lost in a standard RNN.</p>
+</section>
+<section id="lstms-structure" class="slide level2">
+<h2>LSTMs structure</h2>
+<div style="font-size:90%">
+<p>A chain-like structure just like RNNs.</p>
+<p>4 modules instead of a single hidden layer: the cell state, the forget gate layer, the input gate layer, and the output gate.</p>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/LSTM3-chain.png" class=""></p>
+<figcaption>LSTM structure</figcaption>
+</figure>
+</div>
+</section>
+<section id="sigmoid-and-tanh" class="slide level2">
+<h2>Sigmoid and tanh</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/sigmoid_tan.png" class="" style="width:40.0%"></p>
+<figcaption>Sigmoid and tanh</figcaption>
+</figure>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="math display">\[\sigma(z)=\frac{1}{1+e^{-z}}\]</span></p>
+</div><div class="column" style="width:50%;">
+<p><span class="math display">\[\text{tanh}(z)=\frac{e^z-e^{-z}}{e^z+e^{-z}}\]</span></p>
+</div></div>
+</section>
+<section id="the-cell-state" class="slide level2">
+<h2>The cell state</h2>
+<p>The cell state represents the Long-Term Memory</p>
+<p>It passes vectors without weights.</p>
+<p>LSTM can remove or add information to the cell state</p>
+
+<img data-src="images/LSTM3-C-line.png" class="r-stretch quarto-figure-center"><p class="caption">LSTM cell state</p></section>
+<section id="the-forget-gate-layer" class="slide level2">
+<h2>The forget gate layer</h2>
+
+<img data-src="images/LSTM3-focus-f.png" class="r-stretch quarto-figure-center"><p class="caption">LSTM forget gate</p><p>To decide what information we’re keeping from the <strong>previous output</strong>. It uses a <em>sigmoid</em> function:</p>
+<ul>
+<li>0 completely forget this</li>
+<li>1 completely keep this.</li>
+</ul>
+</section>
+<section id="input-gate-layer" class="slide level2">
+<h2>Input gate layer</h2>
+<p>It decides which values we’ll update:</p>
+<ul>
+<li>The <code>tanh</code> layer creates a vector of new candidate values, a <strong>potential memory</strong> to add to the long-term memory</li>
+<li>The <span style="color:#ffa07a"><span class="math inline">\(\sigma\)</span></span> layer decides the percentage of the potential memory to be added to the state.</li>
+</ul>
+
+<img data-src="images/LSTM3-focus-i.png" class="r-stretch quarto-figure-center"><p class="caption">LSTM input gate</p></section>
+<section id="update-the-cell-state" class="slide level2">
+<h2>Update the cell state</h2>
+<ul>
+<li>We forget the things we decided to forget and add the candidate values, scaled by how much we decided to update each state value.</li>
+</ul>
+
+<img data-src="images/LSTM3-focus-C.png" class="r-stretch quarto-figure-center"><p class="caption">LSTM update cell state</p></section>
+<section id="the-output-gate" class="slide level2">
+<h2>The output gate</h2>
+<p>It is based on our cell state, but with a filtered version to create a potential new short term memory</p>
+<p>Again, a <code>tanh</code> and a <span style="color:#ffa07a"><span class="math inline">\(\sigma\)</span></span> to decide what to update and by how much.</p>
+
+<img data-src="images/LSTM3-focus-o.png" class="r-stretch quarto-figure-center"><p class="caption">LSTM output gate</p></section></section>
+<section>
+<section id="grus" class="title-slide slide level1 center">
+<h1>GRUs</h1>
+
+</section>
+<section id="gated-recurrent-unit" class="slide level2">
+<h2>Gated Recurrent Unit</h2>
+<div style="font-size:70%">
+<ul>
+<li><p>A variation of the LSTM with two gates:</p>
+<ul>
+<li><strong>reset gate</strong>: how much of the previous state we want to remember</li>
+<li><strong>update gate</strong>: how much of the new state we’ll copy to the old one</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/LSTM3-var-GRU.png" class="" style="width:60.0%"></p>
+<figcaption>GRUs</figcaption>
+</figure>
+</div>
+<ul>
+<li><p>Introduced in 2014, as a simplification of LSTMs, with fewer parameters.</p></li>
+<li><p>No performance difference between SLTM and GRU</p></li>
 </ul>
 </div>
-<aside class="notes">
-<ul>
-<li>You can add notes on each slide with blocks like this!</li>
-<li>Load a deck in the browser and type “s” to see these notes.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-
-<section>
-<section id="slide-section" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
-
-</section>
-<section id="slide" class="slide level2">
-<h2>SLIDE</h2>
-<ul>
-<li>DENOTE MAJOR SECTIONS WITH <code># TITLE</code> (eg <code># Installation</code>)</li>
-<li>ADD INDIVIDUAL SLIDES WITH <code>##</code> (eg <code>## rustup on Linux/macOS</code>)</li>
-<li>KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
-</ul>
-</section>
-<section id="slide-1" class="slide level2">
-<h2>SLIDE</h2>
-</section></section>
-<section>
-<section id="slide-section-1" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
-
-</section>
-<section id="slide-2" class="slide level2">
-<h2>SLIDE</h2>
-</section>
-<section id="slide-3" class="slide level2">
-<h2>SLIDE</h2>
 
 
 </section></section>

@@ -6,8 +6,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.40">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.42">
 
   <title>Generative AI Handbook Book Club – 8. Recurrent Neural Networks</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -28,7 +28,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-f77ede3f8df5db7b2f50cc1693ca0955.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-dee71f6781de2a28e7bddad0eace46de.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -132,59 +132,73 @@
 </div>
 
 </section>
+<section>
 <section id="learning-objectives" class="title-slide slide level1 center">
 <h1>Learning objectives</h1>
 <div>
 <ul>
-<li>THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY</li>
+<li>Understand the need for RNNs</li>
+<li>Review their structure</li>
+<li>Review their limitations</li>
 </ul>
 </div>
-<aside class="notes">
+</section>
+<section id="why-do-we-need-them" class="slide level2">
+<h2>Why do we need them?</h2>
+<div style="font-size:80%">
+<p>Vanilla Neural Networks have fixed-sized vector as input and produce a fixed-sized vector as output. They assume inputs and outputs are independent.</p>
+<p><strong>Recurrent neural nets</strong> allow us to operate over sequences of vectors: sequences in the input, the output, or both.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/rnn_diags.jpeg" class="" style="width:60.0%"></p>
+<figcaption>Sequence input/output</figcaption>
+</figure>
+</div>
+<div style="font-size:50%">
+<p>Examples:</p>
+<p>(1) Vanilla. (2) Image to sentence of words. (3) Sentence to classification. (4) Sentence translation. (5) Video frames to labeled frames.</p>
+</div>
+<p>They are trained on sequential or time series data where prior elements affect the next output.</p>
+</div>
+</section>
+<section id="rnns-structure" class="slide level2">
+<h2>RNNs structure</h2>
+<p>Recurrent connections: the output of a neuron at one time step is fed back as input to the network at the next time step.</p>
+<div class="columns">
+<div class="column" style="width:30%;font-size:90%">
+<p><strong>Recurrent unit (v)</strong>: a single hidden vector updated at each time step.</p>
+</div><div class="column" style="width:70%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/rnn.webp" class=""></p>
+<figcaption>RNN structure</figcaption>
+</figure>
+</div>
+</div></div>
+<p>The recurrent unit serves as a form of memory that is based on the current input and the previous hidden state.</p>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+
+<img data-src="images/rnn_example.png" class="r-stretch quarto-figure-center"><p class="caption">RNN Example from StatQuest</p></section>
+<section id="limitations" class="slide level2">
+<h2>Limitations</h2>
+<div class="columns">
+<div class="column" style="width:70%;font-size:90%">
+<p>Weights in the recurrent vector are uptated with backpropagation.</p>
+<p>Partial derivatives cause gradients of earlier weights to be calculated with increasingly many multiplications.</p>
 <ul>
-<li>You can add notes on each slide with blocks like this!</li>
-<li>Load a deck in the browser and type “s” to see these notes.</li>
+<li><strong>Vanishing Gradient</strong>: If <span class="math inline">\(w_r &lt; 1\)</span> gradients shrinks over time steps, limiting the ability to learn long-term dependencies.</li>
+<li><strong>Exploding Gradient</strong>: If <span class="math inline">\(w_r &gt; 1\)</span> gradients grow uncontrollably, causing large weight updates that destabilize training.</li>
 </ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-
-<section>
-<section id="slide-section" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
-
-</section>
-<section id="slide" class="slide level2">
-<h2>SLIDE</h2>
-<ul>
-<li>DENOTE MAJOR SECTIONS WITH <code># TITLE</code> (eg <code># Installation</code>)</li>
-<li>ADD INDIVIDUAL SLIDES WITH <code>##</code> (eg <code>## rustup on Linux/macOS</code>)</li>
-<li>KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
-</ul>
-</section>
-<section id="slide-1" class="slide level2">
-<h2>SLIDE</h2>
-</section></section>
-<section>
-<section id="slide-section-1" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
-
-</section>
-<section id="slide-2" class="slide level2">
-<h2>SLIDE</h2>
-</section>
-<section id="slide-3" class="slide level2">
-<h2>SLIDE</h2>
-
-
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/rnn_gradients.png"></p>
+<figcaption>Exploding Gradient</figcaption>
+</figure>
+</div>
+</div></div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">

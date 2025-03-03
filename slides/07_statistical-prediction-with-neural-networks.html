@@ -6,8 +6,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.40">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.42">
 
   <title>Generative AI Handbook Book Club – 7. Statistical Prediction with Neural Networks</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -28,7 +28,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-f77ede3f8df5db7b2f50cc1693ca0955.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-dee71f6781de2a28e7bddad0eace46de.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -134,16 +134,148 @@
 </section>
 <section id="learning-objectives" class="title-slide slide level1 center">
 <h1>Learning objectives</h1>
-<div>
+<div class="columns">
+<div class="column" style="width:30%;">
 <ul>
-<li>THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY</li>
+<li>Review ANN terminology</li>
+<li>Review backpropagation</li>
 </ul>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/ICLH_Diagram_Batch_01_03-DeepNeuralNetwork.png"></p>
+<figcaption>Deep Neural Networks</figcaption>
+</figure>
 </div>
-<aside class="notes">
+<p>image source: <a href="https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/cdp/cf/ul/g/3a/b8/ICLH_Diagram_Batch_01_03-DeepNeuralNetwork.png">IBM</a></p>
+</div><aside class="notes">
+
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section>
+
+<section>
+<section id="neural-nets-fundamentals" class="title-slide slide level1 center">
+<h1>Neural nets fundamentals</h1>
+
+</section>
+<section id="anns" class="slide level2">
+<h2>ANNs</h2>
 <ul>
-<li>You can add notes on each slide with blocks like this!</li>
-<li>Load a deck in the browser and type “s” to see these notes.</li>
+<li>An Artificial Neural Network (<strong>ANN</strong>) is machine learning model designed to find nonlinear patterns in data.</li>
+<li>It is a set of connected units aggregated into layers.</li>
+<li>Each neuron receives signals (<strong>real numbers</strong>) from its connected neurons and process its inputs through an <strong>activation function</strong>.</li>
+<li>ANNs are trained to minimize the difference between the predicted output and the actual target values in a given dataset.</li>
+<li>Training requires adjusting function parameters</li>
+<li><a href="http://neuralnetworksanddeeplearning.com/chap1.html">Neural Networks and Deep Learning - Chapter 1</a></li>
 </ul>
+</section>
+<section id="network-architecture" class="slide level2">
+<h2>Network architecture</h2>
+<div style="font-size:78%">
+<p>The number of neurons in the input/output layers is related to their application.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p><code>1</code> neuron input with <code>1</code> neuron output: Ex. drug dosage and binary response. Like linear regression</p></li>
+<li><p><code>N</code> neuron inputs, <code>M</code> neuron outputs: N number of features. M number of categories in classification.</p>
+<pre><code>* Example: classification of images into digits. 28x28 input neuron from a 28x28px image and 10 output networks for digits.</code></pre></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/net_architechture.png"></p>
+<figcaption>Neural Net for 28x28 image</figcaption>
+</figure>
+</div>
+</div></div>
+</div>
+</section>
+<section id="the-perceptron" class="slide level2">
+<h2>The <em>Perceptron</em></h2>
+<div style="font-size: 80%">
+<ul>
+<li>A type of artificial neuron developed in the 1950s and the 1960s</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/perceptron.png"></p>
+<figcaption>Perceptron</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p>It takes several <strong>binary</strong> inputs <span class="math inline">\(x_1,x_2,x_3\)</span> and produces a single <strong>binary</strong> output</p>
+<p>Each input has an associated weight <span class="math inline">\(w_1,w_2,w_3\)</span> indicating the importance of its input to the output.</p>
+</div></div>
+<p>To calculate the output: <span class="math display">\[ output = \left\{
+\begin{array}{ll}
+      0 &amp; \text{if } \sum_jw_jx_j \leq \text{threshold}\\
+      1 &amp; \text{if } \sum_jw_jx_j \geq \text{threshold} \\
+\end{array}
+\right.  \]</span></p>
+<p>A network of perceptrons could weigh up evidence and make decisions, like computing logical functions with binary operations such as <code>AND</code>, <code>OR</code> or <code>NAND</code> gates.</p>
+</div>
+</section>
+<section id="from-binary-to-sigmoid-functions" class="slide level2">
+<h2>From binary to sigmoid functions</h2>
+<div style="font-size:65%">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/perceptron.png"></p>
+<figcaption>Sigmoid neuron. Same structure as perceptron</figcaption>
+</figure>
+</div>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/sigmoid.png"></p>
+<figcaption>Sigmoid function</figcaption>
+</figure>
+</div>
+</div></div>
+<p>The output is defined by the sigmoid function:</p>
+<div class="columns">
+<div class="column" style="width:55%;">
+<p><span class="math display">\[\sigma(z)=\frac{1}{1+e^{-z}}\]</span> <span class="math display">\[\sigma(w\cdot x+b)=\frac{1}{1+exp(-\sum_jw_jx_j-b)}\]</span></p>
+</div><div class="column" style="width:40%;">
+<p>Inputs <span class="math inline">\(x_j\)</span> and single output in the <span class="math inline">\([0,1]\)</span> range.</p>
+<p>Weights, <span class="math inline">\(w_j\)</span> tell us how important each input is.</p>
+<p>Bias <span class="math inline">\(b\)</span> tell us how high the sum needs to be to activate the neuron.</p>
+</div></div>
+<p>Other activation functions: <a href="https://en.wikipedia.org/wiki/Rectifier_(neural_networks)">ReLU</a>, <a href="https://en.wikipedia.org/wiki/Softmax_function">Softax</a>, <a href="https://en.wikipedia.org/wiki/Activation_function">etc</a></p>
+</div>
+</section></section>
+<section>
+<section id="backpropagation" class="title-slide slide level1 center">
+<h1>Backpropagation</h1>
+
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+
+<img data-src="images/bp_learn.png" class="r-stretch quarto-figure-center"><p class="caption">ANN learning</p><p>From: <a href="https://www.youtube.com/watch?v=aircAruvnKk">But what is a neural network? | Deep learning chapter 1</a></p>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<p><img data-src="images/bp_rep.png" alt="ANN representation"> From: <a href="https://www.youtube.com/watch?v=aircAruvnKk">But what is a neural network? | Deep learning chapter 1</a> Matrix operations</p>
+<aside class="notes">
+<p>we’re thinking of each neuron as being connected to all the neurons in the previous layer, and the weights in the weighted sum defining its activation are kind of like the strengths of those connections, and the bias is some indication of whether that neuron tends to be active or inactive.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -156,33 +288,75 @@
           display:block!important;
       }</style></aside>
 </section>
-
-<section>
-<section id="slide-section" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
-
+<section id="cost-function" class="slide level2">
+<h2>Cost function</h2>
+<p><strong>Goal</strong>: find weights and biases so that the output of the network approximates <span class="math inline">\(f(x)\)</span> for all training inputs.</p>
+<p>To evaluate how well we’re achieving this goal, we define a <em>cost</em> function, also referred to as <em>loss</em> or <em>objective</em> function.</p>
+<p>Common one: <em>mean squared error</em></p>
+<p><span class="math display">\[
+C(w,b) = \frac{1}{2n}\sum_x ||y(x)-a||^2
+\]</span> We want <span class="math inline">\(C(w,b)\approx 0\)</span>, so we want to <strong>minimize</strong> the function</p>
 </section>
-<section id="slide" class="slide level2">
-<h2>SLIDE</h2>
+<section id="gradient-descent" class="slide level2">
+<h2>Gradient descent</h2>
+<p>In <span class="math inline">\(x,y\)</span>, the slope of the derivative is the rate of change of a function at a specific point.</p>
+<p><img data-src="images/bp_slope.png" class="" style="width:60.0%"></p>
+<p>From: <a href="https://www.youtube.com/watch?v=IHZwWFHWa-w">Gradient descent, how neural networks learn | DL2</a></p>
+</section>
+<section id="gradient-descend" class="slide level2">
+<h2>Gradient descend</h2>
+<iframe data-external="1" src="https://www.youtube.com/embed/IHZwWFHWa-w?start=418" width="100%" height="100%" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</section>
+<section id="gradient-descend-calculation" class="slide level2">
+<h2>Gradient descend calculation</h2>
+<p>With partial derivatives using the <strong>chain rule</strong> (from Leibniz)</p>
+<p>A very simple example:</p>
+<iframe data-external="1" src="https://www.youtube.com/embed/IN2XmBhILt4?start=642" width="80%" height="450px" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</section>
+<section id="algorithm" class="slide level2" style="font-size:80%">
+<h2>Algorithm</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<ol type="1">
+<li>Inputs are propagated from the input to the output layer.</li>
+<li>The network error is calculated.</li>
+<li>The error is propagated from the output layer to the input layer - <strong>backpropagation</strong>.</li>
+</ol>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/Backpropagation-passes-architecture.webp"></p>
+<figcaption>Forward-Backward</figcaption>
+</figure>
+</div>
+</div></div>
+<p>We get the derivatives of the cost function with respect to each individual <span class="math inline">\(w\)</span> and <span class="math inline">\(b\)</span> and update them according to a learning rate.</p>
+<p>We repeat until the change is really small or we reach some other condition.</p>
+</section>
+<section id="again" class="slide level2">
+<h2>Again</h2>
+
+<img data-src="images/sgd.png" style="width:70.0%" class="r-stretch quarto-figure-center"><p class="caption">Training Algorithm</p><p>From: <a href="http://neuralnetworksanddeeplearning.com/chap2.html">How the backpropagation algorithm works</a></p>
+</section>
+<section id="backpropagation-implementation" class="slide level2">
+<h2>Backpropagation implementation</h2>
 <ul>
-<li>DENOTE MAJOR SECTIONS WITH <code># TITLE</code> (eg <code># Installation</code>)</li>
-<li>ADD INDIVIDUAL SLIDES WITH <code>##</code> (eg <code>## rustup on Linux/macOS</code>)</li>
-<li>KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
+<li><a href="https://karpathy.github.io/neuralnets/">Hacker’s guide to Neural Networks by Andrej Karpathy</a></li>
+<li><a href="https://neptune.ai/blog/backpropagation-algorithm-in-neural-networks-guide">A Comprehensive Guide to the Backpropagation Algorithm in Neural Networks by neptune.ai</a></li>
+<li><a href="http://neuralnetworksanddeeplearning.com/chap2.html">How the backpropagation algorithm works by Michael Nielsen</a></li>
 </ul>
 </section>
-<section id="slide-1" class="slide level2">
-<h2>SLIDE</h2>
-</section></section>
-<section>
-<section id="slide-section-1" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
-
-</section>
-<section id="slide-2" class="slide level2">
-<h2>SLIDE</h2>
-</section>
-<section id="slide-3" class="slide level2">
-<h2>SLIDE</h2>
+<section id="artificial-neural-networks" class="slide level2">
+<h2>Artificial Neural Networks</h2>
+<p>What do we need?</p>
+<ul>
+<li>A network structure with input, output and <em>h</em> hidden layers.</li>
+<li>One <strong>weight</strong> value per link (neuron-neuron connection).</li>
+<li>One <strong>bias</strong> value per neuron.</li>
+<li>An activation function for the neurons, usually ReLU or sigmoid.</li>
+<li>A cost function to minimize during training and to tune weight and biases values.</li>
+<li>A training algorithm more like stochastic gradient descent.</li>
+</ul>
 
 
 </section></section>

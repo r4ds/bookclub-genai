@@ -1,31 +1,220 @@
 ---
 engine: knitr
 title: "7. Statistical Prediction with Neural Networks"
+format: revealjs
 ---
 
 # Learning objectives
 
-::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+:::: {.columns}
+
+::: {.column width="30%"}
+- Review ANN terminology 
+- Review backpropagation
+:::
+
+:::{.column width="10%"}
+:::
+:::{.column width="60%"}
+![Deep Neural Networks](images/ICLH_Diagram_Batch_01_03-DeepNeuralNetwork.png)
+
+image source: [IBM](https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/cdp/cf/ul/g/3a/b8/ICLH_Diagram_Batch_01_03-DeepNeuralNetwork.png)
 :::
 
 ::: notes
-- You can add notes on each slide with blocks like this!
-- Load a deck in the browser and type "s" to see these notes.
 :::
 
-# SLIDE SECTION
+::::
 
-## SLIDE
+# Neural nets fundamentals
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+## ANNs
 
-## SLIDE
+- An Artificial Neural Network (**ANN**)  is machine learning model designed to find nonlinear patterns in data.
+- It is a set of connected units aggregated into layers.
+- Each neuron receives signals (**real numbers**) from its connected neurons and
+process its inputs through an **activation function**.
+- ANNs are trained to minimize the difference between the predicted output and the actual target values in a given dataset.
+- Training requires adjusting function parameters
+- [Neural Networks and Deep Learning - Chapter 1](http://neuralnetworksanddeeplearning.com/chap1.html)
 
-# SLIDE SECTION
+## Network architecture
 
-## SLIDE
+:::{style="font-size:78%"}
+The number of neurons in the input/output layers is related to their application. 
 
-## SLIDE
+
+::::{.columns}
+:::{.column width="50%"}
+
+- `1` neuron input with `1` neuron output: Ex. drug dosage and binary response. 
+Like linear regression
+- `N` neuron inputs, `M` neuron outputs: N number of features. M number of categories in classification.
+
+      * Example: classification of images into digits. 28x28 input neuron from a 28x28px image and 10 output networks for digits.
+:::
+:::{.column width="50%"}
+
+  ![Neural Net for 28x28 image](images/net_architechture.png)
+:::
+::::
+:::
+
+## The *Perceptron*
+
+::: {style="font-size: 80%"}
+- A type of artificial neuron developed in the 1950s and the 1960s
+
+::::{.columns}
+
+:::{.column width="50%"}
+![Perceptron](images/perceptron.png)
+:::
+::: {.column width="50%"}
+It takes several **binary** inputs $x_1,x_2,x_3$ and produces
+a single **binary** output
+
+Each input has an associated weight $w_1,w_2,w_3$ 
+indicating the importance of its input to the output. 
+:::
+::::
+
+
+To calculate the output: 
+$$ output = \left\{
+\begin{array}{ll}
+      0 & \text{if } \sum_jw_jx_j \leq \text{threshold}\\
+      1 & \text{if } \sum_jw_jx_j \geq \text{threshold} \\
+\end{array} 
+\right.  $$
+
+A network of perceptrons could weigh up evidence and make decisions, like computing logical functions with binary operations such as `AND`, `OR` or `NAND` gates.
+:::
+
+## From binary to sigmoid functions
+
+:::{style="font-size:65%"}
+
+::::{.columns}
+:::{.column width="50%"}
+![Sigmoid neuron. Same structure as perceptron](images/perceptron.png)
+:::
+::: {.column width="30%"}
+![Sigmoid function](images/sigmoid.png)
+:::
+::::
+
+The output is defined by the sigmoid function: 
+
+::::{.columns}
+:::{.column width="55%"}
+$$\sigma(z)=\frac{1}{1+e^{-z}}$$
+$$\sigma(w\cdot x+b)=\frac{1}{1+exp(-\sum_jw_jx_j-b)}$$
+
+:::
+:::{.column width="40%"}
+Inputs $x_j$ and single output in the $[0,1]$ range. 
+
+Weights, $w_j$ tell us how important each input is.
+
+Bias $b$ tell us how high the sum needs to be to activate the neuron.
+:::
+::::
+
+Other activation functions: [ReLU](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)), [Softax](https://en.wikipedia.org/wiki/Softmax_function), [etc](https://en.wikipedia.org/wiki/Activation_function)
+::::
+
+# Backpropagation
+
+## 
+
+![ANN learning](images/bp_learn.png)
+
+From: [But what is a neural network? | Deep learning chapter 1](https://www.youtube.com/watch?v=aircAruvnKk)
+
+##
+
+![ANN representation](images/bp_rep.png)
+From: [But what is a neural network? | Deep learning chapter 1](https://www.youtube.com/watch?v=aircAruvnKk)
+Matrix operations
+
+::: notes
+we're thinking of each neuron as being connected to all the neurons in the previous layer, and the weights in the weighted sum defining its activation are kind of like the strengths of those connections, and the bias is some indication of whether that neuron tends to be active or inactive.
+:::
+
+## Cost function
+
+**Goal**: find weights and biases so that the output of the network 
+approximates $f(x)$ for all training inputs.
+
+
+To evaluate how well we're achieving this goal, we define a *cost* function, 
+also referred to as *loss* or *objective* function.
+
+Common one: *mean squared error*
+
+$$
+C(w,b) = \frac{1}{2n}\sum_x ||y(x)-a||^2
+$$
+We want $C(w,b)\approx 0$, so we want to **minimize** the function
+
+## Gradient descent
+
+In $x,y$, the slope of the derivative is the rate of change of a function at a specific point.
+
+![](images/bp_slope.png){.nostretch width='60%'}
+
+From: [Gradient descent, how neural networks learn | DL2 ](https://www.youtube.com/watch?v=IHZwWFHWa-w)
+
+## Gradient descend
+{{< video https://www.youtube.com/watch?v=IHZwWFHWa-w start="418" width="100%" height="100%">}}
+
+
+## Gradient descend calculation
+
+With partial derivatives using the **chain rule** (from Leibniz)
+
+A very simple example:
+
+{{< video https://www.youtube.com/watch?v=IN2XmBhILt4 start="642" width="80%"  height="450px">}}
+
+## Algorithm {style="font-size:80%"}
+
+::::{.columns}
+
+:::{.column width="70%"}
+1. Inputs are propagated from the input to the output layer.
+2. The network error is calculated.
+3. The error is propagated from the output layer to the input layer - **backpropagation**.
+:::
+:::{.column width="30%"}
+![Forward-Backward](images/Backpropagation-passes-architecture.webp)
+:::
+::::
+We get  the derivatives of the cost function with respect to each individual $w$ and $b$ and update them  according to a learning rate. 
+
+We repeat until the change is really small or we reach some other condition.
+
+##  Again
+
+![Training Algorithm](images/sgd.png){width="70%"}
+
+From: [How the backpropagation algorithm works](http://neuralnetworksanddeeplearning.com/chap2.html)
+
+## Backpropagation implementation
+
+- [Hacker's guide to Neural Networks by Andrej Karpathy](https://karpathy.github.io/neuralnets/)
+- [A Comprehensive Guide to the Backpropagation Algorithm in Neural Networks by neptune.ai](https://neptune.ai/blog/backpropagation-algorithm-in-neural-networks-guide)
+- [How the backpropagation algorithm works by Michael Nielsen](http://neuralnetworksanddeeplearning.com/chap2.html)
+
+## Artificial Neural Networks
+
+What do we need?
+
+- A network structure with input, output and *h* hidden layers.
+- One **weight** value per link (neuron-neuron connection).
+- One **bias** value per neuron. 
+- An activation function for the neurons, usually ReLU or sigmoid.
+- A cost function to minimize during training and to tune weight and biases values.
+- A training algorithm more like stochastic gradient descent.
+

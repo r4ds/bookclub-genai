@@ -1,31 +1,70 @@
 ---
 engine: knitr
 title: "8. Recurrent Neural Networks"
+format: revealjs
 ---
 
 # Learning objectives
 
 ::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+- Understand the need for RNNs
+- Review their structure
+- Review their limitations
 :::
 
-::: notes
-- You can add notes on each slide with blocks like this!
-- Load a deck in the browser and type "s" to see these notes.
+## Why do we need them?
+
+:::{style='font-size:80%'}
+Vanilla Neural Networks have fixed-sized vector as input and produce a fixed-sized vector as output. They assume inputs and outputs are independent.
+
+**Recurrent neural nets**  allow us to operate over sequences of vectors: sequences in the input, the output, or both. 
+ 
+ 
+ ![Sequence input/output](images/rnn_diags.jpeg){.nostretch fig-align="center" width="60%"}
+ 
+:::{style='font-size:50%'}
+Examples:
+
+\(1\) Vanilla. (2) Image to sentence of words. (3) Sentence to classification. (4) Sentence translation. (5) Video frames to labeled frames.
 :::
 
-# SLIDE SECTION
+They are trained on sequential or time series data where prior elements affect the next output.
+::: 
 
-## SLIDE
+## RNNs structure
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+Recurrent connections: the output of a neuron at one time step is fed back as input to the network at the next time step.
 
-## SLIDE
+::::{.columns}
+:::{.column style="width:30%;font-size:90%"}
+**Recurrent unit (v)**: a single hidden vector updated at each time step. 
+:::
 
-# SLIDE SECTION
+:::{.column width="70%"}
+![RNN structure](images/rnn.webp){.nostretch width="70%}
+:::
+::::
 
-## SLIDE
+The recurrent unit serves as a form of memory that is based on the current input and the previous hidden state.
 
-## SLIDE
+##
+
+![RNN Example from StatQuest](images/rnn_example.png)
+
+
+## Limitations
+
+::::{.columns}
+:::{.column style="width:70%;font-size:90%"}
+Weights in the recurrent vector are uptated with backpropagation.
+
+Partial derivatives cause gradients of earlier weights to be calculated with increasingly many multiplications. 
+
+- **Vanishing Gradient**: If $w_r < 1$ gradients shrinks over time steps, limiting the ability to learn long-term dependencies.
+- **Exploding Gradient**: If $w_r > 1$ gradients grow uncontrollably, causing large weight updates that destabilize training.
+:::
+:::{.column width="30%"}
+![Exploding Gradient](images/rnn_gradients.png)
+::::
+
+

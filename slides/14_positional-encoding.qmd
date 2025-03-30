@@ -1,31 +1,70 @@
 ---
 engine: knitr
 title: "14. Positional Encoding"
+author: "Bryan Tegomoh"
+date: "March 30, 2025"
+format:
+  revealjs: 
+    transition: slide
+    slide-number: true
 ---
 
-# Learning objectives
+# Chapter 14: Positional Encoding
 
-::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
-:::
+## Why Positional Encoding?
 
-::: notes
-- You can add notes on each slide with blocks like this!
-- Load a deck in the browser and type "s" to see these notes.
-:::
+-   Transformers lack recurrence (unlike RNNs)
 
-# SLIDE SECTION
+-   No inherent sense of word order
 
-## SLIDE
+-   Solution: Add positional info to token embeddings
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+    ![](images/clipboard-1339593530.png)
 
-## SLIDE
+## The Power of Positional Encoding
 
-# SLIDE SECTION
+![](images/clipboard-3612120657.png)
 
-## SLIDE
+## Transformer Architecture
 
-## SLIDE
+![](images/clipboard-373978666.png)
+
+## Naive Approaches
+
+-   **One-hot encoding**: Unique vector per position
+    -   Issue: Doesn’t scale, no ordinality
+-   **Linear indices**: 1, 2, 3, ...
+    -   Issue: Large values, poor generalization
+-   Need: Unique, bounded, relative-aware encoding
+
+## Sinusoidal Positional Encoding
+
+-   Proposed in "Attention is All You Need" [Vaswani et al.](https://arxiv.org/pdf/1706.03762)
+-   For position ( k ), dimension ( d ):
+    -   ( P(k, 2i) = \sin(k / 10000\^{2i/d}) )
+    -   ( P(k, 2i+1) = \cos(k / 10000\^{2i/d}) )
+-   Vector per position, added to token embedding
+
+## How It Works
+
+-   Sine/cosine pairs at varying frequencies
+-   Wavelengths: ( 2\pi ) to ( 2\pi \cdot 10000 )
+-   Properties:
+    -   Unique per position
+    -   Consistent distances
+    -   Generalizes to longer sequences
+
+## Visualization
+
+-   Imagine a 512-dim encoding for 100-token sequence
+-   *See Mehreen Saeed’s blog for a plot*
+-   Each row = position, each column = dimension
+-   Gradual frequency shift encodes order
+
+## Modern Twist: RoPE
+
+-   **Rotary Positional Encoding (RoPE)**:
+    -   Rotates embeddings based on position
+    -   More stable, faster to learn
+-   Widely used in frontier LLMs (e.g., LLaMA)
+-   *Check Eleuther AI’s blog for details*

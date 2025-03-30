@@ -1,31 +1,129 @@
 ---
 engine: knitr
 title: "13. Tokenization"
+author: "Bryan Tegomoh"
+date: "March 30, 2025"
+format:
+  revealjs: 
+    transition: slide
+    slide-number: true
 ---
 
-# Learning objectives
+# Welcome to the Lecture
 
-::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
-:::
+**Section III: Foundations for Modern Language Modeling**
+
+Focus:
+
+-   *Chapter 13: Tokenization*
+
+-   *Chapter 14: Positional Encoding*
+
+Goal: Understand key concepts for training modern LLMs
+
+## Tokenization
+
+"Tokenization is at the heart of much weirdness of LLMs" - Karpathy
+
+-   Why can’t LLM spell words? **Tokenization.**
+-   Why can’t LLM do super simple string processing tasks? **Tokenization.**
+-   Why is LLM worse at non-English languages (e.g. Japanese)? **Tokenization.**
+-   Why is LLM bad at simple arithmetic? **Tokenization.**
+-   Why did my LLM abruptly halt when it sees the string "\</endoftext\|\>"? **Tokenization.**
+-   Why is LLM not actually end-to-end language modeling? **Tokenization.**
+-   What is the real root of suffering? **Tokenization.**
+
+## Quick Recap: What Came Before (1/2)
+
+-   **Introduction**:
+    -   The AI Landscape
+    -   The Content Landscape
+    -   Preliminaries : Math (Calculus, Linear algebra), Programming (Python basics)
+-   **Section I: Foundations of Sequential Prediction**
+    -   Statistical Prediction & Supervised Learning
+    -   Time-Series Analysis
+    -   Online Learning and Regret Minimization
+    -   Reinforcement Learning
+    -   Markov Models
+
+## Quick Recap: What Came Before (2/2)
+
+-   **Section II: Neural Sequential Prediction**
+    -   Statistical Prediction with Neural Networks
+    -   Recurrent Neural Networks (RNNs)
+    -   LSTMs and GRUs (Long Short-Term Memory and Gated Recurrent Unit) networks
+    -   Embeddings and Topic Modeling
+    -   Encoders and Decoders
+    -   Decoder-Only Transformers
+
+## Why This Matters
+
+-   **Builds from decoder-only Transformers to Modern LLM Foundations**
+-   Key questions:
+    -   How do we process text efficiently?
+    -   How do we encode word order without recurrence?
+-   Rapid AI progress (Where we were in 2022 → today)
+
+## What is Tokenization?
+
+-   Converting text into manageable units (*tokens*) for LLMs
+-   Why it’s critical:
+    -   LLMs process tokens, not raw characters or full words
+    -   Impacts efficiency and generalization
+    -   ![](images/clipboard-720660392.png)
+
+## Tokenization Approaches
+
+-   **Character-level**: Each char = token
+    -   Pros: Simple, handles all inputs
+    -   Cons: Inefficient (long sequences)
+-   **Word-level**: Each word = token
+    -   Pros: Intuitive, shorter sequences
+
+    -   Cons: Fixed vocab → unseen words/misspellings
+
+        ![](images/clipboard-3744622191.png)
+
+## Subword-Level Tokenization
+
+-   **Solution**: Split words into subword units.
+
+-   Example: "playing" → "play" + "##ing"
+
+-   Algorithm: **Byte-Pair Encoding (BPE)**
+
+-   Starts with character-level tokens
+
+-   Iteratively merges frequent pairs
+
+-   Analogy: Huffman coding (but dynamic)
+
+-   Result: Compact, adaptive vocabulary
+
+-   *See Andrej Karpathy’s video for intuition*
+
+## Byte-Pair Encoding (BPE)
+
+-   ![](images/clipboard-3315264481.png)
+
+## BPE Example
+
+-   Text: "low lower lowest"
+-   Initial: `l o w`, `l o w e r`, `l o w e s t`
+-   Merge `lo` → `low`
+-   Merge `low` + `e` → `lowe`
+-   Final vocab: `low`, `lowe`, `r`, `s`, `t`
 
 ::: notes
-- You can add notes on each slide with blocks like this!
-- Load a deck in the browser and type "s" to see these notes.
+-   BPE builds a vocabulary by finding and combining frequent patterns. Here, it learned that "low" is a common base in all three words, and "lowe" is a common base in "lower" and "lowest". The leftover letters (r, s, t) are treated as separate tokens.
+
+-   This is the input text we’re working with. It’s three words: "low", "lower", and "lowest". BPE will analyze this text to find common patterns and create a vocabulary.
+
+-   At the start, BPE treats every word as a sequence of individual characters, with spaces between them for clarity. So: "low" becomes l o w "lower" becomes l o w e r "lowest" becomes l o w e s t Think of these as the smallest units (individual characters) that BPE begins with. At this point, the vocabulary is just the individual letters: l, o, w, e, r, s, t.
 :::
 
-# SLIDE SECTION
+## Why Subword Tokenization?
 
-## SLIDE
-
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
-
-## SLIDE
-
-# SLIDE SECTION
-
-## SLIDE
-
-## SLIDE
+-   Covers unseen words (e.g., "lowering" → "lowe" + "r" + "##ing")
+-   Reduces sequence length vs. character-level
+-   Used in most modern LLMs (e.g., GPT, BERT)

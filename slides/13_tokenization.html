@@ -9,6 +9,8 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.42">
 
+  <meta name="author" content="Bryan Tegomoh">
+  <meta name="dcterms.date" content="2025-03-30">
   <title>Generative AI Handbook Book Club – 13. Tokenization</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -129,20 +131,145 @@
   <h1 class="title">13. Tokenization</h1>
 
 <div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Bryan Tegomoh 
+</div>
+</div>
 </div>
 
+  <p class="date">2025-03-30</p>
 </section>
-<section id="learning-objectives" class="title-slide slide level1 center">
-<h1>Learning objectives</h1>
-<div>
+<section>
+<section id="welcome-to-the-lecture" class="title-slide slide level1 center">
+<h1>Welcome to the Lecture</h1>
+<p><strong>Section III: Foundations for Modern Language Modeling</strong></p>
+<p>Focus:</p>
 <ul>
-<li>THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY</li>
+<li><p><em>Chapter 13: Tokenization</em></p></li>
+<li><p><em>Chapter 14: Positional Encoding</em></p></li>
 </ul>
-</div>
+<p>Goal: Understand key concepts for training modern LLMs</p>
+</section>
+<section id="tokenization" class="slide level2">
+<h2>Tokenization</h2>
+<p>“Tokenization is at the heart of much weirdness of LLMs” - Karpathy</p>
+<ul>
+<li>Why can’t LLM spell words? <strong>Tokenization.</strong></li>
+<li>Why can’t LLM do super simple string processing tasks? <strong>Tokenization.</strong></li>
+<li>Why is LLM worse at non-English languages (e.g.&nbsp;Japanese)? <strong>Tokenization.</strong></li>
+<li>Why is LLM bad at simple arithmetic? <strong>Tokenization.</strong></li>
+<li>Why did my LLM abruptly halt when it sees the string “&lt;/endoftext|&gt;”? <strong>Tokenization.</strong></li>
+<li>Why is LLM not actually end-to-end language modeling? <strong>Tokenization.</strong></li>
+<li>What is the real root of suffering? <strong>Tokenization.</strong></li>
+</ul>
+</section>
+<section id="quick-recap-what-came-before-12" class="slide level2">
+<h2>Quick Recap: What Came Before (1/2)</h2>
+<ul>
+<li><strong>Introduction</strong>:
+<ul>
+<li>The AI Landscape</li>
+<li>The Content Landscape</li>
+<li>Preliminaries : Math (Calculus, Linear algebra), Programming (Python basics)</li>
+</ul></li>
+<li><strong>Section I: Foundations of Sequential Prediction</strong>
+<ul>
+<li>Statistical Prediction &amp; Supervised Learning</li>
+<li>Time-Series Analysis</li>
+<li>Online Learning and Regret Minimization</li>
+<li>Reinforcement Learning</li>
+<li>Markov Models</li>
+</ul></li>
+</ul>
+</section>
+<section id="quick-recap-what-came-before-22" class="slide level2">
+<h2>Quick Recap: What Came Before (2/2)</h2>
+<ul>
+<li><strong>Section II: Neural Sequential Prediction</strong>
+<ul>
+<li>Statistical Prediction with Neural Networks</li>
+<li>Recurrent Neural Networks (RNNs)</li>
+<li>LSTMs and GRUs (Long Short-Term Memory and Gated Recurrent Unit) networks</li>
+<li>Embeddings and Topic Modeling</li>
+<li>Encoders and Decoders</li>
+<li>Decoder-Only Transformers</li>
+</ul></li>
+</ul>
+</section>
+<section id="why-this-matters" class="slide level2">
+<h2>Why This Matters</h2>
+<ul>
+<li><strong>Builds from decoder-only Transformers to Modern LLM Foundations</strong></li>
+<li>Key questions:
+<ul>
+<li>How do we process text efficiently?</li>
+<li>How do we encode word order without recurrence?</li>
+</ul></li>
+<li>Rapid AI progress (Where we were in 2022 → today)</li>
+</ul>
+</section>
+<section id="what-is-tokenization" class="slide level2">
+<h2>What is Tokenization?</h2>
+<ul>
+<li>Converting text into manageable units (<em>tokens</em>) for LLMs</li>
+<li>Why it’s critical:
+<ul>
+<li>LLMs process tokens, not raw characters or full words</li>
+<li>Impacts efficiency and generalization</li>
+<li><img data-src="images/clipboard-720660392.png"></li>
+</ul></li>
+</ul>
+</section>
+<section id="tokenization-approaches" class="slide level2">
+<h2>Tokenization Approaches</h2>
+<ul>
+<li><strong>Character-level</strong>: Each char = token
+<ul>
+<li>Pros: Simple, handles all inputs</li>
+<li>Cons: Inefficient (long sequences)</li>
+</ul></li>
+<li><strong>Word-level</strong>: Each word = token
+<ul>
+<li><p>Pros: Intuitive, shorter sequences</p></li>
+<li><p>Cons: Fixed vocab → unseen words/misspellings</p>
+<p><img data-src="images/clipboard-3744622191.png"></p></li>
+</ul></li>
+</ul>
+</section>
+<section id="subword-level-tokenization" class="slide level2">
+<h2>Subword-Level Tokenization</h2>
+<ul>
+<li><p><strong>Solution</strong>: Split words into subword units.</p></li>
+<li><p>Example: “playing” → “play” + “##ing”</p></li>
+<li><p>Algorithm: <strong>Byte-Pair Encoding (BPE)</strong></p></li>
+<li><p>Starts with character-level tokens</p></li>
+<li><p>Iteratively merges frequent pairs</p></li>
+<li><p>Analogy: Huffman coding (but dynamic)</p></li>
+<li><p>Result: Compact, adaptive vocabulary</p></li>
+<li><p><em>See Andrej Karpathy’s video for intuition</em></p></li>
+</ul>
+</section>
+<section id="byte-pair-encoding-bpe" class="slide level2">
+<h2>Byte-Pair Encoding (BPE)</h2>
+<ul>
+<li><img data-src="images/clipboard-3315264481.png"></li>
+</ul>
+</section>
+<section id="bpe-example" class="slide level2">
+<h2>BPE Example</h2>
+<ul>
+<li>Text: “low lower lowest”</li>
+<li>Initial: <code>l o w</code>, <code>l o w e r</code>, <code>l o w e s t</code></li>
+<li>Merge <code>lo</code> → <code>low</code></li>
+<li>Merge <code>low</code> + <code>e</code> → <code>lowe</code></li>
+<li>Final vocab: <code>low</code>, <code>lowe</code>, <code>r</code>, <code>s</code>, <code>t</code></li>
+</ul>
 <aside class="notes">
 <ul>
-<li>You can add notes on each slide with blocks like this!</li>
-<li>Load a deck in the browser and type “s” to see these notes.</li>
+<li><p>BPE builds a vocabulary by finding and combining frequent patterns. Here, it learned that “low” is a common base in all three words, and “lowe” is a common base in “lower” and “lowest”. The leftover letters (r, s, t) are treated as separate tokens.</p></li>
+<li><p>This is the input text we’re working with. It’s three words: “low”, “lower”, and “lowest”. BPE will analyze this text to find common patterns and create a vocabulary.</p></li>
+<li><p>At the start, BPE treats every word as a sequence of individual characters, with spaces between them for clarity. So: “low” becomes l o w “lower” becomes l o w e r “lowest” becomes l o w e s t Think of these as the smallest units (individual characters) that BPE begins with. At this point, the vocabulary is just the individual letters: l, o, w, e, r, s, t.</p></li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -156,33 +283,13 @@
           display:block!important;
       }</style></aside>
 </section>
-
-<section>
-<section id="slide-section" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
-
-</section>
-<section id="slide" class="slide level2">
-<h2>SLIDE</h2>
+<section id="why-subword-tokenization" class="slide level2">
+<h2>Why Subword Tokenization?</h2>
 <ul>
-<li>DENOTE MAJOR SECTIONS WITH <code># TITLE</code> (eg <code># Installation</code>)</li>
-<li>ADD INDIVIDUAL SLIDES WITH <code>##</code> (eg <code>## rustup on Linux/macOS</code>)</li>
-<li>KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
+<li>Covers unseen words (e.g., “lowering” → “lowe” + “r” + “##ing”)</li>
+<li>Reduces sequence length vs.&nbsp;character-level</li>
+<li>Used in most modern LLMs (e.g., GPT, BERT)</li>
 </ul>
-</section>
-<section id="slide-1" class="slide level2">
-<h2>SLIDE</h2>
-</section></section>
-<section>
-<section id="slide-section-1" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
-
-</section>
-<section id="slide-2" class="slide level2">
-<h2>SLIDE</h2>
-</section>
-<section id="slide-3" class="slide level2">
-<h2>SLIDE</h2>
 
 
 </section></section>
@@ -242,7 +349,7 @@
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',

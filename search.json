@@ -1130,44 +1130,88 @@
     ]
   },
   {
-    "objectID": "slides/14_positional-encoding.html#slide",
-    "href": "slides/14_positional-encoding.html#slide",
+    "objectID": "slides/14_positional-encoding.html#why-positional-encoding",
+    "href": "slides/14_positional-encoding.html#why-positional-encoding",
     "title": "14. Positional Encoding",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "section": "Why Positional Encoding?",
+    "text": "Why Positional Encoding?\n\nTransformers lack recurrence (unlike RNNs)\nNo inherent sense of word order\nSolution: Add positional info to token embeddings",
     "crumbs": [
       "Section III: Foundations for Modern Language Modeling",
       "14. Positional Encoding"
     ]
   },
   {
-    "objectID": "slides/14_positional-encoding.html#slide-1",
-    "href": "slides/14_positional-encoding.html#slide-1",
+    "objectID": "slides/14_positional-encoding.html#the-power-of-positional-encoding",
+    "href": "slides/14_positional-encoding.html#the-power-of-positional-encoding",
     "title": "14. Positional Encoding",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "The Power of Positional Encoding",
+    "text": "The Power of Positional Encoding",
     "crumbs": [
       "Section III: Foundations for Modern Language Modeling",
       "14. Positional Encoding"
     ]
   },
   {
-    "objectID": "slides/14_positional-encoding.html#slide-2",
-    "href": "slides/14_positional-encoding.html#slide-2",
+    "objectID": "slides/14_positional-encoding.html#transformer-architecture",
+    "href": "slides/14_positional-encoding.html#transformer-architecture",
     "title": "14. Positional Encoding",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Transformer Architecture",
+    "text": "Transformer Architecture",
     "crumbs": [
       "Section III: Foundations for Modern Language Modeling",
       "14. Positional Encoding"
     ]
   },
   {
-    "objectID": "slides/14_positional-encoding.html#slide-3",
-    "href": "slides/14_positional-encoding.html#slide-3",
+    "objectID": "slides/14_positional-encoding.html#naive-approaches",
+    "href": "slides/14_positional-encoding.html#naive-approaches",
     "title": "14. Positional Encoding",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Naive Approaches",
+    "text": "Naive Approaches\n\nOne-hot encoding: Unique vector per position\n\nIssue: Doesn’t scale, no ordinality\n\nLinear indices: 1, 2, 3, …\n\nIssue: Large values, poor generalization\n\nNeed: Unique, bounded, relative-aware encoding",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "14. Positional Encoding"
+    ]
+  },
+  {
+    "objectID": "slides/14_positional-encoding.html#sinusoidal-positional-encoding",
+    "href": "slides/14_positional-encoding.html#sinusoidal-positional-encoding",
+    "title": "14. Positional Encoding",
+    "section": "Sinusoidal Positional Encoding",
+    "text": "Sinusoidal Positional Encoding\n\nProposed in “Attention is All You Need” Vaswani et al.\nFor position ( k ), dimension ( d ):\n\n( P(k, 2i) = (k / 10000^{2i/d}) )\n( P(k, 2i+1) = (k / 10000^{2i/d}) )\n\nVector per position, added to token embedding",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "14. Positional Encoding"
+    ]
+  },
+  {
+    "objectID": "slides/14_positional-encoding.html#how-it-works",
+    "href": "slides/14_positional-encoding.html#how-it-works",
+    "title": "14. Positional Encoding",
+    "section": "How It Works",
+    "text": "How It Works\n\nSine/cosine pairs at varying frequencies\nWavelengths: ( 2) to ( 2 )\nProperties:\n\nUnique per position\nConsistent distances\nGeneralizes to longer sequences",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "14. Positional Encoding"
+    ]
+  },
+  {
+    "objectID": "slides/14_positional-encoding.html#visualization",
+    "href": "slides/14_positional-encoding.html#visualization",
+    "title": "14. Positional Encoding",
+    "section": "Visualization",
+    "text": "Visualization\n\nImagine a 512-dim encoding for 100-token sequence\nSee Mehreen Saeed’s blog for a plot\nEach row = position, each column = dimension\nGradual frequency shift encodes order",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "14. Positional Encoding"
+    ]
+  },
+  {
+    "objectID": "slides/14_positional-encoding.html#modern-twist-rope",
+    "href": "slides/14_positional-encoding.html#modern-twist-rope",
+    "title": "14. Positional Encoding",
+    "section": "Modern Twist: RoPE",
+    "text": "Modern Twist: RoPE\n\nRotary Positional Encoding (RoPE):\n\nRotates embeddings based on position\nMore stable, faster to learn\n\nWidely used in frontier LLMs (e.g., LLaMA)\nCheck Eleuther AI’s blog for details",
     "crumbs": [
       "Section III: Foundations for Modern Language Modeling",
       "14. Positional Encoding"
@@ -2207,44 +2251,110 @@
     ]
   },
   {
-    "objectID": "slides/13_tokenization.html#slide",
-    "href": "slides/13_tokenization.html#slide",
+    "objectID": "slides/13_tokenization.html#tokenization",
+    "href": "slides/13_tokenization.html#tokenization",
     "title": "13. Tokenization",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "section": "Tokenization",
+    "text": "Tokenization\n“Tokenization is at the heart of much weirdness of LLMs” - Karpathy\n\nWhy can’t LLM spell words? Tokenization.\nWhy can’t LLM do super simple string processing tasks? Tokenization.\nWhy is LLM worse at non-English languages (e.g. Japanese)? Tokenization.\nWhy is LLM bad at simple arithmetic? Tokenization.\nWhy did my LLM abruptly halt when it sees the string “&lt;/endoftext|&gt;”? Tokenization.\nWhy is LLM not actually end-to-end language modeling? Tokenization.\nWhat is the real root of suffering? Tokenization.",
     "crumbs": [
       "Section III: Foundations for Modern Language Modeling",
       "13. Tokenization"
     ]
   },
   {
-    "objectID": "slides/13_tokenization.html#slide-1",
-    "href": "slides/13_tokenization.html#slide-1",
+    "objectID": "slides/13_tokenization.html#quick-recap-what-came-before-12",
+    "href": "slides/13_tokenization.html#quick-recap-what-came-before-12",
     "title": "13. Tokenization",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Quick Recap: What Came Before (1/2)",
+    "text": "Quick Recap: What Came Before (1/2)\n\nIntroduction:\n\nThe AI Landscape\nThe Content Landscape\nPreliminaries : Math (Calculus, Linear algebra), Programming (Python basics)\n\nSection I: Foundations of Sequential Prediction\n\nStatistical Prediction & Supervised Learning\nTime-Series Analysis\nOnline Learning and Regret Minimization\nReinforcement Learning\nMarkov Models",
     "crumbs": [
       "Section III: Foundations for Modern Language Modeling",
       "13. Tokenization"
     ]
   },
   {
-    "objectID": "slides/13_tokenization.html#slide-2",
-    "href": "slides/13_tokenization.html#slide-2",
+    "objectID": "slides/13_tokenization.html#quick-recap-what-came-before-22",
+    "href": "slides/13_tokenization.html#quick-recap-what-came-before-22",
     "title": "13. Tokenization",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Quick Recap: What Came Before (2/2)",
+    "text": "Quick Recap: What Came Before (2/2)\n\nSection II: Neural Sequential Prediction\n\nStatistical Prediction with Neural Networks\nRecurrent Neural Networks (RNNs)\nLSTMs and GRUs (Long Short-Term Memory and Gated Recurrent Unit) networks\nEmbeddings and Topic Modeling\nEncoders and Decoders\nDecoder-Only Transformers",
     "crumbs": [
       "Section III: Foundations for Modern Language Modeling",
       "13. Tokenization"
     ]
   },
   {
-    "objectID": "slides/13_tokenization.html#slide-3",
-    "href": "slides/13_tokenization.html#slide-3",
+    "objectID": "slides/13_tokenization.html#why-this-matters",
+    "href": "slides/13_tokenization.html#why-this-matters",
     "title": "13. Tokenization",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Why This Matters",
+    "text": "Why This Matters\n\nBuilds from decoder-only Transformers to Modern LLM Foundations\nKey questions:\n\nHow do we process text efficiently?\nHow do we encode word order without recurrence?\n\nRapid AI progress (Where we were in 2022 → today)",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "13. Tokenization"
+    ]
+  },
+  {
+    "objectID": "slides/13_tokenization.html#what-is-tokenization",
+    "href": "slides/13_tokenization.html#what-is-tokenization",
+    "title": "13. Tokenization",
+    "section": "What is Tokenization?",
+    "text": "What is Tokenization?\n\nConverting text into manageable units (tokens) for LLMs\nWhy it’s critical:\n\nLLMs process tokens, not raw characters or full words\nImpacts efficiency and generalization",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "13. Tokenization"
+    ]
+  },
+  {
+    "objectID": "slides/13_tokenization.html#tokenization-approaches",
+    "href": "slides/13_tokenization.html#tokenization-approaches",
+    "title": "13. Tokenization",
+    "section": "Tokenization Approaches",
+    "text": "Tokenization Approaches\n\nCharacter-level: Each char = token\n\nPros: Simple, handles all inputs\nCons: Inefficient (long sequences)\n\nWord-level: Each word = token\n\nPros: Intuitive, shorter sequences\nCons: Fixed vocab → unseen words/misspellings",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "13. Tokenization"
+    ]
+  },
+  {
+    "objectID": "slides/13_tokenization.html#subword-level-tokenization",
+    "href": "slides/13_tokenization.html#subword-level-tokenization",
+    "title": "13. Tokenization",
+    "section": "Subword-Level Tokenization",
+    "text": "Subword-Level Tokenization\n\nSolution: Split words into subword units.\nExample: “playing” → “play” + “##ing”\nAlgorithm: Byte-Pair Encoding (BPE)\nStarts with character-level tokens\nIteratively merges frequent pairs\nAnalogy: Huffman coding (but dynamic)\nResult: Compact, adaptive vocabulary\nSee Andrej Karpathy’s video for intuition",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "13. Tokenization"
+    ]
+  },
+  {
+    "objectID": "slides/13_tokenization.html#byte-pair-encoding-bpe",
+    "href": "slides/13_tokenization.html#byte-pair-encoding-bpe",
+    "title": "13. Tokenization",
+    "section": "Byte-Pair Encoding (BPE)",
+    "text": "Byte-Pair Encoding (BPE)",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "13. Tokenization"
+    ]
+  },
+  {
+    "objectID": "slides/13_tokenization.html#bpe-example",
+    "href": "slides/13_tokenization.html#bpe-example",
+    "title": "13. Tokenization",
+    "section": "BPE Example",
+    "text": "BPE Example\n\nText: “low lower lowest”\nInitial: l o w, l o w e r, l o w e s t\nMerge lo → low\nMerge low + e → lowe\nFinal vocab: low, lowe, r, s, t\n\n\n\nBPE builds a vocabulary by finding and combining frequent patterns. Here, it learned that “low” is a common base in all three words, and “lowe” is a common base in “lower” and “lowest”. The leftover letters (r, s, t) are treated as separate tokens.\nThis is the input text we’re working with. It’s three words: “low”, “lower”, and “lowest”. BPE will analyze this text to find common patterns and create a vocabulary.\nAt the start, BPE treats every word as a sequence of individual characters, with spaces between them for clarity. So: “low” becomes l o w “lower” becomes l o w e r “lowest” becomes l o w e s t Think of these as the smallest units (individual characters) that BPE begins with. At this point, the vocabulary is just the individual letters: l, o, w, e, r, s, t.",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "13. Tokenization"
+    ]
+  },
+  {
+    "objectID": "slides/13_tokenization.html#why-subword-tokenization",
+    "href": "slides/13_tokenization.html#why-subword-tokenization",
+    "title": "13. Tokenization",
+    "section": "Why Subword Tokenization?",
+    "text": "Why Subword Tokenization?\n\nCovers unseen words (e.g., “lowering” → “lowe” + “r” + “##ing”)\nReduces sequence length vs. character-level\nUsed in most modern LLMs (e.g., GPT, BERT)",
     "crumbs": [
       "Section III: Foundations for Modern Language Modeling",
       "13. Tokenization"

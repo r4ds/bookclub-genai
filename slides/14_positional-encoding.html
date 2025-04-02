@@ -9,6 +9,8 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.42">
 
+  <meta name="author" content="Bryan Tegomoh">
+  <meta name="dcterms.date" content="2025-03-30">
   <title>Generative AI Handbook Book Club – 14. Positional Encoding</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -129,60 +131,96 @@
   <h1 class="title">14. Positional Encoding</h1>
 
 <div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Bryan Tegomoh 
+</div>
+</div>
 </div>
 
+  <p class="date">2025-03-30</p>
 </section>
-<section id="learning-objectives" class="title-slide slide level1 center">
-<h1>Learning objectives</h1>
-<div>
-<ul>
-<li>THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY</li>
-</ul>
-</div>
-<aside class="notes">
-<ul>
-<li>You can add notes on each slide with blocks like this!</li>
-<li>Load a deck in the browser and type “s” to see these notes.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-
 <section>
-<section id="slide-section" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
+<section id="chapter-14-positional-encoding" class="title-slide slide level1 center">
+<h1>Chapter 14: Positional Encoding</h1>
 
 </section>
-<section id="slide" class="slide level2">
-<h2>SLIDE</h2>
+<section id="why-positional-encoding" class="slide level2">
+<h2>Why Positional Encoding?</h2>
 <ul>
-<li>DENOTE MAJOR SECTIONS WITH <code># TITLE</code> (eg <code># Installation</code>)</li>
-<li>ADD INDIVIDUAL SLIDES WITH <code>##</code> (eg <code>## rustup on Linux/macOS</code>)</li>
-<li>KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
+<li><p>Transformers lack recurrence (unlike RNNs)</p></li>
+<li><p>No inherent sense of word order</p></li>
+<li><p>Solution: Add positional info to token embeddings</p>
+<p><img data-src="images/clipboard-1339593530.png"></p></li>
 </ul>
 </section>
-<section id="slide-1" class="slide level2">
-<h2>SLIDE</h2>
-</section></section>
-<section>
-<section id="slide-section-1" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
+<section id="the-power-of-positional-encoding" class="slide level2">
+<h2>The Power of Positional Encoding</h2>
 
+<img data-src="images/clipboard-3612120657.png" class="r-stretch"></section>
+<section id="transformer-architecture" class="slide level2">
+<h2>Transformer Architecture</h2>
+
+<img data-src="images/clipboard-373978666.png" class="r-stretch"></section>
+<section id="naive-approaches" class="slide level2">
+<h2>Naive Approaches</h2>
+<ul>
+<li><strong>One-hot encoding</strong>: Unique vector per position
+<ul>
+<li>Issue: Doesn’t scale, no ordinality</li>
+</ul></li>
+<li><strong>Linear indices</strong>: 1, 2, 3, …
+<ul>
+<li>Issue: Large values, poor generalization</li>
+</ul></li>
+<li>Need: Unique, bounded, relative-aware encoding</li>
+</ul>
 </section>
-<section id="slide-2" class="slide level2">
-<h2>SLIDE</h2>
+<section id="sinusoidal-positional-encoding" class="slide level2">
+<h2>Sinusoidal Positional Encoding</h2>
+<ul>
+<li>Proposed in “Attention is All You Need” <a href="https://arxiv.org/pdf/1706.03762">Vaswani et al.</a></li>
+<li>For position ( k ), dimension ( d ):
+<ul>
+<li>( P(k, 2i) = (k / 10000^{2i/d}) )</li>
+<li>( P(k, 2i+1) = (k / 10000^{2i/d}) )</li>
+</ul></li>
+<li>Vector per position, added to token embedding</li>
+</ul>
 </section>
-<section id="slide-3" class="slide level2">
-<h2>SLIDE</h2>
+<section id="how-it-works" class="slide level2">
+<h2>How It Works</h2>
+<ul>
+<li>Sine/cosine pairs at varying frequencies</li>
+<li>Wavelengths: ( 2) to ( 2 )</li>
+<li>Properties:
+<ul>
+<li>Unique per position</li>
+<li>Consistent distances</li>
+<li>Generalizes to longer sequences</li>
+</ul></li>
+</ul>
+</section>
+<section id="visualization" class="slide level2">
+<h2>Visualization</h2>
+<ul>
+<li>Imagine a 512-dim encoding for 100-token sequence</li>
+<li><em>See Mehreen Saeed’s blog for a plot</em></li>
+<li>Each row = position, each column = dimension</li>
+<li>Gradual frequency shift encodes order</li>
+</ul>
+</section>
+<section id="modern-twist-rope" class="slide level2">
+<h2>Modern Twist: RoPE</h2>
+<ul>
+<li><strong>Rotary Positional Encoding (RoPE)</strong>:
+<ul>
+<li>Rotates embeddings based on position</li>
+<li>More stable, faster to learn</li>
+</ul></li>
+<li>Widely used in frontier LLMs (e.g., LLaMA)</li>
+<li><em>Check Eleuther AI’s blog for details</em></li>
+</ul>
 
 
 </section></section>
@@ -242,7 +280,7 @@
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',

@@ -6,9 +6,11 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.42">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-4379b0ccadffce622b03caf4c46266b3.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.43">
 
+  <meta name="author" content="Bryan Tegomoh">
+  <meta name="dcterms.date" content="2025-04-06">
   <title>Generative AI Handbook Book Club – 16. Distributed Training and FSDP</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -27,6 +29,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #f8f8f2;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; background-color: #2a0f15; font-weight: bold; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-dee71f6781de2a28e7bddad0eace46de.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -129,60 +196,199 @@
   <h1 class="title">16. Distributed Training and FSDP</h1>
 
 <div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Bryan Tegomoh 
+</div>
+</div>
 </div>
 
+  <p class="date">2025-04-06</p>
 </section>
-<section id="learning-objectives" class="title-slide slide level1 center">
-<h1>Learning objectives</h1>
-<div>
-<ul>
-<li>THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY</li>
-</ul>
-</div>
-<aside class="notes">
-<ul>
-<li>You can add notes on each slide with blocks like this!</li>
-<li>Load a deck in the browser and type “s” to see these notes.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-
 <section>
-<section id="slide-section" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
-
-</section>
-<section id="slide" class="slide level2">
-<h2>SLIDE</h2>
+<section id="welcome-to-the-lecture" class="title-slide slide level1 center">
+<h1>Welcome to the Lecture</h1>
+<p><strong>Section III: Foundations for Modern Language Modeling</strong></p>
+<p>Focus:</p>
 <ul>
-<li>DENOTE MAJOR SECTIONS WITH <code># TITLE</code> (eg <code># Installation</code>)</li>
-<li>ADD INDIVIDUAL SLIDES WITH <code>##</code> (eg <code>## rustup on Linux/macOS</code>)</li>
-<li>KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
+<li><p><del><em>Chapter 15: Pretraining Recipes</em></del></p>
+<ul>
+<li><p><del>Goal: Understand the choices in pretraining LLMs</del></p></li>
+<li><p><del>Builds on: Transformers, Tokenization, Positional encoding</del></p></li>
+</ul></li>
+<li><p><em>Chapter 16: Distributed Training and FSDP</em></p>
+<ul>
+<li>Goal: Learn how to scale LLM training</li>
+</ul></li>
+</ul>
+<p>Primary Objective: Understand key concepts for training modern LLMs</p>
+</section>
+<section id="why-distributed-training" class="slide level2">
+<h2>Why Distributed Training?</h2>
+<p><strong>The Scale Challenge</strong>: - Modern LLMs: 7B to 1T+ parameters - Single GPU memory (A100): Only 40-80GB - 7B model memory requirements: - Weights: ~14GB (FP16) - Gradients: ~14GB - Optimizer states: ~28GB (Adam) - Activations: Variable with batch size</p>
+<p><strong>Solution</strong>: Split computation across multiple devices</p>
+</section>
+<section id="hardware-requirements-for-llm-training" class="slide level2">
+<h2>Hardware Requirements for LLM Training</h2>
+
+<img data-src="images/clipboard-3034191736.png" class="r-stretch"></section>
+<section id="gpu-memory-requirements" class="slide level2">
+<h2>GPU Memory Requirements</h2>
+
+<img data-src="images/clipboard-4162239673.png" class="r-stretch"></section>
+<section id="parallelism-strategies" class="slide level2">
+<h2>Parallelism Strategies</h2>
+<p>Four primary approaches:</p>
+<ol type="1">
+<li><strong>Data Parallelism</strong>:
+<ul>
+<li>Same model, different data batches</li>
+<li>Simple but limited by model size</li>
+</ul></li>
+<li><strong>Model Parallelism</strong>:
+<ul>
+<li>Different layers on different devices</li>
+<li>Enables larger models but sequential processing</li>
+</ul></li>
+<li><strong>Pipeline Parallelism</strong>:
+<ul>
+<li>Stages of model on different devices</li>
+<li>Multiple batches in pipeline</li>
+</ul></li>
+<li><strong>Tensor Parallelism</strong>:
+<ul>
+<li>Split individual operations (matrices)</li>
+<li>Efficient for Transformer operations</li>
+</ul></li>
+</ol>
+<p>Improving Optimization Performance with Parallelism Computing</p>
+
+<img data-src="images/clipboard-3166054473.png" class="r-stretch"></section>
+<section id="full-sharded-data-parallelism-fsdp" class="slide level2">
+<h2>Full Sharded Data Parallelism (FSDP)</h2>
+<p><strong>Core Concept</strong>: Shard model parameters, gradients, and optimizer states</p>
+<p><strong>How it works</strong>: - Each device stores only a portion of the full model - During forward/backward pass: - Gather needed parameters (all-gather) - Compute with gathered parameters - Re-shard parameters after use</p>
+<p><strong>Benefits</strong>: - ~N-fold memory reduction with N devices - Enables training much larger models - Preserves computation efficiency of data parallelism</p>
+</section>
+<section id="full-sharded-data-parallelism-fsdp-1" class="slide level2">
+<h2>Full Sharded Data Parallelism (FSDP)</h2>
+
+<img data-src="images/clipboard-1423375843.png" class="r-stretch"></section>
+<section id="critical-memory-optimizations" class="slide level2">
+<h2>Critical Memory Optimizations</h2>
+<p>Combine these techniques for maximum efficiency:</p>
+<ul>
+<li><strong>Mixed Precision Training</strong>:
+<ul>
+<li>Use BF16/FP16 for most operations</li>
+<li>Maintain FP32 master weights for stability</li>
+<li>2x memory reduction</li>
+</ul></li>
+<li><strong>Activation Checkpointing</strong>:
+<ul>
+<li>Discard activations during forward pass</li>
+<li>Recompute during backward pass</li>
+<li>Trade computation for memory</li>
+</ul></li>
+<li><strong>Gradient Accumulation</strong>:
+<ul>
+<li>Update less frequently</li>
+<li>Process more data with same memory</li>
+</ul></li>
 </ul>
 </section>
-<section id="slide-1" class="slide level2">
-<h2>SLIDE</h2>
-</section></section>
-<section>
-<section id="slide-section-1" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
+<section id="fsdp-implementation-pytorch" class="slide level2">
+<h2>FSDP Implementation (PyTorch)</h2>
+<p>Basic implementation:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="co"># Initialize distributed process group</span></span>
+<span id="cb1-2"><a></a>torch.distributed.init_process_group(<span class="st">"nccl"</span>)</span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a><span class="co"># Wrap model with FSDP</span></span>
+<span id="cb1-5"><a></a>model <span class="op">=</span> FSDP(</span>
+<span id="cb1-6"><a></a>    model,</span>
+<span id="cb1-7"><a></a>    sharding_strategy<span class="op">=</span>ShardingStrategy.FULL_SHARD,</span>
+<span id="cb1-8"><a></a>    mixed_precision<span class="op">=</span>mp_policy,</span>
+<span id="cb1-9"><a></a>    device_id<span class="op">=</span>torch.cuda.current_device()</span>
+<span id="cb1-10"><a></a>)</span>
+<span id="cb1-11"><a></a></span>
+<span id="cb1-12"><a></a><span class="co"># Train normally</span></span>
+<span id="cb1-13"><a></a><span class="cf">for</span> batch <span class="kw">in</span> dataloader:</span>
+<span id="cb1-14"><a></a>    loss <span class="op">=</span> model(batch).loss</span>
+<span id="cb1-15"><a></a>    loss.backward()</span>
+<span id="cb1-16"><a></a>    optimizer.step()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="hardware-communication-considerations" class="slide level2">
+<h2>Hardware &amp; Communication Considerations</h2>
+<p><strong>Hardware Topology</strong>: - Intra-node: High-speed GPU connections (NVLink) - Inter-node: Network connections (InfiniBand)</p>
+<p><strong>Communication Bottlenecks</strong>: - All-gather: Collect sharded parameters - Reduce-scatter: Aggregate gradients - Communication volume grows with model size</p>
+<p><strong>Optimization Strategies</strong>: - Match parallelism strategy to hardware topology - Hierarchical communication patterns - Overlap computation with communication</p>
+</section>
+<section id="d-parallelism-state-of-the-art" class="slide level2">
+<h2>3D Parallelism: State-of-the-Art</h2>
+<p>Combining complementary strategies:</p>
+<ul>
+<li><strong>Data Parallelism/FSDP</strong>: Across node groups</li>
+<li><strong>Pipeline Parallelism</strong>: Between GPU clusters</li>
+<li><strong>Tensor Parallelism</strong>: Within GPU clusters</li>
+</ul>
+<p>Example (175B model training): - 8-way tensor parallelism - 12-way pipeline parallelism - 32-way data parallelism - Total: 3,072 GPUs</p>
+<p>Used by major labs for largest models</p>
+</section>
+<section id="d-parallelism" class="slide level2">
+<h2>3D Parallelism</h2>
 
+<img data-src="images/clipboard-2415948886.png" class="r-stretch"></section>
+<section id="practical-training-challenges" class="slide level2">
+<h2>Practical Training Challenges</h2>
+<ul>
+<li><strong>Checkpoint Management</strong>:
+<ul>
+<li>TB-sized checkpoints</li>
+<li>Distributed saving/loading</li>
+</ul></li>
+<li><strong>Fault Tolerance</strong>:
+<ul>
+<li>Hardware failures increasingly likely at scale</li>
+<li>Need robust recovery mechanisms</li>
+</ul></li>
+<li><strong>Performance Debugging</strong>:
+<ul>
+<li>Complex interactions between strategies</li>
+<li>Profiling distributed workloads</li>
+</ul></li>
+<li><strong>Cost Management</strong>:
+<ul>
+<li>Training budgets in millions of dollars</li>
+<li>Efficiency optimizations have major impact</li>
+</ul></li>
+</ul>
 </section>
-<section id="slide-2" class="slide level2">
-<h2>SLIDE</h2>
+<section id="frameworks-and-resources" class="slide level2">
+<h2>Frameworks and Resources</h2>
+<p><strong>Popular Frameworks</strong>:</p>
+<ol type="1">
+<li><p>- <strong>PyTorch FSDP</strong>: Native PyTorch implementation</p></li>
+<li><p>- <strong>DeepSpeed</strong>: Microsoft’s ZeRO implementation</p></li>
+<li><p>- <strong>Megatron-LM</strong>: NVIDIA’s specialized framework</p></li>
+<li><p>- <strong>JAX/Flax</strong>: Google’s functional approach</p></li>
+</ol>
+<p><strong>Learning Resources</strong>:</p>
+<ul>
+<li><p>- <a href="https://pytorch.org/tutorials/intermediate/FSDP_tutorial.html">PyTorch FSDP Tutorial</a></p></li>
+<li><p>- <a href="https://arxiv.org/abs/1910.02054">DeepSpeed ZeRO Paper</a></p></li>
+<li><p>- <a href="https://github.com/NVIDIA/Megatron-LM">Megatron-LM GitHub</a></p></li>
+</ul>
 </section>
-<section id="slide-3" class="slide level2">
-<h2>SLIDE</h2>
+<section id="key-takeaways" class="slide level2">
+<h2><em>Key Takeaways</em></h2>
+<ol type="1">
+<li><p>Distributed training essential for modern LLMs</p></li>
+<li><p>FSDP provides memory-efficient data parallelism</p></li>
+<li><p>Combine multiple parallelism strategies for best results</p></li>
+<li><p>Memory optimizations as important as compute scaling</p></li>
+<li><p>Hardware topology should inform parallelism strategy</p></li>
+<li><p>LLM training represents extreme engineering challenge</p></li>
+</ol>
 
 
 </section></section>
@@ -242,7 +448,7 @@
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',

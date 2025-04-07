@@ -242,44 +242,275 @@
     ]
   },
   {
-    "objectID": "slides/15_pretraining-recipes.html#slide",
-    "href": "slides/15_pretraining-recipes.html#slide",
+    "objectID": "slides/15_pretraining-recipes.html#what-is-pretraining",
+    "href": "slides/15_pretraining-recipes.html#what-is-pretraining",
     "title": "15. Pretraining Recipes",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "section": "What is Pretraining?",
+    "text": "What is Pretraining?\n\nTraining an LLM from scratch on a large corpus (e.g., Common Crawl)\nObjective: Predict next token in text\nOutput: A “base” model for later finetuning\nConnects to decoder-only Transformers (Section II)",
     "crumbs": [
       "Section III: Foundations for Modern Language Modeling",
       "15. Pretraining Recipes"
     ]
   },
   {
-    "objectID": "slides/15_pretraining-recipes.html#slide-1",
-    "href": "slides/15_pretraining-recipes.html#slide-1",
+    "objectID": "slides/15_pretraining-recipes.html#pretraining-the-big-picture",
+    "href": "slides/15_pretraining-recipes.html#pretraining-the-big-picture",
     "title": "15. Pretraining Recipes",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Pretraining: The Big Picture",
+    "text": "Pretraining: The Big Picture\n\nProcess of training a model on vast amounts of text data\nSelf-supervised learning: predict next token or masked tokens\nGoal: Develop general language understanding capabilities\nResource-intensive: requires significant compute, data, engineering\nMany design choices affect training efficiency and model quality",
     "crumbs": [
       "Section III: Foundations for Modern Language Modeling",
       "15. Pretraining Recipes"
     ]
   },
   {
-    "objectID": "slides/15_pretraining-recipes.html#slide-2",
-    "href": "slides/15_pretraining-recipes.html#slide-2",
+    "objectID": "slides/15_pretraining-recipes.html#building-on-previous-chapters",
+    "href": "slides/15_pretraining-recipes.html#building-on-previous-chapters",
     "title": "15. Pretraining Recipes",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Building on Previous Chapters",
+    "text": "Building on Previous Chapters\n\nTransformer Architecture: Foundation of modern LLMs\nTokenization: Converting text to model-readable tokens\nPositional Encoding: Representing sequence information\nHere we examine: How to effectively train these models?",
     "crumbs": [
       "Section III: Foundations for Modern Language Modeling",
       "15. Pretraining Recipes"
     ]
   },
   {
-    "objectID": "slides/15_pretraining-recipes.html#slide-3",
-    "href": "slides/15_pretraining-recipes.html#slide-3",
+    "objectID": "slides/15_pretraining-recipes.html#core-architectural-choices",
+    "href": "slides/15_pretraining-recipes.html#core-architectural-choices",
     "title": "15. Pretraining Recipes",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Core Architectural Choices",
+    "text": "Core Architectural Choices\nKey decisions when pretraining LLMs:\n\nAttention mechanisms\nActivation functions\nNormalization approaches\nModel sizing & dimensionality",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "15. Pretraining Recipes"
+    ]
+  },
+  {
+    "objectID": "slides/15_pretraining-recipes.html#attention-mechanism-variants",
+    "href": "slides/15_pretraining-recipes.html#attention-mechanism-variants",
+    "title": "15. Pretraining Recipes",
+    "section": "Attention Mechanism Variants",
+    "text": "Attention Mechanism Variants\nThree main approaches:\n\nMulti-Head Attention (MHA): - Original Transformer design - Multiple attention heads, each with full query/key/value projections - Most expressive but computationally expensive\nMulti-Query Attention (MQA): - Shared key and value projections across heads - Queries remain separate - Reduces memory bandwidth requirements\nGrouped-Query Attention (GQA): - Middle ground between MHA and MQA - Keys and values shared among groups of heads - Better balance of efficiency and expressiveness",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "15. Pretraining Recipes"
+    ]
+  },
+  {
+    "objectID": "slides/15_pretraining-recipes.html#key-decisions-in-pretraining",
+    "href": "slides/15_pretraining-recipes.html#key-decisions-in-pretraining",
+    "title": "15. Pretraining Recipes",
+    "section": "Key Decisions in Pretraining",
+    "text": "Key Decisions in Pretraining\n\nNo one-size-fits-all “recipe”\nChoices impact performance, cost, speed\nCore areas:\n\nModel architecture (e.g., attention)\nTraining setup (e.g., optimization)\nData handling",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "15. Pretraining Recipes"
+    ]
+  },
+  {
+    "objectID": "slides/15_pretraining-recipes.html#attention-variants-trade-offs",
+    "href": "slides/15_pretraining-recipes.html#attention-variants-trade-offs",
+    "title": "15. Pretraining Recipes",
+    "section": "Attention Variants: Trade-offs",
+    "text": "Attention Variants: Trade-offs\n\n\n\n\n\n\n\n\n\n\n\nVariant\nParameters\nMemory\nQuality\nUsed In\n\n\n\n\nMHA\nHighest\nHighest\nHighest\nEarly models, high-quality research\n\n\nMQA\nLowest\nLowest\nLowest\nDeployment-optimized models\n\n\nGQA\nMedium\nMedium\nMedium\nModern balanced models (Claude, PaLM)",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "15. Pretraining Recipes"
+    ]
+  },
+  {
+    "objectID": "slides/15_pretraining-recipes.html#attention-variants-mqa-vs-gqa-vs-mha",
+    "href": "slides/15_pretraining-recipes.html#attention-variants-mqa-vs-gqa-vs-mha",
+    "title": "15. Pretraining Recipes",
+    "section": "Attention Variants: MQA vs GQA vs MHA",
+    "text": "Attention Variants: MQA vs GQA vs MHA\nAttention Variants Comparison",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "15. Pretraining Recipes"
+    ]
+  },
+  {
+    "objectID": "slides/15_pretraining-recipes.html#activation-functions",
+    "href": "slides/15_pretraining-recipes.html#activation-functions",
+    "title": "15. Pretraining Recipes",
+    "section": "Activation Functions",
+    "text": "Activation Functions\nEvolution of activation functions in LLMs:\n\n- ReLU: Simple, efficient, but limited expressiveness\n- GeLU: Smoother variant of ReLU, used in many models\n- SwiGLU: Swish + GLU combination, better performance - Used in PaLM, LLaMA, and other recent models - Computationally more expensive but better results\n\n\nImpacts how neurons “fire” in Transformers",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "15. Pretraining Recipes"
+    ]
+  },
+  {
+    "objectID": "slides/15_pretraining-recipes.html#plot-of-relu-vs.-gelu",
+    "href": "slides/15_pretraining-recipes.html#plot-of-relu-vs.-gelu",
+    "title": "15. Pretraining Recipes",
+    "section": "Plot of ReLU vs. GeLU",
+    "text": "Plot of ReLU vs. GeLU",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "15. Pretraining Recipes"
+    ]
+  },
+  {
+    "objectID": "slides/15_pretraining-recipes.html#swiglu-the-modern-standard",
+    "href": "slides/15_pretraining-recipes.html#swiglu-the-modern-standard",
+    "title": "15. Pretraining Recipes",
+    "section": "SwiGLU: The Modern Standard",
+    "text": "SwiGLU: The Modern Standard\nSwiGLU computation:\n\\(\\text{SwiGLU}(x) = \\text{Swish}(xW) \\otimes (xV)\\)\nWhere:\n\n\\[\\text{Swish}(x) = x \\cdot \\text{sigmoid}(\\beta x)\\]\n\\[\\otimes \\text{ denotes element-wise multiplication}\\]\n\nBenefits:\n\nBetter gradient flow\n\nImproved representational capacity\n\nModest compute overhead for significant quality gains",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "15. Pretraining Recipes"
+    ]
+  },
+  {
+    "objectID": "slides/15_pretraining-recipes.html#normalization-techniques",
+    "href": "slides/15_pretraining-recipes.html#normalization-techniques",
+    "title": "15. Pretraining Recipes",
+    "section": "Normalization Techniques",
+    "text": "Normalization Techniques\n\nLayer Normalization: Standard in Transformers\n\nNormalizes across feature dimension\nStabilizes training\n\nRMSNorm: Simplified version of LayerNorm\n\nRemoves mean-centering step\nSlightly faster computation\nUsed in LLaMA and other recent models",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "15. Pretraining Recipes"
+    ]
+  },
+  {
+    "objectID": "slides/15_pretraining-recipes.html#optimization-strategies",
+    "href": "slides/15_pretraining-recipes.html#optimization-strategies",
+    "title": "15. Pretraining Recipes",
+    "section": "Optimization Strategies",
+    "text": "Optimization Strategies\n\nKey components:\n\nOptimizer choice\nLearning rate scheduling\nWeight decay\nGradient clipping",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "15. Pretraining Recipes"
+    ]
+  },
+  {
+    "objectID": "slides/15_pretraining-recipes.html#optimizers-for-llms",
+    "href": "slides/15_pretraining-recipes.html#optimizers-for-llms",
+    "title": "15. Pretraining Recipes",
+    "section": "Optimizers for LLMs",
+    "text": "Optimizers for LLMs\n\nAdamW: Standard choice for most LLMs\n\nAdaptive learning rates with proper weight decay\nRobust to hyperparameter choices\n\nAdafactor: Memory-efficient alternative\n\nFactorizes second moment matrices\nUseful for memory-constrained settings\n\nLion: Recent lightweight optimizer\n\nMomentum-based with sign updates\nLess memory usage, competitive performance",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "15. Pretraining Recipes"
+    ]
+  },
+  {
+    "objectID": "slides/15_pretraining-recipes.html#learning-rate-scheduling",
+    "href": "slides/15_pretraining-recipes.html#learning-rate-scheduling",
+    "title": "15. Pretraining Recipes",
+    "section": "Learning Rate Scheduling",
+    "text": "Learning Rate Scheduling\nTypical LLM learning rate schedule:\n\nWarmup phase: Gradually increase from small value\n\nPrevents early instability\nUsually 1-3% of total training steps\n\nDecay phase: Gradual reduction of learning rate\n\nCosine decay: Smooth reduction to minimum value\nLinear decay: Simpler alternative",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "15. Pretraining Recipes"
+    ]
+  },
+  {
+    "objectID": "slides/15_pretraining-recipes.html#learning-rate-schedule",
+    "href": "slides/15_pretraining-recipes.html#learning-rate-schedule",
+    "title": "15. Pretraining Recipes",
+    "section": "Learning Rate Schedule",
+    "text": "Learning Rate Schedule",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "15. Pretraining Recipes"
+    ]
+  },
+  {
+    "objectID": "slides/15_pretraining-recipes.html#effective-batch-sizing",
+    "href": "slides/15_pretraining-recipes.html#effective-batch-sizing",
+    "title": "15. Pretraining Recipes",
+    "section": "Effective Batch Sizing",
+    "text": "Effective Batch Sizing\n\nGlobal batch size: Total number of sequences processed before update\nMicro-batch size: Sequences processed on each device\nGradient accumulation: Accumulate gradients over multiple micro-batches\n\nKey considerations: - Larger batches → better gradient estimates but diminishing returns - Memory constraints often limit micro-batch size - Typical global batch sizes: 1-8 million tokens",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "15. Pretraining Recipes"
+    ]
+  },
+  {
+    "objectID": "slides/15_pretraining-recipes.html#dropout-strategies",
+    "href": "slides/15_pretraining-recipes.html#dropout-strategies",
+    "title": "15. Pretraining Recipes",
+    "section": "Dropout Strategies",
+    "text": "Dropout Strategies\n\nEarly LLMs: Significant dropout (0.1-0.2)\nModern trend: Minimal or no dropout\n\nChinchilla scaling laws: data &gt; regularization\nCurrent practice: Use dropout only for small models or limited data\n\nWhen used, applied to:\n\nAttention outputs\nFeed-forward outputs\nEmbedding layers",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "15. Pretraining Recipes"
+    ]
+  },
+  {
+    "objectID": "slides/15_pretraining-recipes.html#training-duration-and-data-reuse",
+    "href": "slides/15_pretraining-recipes.html#training-duration-and-data-reuse",
+    "title": "15. Pretraining Recipes",
+    "section": "Training Duration and Data Reuse",
+    "text": "Training Duration and Data Reuse\n\nEpoch: One pass through the entire dataset\nModern LLMs rarely see full epochs\nTokens seen during training:\n\nGPT-3: 300B tokens\nPaLM: 780B tokens\nLLaMA 2: 2T tokens\nClaude/GPT-4: 10T+ tokens (estimated)\n\nData mixing: Different sources with different sampling weights\nData repetition: Strategic repeating of high-quality data",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "15. Pretraining Recipes"
+    ]
+  },
+  {
+    "objectID": "slides/15_pretraining-recipes.html#scaling-laws-and-compute-optimal-training",
+    "href": "slides/15_pretraining-recipes.html#scaling-laws-and-compute-optimal-training",
+    "title": "15. Pretraining Recipes",
+    "section": "Scaling Laws and Compute-Optimal Training",
+    "text": "Scaling Laws and Compute-Optimal Training\n\nChinchilla scaling laws (DeepMind, 2022):\n\nModel size and training data should scale together\nOptimal tokens ≈ 20x parameter count\nE.g., 70B model → 1.4T tokens for optimal training\n\nCompute-optimal training:\n\nBalance model size, data, and training time given fixed compute budget",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "15. Pretraining Recipes"
+    ]
+  },
+  {
+    "objectID": "slides/15_pretraining-recipes.html#hyperparameter-selection",
+    "href": "slides/15_pretraining-recipes.html#hyperparameter-selection",
+    "title": "15. Pretraining Recipes",
+    "section": "Hyperparameter Selection",
+    "text": "Hyperparameter Selection\n\nModern approach: Much less tuning than traditional ML\nFocus on proven defaults from literature\nKey hyperparameters to tune:\n\nLearning rate and schedule\nWeight decay\nModel width/depth ratio\nGlobal batch size",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "15. Pretraining Recipes"
+    ]
+  },
+  {
+    "objectID": "slides/15_pretraining-recipes.html#engineering-considerations",
+    "href": "slides/15_pretraining-recipes.html#engineering-considerations",
+    "title": "15. Pretraining Recipes",
+    "section": "Engineering Considerations",
+    "text": "Engineering Considerations\n\nMixed precision training: fp16/bf16 + fp32 optimizer states\nGradient checkpointing: Trade computation for memory\nModel parallelism: Distribute model across devices\nData parallelism: Process different batches on different devices\nZero Redundancy Optimizer (ZeRO): Partition optimizer states\nFlashAttention: Efficient attention implementation",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "15. Pretraining Recipes"
+    ]
+  },
+  {
+    "objectID": "slides/15_pretraining-recipes.html#industry-best-practices",
+    "href": "slides/15_pretraining-recipes.html#industry-best-practices",
+    "title": "15. Pretraining Recipes",
+    "section": "Industry Best Practices",
+    "text": "Industry Best Practices\nRecent trends from leading labs:\n\nGQA + SwiGLU + RMSNorm architecture\nAdamW optimizer with cosine decay\n2-4M token batch sizes\nMinimal dropout\nCompute-optimal training allocation\nHeavy use of data curation and filtering",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "15. Pretraining Recipes"
+    ]
+  },
+  {
+    "objectID": "slides/15_pretraining-recipes.html#resources",
+    "href": "slides/15_pretraining-recipes.html#resources",
+    "title": "15. Pretraining Recipes",
+    "section": "Resources",
+    "text": "Resources\n\n\nA Recipe for Training Neural Networks by Andrej Karpathy\nThe Novice’s LLM Training Guide by Alpin Dale\nNavigating the Attention Landscape by Shobhit Agarwal\nChinchilla scaling laws paper",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "15. Pretraining Recipes"
+    ]
+  },
+  {
+    "objectID": "slides/15_pretraining-recipes.html#key-takeaways",
+    "href": "slides/15_pretraining-recipes.html#key-takeaways",
+    "title": "15. Pretraining Recipes",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\n\nMany architectural and training choices affect LLM performance\nModern defaults have emerged through industry experimentation\nBalancing compute efficiency and model quality is crucial\nBoth architecture and optimization strategy matter significantly\nNo single “best recipe” - depends on resources and goals",
     "crumbs": [
       "Section III: Foundations for Modern Language Modeling",
       "15. Pretraining Recipes"
@@ -484,44 +715,154 @@
     ]
   },
   {
-    "objectID": "slides/16_distributed-training-and-fsdp.html#slide",
-    "href": "slides/16_distributed-training-and-fsdp.html#slide",
+    "objectID": "slides/16_distributed-training-and-fsdp.html#why-distributed-training",
+    "href": "slides/16_distributed-training-and-fsdp.html#why-distributed-training",
     "title": "16. Distributed Training and FSDP",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "section": "Why Distributed Training?",
+    "text": "Why Distributed Training?\nThe Scale Challenge: - Modern LLMs: 7B to 1T+ parameters - Single GPU memory (A100): Only 40-80GB - 7B model memory requirements: - Weights: ~14GB (FP16) - Gradients: ~14GB - Optimizer states: ~28GB (Adam) - Activations: Variable with batch size\nSolution: Split computation across multiple devices",
     "crumbs": [
       "Section III: Foundations for Modern Language Modeling",
       "16. Distributed Training and FSDP"
     ]
   },
   {
-    "objectID": "slides/16_distributed-training-and-fsdp.html#slide-1",
-    "href": "slides/16_distributed-training-and-fsdp.html#slide-1",
+    "objectID": "slides/16_distributed-training-and-fsdp.html#hardware-requirements-for-llm-training",
+    "href": "slides/16_distributed-training-and-fsdp.html#hardware-requirements-for-llm-training",
     "title": "16. Distributed Training and FSDP",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Hardware Requirements for LLM Training",
+    "text": "Hardware Requirements for LLM Training",
     "crumbs": [
       "Section III: Foundations for Modern Language Modeling",
       "16. Distributed Training and FSDP"
     ]
   },
   {
-    "objectID": "slides/16_distributed-training-and-fsdp.html#slide-2",
-    "href": "slides/16_distributed-training-and-fsdp.html#slide-2",
+    "objectID": "slides/16_distributed-training-and-fsdp.html#gpu-memory-requirements",
+    "href": "slides/16_distributed-training-and-fsdp.html#gpu-memory-requirements",
     "title": "16. Distributed Training and FSDP",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "GPU Memory Requirements",
+    "text": "GPU Memory Requirements",
     "crumbs": [
       "Section III: Foundations for Modern Language Modeling",
       "16. Distributed Training and FSDP"
     ]
   },
   {
-    "objectID": "slides/16_distributed-training-and-fsdp.html#slide-3",
-    "href": "slides/16_distributed-training-and-fsdp.html#slide-3",
+    "objectID": "slides/16_distributed-training-and-fsdp.html#parallelism-strategies",
+    "href": "slides/16_distributed-training-and-fsdp.html#parallelism-strategies",
     "title": "16. Distributed Training and FSDP",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Parallelism Strategies",
+    "text": "Parallelism Strategies\nFour primary approaches:\n\nData Parallelism:\n\nSame model, different data batches\nSimple but limited by model size\n\nModel Parallelism:\n\nDifferent layers on different devices\nEnables larger models but sequential processing\n\nPipeline Parallelism:\n\nStages of model on different devices\nMultiple batches in pipeline\n\nTensor Parallelism:\n\nSplit individual operations (matrices)\nEfficient for Transformer operations\n\n\nImproving Optimization Performance with Parallelism Computing",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "16. Distributed Training and FSDP"
+    ]
+  },
+  {
+    "objectID": "slides/16_distributed-training-and-fsdp.html#full-sharded-data-parallelism-fsdp",
+    "href": "slides/16_distributed-training-and-fsdp.html#full-sharded-data-parallelism-fsdp",
+    "title": "16. Distributed Training and FSDP",
+    "section": "Full Sharded Data Parallelism (FSDP)",
+    "text": "Full Sharded Data Parallelism (FSDP)\nCore Concept: Shard model parameters, gradients, and optimizer states\nHow it works: - Each device stores only a portion of the full model - During forward/backward pass: - Gather needed parameters (all-gather) - Compute with gathered parameters - Re-shard parameters after use\nBenefits: - ~N-fold memory reduction with N devices - Enables training much larger models - Preserves computation efficiency of data parallelism",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "16. Distributed Training and FSDP"
+    ]
+  },
+  {
+    "objectID": "slides/16_distributed-training-and-fsdp.html#full-sharded-data-parallelism-fsdp-1",
+    "href": "slides/16_distributed-training-and-fsdp.html#full-sharded-data-parallelism-fsdp-1",
+    "title": "16. Distributed Training and FSDP",
+    "section": "Full Sharded Data Parallelism (FSDP)",
+    "text": "Full Sharded Data Parallelism (FSDP)",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "16. Distributed Training and FSDP"
+    ]
+  },
+  {
+    "objectID": "slides/16_distributed-training-and-fsdp.html#critical-memory-optimizations",
+    "href": "slides/16_distributed-training-and-fsdp.html#critical-memory-optimizations",
+    "title": "16. Distributed Training and FSDP",
+    "section": "Critical Memory Optimizations",
+    "text": "Critical Memory Optimizations\nCombine these techniques for maximum efficiency:\n\nMixed Precision Training:\n\nUse BF16/FP16 for most operations\nMaintain FP32 master weights for stability\n2x memory reduction\n\nActivation Checkpointing:\n\nDiscard activations during forward pass\nRecompute during backward pass\nTrade computation for memory\n\nGradient Accumulation:\n\nUpdate less frequently\nProcess more data with same memory",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "16. Distributed Training and FSDP"
+    ]
+  },
+  {
+    "objectID": "slides/16_distributed-training-and-fsdp.html#fsdp-implementation-pytorch",
+    "href": "slides/16_distributed-training-and-fsdp.html#fsdp-implementation-pytorch",
+    "title": "16. Distributed Training and FSDP",
+    "section": "FSDP Implementation (PyTorch)",
+    "text": "FSDP Implementation (PyTorch)\nBasic implementation:\n# Initialize distributed process group\ntorch.distributed.init_process_group(\"nccl\")\n\n# Wrap model with FSDP\nmodel = FSDP(\n    model,\n    sharding_strategy=ShardingStrategy.FULL_SHARD,\n    mixed_precision=mp_policy,\n    device_id=torch.cuda.current_device()\n)\n\n# Train normally\nfor batch in dataloader:\n    loss = model(batch).loss\n    loss.backward()\n    optimizer.step()",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "16. Distributed Training and FSDP"
+    ]
+  },
+  {
+    "objectID": "slides/16_distributed-training-and-fsdp.html#hardware-communication-considerations",
+    "href": "slides/16_distributed-training-and-fsdp.html#hardware-communication-considerations",
+    "title": "16. Distributed Training and FSDP",
+    "section": "Hardware & Communication Considerations",
+    "text": "Hardware & Communication Considerations\nHardware Topology: - Intra-node: High-speed GPU connections (NVLink) - Inter-node: Network connections (InfiniBand)\nCommunication Bottlenecks: - All-gather: Collect sharded parameters - Reduce-scatter: Aggregate gradients - Communication volume grows with model size\nOptimization Strategies: - Match parallelism strategy to hardware topology - Hierarchical communication patterns - Overlap computation with communication",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "16. Distributed Training and FSDP"
+    ]
+  },
+  {
+    "objectID": "slides/16_distributed-training-and-fsdp.html#d-parallelism-state-of-the-art",
+    "href": "slides/16_distributed-training-and-fsdp.html#d-parallelism-state-of-the-art",
+    "title": "16. Distributed Training and FSDP",
+    "section": "3D Parallelism: State-of-the-Art",
+    "text": "3D Parallelism: State-of-the-Art\nCombining complementary strategies:\n\nData Parallelism/FSDP: Across node groups\nPipeline Parallelism: Between GPU clusters\nTensor Parallelism: Within GPU clusters\n\nExample (175B model training): - 8-way tensor parallelism - 12-way pipeline parallelism - 32-way data parallelism - Total: 3,072 GPUs\nUsed by major labs for largest models",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "16. Distributed Training and FSDP"
+    ]
+  },
+  {
+    "objectID": "slides/16_distributed-training-and-fsdp.html#d-parallelism",
+    "href": "slides/16_distributed-training-and-fsdp.html#d-parallelism",
+    "title": "16. Distributed Training and FSDP",
+    "section": "3D Parallelism",
+    "text": "3D Parallelism",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "16. Distributed Training and FSDP"
+    ]
+  },
+  {
+    "objectID": "slides/16_distributed-training-and-fsdp.html#practical-training-challenges",
+    "href": "slides/16_distributed-training-and-fsdp.html#practical-training-challenges",
+    "title": "16. Distributed Training and FSDP",
+    "section": "Practical Training Challenges",
+    "text": "Practical Training Challenges\n\nCheckpoint Management:\n\nTB-sized checkpoints\nDistributed saving/loading\n\nFault Tolerance:\n\nHardware failures increasingly likely at scale\nNeed robust recovery mechanisms\n\nPerformance Debugging:\n\nComplex interactions between strategies\nProfiling distributed workloads\n\nCost Management:\n\nTraining budgets in millions of dollars\nEfficiency optimizations have major impact",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "16. Distributed Training and FSDP"
+    ]
+  },
+  {
+    "objectID": "slides/16_distributed-training-and-fsdp.html#frameworks-and-resources",
+    "href": "slides/16_distributed-training-and-fsdp.html#frameworks-and-resources",
+    "title": "16. Distributed Training and FSDP",
+    "section": "Frameworks and Resources",
+    "text": "Frameworks and Resources\nPopular Frameworks:\n\n- PyTorch FSDP: Native PyTorch implementation\n- DeepSpeed: Microsoft’s ZeRO implementation\n- Megatron-LM: NVIDIA’s specialized framework\n- JAX/Flax: Google’s functional approach\n\nLearning Resources:\n\n- PyTorch FSDP Tutorial\n- DeepSpeed ZeRO Paper\n- Megatron-LM GitHub",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "16. Distributed Training and FSDP"
+    ]
+  },
+  {
+    "objectID": "slides/16_distributed-training-and-fsdp.html#key-takeaways",
+    "href": "slides/16_distributed-training-and-fsdp.html#key-takeaways",
+    "title": "16. Distributed Training and FSDP",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nDistributed training essential for modern LLMs\nFSDP provides memory-efficient data parallelism\nCombine multiple parallelism strategies for best results\nMemory optimizations as important as compute scaling\nHardware topology should inform parallelism strategy\nLLM training represents extreme engineering challenge",
     "crumbs": [
       "Section III: Foundations for Modern Language Modeling",
       "16. Distributed Training and FSDP"

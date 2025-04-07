@@ -6,9 +6,11 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b53751a350365c71b6c909e95f209ed1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.6.42">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-4379b0ccadffce622b03caf4c46266b3.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.43">
 
+  <meta name="author" content="Bryan Tegomoh">
+  <meta name="dcterms.date" content="2025-04-06">
   <title>Generative AI Handbook Book Club – 15. Pretraining Recipes</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -129,60 +131,361 @@
   <h1 class="title">15. Pretraining Recipes</h1>
 
 <div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Bryan Tegomoh 
+</div>
+</div>
 </div>
 
+  <p class="date">2025-04-06</p>
 </section>
-<section id="learning-objectives" class="title-slide slide level1 center">
-<h1>Learning objectives</h1>
+<section>
+<section id="welcome-to-the-lecture" class="title-slide slide level1 center">
+<h1>Welcome to the Lecture</h1>
+<p><strong>Section III: Foundations for Modern Language Modeling</strong></p>
+<p>Focus:</p>
+<ul>
+<li><p><em>Chapter 15: Pretraining Recipes</em></p>
+<ul>
+<li><p>Goal: Understand the choices in pretraining LLMs</p></li>
+<li><p>Builds on: Transformers, Tokenization, Positional encoding</p></li>
+</ul></li>
+<li><p><em>Chapter 16: Distributed Training and FSDP</em></p>
+<ul>
+<li>Goal: Learn how to scale LLM training</li>
+</ul></li>
+</ul>
+<p>Primary Objective: Understand key concepts for training modern LLMs</p>
+</section>
+<section id="what-is-pretraining" class="slide level2">
+<h2>What is Pretraining?</h2>
+<ul>
+<li><p>Training an LLM from scratch on a large corpus (e.g., Common Crawl)</p></li>
+<li><p>Objective: Predict next token in text</p></li>
+<li><p>Output: A “base” model for later finetuning</p></li>
+<li><p><em>Connects to decoder-only Transformers (Section II)</em></p></li>
+</ul>
+</section>
+<section id="pretraining-the-big-picture" class="slide level2">
+<h2>Pretraining: The Big Picture</h2>
+<ul>
+<li>Process of training a model on vast amounts of text data</li>
+<li>Self-supervised learning: predict next token or masked tokens</li>
+<li>Goal: Develop general language understanding capabilities</li>
+<li>Resource-intensive: requires significant compute, data, engineering</li>
+<li>Many design choices affect training efficiency and model quality</li>
+</ul>
+</section>
+<section id="building-on-previous-chapters" class="slide level2">
+<h2>Building on Previous Chapters</h2>
+<ul>
+<li><strong>Transformer Architecture</strong>: Foundation of modern LLMs</li>
+<li><strong>Tokenization</strong>: Converting text to model-readable tokens</li>
+<li><strong>Positional Encoding</strong>: Representing sequence information</li>
+<li>Here we examine: How to effectively train these models?</li>
+</ul>
+</section>
+<section id="core-architectural-choices" class="slide level2">
+<h2>Core Architectural Choices</h2>
+<p>Key decisions when pretraining LLMs:</p>
+<ol type="1">
+<li>Attention mechanisms</li>
+<li>Activation functions</li>
+<li>Normalization approaches</li>
+<li>Model sizing &amp; dimensionality</li>
+</ol>
+</section>
+<section id="attention-mechanism-variants" class="slide level2">
+<h2>Attention Mechanism Variants</h2>
+<p><strong>Three main approaches:</strong></p>
+<ol type="1">
+<li><strong>Multi-Head Attention (MHA)</strong>: - Original Transformer design - Multiple attention heads, each with full query/key/value projections - Most expressive but computationally expensive</li>
+<li><strong>Multi-Query Attention (MQA)</strong>: - Shared key and value projections across heads - Queries remain separate - Reduces memory bandwidth requirements</li>
+<li><strong>Grouped-Query Attention (GQA)</strong>: - Middle ground between MHA and MQA - Keys and values shared among groups of heads - Better balance of efficiency and expressiveness</li>
+</ol>
+</section>
+<section id="key-decisions-in-pretraining" class="slide level2">
+<h2>Key Decisions in Pretraining</h2>
+<ul>
+<li>No one-size-fits-all “recipe”</li>
+<li>Choices impact performance, cost, speed</li>
+<li>Core areas:
+<ul>
+<li>Model architecture (e.g., attention)</li>
+<li>Training setup (e.g., optimization)</li>
+<li>Data handling</li>
+</ul></li>
+</ul>
+</section>
+<section id="attention-variants-trade-offs" class="slide level2">
+<h2>Attention Variants: Trade-offs</h2>
+<div style="font-size: 0.85em;">
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variant</th>
+<th>Parameters</th>
+<th>Memory</th>
+<th>Quality</th>
+<th>Used In</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>MHA</td>
+<td>Highest</td>
+<td>Highest</td>
+<td>Highest</td>
+<td>Early models, high-quality research</td>
+</tr>
+<tr class="even">
+<td>MQA</td>
+<td>Lowest</td>
+<td>Lowest</td>
+<td>Lowest</td>
+<td>Deployment-optimized models</td>
+</tr>
+<tr class="odd">
+<td>GQA</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Modern balanced models (Claude, PaLM)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="attention-variants-mqa-vs-gqa-vs-mha" class="slide level2">
+<h2>Attention Variants: MQA vs GQA vs MHA</h2>
+<p><img data-src="images/clipboard-1918275476.png">Attention Variants Comparison</p>
+</section>
+<section id="activation-functions" class="slide level2">
+<h2>Activation Functions</h2>
+<p>Evolution of activation functions in LLMs:</p>
+<ol type="1">
+<li><p>- <strong>ReLU</strong>: Simple, efficient, but limited expressiveness</p></li>
+<li><p>- <strong>GeLU</strong>: Smoother variant of ReLU, used in many models</p></li>
+<li><p>- <strong>SwiGLU</strong>: Swish + GLU combination, better performance - Used in PaLM, LLaMA, and other recent models - Computationally more expensive but better results</p></li>
+</ol>
+<ul>
+<li>Impacts how neurons “fire” in Transformers</li>
+</ul>
+</section>
+<section id="plot-of-relu-vs.-gelu" class="slide level2">
+<h2><em>Plot of ReLU vs.&nbsp;GeLU</em></h2>
+
+<img data-src="images/clipboard-353743780.png" class="r-stretch"></section>
+<section id="swiglu-the-modern-standard" class="slide level2">
+<h2>SwiGLU: The Modern Standard</h2>
+<p>SwiGLU computation:</p>
+<p><span class="math inline">\(\text{SwiGLU}(x) = \text{Swish}(xW) \otimes (xV)\)</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math display">\[\text{Swish}(x) = x \cdot \text{sigmoid}(\beta x)\]</span></li>
+<li><span class="math display">\[\otimes \text{ denotes element-wise multiplication}\]</span></li>
+</ul>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>Better gradient flow<br>
+</li>
+<li>Improved representational capacity<br>
+</li>
+<li>Modest compute overhead for significant quality gains</li>
+</ul>
+</section>
+<section id="normalization-techniques" class="slide level2">
+<h2>Normalization Techniques</h2>
+<ul>
+<li><strong>Layer Normalization</strong>: Standard in Transformers
+<ul>
+<li>Normalizes across feature dimension</li>
+<li>Stabilizes training</li>
+</ul></li>
+<li><strong>RMSNorm</strong>: Simplified version of LayerNorm
+<ul>
+<li>Removes mean-centering step</li>
+<li>Slightly faster computation</li>
+<li>Used in LLaMA and other recent models</li>
+</ul></li>
+</ul>
+</section>
+<section id="optimization-strategies" class="slide level2">
+<h2>Optimization Strategies</h2>
+<div>
+<p>Key components:</p>
+<ol type="1">
+<li>Optimizer choice</li>
+<li>Learning rate scheduling</li>
+<li>Weight decay</li>
+<li>Gradient clipping</li>
+</ol>
+</div>
+</section>
+<section id="optimizers-for-llms" class="slide level2">
+<h2>Optimizers for LLMs</h2>
+<ul>
+<li><strong>AdamW</strong>: Standard choice for most LLMs
+<ul>
+<li>Adaptive learning rates with proper weight decay</li>
+<li>Robust to hyperparameter choices</li>
+</ul></li>
+<li><strong>Adafactor</strong>: Memory-efficient alternative
+<ul>
+<li>Factorizes second moment matrices</li>
+<li>Useful for memory-constrained settings</li>
+</ul></li>
+<li><strong>Lion</strong>: Recent lightweight optimizer
+<ul>
+<li>Momentum-based with sign updates</li>
+<li>Less memory usage, competitive performance</li>
+</ul></li>
+</ul>
+</section>
+<section id="learning-rate-scheduling" class="slide level2">
+<h2>Learning Rate Scheduling</h2>
+<p>Typical LLM learning rate schedule:</p>
+<ul>
+<li><strong>Warmup phase</strong>: Gradually increase from small value
+<ul>
+<li>Prevents early instability</li>
+<li>Usually 1-3% of total training steps</li>
+</ul></li>
+<li><strong>Decay phase</strong>: Gradual reduction of learning rate
+<ul>
+<li><strong>Cosine decay</strong>: Smooth reduction to minimum value</li>
+<li><strong>Linear decay</strong>: Simpler alternative</li>
+</ul></li>
+</ul>
+</section>
+<section id="learning-rate-schedule" class="slide level2">
+<h2>Learning Rate Schedule</h2>
+
+<img data-src="images/clipboard-1002206569.png" class="r-stretch"></section>
+<section id="effective-batch-sizing" class="slide level2">
+<h2>Effective Batch Sizing</h2>
+<ul>
+<li><strong>Global batch size</strong>: Total number of sequences processed before update</li>
+<li><strong>Micro-batch size</strong>: Sequences processed on each device</li>
+<li><strong>Gradient accumulation</strong>: Accumulate gradients over multiple micro-batches</li>
+</ul>
+<p>Key considerations: - Larger batches → better gradient estimates but diminishing returns - Memory constraints often limit micro-batch size - Typical global batch sizes: 1-8 million tokens</p>
+</section>
+<section id="dropout-strategies" class="slide level2">
+<h2>Dropout Strategies</h2>
+<ul>
+<li>Early LLMs: Significant dropout (0.1-0.2)</li>
+<li>Modern trend: Minimal or no dropout
+<ul>
+<li>Chinchilla scaling laws: data &gt; regularization</li>
+<li>Current practice: Use dropout only for small models or limited data</li>
+</ul></li>
+<li>When used, applied to:
+<ul>
+<li>Attention outputs</li>
+<li>Feed-forward outputs</li>
+<li>Embedding layers</li>
+</ul></li>
+</ul>
+</section>
+<section id="training-duration-and-data-reuse" class="slide level2">
+<h2>Training Duration and Data Reuse</h2>
+<ul>
+<li><strong>Epoch</strong>: One pass through the entire dataset</li>
+<li>Modern LLMs rarely see full epochs</li>
+<li><strong>Tokens seen during training</strong>:
+<ul>
+<li>GPT-3: 300B tokens</li>
+<li>PaLM: 780B tokens</li>
+<li>LLaMA 2: 2T tokens</li>
+<li>Claude/GPT-4: 10T+ tokens (estimated)</li>
+</ul></li>
+<li><strong>Data mixing</strong>: Different sources with different sampling weights</li>
+<li><strong>Data repetition</strong>: Strategic repeating of high-quality data</li>
+</ul>
+</section>
+<section id="scaling-laws-and-compute-optimal-training" class="slide level2">
+<h2>Scaling Laws and Compute-Optimal Training</h2>
+<ul>
+<li><strong>Chinchilla scaling laws</strong> (DeepMind, 2022):
+<ul>
+<li>Model size and training data should scale together</li>
+<li>Optimal tokens ≈ 20x parameter count</li>
+<li>E.g., 70B model → 1.4T tokens for optimal training</li>
+</ul></li>
+<li><strong>Compute-optimal training</strong>:
+<ul>
+<li>Balance model size, data, and training time given fixed compute budget</li>
+</ul></li>
+</ul>
+</section>
+<section id="hyperparameter-selection" class="slide level2">
+<h2>Hyperparameter Selection</h2>
+<ul>
+<li>Modern approach: Much less tuning than traditional ML</li>
+<li>Focus on proven defaults from literature</li>
+<li>Key hyperparameters to tune:
+<ul>
+<li>Learning rate and schedule</li>
+<li>Weight decay</li>
+<li>Model width/depth ratio</li>
+<li>Global batch size</li>
+</ul></li>
+</ul>
+</section>
+<section id="engineering-considerations" class="slide level2">
+<h2>Engineering Considerations</h2>
+<ul>
+<li><strong>Mixed precision training</strong>: fp16/bf16 + fp32 optimizer states</li>
+<li><strong>Gradient checkpointing</strong>: Trade computation for memory</li>
+<li><strong>Model parallelism</strong>: Distribute model across devices</li>
+<li><strong>Data parallelism</strong>: Process different batches on different devices</li>
+<li><strong>Zero Redundancy Optimizer (ZeRO)</strong>: Partition optimizer states</li>
+<li><strong>FlashAttention</strong>: Efficient attention implementation</li>
+</ul>
+</section>
+<section id="industry-best-practices" class="slide level2">
+<h2>Industry Best Practices</h2>
+<p>Recent trends from leading labs:</p>
+<ul>
+<li>GQA + SwiGLU + RMSNorm architecture</li>
+<li>AdamW optimizer with cosine decay</li>
+<li>2-4M token batch sizes</li>
+<li>Minimal dropout</li>
+<li>Compute-optimal training allocation</li>
+<li>Heavy use of data curation and filtering</li>
+</ul>
+</section>
+<section id="resources" class="slide level2">
+<h2>Resources</h2>
 <div>
 <ul>
-<li>THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY</li>
+<li><a href="https://karpathy.github.io/2019/04/25/recipe/">A Recipe for Training Neural Networks</a> by Andrej Karpathy</li>
+<li><a href="https://rentry.org/llm-training">The Novice’s LLM Training Guide</a> by Alpin Dale</li>
+<li><a href="https://medium.com/@shobhitva/navigating-the-attention-landscape-mha-mqa-and-gqa-decoded-25e589d66e53">Navigating the Attention Landscape</a> by Shobhit Agarwal</li>
+<li><a href="https://arxiv.org/abs/2203.15556">Chinchilla scaling laws paper</a></li>
 </ul>
 </div>
-<aside class="notes">
+</section>
+<section id="key-takeaways" class="slide level2">
+<h2>Key Takeaways</h2>
+<div>
 <ul>
-<li>You can add notes on each slide with blocks like this!</li>
-<li>Load a deck in the browser and type “s” to see these notes.</li>
+<li>Many architectural and training choices affect LLM performance</li>
+<li>Modern defaults have emerged through industry experimentation</li>
+<li>Balancing compute efficiency and model quality is crucial</li>
+<li>Both architecture and optimization strategy matter significantly</li>
+<li>No single “best recipe” - depends on resources and goals</li>
 </ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-
-<section>
-<section id="slide-section" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
-
-</section>
-<section id="slide" class="slide level2">
-<h2>SLIDE</h2>
-<ul>
-<li>DENOTE MAJOR SECTIONS WITH <code># TITLE</code> (eg <code># Installation</code>)</li>
-<li>ADD INDIVIDUAL SLIDES WITH <code>##</code> (eg <code>## rustup on Linux/macOS</code>)</li>
-<li>KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
-</ul>
-</section>
-<section id="slide-1" class="slide level2">
-<h2>SLIDE</h2>
-</section></section>
-<section>
-<section id="slide-section-1" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
-
-</section>
-<section id="slide-2" class="slide level2">
-<h2>SLIDE</h2>
-</section>
-<section id="slide-3" class="slide level2">
-<h2>SLIDE</h2>
+</div>
 
 
 </section></section>
@@ -242,7 +545,7 @@
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',

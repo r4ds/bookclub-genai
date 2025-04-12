@@ -6,26 +6,92 @@ title: "20. Low-Rank Adapters (LoRA)"
 # Learning objectives
 
 ::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+- Motivate dimension reduction
+- Discuss LoRA
+- Introduce DoRA
 :::
 
 ::: notes
-- You can add notes on each slide with blocks like this!
-- Load a deck in the browser and type "s" to see these notes.
+- I should call her
 :::
 
-# SLIDE SECTION
+# Low-Rank Adaptation
 
-## SLIDE
+## Palmer Penguins
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+![Allison Horst](images/penguin_PCA.png)
 
-## SLIDE
+## SVD
 
-# SLIDE SECTION
+![SVD](images/SVD_dimensionality_reduction.png)
 
-## SLIDE
+* image source: [Antriksh Singh](https://medium.com/@antriksh_66433/dimensionality-reduction-singular-value-decomposition-727426d3b063)
 
-## SLIDE
+## Update Rule
+
+$$\begin{array}{rcl}
+  W_{1} & = & W_{\text{pre}} + \Delta W_{0} \\
+  W_{2} & = & W_{1} + \Delta W_{1} \\
+  W_{3} & = & W_{2} + \Delta W_{2} \\
+  ... & ~ & ... \\
+  W_{\text{out}}
+\end{array}$$
+
+## Freezing the Pre-Training Weights
+
+$$W_{\text{out}} = W_{\text{pre}} + \displaystyle\sum_{i = 0} \Delta W_{i}$$
+
+## Fine Tuning
+
+![fine tuning scheme](images/regular-finetuning-alt.png)
+
+* image source: [Sebastian Raschka](https://sebastianraschka.com/blog/2023/llm-finetuning-lora.html)
+
+
+## Dimensionality Reduction
+
+![matrix factorization](images/lora-weights.png)
+
+* image source: [Sebastian Raschka](https://sebastianraschka.com/blog/2023/llm-finetuning-lora.html)
+
+## Speed versus Complexity Trade-Off
+
+* smaller rank $r$
+
+    * fewer parameters
+    * faster training
+    * lower compute
+    
+* larger rank $r$
+
+    * more likely to capture task-specific information
+
+
+# Demonstration
+
+* [Colab notebook](https://colab.research.google.com/drive/1iERDk94Jp0UErsPf7vXyPKeiM4ZJUQ-a?usp=sharing) by Chris Alexiuk
+* [advice on LoRA tuning](https://magazine.sebastianraschka.com/p/practical-tips-for-finetuning-llms) by Sebastian Raschka
+
+# DoRA
+
+## DoRA from Vectors
+
+Weight-**D**ecomposed L**o**w-**R**ank **A**daptation
+
+* $m$: magnitude vector
+* $V$: directional matrix
+
+![vectors!](images/vector_review.png)
+
+
+## DoRA Decomposition
+
+$$W' = m \cdot \frac{W_{0} + BA}{||W_{0} + BA||_{c}}$$
+
+![DoRA decomposition](images/DoRA_decomposition.png)
+
+## DoRA Workflow
+
+![DoRA workflow](images/DoRA_workflow.png)
+
+* images source: [Sebastian Raschka](https://magazine.sebastianraschka.com/p/lora-and-dora-from-scratch)

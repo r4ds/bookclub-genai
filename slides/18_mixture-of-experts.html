@@ -9,6 +9,8 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-4379b0ccadffce622b03caf4c46266b3.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.43">
 
+  <meta name="author" content="Bryan Tegomoh">
+  <meta name="dcterms.date" content="2025-04-13">
   <title>Generative AI Handbook Book Club – 18. Mixture-of-Experts</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -129,63 +131,50 @@
   <h1 class="title">18. Mixture-of-Experts</h1>
 
 <div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Bryan Tegomoh 
+</div>
+</div>
 </div>
 
+  <p class="date">2025-04-13</p>
 </section>
-<section id="learning-objectives" class="title-slide slide level1 center">
-<h1>Learning objectives</h1>
-<div>
+<section id="mixture-of-experts-the-basics" class="slide level2">
+<h2>Mixture-of-Experts: The Basics</h2>
 <ul>
-<li>THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY</li>
-</ul>
-</div>
-<aside class="notes">
-<ul>
-<li>You can add notes on each slide with blocks like this!</li>
-<li>Load a deck in the browser and type “s” to see these notes.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-
-<section>
-<section id="slide-section" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
-
-</section>
-<section id="slide" class="slide level2">
-<h2>SLIDE</h2>
-<ul>
-<li>DENOTE MAJOR SECTIONS WITH <code># TITLE</code> (eg <code># Installation</code>)</li>
-<li>ADD INDIVIDUAL SLIDES WITH <code>##</code> (eg <code>## rustup on Linux/macOS</code>)</li>
-<li>KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
+<li><strong>Chapter 18</strong> from <em>GenAI Handbook</em></li>
+<li>Goal: Learn MoE for efficient LLMs</li>
+<li>Key idea: Use only some parameters per task</li>
+<li>Builds on: Scaling laws, pretraining</li>
 </ul>
 </section>
-<section id="slide-1" class="slide level2">
-<h2>SLIDE</h2>
-</section></section>
-<section>
-<section id="slide-section-1" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
+<section id="how-moe-works" class="slide level2">
+<h2>How MoE Works</h2>
+<ul>
+<li>Unlike dense models (e.g., Llama3), MoE is <strong>sparse</strong></li>
+<li><strong>Experts</strong>: Specialized sub-networks per layer</li>
+<li><strong>Router</strong>: Picks a few experts per input</li>
+<li>Result: Big model, less compute</li>
+</ul>
+</section>
+<section id="mixture-of-experts" class="slide level2">
+<h2>Mixture of Experts</h2>
+
+<img data-src="images/clipboard-35413599.png" class="r-stretch"></section>
+<section id="why-it-matters" class="slide level2">
+<h2>Why It Matters</h2>
+<ul>
+<li><strong>Efficiency</strong>: Less memory/time than dense models</li>
+<li><strong>Scale</strong>: Grow “knowledge” without slowing down</li>
+<li>Examples: Mixtral (8x7B, 8x22B), maybe GPT-4</li>
+</ul>
+</section>
+<section class="slide level2">
+
+
 
 </section>
-<section id="slide-2" class="slide level2">
-<h2>SLIDE</h2>
-</section>
-<section id="slide-3" class="slide level2">
-<h2>SLIDE</h2>
-
-
-</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
@@ -242,7 +231,7 @@
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',

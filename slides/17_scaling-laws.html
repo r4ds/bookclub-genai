@@ -9,6 +9,8 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-4379b0ccadffce622b03caf4c46266b3.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.43">
 
+  <meta name="author" content="Bryan Tegomoh">
+  <meta name="dcterms.date" content="2025-04-13">
   <title>Generative AI Handbook Book Club – 17. Scaling Laws</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -129,63 +131,220 @@
   <h1 class="title">17. Scaling Laws</h1>
 
 <div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Bryan Tegomoh 
+</div>
+</div>
 </div>
 
+  <p class="date">2025-04-13</p>
 </section>
-<section id="learning-objectives" class="title-slide slide level1 center">
-<h1>Learning objectives</h1>
-<div>
+<section id="chapter-17-scaling-laws" class="slide level2">
+<h2>Chapter 17: Scaling Laws</h2>
 <ul>
-<li>THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY</li>
+<li><p>Goal: Understand how scale predicts LLM performance</p></li>
+<li><p>Builds on: Pretraining, Distributed Training</p></li>
 </ul>
+<p>We’ll cover:</p>
+<ul>
+<li><p>What are scaling laws?</p></li>
+<li><p>Power laws: the foundation</p></li>
+<li><p>Scaling laws in deep learning</p></li>
+<li><p>The Chinchilla scaling law Implications and limitations</p></li>
+<li><p>The “bitter lesson” of AI research</p></li>
+</ul>
+</section>
+<section id="what-are-scaling-laws" class="slide level2">
+<h2>What Are Scaling Laws?</h2>
+<ul>
+<li><strong>Scaling Laws</strong> describe how changes in model size, dataset size, or compute affect AI model performance.</li>
+<li>They are essential for understanding and optimizing AI models.</li>
+<li>Predict how LLM performance (loss) changes with:
+<ul>
+<li>Model size (parameters)</li>
+<li>Dataset size (tokens)</li>
+<li>Compute (FLOPs)</li>
+</ul></li>
+<li>Allow us to make reliable predictions about model performance</li>
+<li>Enable optimization of hyperparameters without expensive grid searches</li>
+</ul>
+</section>
+<section id="power-laws-the-foundation" class="slide level2">
+<h2>Power Laws: The Foundation</h2>
+<ul>
+<li><p><strong>Power laws</strong>: mathematical equations of the form: y = bx^a</p></li>
+<li><p>Describe how one quantity varies as the power of another</p>
+<ul>
+<li>y : Performance (e.g., loss), x : Scale (e.g., parameters)</li>
+</ul></li>
+<li><p>On a log-log plot, Power laws = straight lines</p>
+<p><img data-src="images/clipboard-3133611621.png" class="center" style="width:60.0%"></p></li>
+</ul>
+</section>
+<section id="scaling-laws-in-deep-learning-why-scaling-laws-matter" class="slide level2">
+<h2>Scaling Laws in Deep Learning: why scaling laws matter</h2>
+<ul>
+<li>In deep learning, performance scales according to:
+<ul>
+<li><strong>N</strong>: Model size (number of parameters)</li>
+<li><strong>D</strong>: Dataset size (tokens, pixels, etc.)</li>
+<li><strong>C</strong>: Compute (FLOPs)</li>
+</ul></li>
+<li><strong>As these variables increase, model loss decreases following power laws</strong></li>
+<li><strong>Scaling is primarily bottlenecked by computational resources</strong></li>
+</ul>
+</section>
+<section id="key-variables-in-scaling-laws" class="slide level2">
+<h2>Key Variables in Scaling Laws</h2>
+<ol type="1">
+<li><p><strong>Model Size (N):</strong></p>
+<p>Number of parameters (weights) in the model</p>
+<p>Measures model capacity</p></li>
+<li><p><strong>Dataset Size (D):</strong></p>
+<p>Number of tokens the model is trained on</p>
+<p>Tokens can be words, subwords, pixels, etc.</p></li>
+<li><p><strong>Compute (C):</strong></p>
+<p>Floating point operations (FLOPs) used during training</p>
+<p>Enables both larger models and more training data</p></li>
+</ol>
+</section>
+<section id="the-chinchilla-scaling-law" class="slide level2">
+<h2>The Chinchilla Scaling Law</h2>
+<ul>
+<li>Key paper (Hoffmann et al.&nbsp;2022): <a href="https://arxiv.org/abs/2203.15556">“Training Compute-Optimal LLMs”</a></li>
+<li>Finding: Balance model size &amp; data for compute budget</li>
+<li>Introduced by Hoffmann et al.&nbsp;(2022)</li>
+</ul>
+<!-- -->
+<ul>
+<li>Key insight: <strong>optimal performance requires balancing model and data size</strong></li>
+</ul>
+<!-- -->
+<ul>
+<li><p>Small models with more training data can outperform larger models</p></li>
+<li><p>Chinchilla (70B params) beat larger models with more tokens</p></li>
+</ul>
+</section>
+<section id="chinchilla-in-action" class="slide level2">
+<h2>Chinchilla in Action</h2>
+
+<img data-src="images/clipboard-3085690334.png" class="r-stretch"></section>
+<section id="implications" class="slide level2">
+<h2>Implications</h2>
+<ul>
+<li><strong>Planning</strong>: Predict performance before training</li>
+<li><strong>Efficiency</strong>: Avoid oversized models</li>
+<li><strong>Cost</strong>: Optimize compute allocation</li>
+<li><em>Ties to <a href="https://github.com/r4ds/bookclub-genai/blob/main/slides/16_distributed-training-and-fsdp.qmd">distributed training’s scale (Ch. 16)</a></em></li>
+</ul>
+</section>
+<section id="universal-applicability" class="slide level2">
+<h2>Universal Applicability</h2>
+<ul>
+<li>Scaling laws hold across many <strong>modalities</strong> and <strong>orders of magnitude</strong>.</li>
+<li>Generative models (e.g., LLMs) follow scaling laws.</li>
+<li>Strong for generative models (e.g., LLMs)</li>
+<li>Weaker for discriminative models (e.g., image classifiers)</li>
+<li>Algorithms can shift the curve (better constant terms)</li>
+</ul>
+</section>
+<section id="the-bitter-lesson" class="slide level2">
+<h2>The Bitter Lesson</h2>
+<ul>
+<li><p><strong>Key observation</strong>: Scaling beats intricate, expert-designed systems.</p></li>
+<li><p>Simpler systems trained on more data outperform complex, human-designed approaches.</p></li>
+<li><p>Lesson: Invest in <strong>compute</strong> and <strong>data</strong> rather than manual feature engineering.</p></li>
+<li><p><strong>Scaling often beats complex designs</strong></p></li>
+<li><p><a href="https://bdtechtalks.com/2022/12/01/rich-sutton-the-bitter-lesson/">“More compute + data &gt; human ingenuity alone” (Sutton)</a></p></li>
+</ul>
+</section>
+<section id="challenges-debates" class="slide level2">
+<h2>Challenges &amp; Debates</h2>
+<ul>
+<li>Chinchilla’s exact numbers contested</li>
+<li>Scaling laws are not universal.</li>
+<li>Equations are debated and subject to refinement.</li>
+<li><strong>Future trends</strong>: Scaling laws may evolve as models and tasks become more complex.</li>
+<li>Replication issues (see Eleuther AI post)</li>
+<li>Future laws may refine predictions</li>
+</ul>
+</section>
+<section id="implications-for-ai-development" class="slide level2">
+<h2>Implications for AI Development</h2>
+<ol type="1">
+<li><p><strong>Resource allocation:</strong> Optimize the ratio of model size to dataset size</p></li>
+<li><p><strong>Investment focus:</strong> Compute is the fundamental bottleneck</p></li>
+<li><p><strong>Research priorities:</strong> Algorithm improvements can shift the scaling curve</p></li>
+<li><p><strong>Future capabilities:</strong> May be predictable through extrapolation</p></li>
+<li><p><strong>AI timelines:</strong> Scaling laws inform predictions about AI progress</p></li>
+</ol>
+</section>
+<section id="key-takeaways" class="slide level2">
+<h2>Key Takeaways</h2>
+<ul>
+<li>Scaling laws predict loss via params, data, compute</li>
+<li>Chinchilla: Balance scale for efficiency</li>
+<li>Power laws = reliable trends, but not universal</li>
+<li>Optimize training smarter, not harder</li>
+</ul>
+</section>
+<section id="resources" class="slide level2">
+<h2>Resources</h2>
+<ul>
+<li><a href="https://medium.com/@raniahossam/chinchilla-scaling-laws-for-large-language-models-llms-40c434e4e1c1">“Chinchilla Scaling Laws”</a> by Rania Hossam</li>
+<li>“<a href="https://www.lesswrong.com/posts/6Fpvch8RR29qLEWNH/chinchilla-s-wild-implications">Chinchilla’s Wild Implications</a>” (LessWrong)</li>
+<li><a href="https://cthiriet.com/blog/scaling-laws">“Scaling Laws and Emergent Properties”</a> by Clément Thiriet</li>
+<li>Stanford CS224n “<a href="https://www.youtube.com/watch?v=UFem7xa3Q2Q">Scaling Language Models</a>” video</li>
+</ul>
+</section>
+<section id="qa" class="slide level2">
+<h2>Q&amp;A</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<aside class="notes">
-<ul>
-<li>You can add notes on each slide with blocks like this!</li>
-<li>Load a deck in the browser and type “s” to see these notes.</li>
-</ul>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<p><strong>True or False: Scaling laws apply to all ML models</strong></p>
+</div>
+<div class="callout-content">
+<p>False. Generative models (e.g., LLMs) follow clear scaling laws, but discriminative models (e.g., image classifiers) often don’t.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>How does compute relate to scaling?</strong></p>
+</div>
+<div class="callout-content">
+<p>Compute drives scaling by enabling larger models and datasets. More FLOPs = more parameters or tokens.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>What’s a power law?</strong></p>
+</div>
+<div class="callout-content">
+<p>A power law is ( y = bx^a ), where ( y ) (e.g., loss) scales with ( x ) (e.g., params) raised to an exponent. It’s linear on a log-log plot.</p>
+</div>
+</div>
+</div>
 </section>
-
-<section>
-<section id="slide-section" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
-
-</section>
-<section id="slide" class="slide level2">
-<h2>SLIDE</h2>
-<ul>
-<li>DENOTE MAJOR SECTIONS WITH <code># TITLE</code> (eg <code># Installation</code>)</li>
-<li>ADD INDIVIDUAL SLIDES WITH <code>##</code> (eg <code>## rustup on Linux/macOS</code>)</li>
-<li>KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
-</ul>
-</section>
-<section id="slide-1" class="slide level2">
-<h2>SLIDE</h2>
-</section></section>
-<section>
-<section id="slide-section-1" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
-
-</section>
-<section id="slide-2" class="slide level2">
-<h2>SLIDE</h2>
-</section>
-<section id="slide-3" class="slide level2">
-<h2>SLIDE</h2>
+<section class="slide level2">
 
 
-</section></section>
+
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
@@ -242,7 +401,7 @@
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',

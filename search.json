@@ -1647,44 +1647,165 @@
     ]
   },
   {
-    "objectID": "slides/17_scaling-laws.html#slide",
-    "href": "slides/17_scaling-laws.html#slide",
+    "objectID": "slides/17_scaling-laws.html#chapter-17-scaling-laws",
+    "href": "slides/17_scaling-laws.html#chapter-17-scaling-laws",
     "title": "17. Scaling Laws",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "section": "Chapter 17: Scaling Laws",
+    "text": "Chapter 17: Scaling Laws\n\nGoal: Understand how scale predicts LLM performance\nBuilds on: Pretraining, Distributed Training\n\nWe’ll cover:\n\nWhat are scaling laws?\nPower laws: the foundation\nScaling laws in deep learning\nThe Chinchilla scaling law Implications and limitations\nThe “bitter lesson” of AI research",
     "crumbs": [
       "Section III: Foundations for Modern Language Modeling",
       "17. Scaling Laws"
     ]
   },
   {
-    "objectID": "slides/17_scaling-laws.html#slide-1",
-    "href": "slides/17_scaling-laws.html#slide-1",
+    "objectID": "slides/17_scaling-laws.html#what-are-scaling-laws",
+    "href": "slides/17_scaling-laws.html#what-are-scaling-laws",
     "title": "17. Scaling Laws",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "What Are Scaling Laws?",
+    "text": "What Are Scaling Laws?\n\nScaling Laws describe how changes in model size, dataset size, or compute affect AI model performance.\nThey are essential for understanding and optimizing AI models.\nPredict how LLM performance (loss) changes with:\n\nModel size (parameters)\nDataset size (tokens)\nCompute (FLOPs)\n\nAllow us to make reliable predictions about model performance\nEnable optimization of hyperparameters without expensive grid searches",
     "crumbs": [
       "Section III: Foundations for Modern Language Modeling",
       "17. Scaling Laws"
     ]
   },
   {
-    "objectID": "slides/17_scaling-laws.html#slide-2",
-    "href": "slides/17_scaling-laws.html#slide-2",
+    "objectID": "slides/17_scaling-laws.html#power-laws-the-foundation",
+    "href": "slides/17_scaling-laws.html#power-laws-the-foundation",
     "title": "17. Scaling Laws",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Power Laws: The Foundation",
+    "text": "Power Laws: The Foundation\n\nPower laws: mathematical equations of the form: y = bx^a\nDescribe how one quantity varies as the power of another\n\ny : Performance (e.g., loss), x : Scale (e.g., parameters)\n\nOn a log-log plot, Power laws = straight lines",
     "crumbs": [
       "Section III: Foundations for Modern Language Modeling",
       "17. Scaling Laws"
     ]
   },
   {
-    "objectID": "slides/17_scaling-laws.html#slide-3",
-    "href": "slides/17_scaling-laws.html#slide-3",
+    "objectID": "slides/17_scaling-laws.html#scaling-laws-in-deep-learning-why-scaling-laws-matter",
+    "href": "slides/17_scaling-laws.html#scaling-laws-in-deep-learning-why-scaling-laws-matter",
     "title": "17. Scaling Laws",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Scaling Laws in Deep Learning: why scaling laws matter",
+    "text": "Scaling Laws in Deep Learning: why scaling laws matter\n\nIn deep learning, performance scales according to:\n\nN: Model size (number of parameters)\nD: Dataset size (tokens, pixels, etc.)\nC: Compute (FLOPs)\n\nAs these variables increase, model loss decreases following power laws\nScaling is primarily bottlenecked by computational resources",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "17. Scaling Laws"
+    ]
+  },
+  {
+    "objectID": "slides/17_scaling-laws.html#key-variables-in-scaling-laws",
+    "href": "slides/17_scaling-laws.html#key-variables-in-scaling-laws",
+    "title": "17. Scaling Laws",
+    "section": "Key Variables in Scaling Laws",
+    "text": "Key Variables in Scaling Laws\n\nModel Size (N):\nNumber of parameters (weights) in the model\nMeasures model capacity\nDataset Size (D):\nNumber of tokens the model is trained on\nTokens can be words, subwords, pixels, etc.\nCompute (C):\nFloating point operations (FLOPs) used during training\nEnables both larger models and more training data",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "17. Scaling Laws"
+    ]
+  },
+  {
+    "objectID": "slides/17_scaling-laws.html#the-chinchilla-scaling-law",
+    "href": "slides/17_scaling-laws.html#the-chinchilla-scaling-law",
+    "title": "17. Scaling Laws",
+    "section": "The Chinchilla Scaling Law",
+    "text": "The Chinchilla Scaling Law\n\nKey paper (Hoffmann et al. 2022): “Training Compute-Optimal LLMs”\nFinding: Balance model size & data for compute budget\nIntroduced by Hoffmann et al. (2022)\n\n\n\nKey insight: optimal performance requires balancing model and data size\n\n\n\nSmall models with more training data can outperform larger models\nChinchilla (70B params) beat larger models with more tokens",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "17. Scaling Laws"
+    ]
+  },
+  {
+    "objectID": "slides/17_scaling-laws.html#chinchilla-in-action",
+    "href": "slides/17_scaling-laws.html#chinchilla-in-action",
+    "title": "17. Scaling Laws",
+    "section": "Chinchilla in Action",
+    "text": "Chinchilla in Action",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "17. Scaling Laws"
+    ]
+  },
+  {
+    "objectID": "slides/17_scaling-laws.html#implications",
+    "href": "slides/17_scaling-laws.html#implications",
+    "title": "17. Scaling Laws",
+    "section": "Implications",
+    "text": "Implications\n\nPlanning: Predict performance before training\nEfficiency: Avoid oversized models\nCost: Optimize compute allocation\nTies to distributed training’s scale (Ch. 16)",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "17. Scaling Laws"
+    ]
+  },
+  {
+    "objectID": "slides/17_scaling-laws.html#universal-applicability",
+    "href": "slides/17_scaling-laws.html#universal-applicability",
+    "title": "17. Scaling Laws",
+    "section": "Universal Applicability",
+    "text": "Universal Applicability\n\nScaling laws hold across many modalities and orders of magnitude.\nGenerative models (e.g., LLMs) follow scaling laws.\nStrong for generative models (e.g., LLMs)\nWeaker for discriminative models (e.g., image classifiers)\nAlgorithms can shift the curve (better constant terms)",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "17. Scaling Laws"
+    ]
+  },
+  {
+    "objectID": "slides/17_scaling-laws.html#the-bitter-lesson",
+    "href": "slides/17_scaling-laws.html#the-bitter-lesson",
+    "title": "17. Scaling Laws",
+    "section": "The Bitter Lesson",
+    "text": "The Bitter Lesson\n\nKey observation: Scaling beats intricate, expert-designed systems.\nSimpler systems trained on more data outperform complex, human-designed approaches.\nLesson: Invest in compute and data rather than manual feature engineering.\nScaling often beats complex designs\n“More compute + data &gt; human ingenuity alone” (Sutton)",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "17. Scaling Laws"
+    ]
+  },
+  {
+    "objectID": "slides/17_scaling-laws.html#challenges-debates",
+    "href": "slides/17_scaling-laws.html#challenges-debates",
+    "title": "17. Scaling Laws",
+    "section": "Challenges & Debates",
+    "text": "Challenges & Debates\n\nChinchilla’s exact numbers contested\nScaling laws are not universal.\nEquations are debated and subject to refinement.\nFuture trends: Scaling laws may evolve as models and tasks become more complex.\nReplication issues (see Eleuther AI post)\nFuture laws may refine predictions",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "17. Scaling Laws"
+    ]
+  },
+  {
+    "objectID": "slides/17_scaling-laws.html#implications-for-ai-development",
+    "href": "slides/17_scaling-laws.html#implications-for-ai-development",
+    "title": "17. Scaling Laws",
+    "section": "Implications for AI Development",
+    "text": "Implications for AI Development\n\nResource allocation: Optimize the ratio of model size to dataset size\nInvestment focus: Compute is the fundamental bottleneck\nResearch priorities: Algorithm improvements can shift the scaling curve\nFuture capabilities: May be predictable through extrapolation\nAI timelines: Scaling laws inform predictions about AI progress",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "17. Scaling Laws"
+    ]
+  },
+  {
+    "objectID": "slides/17_scaling-laws.html#key-takeaways",
+    "href": "slides/17_scaling-laws.html#key-takeaways",
+    "title": "17. Scaling Laws",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nScaling laws predict loss via params, data, compute\nChinchilla: Balance scale for efficiency\nPower laws = reliable trends, but not universal\nOptimize training smarter, not harder",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "17. Scaling Laws"
+    ]
+  },
+  {
+    "objectID": "slides/17_scaling-laws.html#resources",
+    "href": "slides/17_scaling-laws.html#resources",
+    "title": "17. Scaling Laws",
+    "section": "Resources",
+    "text": "Resources\n\n“Chinchilla Scaling Laws” by Rania Hossam\n“Chinchilla’s Wild Implications” (LessWrong)\n“Scaling Laws and Emergent Properties” by Clément Thiriet\nStanford CS224n “Scaling Language Models” video",
+    "crumbs": [
+      "Section III: Foundations for Modern Language Modeling",
+      "17. Scaling Laws"
+    ]
+  },
+  {
+    "objectID": "slides/17_scaling-laws.html#qa",
+    "href": "slides/17_scaling-laws.html#qa",
+    "title": "17. Scaling Laws",
+    "section": "Q&A",
+    "text": "Q&A\n\n\n\n\n\n\nTrue or False: Scaling laws apply to all ML models\n\n\nFalse. Generative models (e.g., LLMs) follow clear scaling laws, but discriminative models (e.g., image classifiers) often don’t.\n\n\n\n\n\n\n\n\n\nHow does compute relate to scaling?\n\n\nCompute drives scaling by enabling larger models and datasets. More FLOPs = more parameters or tokens.\n\n\n\n\n\n\n\n\n\nWhat’s a power law?\n\n\nA power law is ( y = bx^a ), where ( y ) (e.g., loss) scales with ( x ) (e.g., params) raised to an exponent. It’s linear on a log-log plot.",
     "crumbs": [
       "Section III: Foundations for Modern Language Modeling",
       "17. Scaling Laws"
@@ -1877,44 +1998,44 @@
     ]
   },
   {
-    "objectID": "slides/18_mixture-of-experts.html#slide",
-    "href": "slides/18_mixture-of-experts.html#slide",
+    "objectID": "slides/18_mixture-of-experts.html#mixture-of-experts-the-basics",
+    "href": "slides/18_mixture-of-experts.html#mixture-of-experts-the-basics",
     "title": "18. Mixture-of-Experts",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "section": "Mixture-of-Experts: The Basics",
+    "text": "Mixture-of-Experts: The Basics\n\nChapter 18 from GenAI Handbook\nGoal: Learn MoE for efficient LLMs\nKey idea: Use only some parameters per task\nBuilds on: Scaling laws, pretraining",
     "crumbs": [
       "Section III: Foundations for Modern Language Modeling",
       "18. Mixture-of-Experts"
     ]
   },
   {
-    "objectID": "slides/18_mixture-of-experts.html#slide-1",
-    "href": "slides/18_mixture-of-experts.html#slide-1",
+    "objectID": "slides/18_mixture-of-experts.html#how-moe-works",
+    "href": "slides/18_mixture-of-experts.html#how-moe-works",
     "title": "18. Mixture-of-Experts",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "How MoE Works",
+    "text": "How MoE Works\n\nUnlike dense models (e.g., Llama3), MoE is sparse\nExperts: Specialized sub-networks per layer\nRouter: Picks a few experts per input\nResult: Big model, less compute",
     "crumbs": [
       "Section III: Foundations for Modern Language Modeling",
       "18. Mixture-of-Experts"
     ]
   },
   {
-    "objectID": "slides/18_mixture-of-experts.html#slide-2",
-    "href": "slides/18_mixture-of-experts.html#slide-2",
+    "objectID": "slides/18_mixture-of-experts.html#mixture-of-experts",
+    "href": "slides/18_mixture-of-experts.html#mixture-of-experts",
     "title": "18. Mixture-of-Experts",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Mixture of Experts",
+    "text": "Mixture of Experts",
     "crumbs": [
       "Section III: Foundations for Modern Language Modeling",
       "18. Mixture-of-Experts"
     ]
   },
   {
-    "objectID": "slides/18_mixture-of-experts.html#slide-3",
-    "href": "slides/18_mixture-of-experts.html#slide-3",
+    "objectID": "slides/18_mixture-of-experts.html#why-it-matters",
+    "href": "slides/18_mixture-of-experts.html#why-it-matters",
     "title": "18. Mixture-of-Experts",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Why It Matters",
+    "text": "Why It Matters\n\nEfficiency: Less memory/time than dense models\nScale: Grow “knowledge” without slowing down\nExamples: Mixtral (8x7B, 8x22B), maybe GPT-4",
     "crumbs": [
       "Section III: Foundations for Modern Language Modeling",
       "18. Mixture-of-Experts"

@@ -3,29 +3,112 @@ engine: knitr
 title: "19. Instruct Fine-Tuning"
 ---
 
+```{r setup_19}
+#| echo: false
+#| eval: false
+#| include: false
+library("gt")
+```
+
+
 # Learning objectives
 
 ::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+- Introduce Fine Tuning
+- Motivate Instruct Fine Tuning
 :::
 
 ::: notes
-- You can add notes on each slide with blocks like this!
-- Load a deck in the browser and type "s" to see these notes.
+- The non-math side of training LLMs
 :::
 
-# SLIDE SECTION
+## Sources
 
-## SLIDE
+Following the [Gen AI Handbook](https://genai-handbook.github.io/), we looked at
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+* [blog post](https://newsletter.ruder.io/p/instruction-tuning-vol-1) by Sebastian Ruder (Meta)
+* [video](https://www.youtube.com/watch?v=YoVek79LFe0) by Shayne Longpre (Google)
 
-## SLIDE
 
-# SLIDE SECTION
+# Fine Tuning
 
-## SLIDE
+## Module
 
-## SLIDE
+![fine tuning](images/fine_tuning.png)
+
+* "... to add a small set of parameters to a pretrained LLM.  Only the newly added parameters are finetuned while all the parameters of the pretrained LLM remain frozen." --- Sebastian Raschka (author, [article](https://magazine.sebastianraschka.com/p/finetuning-llms-with-adapters))
+
+## Where were we?
+
+![Wei, et al., 2022](images/LLMs_back_in_2022.png)
+
+
+# Instruct Fine Tuning
+
+## Definition Seeking
+
+![getting definitions](images/instruct_fine_tuning_GPT_1.png)
+
+## Instruction Guidance
+
+![providing instructions](images/instruct_fine_tuning_GPT_2.png)
+
+## Alignment Tuning = Instruction Tuning
+
+* open-ended tasks
+* creative generation
+* human feedback
+
+## Instruction Data
+
+* Mixing few-shot settings
+* Task diversity
+* Data Augmentation
+
+    * e.g. turning a question-answering task into a question-generation task
+    
+* Mixing weights
+
+# Recent Developments
+
+## Natural Instructions: Q
+
+![question generation, Mishra et al., 2022](images/question_generation_example.png)
+
+::: notes
+193k instruction-output examples sourced from 61 existing English NLP tasks. Crowd-sourcing instructions from each dataset are aligned to a common schema. Instructions are thus more structured compared to other datasets.
+:::
+
+
+## Natural Instructions: A
+
+![answer generation, Mishra et al., 2022](images/answer_generation_example.png)
+
+## Unnatural Instructions
+
+```{r}
+#| echo: false
+#| eval: false
+
+unnatural_instructions_df <- data.frame(
+  cat1 = c("Experiment Verification", "Recipe Correction", "Character Categorization", "Poem Generation"),
+  cat2 = c("Idiom Explanation", "Author Classification", "Word Invention", "Humor Understanding")
+)
+
+unnatural_instructions_df |>
+  gt() |>
+  tab_header(title = md("**Unnatural Instructions**")) |>
+  tab_options(column_labels.background.color = "blue") |>
+  cols_align(align = "center", columns = everything()) |>
+  tab_source_note(source_note = "Source: Honovich, et al., 2023")
+```
+
+![Honovich, et al., 2023](images/unnatural_instructions.png)
+
+## Exemplars
+
+![Flan 2022](images/flan_exemplars.png)
+
+## Input Inversion
+
+![improve task diversity with input inversion](images/input_inversion.png)

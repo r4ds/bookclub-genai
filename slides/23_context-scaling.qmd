@@ -3,29 +3,64 @@ engine: knitr
 title: "23. Context Scaling"
 ---
 
-# Learning objectives
+# Context Scaling
+
+## Learning objectives
 
 ::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+- Adapt to long context inputs
+- Review RoPE
+
 :::
 
 ::: notes
-- You can add notes on each slide with blocks like this!
-- Load a deck in the browser and type "s" to see these notes.
+- not a long section?
 :::
 
-# SLIDE SECTION
+## Sources
 
-## SLIDE
+Following the [Gen AI Handbook](https://genai-handbook.github.io/), we looked at
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+* [blog post](https://huggingface.co/blog/wenbopan/long-context-fine-tuning) by Belandros Pan (Hugging Face)
+* [blog post](https://blog.eleuther.ai/yarn/) by Honglu Fan, et al. (Eleuther AI) 
+* [blog post](https://www.gradient.ai/blog/scaling-rotational-embeddings-for-long-context-language-models) by Gradient
 
-## SLIDE
+# The Problem
 
-# SLIDE SECTION
+## Issues with Long Contexts
 
-## SLIDE
+![batch alignment](images/input_padding.png)
 
-## SLIDE
+* memory usage
+* attention space: $O(N^{2})$
+
+## Fixes
+
+* Grouped Query Attention (GQA): multiple query matrices, but shares keys and values
+* Gradient Checkpoint: only saves results only after $\sqrt{N}$ layers
+* LoRA
+* Distributed Training
+* Sample packing: sequences share long chains
+* Flash Attention: $O(N)$
+
+# Rotary Position Embedding
+
+## RoPE
+
+![RoPE matrix](images/RoPE_matrix.png)
+
+* PE vectors maintain magnitude
+* resilient with test data $>$ training data
+* image credit: [Eleuther AI](https://blog.eleuther.ai/yarn/)
+
+# Experiments
+
+## Gradient
+
+* H. Liu et al.: "1M-32K, 10M-131k, 10M-262k, 25M-524k, 50M-1048k (**theta-context length**) schedule"
+
+## Llama with YaRN
+
+![Llama with Yarn](images/Llama_YaRN.png)
+
+* image credit: [Eleuther AI](https://blog.eleuther.ai/yarn/)

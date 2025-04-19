@@ -3,29 +3,65 @@ engine: knitr
 title: "22. Direct Preference Optimization Methods"
 ---
 
-# Learning objectives
+# DPO
+
+## Learning objectives
 
 ::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+- Continue discussing fine tuning
+- Introduce Direct Preference Optimzation
+- Move beyond RLHF
+
 :::
 
 ::: notes
-- You can add notes on each slide with blocks like this!
-- Load a deck in the browser and type "s" to see these notes.
+- I wish there was a concrete example of what DPO does
 :::
 
-# SLIDE SECTION
+## Sources
 
-## SLIDE
+Following the [Gen AI Handbook](https://genai-handbook.github.io/), we looked at
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+* [blog post](https://towardsdatascience.com/understanding-the-implications-of-direct-preference-optimization-a4bbd2d85841/) by Matthew Gunton
+* [blog post](https://huggingface.co/blog/pref-tuning) by Kashif Rasul, et al. (Hugging Face), [code](https://huggingface.co/blog/dpo-trl)
 
-## SLIDE
 
-# SLIDE SECTION
+# Policy Iteration
 
-## SLIDE
+## Before: RLHF
 
-## SLIDE
+![RLHF](images/before_RLHF.png)
+
+* image source: [Rafailov et al, 2024](https://arxiv.org/pdf/2305.18290)
+
+## Now: DPO
+
+![DPO](images/after_DPO.png)
+
+* "DPO removes the need for the rewards model all together!" --- [Matthew Gunton](https://towardsdatascience.com/understanding-the-implications-of-direct-preference-optimization-a4bbd2d85841/)
+* image source: [Rafailov et al, 2024](https://arxiv.org/pdf/2305.18290)
+
+## Policy Iteration
+
+![DPO math](images/DPO_main_equation.png)
+
+* $y_{w}$ increases
+* policies improve
+* image source: [Rafailov et al, 2024](https://arxiv.org/pdf/2305.18290)
+
+# Benefits
+
+## Motivations
+
+![DPO on IMDb data set](images/DPO_IMDb.png)
+
+* quality data: no need for reward model
+* dynamic: update with new data
+* precise: can avoid certain topics
+* image source: [Rafailov et al, 2024](https://arxiv.org/pdf/2305.18290)
+
+## Newer Designs
+
+![Zephyr models](images/zephyr_scan.png)
+
+* image source: [Hugging Face](https://huggingface.co/blog/pref-tuning)

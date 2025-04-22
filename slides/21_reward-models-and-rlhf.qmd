@@ -3,29 +3,99 @@ engine: knitr
 title: "21. Reward Models and RLHF"
 ---
 
-# Learning objectives
+# RLHF
+
+## Learning objectives
 
 ::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+- Continue discussing fine tuning
+- Motivate reward models
+- Elaborate on RLHF's role in AI history
 :::
 
 ::: notes
-- You can add notes on each slide with blocks like this!
-- Load a deck in the browser and type "s" to see these notes.
+- If this book club is repeated in the future, readers might be even less interested in benchmarks from a few years ago
 :::
 
-# SLIDE SECTION
+## Sources
 
-## SLIDE
+Following the [Gen AI Handbook](https://genai-handbook.github.io/), we looked at
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+* [blog post](https://huyenchip.com/2023/05/02/rlhf.html) by Chip Huyen (author)
+* [blog post](https://huggingface.co/blog/rlhf) by Nathan Lambert, et al. (Hugging Face)
+* [blog post](https://sebastianraschka.com/blog/2024/research-papers-in-march-2024.html) by Sebastian Raschka (author)
 
-## SLIDE
 
-# SLIDE SECTION
+# Fine Tuning
 
-## SLIDE
+## Continued Pre-Training
 
-## SLIDE
+![continued pre-training](images/continued_pretraining.png)
+
+* image source: [Sebastian Raschka](https://sebastianraschka.com/blog/2024/research-papers-in-march-2024.html)
+
+
+# Reward Models
+
+## RL
+
+![reinforcement learning](images/RL_workflow.png)
+
+* image source: [Hugging Face](https://huggingface.co/blog/rlhf)
+
+## Preference Classification
+
+![preference classification](images/preference_classification.png)
+
+* image source: [Sebastian Raschka](https://sebastianraschka.com/blog/2024/research-papers-in-march-2024.html)
+
+## Loss Function
+
+* $s_{w} = r_{\theta}(x, y_{w})$: reward for winning response
+* $s_{\ell} = r_{\theta}(x, y_{\ell})$: reward for losing response
+* **Goal**: minimize expected loss
+
+$$-\text{E}_{x}\text{log}(\sigma(s_{w} - s_{\ell}))$$
+
+That is, reward model should not have $s_{w} << s_{\ell}$
+
+# Reinforcement Learning with Human Feedback
+
+## RLHF
+
+![RLHF workflow](image/RLHF_workflow.png)
+
+* image source: [Hugging Face](https://huggingface.co/blog/rlhf)
+
+::: notes
+- note use of KL divergence
+:::
+
+## Toward DPO
+
+![toward DPO](images/toward_DPO.png)
+
+* image source: [Sebastian Raschka](https://sebastianraschka.com/blog/2024/research-papers-in-march-2024.html)
+
+## Human Feedback (moderation)
+
+![human feedback for moderation](images/HF_moderation.png)
+
+* image source: [Chip Huyen](https://huyenchip.com/2023/05/02/rlhf.html) by Chip Huyen (author)
+
+
+# Results
+
+## Quality of Model Outputs
+
+![Bai et al., 2022](images/9-sft-rlhf.png)
+
+## Selling Points
+
+![Schulman, 2023](images/10-hallucination.png)
+
+
+
+
+
+

@@ -1,31 +1,40 @@
 ---
 engine: knitr
 title: "18. Mixture-of-Experts"
+author: "Bryan Tegomoh"
+date: "April 13, 2025"
+format:
+  revealjs: 
+    transition: slide
+    slide-number: true
 ---
 
-# Learning objectives
+## Mixture-of-Experts: The Basics
 
-::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
-:::
+-   **Chapter 18** from *GenAI Handbook*
+-   Goal: Learn MoE for efficient LLMs
+-   Key idea: Use only some parameters per task
+-   Builds on: Scaling laws, pretraining
 
-::: notes
-- You can add notes on each slide with blocks like this!
-- Load a deck in the browser and type "s" to see these notes.
-:::
+------------------------------------------------------------------------
 
-# SLIDE SECTION
+## How MoE Works
 
-## SLIDE
+-   Unlike dense models (e.g., Llama3), MoE is **sparse**
+-   **Experts**: Specialized sub-networks per layer
+-   **Router**: Picks a few experts per input
+-   Result: Big model, less compute
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+## Mixture of Experts
 
-## SLIDE
+![](images/clipboard-35413599.png)
 
-# SLIDE SECTION
+------------------------------------------------------------------------
 
-## SLIDE
+## Why It Matters
 
-## SLIDE
+-   **Efficiency**: Less memory/time than dense models
+-   **Scale**: Grow “knowledge” without slowing down
+-   Examples: Mixtral (8x7B, 8x22B), maybe GPT-4
+
+------------------------------------------------------------------------

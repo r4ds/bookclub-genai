@@ -3,29 +3,131 @@ engine: knitr
 title: "24. Distillation and Merging"
 ---
 
-# Learning objectives
+# Distillation
+
+## Learning objectives
 
 ::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+- Finish module on fine tuning
+- Learn to train a "student" with a "teacher"
 :::
 
 ::: notes
-- You can add notes on each slide with blocks like this!
-- Load a deck in the browser and type "s" to see these notes.
+- It would be nice to have a simple tutorial here
 :::
 
-# SLIDE SECTION
+## Sources
 
-## SLIDE
+Following the [Gen AI Handbook](https://genai-handbook.github.io/), we looked at
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+* [blog post](https://medium.com/huggingface/distilbert-8cf3380435b5) by Victor Sanh (Hugging Face)
+* [blog post](https://snorkel.ai/blog/llm-distillation-demystified-a-complete-guide/) by Matt Casey (Snorkel AI) 
+* [blog post](https://research.google/blog/distilling-step-by-step-outperforming-larger-language-models-with-less-training-data-and-smaller-model-sizes/) by Cheng-Yu Hsieh, et al. (Google Research)
 
-## SLIDE
 
-# SLIDE SECTION
+# Math Updates
 
-## SLIDE
+## Temperature
 
-## SLIDE
+Another hyperparameter is the **softmax temperature**
+
+$$p_{i} = \frac{exp(z_{i}/T)}{\sum_{j} exp(z_{j}/T)}$$
+
+* $T \rightarrow 0$: one-hot target vector
+* $T \rightarrow \infty$: uniform distribution (random guessing)
+
+## KL Loss
+
+Kullback-Leibler loss is defined as
+
+$$\begin{array}{rcl}
+KL(p||q) & = & \text{E}_{p}[\log \frac{p}{q}] \\
+~ & = & \displaystyle\sum_{i} p_{i} \cdot \log(p_{i}) - \sum_{i} p_{i} \cdot \log(q_{i})
+\end{array}$$
+
+# BERT
+
+## Transformers
+
+* Encoder-only: BERT
+
+> bidirectional encoder representations from transformers
+
+* Decoder-only: GPT
+
+> generative pre-trained transformer
+
+## Encoders vs Decoders
+
+![BERT vs GPT](images/BERT_vs_GPT.png)
+
+* image source: [Ronak Verma](https://www.linkedin.com/pulse/bert-vs-gpt-which-better-llm-model-ronak-verma-xeixc/)
+
+## Applications
+
+* BERT
+
+    * text classification
+    * data labeling
+    * recommender
+    * sentiment analysis
+    
+* GPT
+
+    * content generation
+    * conversational chatbots
+
+# Distillation
+
+## Fine Tuning
+
+![distillation motivation](iamges/distillation_scatterplot.png)
+
+* image source: [Google Research](https://research.google/blog/distilling-step-by-step-outperforming-larger-language-models-with-less-training-data-and-smaller-model-sizes/)
+    
+## Teacher and Student
+
+
+![teacher and student](images/distillation_teacher_student.png)
+
+::: notes
+Researchers at the University of California at Berkeley found a way to change this, which they call “context distillation.” They built heavily-engineered prompts that ended with simple questions, such as “add these numbers.” Then, they stripped the prompt of its engineering and reduced the response to only its final answer to create a new data set that they used to fine-tune the model.
+:::
+
+* image source: [Snorkel AI](https://snorkel.ai/blog/llm-distillation-demystified-a-complete-guide/)
+
+## Chain of Thought
+
+![chain of thought](images/distillation_CoT.png)
+
+* image source: [Snorkel AI](https://snorkel.ai/blog/llm-distillation-demystified-a-complete-guide/)
+
+# DistilBERT
+
+## DistilBERT Performance
+
+```{r}
+#| echo: false
+#| eval: false
+
+library("gt")
+
+BERT_comparison_df <- data.frame(
+  cats = c("size", "inference", "accuracy"),
+  BERT = c("110M parameters", "668 sec", "93.46 percent"),
+  DistilBERT = c("66M parameters", "410 sec", "93.07 percent")
+)
+
+BERT_comparison_df |>
+  gt(rowname_col = "cats") |>
+  tab_header(title = md("**Performance**")) |>
+  tab_options(column_labels.background.color = "blue") |>
+  cols_align(align = "center", columns = everything()) |>
+  tab_footnote(
+    footnote = "IMDB Review Sentiment Classification",
+    locations = cells_body(rows = "accuracy")
+  ) |>
+  tab_source_note(source_note = "Source: Victor Sanh, 2019")
+```
+
+![DistilBERT performance](images/DistilBERT_performance.png)

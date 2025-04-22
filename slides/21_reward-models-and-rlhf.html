@@ -132,17 +132,23 @@
 </div>
 
 </section>
-<section id="learning-objectives" class="title-slide slide level1 center">
-<h1>Learning objectives</h1>
+<section>
+<section id="rlhf" class="title-slide slide level1 center">
+<h1>RLHF</h1>
+
+</section>
+<section id="learning-objectives" class="slide level2">
+<h2>Learning objectives</h2>
 <div>
 <ul>
-<li>THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY</li>
+<li>Continue discussing fine tuning</li>
+<li>Motivate reward models</li>
+<li>Elaborate on RLHF’s role in AI history</li>
 </ul>
 </div>
 <aside class="notes">
 <ul>
-<li>You can add notes on each slide with blocks like this!</li>
-<li>Load a deck in the browser and type “s” to see these notes.</li>
+<li>If this book club is repeated in the future, readers might be even less interested in benchmarks from a few years ago</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -156,36 +162,112 @@
           display:block!important;
       }</style></aside>
 </section>
-
+<section id="sources" class="slide level2">
+<h2>Sources</h2>
+<p>Following the <a href="https://genai-handbook.github.io/">Gen AI Handbook</a>, we looked at</p>
+<ul>
+<li><a href="https://huyenchip.com/2023/05/02/rlhf.html">blog post</a> by Chip Huyen (author)</li>
+<li><a href="https://huggingface.co/blog/rlhf">blog post</a> by Nathan Lambert, et al.&nbsp;(Hugging Face)</li>
+<li><a href="https://sebastianraschka.com/blog/2024/research-papers-in-march-2024.html">blog post</a> by Sebastian Raschka (author)</li>
+</ul>
+</section></section>
 <section>
-<section id="slide-section" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
+<section id="fine-tuning" class="title-slide slide level1 center">
+<h1>Fine Tuning</h1>
 
 </section>
-<section id="slide" class="slide level2">
-<h2>SLIDE</h2>
-<ul>
-<li>DENOTE MAJOR SECTIONS WITH <code># TITLE</code> (eg <code># Installation</code>)</li>
-<li>ADD INDIVIDUAL SLIDES WITH <code>##</code> (eg <code>## rustup on Linux/macOS</code>)</li>
-<li>KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
+<section id="continued-pre-training" class="slide level2">
+<h2>Continued Pre-Training</h2>
+
+<img data-src="images/continued_pretraining.png" class="r-stretch quarto-figure-center"><p class="caption">continued pre-training</p><ul>
+<li>image source: <a href="https://sebastianraschka.com/blog/2024/research-papers-in-march-2024.html">Sebastian Raschka</a></li>
+</ul>
+</section></section>
+<section>
+<section id="reward-models" class="title-slide slide level1 center">
+<h1>Reward Models</h1>
+
+</section>
+<section id="rl" class="slide level2">
+<h2>RL</h2>
+
+<img data-src="images/RL_workflow.png" class="r-stretch quarto-figure-center"><p class="caption">reinforcement learning</p><ul>
+<li>image source: <a href="https://huggingface.co/blog/rlhf">Hugging Face</a></li>
 </ul>
 </section>
-<section id="slide-1" class="slide level2">
-<h2>SLIDE</h2>
+<section id="preference-classification" class="slide level2">
+<h2>Preference Classification</h2>
+
+<img data-src="images/preference_classification.png" class="r-stretch quarto-figure-center"><p class="caption">preference classification</p><ul>
+<li>image source: <a href="https://sebastianraschka.com/blog/2024/research-papers-in-march-2024.html">Sebastian Raschka</a></li>
+</ul>
+</section>
+<section id="loss-function" class="slide level2">
+<h2>Loss Function</h2>
+<ul>
+<li><span class="math inline">\(s_{w} = r_{\theta}(x, y_{w})\)</span>: reward for winning response</li>
+<li><span class="math inline">\(s_{\ell} = r_{\theta}(x, y_{\ell})\)</span>: reward for losing response</li>
+<li><strong>Goal</strong>: minimize expected loss</li>
+</ul>
+<p><span class="math display">\[-\text{E}_{x}\text{log}(\sigma(s_{w} - s_{\ell}))\]</span></p>
+<p>That is, reward model should not have <span class="math inline">\(s_{w} &lt;&lt; s_{\ell}\)</span></p>
 </section></section>
 <section>
-<section id="slide-section-1" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
+<section id="reinforcement-learning-with-human-feedback" class="title-slide slide level1 center">
+<h1>Reinforcement Learning with Human Feedback</h1>
 
 </section>
-<section id="slide-2" class="slide level2">
-<h2>SLIDE</h2>
+<section id="rlhf-1" class="slide level2">
+<h2>RLHF</h2>
+
+<img data-src="image/RLHF_workflow.png" class="r-stretch quarto-figure-center"><p class="caption">RLHF workflow</p><ul>
+<li>image source: <a href="https://huggingface.co/blog/rlhf">Hugging Face</a></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>note use of KL divergence</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="slide-3" class="slide level2">
-<h2>SLIDE</h2>
+<section id="toward-dpo" class="slide level2">
+<h2>Toward DPO</h2>
 
+<img data-src="images/toward_DPO.png" class="r-stretch quarto-figure-center"><p class="caption">toward DPO</p><ul>
+<li>image source: <a href="https://sebastianraschka.com/blog/2024/research-papers-in-march-2024.html">Sebastian Raschka</a></li>
+</ul>
+</section>
+<section id="human-feedback-moderation" class="slide level2">
+<h2>Human Feedback (moderation)</h2>
 
+<img data-src="images/HF_moderation.png" class="r-stretch quarto-figure-center"><p class="caption">human feedback for moderation</p><ul>
+<li>image source: <a href="https://huyenchip.com/2023/05/02/rlhf.html">Chip Huyen</a> by Chip Huyen (author)</li>
+</ul>
 </section></section>
+<section>
+<section id="results" class="title-slide slide level1 center">
+<h1>Results</h1>
+
+</section>
+<section id="quality-of-model-outputs" class="slide level2">
+<h2>Quality of Model Outputs</h2>
+
+<img data-src="images/9-sft-rlhf.png" class="r-stretch quarto-figure-center"><p class="caption">Bai et al., 2022</p></section>
+<section id="selling-points" class="slide level2">
+<h2>Selling Points</h2>
+
+
+
+<img data-src="images/10-hallucination.png" class="r-stretch quarto-figure-center"><p class="caption">Schulman, 2023</p></section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

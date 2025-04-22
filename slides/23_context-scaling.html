@@ -132,17 +132,22 @@
 </div>
 
 </section>
-<section id="learning-objectives" class="title-slide slide level1 center">
-<h1>Learning objectives</h1>
+<section>
+<section id="context-scaling" class="title-slide slide level1 center">
+<h1>Context Scaling</h1>
+
+</section>
+<section id="learning-objectives" class="slide level2">
+<h2>Learning objectives</h2>
 <div>
 <ul>
-<li>THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY</li>
+<li>Adapt to long context inputs</li>
+<li>Review RoPE</li>
 </ul>
 </div>
 <aside class="notes">
 <ul>
-<li>You can add notes on each slide with blocks like this!</li>
-<li>Load a deck in the browser and type “s” to see these notes.</li>
+<li>not a long section?</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -156,33 +161,70 @@
           display:block!important;
       }</style></aside>
 </section>
-
-<section>
-<section id="slide-section" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
-
-</section>
-<section id="slide" class="slide level2">
-<h2>SLIDE</h2>
+<section id="sources" class="slide level2">
+<h2>Sources</h2>
+<p>Following the <a href="https://genai-handbook.github.io/">Gen AI Handbook</a>, we looked at</p>
 <ul>
-<li>DENOTE MAJOR SECTIONS WITH <code># TITLE</code> (eg <code># Installation</code>)</li>
-<li>ADD INDIVIDUAL SLIDES WITH <code>##</code> (eg <code>## rustup on Linux/macOS</code>)</li>
-<li>KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
+<li><a href="https://huggingface.co/blog/wenbopan/long-context-fine-tuning">blog post</a> by Belandros Pan (Hugging Face)</li>
+<li><a href="https://blog.eleuther.ai/yarn/">blog post</a> by Honglu Fan, et al.&nbsp;(Eleuther AI)</li>
+<li><a href="https://www.gradient.ai/blog/scaling-rotational-embeddings-for-long-context-language-models">blog post</a> by Gradient</li>
 </ul>
-</section>
-<section id="slide-1" class="slide level2">
-<h2>SLIDE</h2>
 </section></section>
 <section>
-<section id="slide-section-1" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
+<section id="the-problem" class="title-slide slide level1 center">
+<h1>The Problem</h1>
 
 </section>
-<section id="slide-2" class="slide level2">
-<h2>SLIDE</h2>
+<section id="issues-with-long-contexts" class="slide level2">
+<h2>Issues with Long Contexts</h2>
+
+<img data-src="images/input_padding.png" class="r-stretch quarto-figure-center"><p class="caption">batch alignment</p><ul>
+<li>memory usage</li>
+<li>attention space: <span class="math inline">\(O(N^{2})\)</span></li>
+</ul>
 </section>
-<section id="slide-3" class="slide level2">
-<h2>SLIDE</h2>
+<section id="fixes" class="slide level2">
+<h2>Fixes</h2>
+<ul>
+<li>Grouped Query Attention (GQA): multiple query matrices, but shares keys and values</li>
+<li>Gradient Checkpoint: only saves results only after <span class="math inline">\(\sqrt{N}\)</span> layers</li>
+<li>LoRA</li>
+<li>Distributed Training</li>
+<li>Sample packing: sequences share long chains</li>
+<li>Flash Attention: <span class="math inline">\(O(N)\)</span></li>
+</ul>
+</section></section>
+<section>
+<section id="rotary-position-embedding" class="title-slide slide level1 center">
+<h1>Rotary Position Embedding</h1>
+
+</section>
+<section id="rope" class="slide level2">
+<h2>RoPE</h2>
+
+<img data-src="images/RoPE_matrix.png" class="r-stretch quarto-figure-center"><p class="caption">RoPE matrix</p><ul>
+<li>PE vectors maintain magnitude</li>
+<li>resilient with test data <span class="math inline">\(&gt;\)</span> training data</li>
+<li>image credit: <a href="https://blog.eleuther.ai/yarn/">Eleuther AI</a></li>
+</ul>
+</section></section>
+<section>
+<section id="experiments" class="title-slide slide level1 center">
+<h1>Experiments</h1>
+
+</section>
+<section id="gradient" class="slide level2">
+<h2>Gradient</h2>
+<ul>
+<li>H. Liu et al.: “1M-32K, 10M-131k, 10M-262k, 25M-524k, 50M-1048k (<strong>theta-context length</strong>) schedule”</li>
+</ul>
+</section>
+<section id="llama-with-yarn" class="slide level2">
+<h2>Llama with YaRN</h2>
+
+<img data-src="images/Llama_YaRN.png" class="r-stretch quarto-figure-center"><p class="caption">Llama with Yarn</p><ul>
+<li>image credit: <a href="https://blog.eleuther.ai/yarn/">Eleuther AI</a></li>
+</ul>
 
 
 </section></section>

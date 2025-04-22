@@ -132,17 +132,23 @@
 </div>
 
 </section>
-<section id="learning-objectives" class="title-slide slide level1 center">
-<h1>Learning objectives</h1>
+<section>
+<section id="dpo" class="title-slide slide level1 center">
+<h1>DPO</h1>
+
+</section>
+<section id="learning-objectives" class="slide level2">
+<h2>Learning objectives</h2>
 <div>
 <ul>
-<li>THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY</li>
+<li>Continue discussing fine tuning</li>
+<li>Introduce Direct Preference Optimzation</li>
+<li>Move beyond RLHF</li>
 </ul>
 </div>
 <aside class="notes">
 <ul>
-<li>You can add notes on each slide with blocks like this!</li>
-<li>Load a deck in the browser and type “s” to see these notes.</li>
+<li>I wish there was a concrete example of what DPO does</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -156,33 +162,64 @@
           display:block!important;
       }</style></aside>
 </section>
-
-<section>
-<section id="slide-section" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
-
-</section>
-<section id="slide" class="slide level2">
-<h2>SLIDE</h2>
+<section id="sources" class="slide level2">
+<h2>Sources</h2>
+<p>Following the <a href="https://genai-handbook.github.io/">Gen AI Handbook</a>, we looked at</p>
 <ul>
-<li>DENOTE MAJOR SECTIONS WITH <code># TITLE</code> (eg <code># Installation</code>)</li>
-<li>ADD INDIVIDUAL SLIDES WITH <code>##</code> (eg <code>## rustup on Linux/macOS</code>)</li>
-<li>KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
+<li><a href="https://towardsdatascience.com/understanding-the-implications-of-direct-preference-optimization-a4bbd2d85841/">blog post</a> by Matthew Gunton</li>
+<li><a href="https://huggingface.co/blog/pref-tuning">blog post</a> by Kashif Rasul, et al.&nbsp;(Hugging Face), <a href="https://huggingface.co/blog/dpo-trl">code</a></li>
 </ul>
-</section>
-<section id="slide-1" class="slide level2">
-<h2>SLIDE</h2>
 </section></section>
 <section>
-<section id="slide-section-1" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
+<section id="policy-iteration" class="title-slide slide level1 center">
+<h1>Policy Iteration</h1>
 
 </section>
-<section id="slide-2" class="slide level2">
-<h2>SLIDE</h2>
+<section id="before-rlhf" class="slide level2">
+<h2>Before: RLHF</h2>
+
+<img data-src="images/before_RLHF.png" class="r-stretch quarto-figure-center"><p class="caption">RLHF</p><ul>
+<li>image source: <a href="https://arxiv.org/pdf/2305.18290">Rafailov et al, 2024</a></li>
+</ul>
 </section>
-<section id="slide-3" class="slide level2">
-<h2>SLIDE</h2>
+<section id="now-dpo" class="slide level2">
+<h2>Now: DPO</h2>
+
+<img data-src="images/after_DPO.png" class="r-stretch quarto-figure-center"><p class="caption">DPO</p><ul>
+<li>“DPO removes the need for the rewards model all together!” — <a href="https://towardsdatascience.com/understanding-the-implications-of-direct-preference-optimization-a4bbd2d85841/">Matthew Gunton</a></li>
+<li>image source: <a href="https://arxiv.org/pdf/2305.18290">Rafailov et al, 2024</a></li>
+</ul>
+</section>
+<section id="policy-iteration-1" class="slide level2">
+<h2>Policy Iteration</h2>
+
+<img data-src="images/DPO_main_equation.png" class="r-stretch quarto-figure-center"><p class="caption">DPO math</p><ul>
+<li><span class="math inline">\(y_{w}\)</span> increases</li>
+<li>policies improve</li>
+<li>image source: <a href="https://arxiv.org/pdf/2305.18290">Rafailov et al, 2024</a></li>
+</ul>
+</section></section>
+<section>
+<section id="benefits" class="title-slide slide level1 center">
+<h1>Benefits</h1>
+
+</section>
+<section id="motivations" class="slide level2">
+<h2>Motivations</h2>
+
+<img data-src="images/DPO_IMDb.png" class="r-stretch quarto-figure-center"><p class="caption">DPO on IMDb data set</p><ul>
+<li>quality data: no need for reward model</li>
+<li>dynamic: update with new data</li>
+<li>precise: can avoid certain topics</li>
+<li>image source: <a href="https://arxiv.org/pdf/2305.18290">Rafailov et al, 2024</a></li>
+</ul>
+</section>
+<section id="newer-designs" class="slide level2">
+<h2>Newer Designs</h2>
+
+<img data-src="images/zephyr_scan.png" class="r-stretch quarto-figure-center"><p class="caption">Zephyr models</p><ul>
+<li>image source: <a href="https://huggingface.co/blog/pref-tuning">Hugging Face</a></li>
+</ul>
 
 
 </section></section>

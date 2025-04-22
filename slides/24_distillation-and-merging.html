@@ -132,17 +132,22 @@
 </div>
 
 </section>
-<section id="learning-objectives" class="title-slide slide level1 center">
-<h1>Learning objectives</h1>
+<section>
+<section id="distillation" class="title-slide slide level1 center">
+<h1>Distillation</h1>
+
+</section>
+<section id="learning-objectives" class="slide level2">
+<h2>Learning objectives</h2>
 <div>
 <ul>
-<li>THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY</li>
+<li>Finish module on fine tuning</li>
+<li>Learn to train a “student” with a “teacher”</li>
 </ul>
 </div>
 <aside class="notes">
 <ul>
-<li>You can add notes on each slide with blocks like this!</li>
-<li>Load a deck in the browser and type “s” to see these notes.</li>
+<li>It would be nice to have a simple tutorial here</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -156,36 +161,131 @@
           display:block!important;
       }</style></aside>
 </section>
-
+<section id="sources" class="slide level2">
+<h2>Sources</h2>
+<p>Following the <a href="https://genai-handbook.github.io/">Gen AI Handbook</a>, we looked at</p>
+<ul>
+<li><a href="https://medium.com/huggingface/distilbert-8cf3380435b5">blog post</a> by Victor Sanh (Hugging Face)</li>
+<li><a href="https://snorkel.ai/blog/llm-distillation-demystified-a-complete-guide/">blog post</a> by Matt Casey (Snorkel AI)</li>
+<li><a href="https://research.google/blog/distilling-step-by-step-outperforming-larger-language-models-with-less-training-data-and-smaller-model-sizes/">blog post</a> by Cheng-Yu Hsieh, et al.&nbsp;(Google Research)</li>
+</ul>
+</section></section>
 <section>
-<section id="slide-section" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
+<section id="math-updates" class="title-slide slide level1 center">
+<h1>Math Updates</h1>
 
 </section>
-<section id="slide" class="slide level2">
-<h2>SLIDE</h2>
+<section id="temperature" class="slide level2">
+<h2>Temperature</h2>
+<p>Another hyperparameter is the <strong>softmax temperature</strong></p>
+<p><span class="math display">\[p_{i} = \frac{exp(z_{i}/T)}{\sum_{j} exp(z_{j}/T)}\]</span></p>
 <ul>
-<li>DENOTE MAJOR SECTIONS WITH <code># TITLE</code> (eg <code># Installation</code>)</li>
-<li>ADD INDIVIDUAL SLIDES WITH <code>##</code> (eg <code>## rustup on Linux/macOS</code>)</li>
-<li>KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
+<li><span class="math inline">\(T \rightarrow 0\)</span>: one-hot target vector</li>
+<li><span class="math inline">\(T \rightarrow \infty\)</span>: uniform distribution (random guessing)</li>
 </ul>
 </section>
-<section id="slide-1" class="slide level2">
-<h2>SLIDE</h2>
+<section id="kl-loss" class="slide level2">
+<h2>KL Loss</h2>
+<p>Kullback-Leibler loss is defined as</p>
+<p><span class="math display">\[\begin{array}{rcl}
+KL(p||q) &amp; = &amp; \text{E}_{p}[\log \frac{p}{q}] \\
+~ &amp; = &amp; \displaystyle\sum_{i} p_{i} \cdot \log(p_{i}) - \sum_{i} p_{i} \cdot \log(q_{i})
+\end{array}\]</span></p>
 </section></section>
 <section>
-<section id="slide-section-1" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
+<section id="bert" class="title-slide slide level1 center">
+<h1>BERT</h1>
 
 </section>
-<section id="slide-2" class="slide level2">
-<h2>SLIDE</h2>
+<section id="transformers" class="slide level2">
+<h2>Transformers</h2>
+<ul>
+<li>Encoder-only: BERT</li>
+</ul>
+<blockquote>
+<p>bidirectional encoder representations from transformers</p>
+</blockquote>
+<ul>
+<li>Decoder-only: GPT</li>
+</ul>
+<blockquote>
+<p>generative pre-trained transformer</p>
+</blockquote>
 </section>
-<section id="slide-3" class="slide level2">
-<h2>SLIDE</h2>
+<section id="encoders-vs-decoders" class="slide level2">
+<h2>Encoders vs Decoders</h2>
 
-
+<img data-src="images/BERT_vs_GPT.png" class="r-stretch quarto-figure-center"><p class="caption">BERT vs GPT</p><ul>
+<li>image source: <a href="https://www.linkedin.com/pulse/bert-vs-gpt-which-better-llm-model-ronak-verma-xeixc/">Ronak Verma</a></li>
+</ul>
+</section>
+<section id="applications" class="slide level2">
+<h2>Applications</h2>
+<ul>
+<li><p>BERT</p>
+<ul>
+<li>text classification</li>
+<li>data labeling</li>
+<li>recommender</li>
+<li>sentiment analysis</li>
+</ul></li>
+<li><p>GPT</p>
+<ul>
+<li>content generation</li>
+<li>conversational chatbots</li>
+</ul></li>
+</ul>
 </section></section>
+<section>
+<section id="distillation-1" class="title-slide slide level1 center">
+<h1>Distillation</h1>
+
+</section>
+<section id="fine-tuning" class="slide level2">
+<h2>Fine Tuning</h2>
+
+<img data-src="iamges/distillation_scatterplot.png" class="r-stretch quarto-figure-center"><p class="caption">distillation motivation</p><ul>
+<li>image source: <a href="https://research.google/blog/distilling-step-by-step-outperforming-larger-language-models-with-less-training-data-and-smaller-model-sizes/">Google Research</a></li>
+</ul>
+</section>
+<section id="teacher-and-student" class="slide level2">
+<h2>Teacher and Student</h2>
+
+<img data-src="images/distillation_teacher_student.png" class="r-stretch quarto-figure-center"><p class="caption">teacher and student</p><aside class="notes">
+<p>Researchers at the University of California at Berkeley found a way to change this, which they call “context distillation.” They built heavily-engineered prompts that ended with simple questions, such as “add these numbers.” Then, they stripped the prompt of its engineering and reduced the response to only its final answer to create a new data set that they used to fine-tune the model.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<ul>
+<li>image source: <a href="https://snorkel.ai/blog/llm-distillation-demystified-a-complete-guide/">Snorkel AI</a></li>
+</ul>
+</section>
+<section id="chain-of-thought" class="slide level2">
+<h2>Chain of Thought</h2>
+
+<img data-src="images/distillation_CoT.png" class="r-stretch quarto-figure-center"><p class="caption">chain of thought</p><ul>
+<li>image source: <a href="https://snorkel.ai/blog/llm-distillation-demystified-a-complete-guide/">Snorkel AI</a></li>
+</ul>
+</section></section>
+<section>
+<section id="distilbert" class="title-slide slide level1 center">
+<h1>DistilBERT</h1>
+
+</section>
+<section id="distilbert-performance" class="slide level2">
+<h2>DistilBERT Performance</h2>
+
+
+
+<img data-src="images/DistilBERT_performance.png" class="r-stretch quarto-figure-center"><p class="caption">DistilBERT performance</p></section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

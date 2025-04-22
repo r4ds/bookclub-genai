@@ -136,13 +136,14 @@
 <h1>Learning objectives</h1>
 <div>
 <ul>
-<li>THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY</li>
+<li>Motivate dimension reduction</li>
+<li>Discuss LoRA</li>
+<li>Introduce DoRA</li>
 </ul>
 </div>
 <aside class="notes">
 <ul>
-<li>You can add notes on each slide with blocks like this!</li>
-<li>Load a deck in the browser and type “s” to see these notes.</li>
+<li>I should call her</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -158,31 +159,97 @@
 </section>
 
 <section>
-<section id="slide-section" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
+<section id="low-rank-adaptation" class="title-slide slide level1 center">
+<h1>Low-Rank Adaptation</h1>
 
 </section>
-<section id="slide" class="slide level2">
-<h2>SLIDE</h2>
-<ul>
-<li>DENOTE MAJOR SECTIONS WITH <code># TITLE</code> (eg <code># Installation</code>)</li>
-<li>ADD INDIVIDUAL SLIDES WITH <code>##</code> (eg <code>## rustup on Linux/macOS</code>)</li>
-<li>KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
+<section id="palmer-penguins" class="slide level2">
+<h2>Palmer Penguins</h2>
+
+<img data-src="images/penguin_PCA.png" class="r-stretch quarto-figure-center"><p class="caption">Allison Horst</p></section>
+<section id="svd" class="slide level2">
+<h2>SVD</h2>
+
+<img data-src="images/SVD_dimensionality_reduction.png" class="r-stretch quarto-figure-center"><p class="caption">SVD</p><ul>
+<li>image source: <a href="https://medium.com/@antriksh_66433/dimensionality-reduction-singular-value-decomposition-727426d3b063">Antriksh Singh</a></li>
 </ul>
 </section>
-<section id="slide-1" class="slide level2">
-<h2>SLIDE</h2>
+<section id="update-rule" class="slide level2">
+<h2>Update Rule</h2>
+<p><span class="math display">\[\begin{array}{rcl}
+  W_{1} &amp; = &amp; W_{\text{pre}} + \Delta W_{0} \\
+  W_{2} &amp; = &amp; W_{1} + \Delta W_{1} \\
+  W_{3} &amp; = &amp; W_{2} + \Delta W_{2} \\
+  ... &amp; ~ &amp; ... \\
+  W_{\text{out}}
+\end{array}\]</span></p>
+</section>
+<section id="freezing-the-pre-training-weights" class="slide level2">
+<h2>Freezing the Pre-Training Weights</h2>
+<p><span class="math display">\[W_{\text{out}} = W_{\text{pre}} + \displaystyle\sum_{i = 0} \Delta W_{i}\]</span></p>
+</section>
+<section id="fine-tuning" class="slide level2">
+<h2>Fine Tuning</h2>
+
+<img data-src="images/regular-finetuning-alt.png" class="r-stretch quarto-figure-center"><p class="caption">fine tuning scheme</p><ul>
+<li>image source: <a href="https://sebastianraschka.com/blog/2023/llm-finetuning-lora.html">Sebastian Raschka</a></li>
+</ul>
+</section>
+<section id="dimensionality-reduction" class="slide level2">
+<h2>Dimensionality Reduction</h2>
+
+<img data-src="images/lora-weights.png" class="r-stretch quarto-figure-center"><p class="caption">matrix factorization</p><ul>
+<li>image source: <a href="https://sebastianraschka.com/blog/2023/llm-finetuning-lora.html">Sebastian Raschka</a></li>
+</ul>
+</section>
+<section id="speed-versus-complexity-trade-off" class="slide level2">
+<h2>Speed versus Complexity Trade-Off</h2>
+<ul>
+<li><p>smaller rank <span class="math inline">\(r\)</span></p>
+<ul>
+<li>fewer parameters</li>
+<li>faster training</li>
+<li>lower compute</li>
+</ul></li>
+<li><p>larger rank <span class="math inline">\(r\)</span></p>
+<ul>
+<li>more likely to capture task-specific information</li>
+</ul></li>
+</ul>
 </section></section>
+<section id="demonstration" class="title-slide slide level1 center">
+<h1>Demonstration</h1>
+<ul>
+<li><a href="https://colab.research.google.com/drive/1iERDk94Jp0UErsPf7vXyPKeiM4ZJUQ-a?usp=sharing">Colab notebook</a> by Chris Alexiuk</li>
+<li><a href="https://magazine.sebastianraschka.com/p/practical-tips-for-finetuning-llms">advice on LoRA tuning</a> by Sebastian Raschka</li>
+</ul>
+</section>
+
 <section>
-<section id="slide-section-1" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
+<section id="dora" class="title-slide slide level1 center">
+<h1>DoRA</h1>
 
 </section>
-<section id="slide-2" class="slide level2">
-<h2>SLIDE</h2>
-</section>
-<section id="slide-3" class="slide level2">
-<h2>SLIDE</h2>
+<section id="dora-from-vectors" class="slide level2">
+<h2>DoRA from Vectors</h2>
+<p>Weight-<strong>D</strong>ecomposed L<strong>o</strong>w-<strong>R</strong>ank <strong>A</strong>daptation</p>
+<ul>
+<li><span class="math inline">\(m\)</span>: magnitude vector</li>
+<li><span class="math inline">\(V\)</span>: directional matrix</li>
+</ul>
+
+<img data-src="images/vector_review.png" class="r-stretch quarto-figure-center"><p class="caption">vectors!</p></section>
+<section id="dora-decomposition" class="slide level2">
+<h2>DoRA Decomposition</h2>
+<p><span class="math display">\[W' = m \cdot \frac{W_{0} + BA}{||W_{0} + BA||_{c}}\]</span></p>
+
+<img data-src="images/DoRA_decomposition.png" class="r-stretch quarto-figure-center"><p class="caption">DoRA decomposition</p></section>
+<section id="dora-workflow" class="slide level2">
+<h2>DoRA Workflow</h2>
+
+<img data-src="images/DoRA_workflow.png" class="r-stretch quarto-figure-center"><p class="caption">DoRA workflow</p><ul>
+<li>images source: <a href="https://magazine.sebastianraschka.com/p/lora-and-dora-from-scratch">Sebastian Raschka</a></li>
+</ul>
 
 
 </section></section>

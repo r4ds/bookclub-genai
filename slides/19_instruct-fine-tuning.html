@@ -132,17 +132,18 @@
 </div>
 
 </section>
+<section>
 <section id="learning-objectives" class="title-slide slide level1 center">
 <h1>Learning objectives</h1>
 <div>
 <ul>
-<li>THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY</li>
+<li>Introduce Fine Tuning</li>
+<li>Motivate Instruct Fine Tuning</li>
 </ul>
 </div>
 <aside class="notes">
 <ul>
-<li>You can add notes on each slide with blocks like this!</li>
-<li>Load a deck in the browser and type “s” to see these notes.</li>
+<li>The non-math side of training LLMs</li>
 </ul>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -156,36 +157,103 @@
           display:block!important;
       }</style></aside>
 </section>
-
+<section id="sources" class="slide level2">
+<h2>Sources</h2>
+<p>Following the <a href="https://genai-handbook.github.io/">Gen AI Handbook</a>, we looked at</p>
+<ul>
+<li><a href="https://newsletter.ruder.io/p/instruction-tuning-vol-1">blog post</a> by Sebastian Ruder (Meta)</li>
+<li><a href="https://www.youtube.com/watch?v=YoVek79LFe0">video</a> by Shayne Longpre (Google)</li>
+</ul>
+</section></section>
 <section>
-<section id="slide-section" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
+<section id="fine-tuning" class="title-slide slide level1 center">
+<h1>Fine Tuning</h1>
 
 </section>
-<section id="slide" class="slide level2">
-<h2>SLIDE</h2>
-<ul>
-<li>DENOTE MAJOR SECTIONS WITH <code># TITLE</code> (eg <code># Installation</code>)</li>
-<li>ADD INDIVIDUAL SLIDES WITH <code>##</code> (eg <code>## rustup on Linux/macOS</code>)</li>
-<li>KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
+<section id="module" class="slide level2">
+<h2>Module</h2>
+
+<img data-src="images/fine_tuning.png" class="r-stretch quarto-figure-center"><p class="caption">fine tuning</p><ul>
+<li>“… to add a small set of parameters to a pretrained LLM. Only the newly added parameters are finetuned while all the parameters of the pretrained LLM remain frozen.” — Sebastian Raschka (author, <a href="https://magazine.sebastianraschka.com/p/finetuning-llms-with-adapters">article</a>)</li>
 </ul>
 </section>
-<section id="slide-1" class="slide level2">
-<h2>SLIDE</h2>
+<section id="where-were-we" class="slide level2">
+<h2>Where were we?</h2>
+
+<img data-src="images/LLMs_back_in_2022.png" class="r-stretch quarto-figure-center"><p class="caption">Wei, et al., 2022</p></section></section>
+<section>
+<section id="instruct-fine-tuning" class="title-slide slide level1 center">
+<h1>Instruct Fine Tuning</h1>
+
+</section>
+<section id="definition-seeking" class="slide level2">
+<h2>Definition Seeking</h2>
+
+<img data-src="images/instruct_fine_tuning_GPT_1.png" class="r-stretch quarto-figure-center"><p class="caption">getting definitions</p></section>
+<section id="instruction-guidance" class="slide level2">
+<h2>Instruction Guidance</h2>
+
+<img data-src="images/instruct_fine_tuning_GPT_2.png" class="r-stretch quarto-figure-center"><p class="caption">providing instructions</p></section>
+<section id="alignment-tuning-instruction-tuning" class="slide level2">
+<h2>Alignment Tuning = Instruction Tuning</h2>
+<ul>
+<li>open-ended tasks</li>
+<li>creative generation</li>
+<li>human feedback</li>
+</ul>
+</section>
+<section id="instruction-data" class="slide level2">
+<h2>Instruction Data</h2>
+<ul>
+<li><p>Mixing few-shot settings</p></li>
+<li><p>Task diversity</p></li>
+<li><p>Data Augmentation</p>
+<ul>
+<li>e.g.&nbsp;turning a question-answering task into a question-generation task</li>
+</ul></li>
+<li><p>Mixing weights</p></li>
+</ul>
 </section></section>
 <section>
-<section id="slide-section-1" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
+<section id="recent-developments" class="title-slide slide level1 center">
+<h1>Recent Developments</h1>
 
 </section>
-<section id="slide-2" class="slide level2">
-<h2>SLIDE</h2>
+<section id="natural-instructions-q" class="slide level2">
+<h2>Natural Instructions: Q</h2>
+
+<img data-src="images/question_generation_example.png" class="r-stretch quarto-figure-center"><p class="caption">question generation, Mishra et al., 2022</p><aside class="notes">
+<p>193k instruction-output examples sourced from 61 existing English NLP tasks. Crowd-sourcing instructions from each dataset are aligned to a common schema. Instructions are thus more structured compared to other datasets.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="slide-3" class="slide level2">
-<h2>SLIDE</h2>
+<section id="natural-instructions-a" class="slide level2">
+<h2>Natural Instructions: A</h2>
+
+<img data-src="images/answer_generation_example.png" class="r-stretch quarto-figure-center"><p class="caption">answer generation, Mishra et al., 2022</p></section>
+<section id="unnatural-instructions" class="slide level2">
+<h2>Unnatural Instructions</h2>
+
+<img data-src="images/unnatural_instructions.png" class="r-stretch quarto-figure-center"><p class="caption">Honovich, et al., 2023</p></section>
+<section id="exemplars" class="slide level2">
+<h2>Exemplars</h2>
+
+<img data-src="images/flan_exemplars.png" class="r-stretch quarto-figure-center"><p class="caption">Flan 2022</p></section>
+<section id="input-inversion" class="slide level2">
+<h2>Input Inversion</h2>
 
 
-</section></section>
+
+<img data-src="images/input_inversion.png" class="r-stretch quarto-figure-center"><p class="caption">improve task diversity with input inversion</p></section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

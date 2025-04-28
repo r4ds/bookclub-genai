@@ -6,26 +6,99 @@ title: "28. Vector Databases and Reranking"
 # Learning objectives
 
 ::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+- What are vector databases?
+- The basis of the Reranking model
 :::
 
-::: notes
-- You can add notes on each slide with blocks like this!
-- Load a deck in the browser and type "s" to see these notes.
+# Vector databases
+From [A fun and absurd introduction to Vector Databases](https://www.youtube.com/watch?v=W-i8bcxkXok) by  Alexander Chatzizacharias
+
+## Vector databases
+
+Vector databases facilitate semantic search on your data.
+
+- Embedding models return vectors and LLM understand context from those vectors.
+- Used for Retrieval-Augmented Generation systems to query documents. 
+
+![Vector database](images/ch28_vector.png)
+
+:::{style="font-size:50%"}
+Image from [What is a Vector Database & How Does it Work?](https://www.pinecone.io/learn/vector-database/)
 :::
 
-# SLIDE SECTION
+## Indexes and distances
+:::: {.columns}
 
-## SLIDE
+::: {.column width="40%"}
+Distance (far) or similarity (close):
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+- Euclidean distance 
 
-## SLIDE
+- Cosine similarity
 
-# SLIDE SECTION
+- Hamming
 
-## SLIDE
+- Manhattan
+:::
+::: {.column width="60%" style='font-size:90%'}
 
-## SLIDE
+Indexing algorithms:
+
+- Exact nearest neighbor: linear search, k-nearest neighbors, space partitioning.
+
+- Approximate nearest neighbor: 
+
+    - **IVFFFlat** Inverted file with flat compression. 
+    - Locality-sensitive hashing (**LSH**)
+    - Approximate Nearest Neighbors Oh yeah (**ANNOY**)
+    - Hierarchical Navigable Small World (**HNSW**)
+:::
+::::
+
+## Some popular vector databases
+
+![Vector databases](images/ch28_vectordbs.png)
+
+:::{style="font-size:50%"}
+Image from [What are Vector Databases? A Beginner's Guide?](https://www.infracloud.io/blogs/vector-databases-beginners-guide/)
+:::
+
+# Reranking
+
+From [Rerankers and Two-Stage Retrieval](https://www.pinecone.io/learn/series/rag/rerankers/) by Picone
+
+##
+
+Retrieval Augmented Generation (**RAG**) is more than putting documents into a vector DB and adding an LLM on top. 
+
+:::{style="font-size:90%"}
+- **Recall**: how many of the relevant documents are we retrieving.
+- **LLM recall** : the ability of an LLM to find information from the text placed within its context window (its RAM). 
+    - More tokens in the context window, less LLM recall.
+:::
+
+![Recall and context window](images/ch28_recall.webp) 
+
+:::notes
+ - We cannot return everything because of `context window`.
+:::
+
+## 
+
+> Maximize **retrieval recall** by retrieving plenty of documents and then maximize **LLM recall** by minimizing the number of documents that make it to the LLM
+
+Solution: Reranker model
+
+![Reranker](images/ch28_reranker.webp) 
+
+## Reranker model
+
+Given a query and document pair, the reranker reorders the documents by relevance to our query using a similarity score.  
+
+Two stages:
+
+- Embedding model/retriever: Fast. 
+    - Retrieves a set of relevant documents from a larger datase
+- Reranker: Slow. 
+    - Reranks the documents retrieved by the first-stage model.
+

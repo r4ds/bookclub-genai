@@ -6,26 +6,85 @@ title: "29. Retrieval-Augmented Generation"
 # Learning objectives
 
 ::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+- Understand the stages and challenges of RAG.
 :::
 
-::: notes
-- You can add notes on each slide with blocks like this!
-- Load a deck in the browser and type "s" to see these notes.
-:::
+# RAG
 
-# SLIDE SECTION
+From [Deconstructing RAG](https://blog.langchain.dev/deconstructing-rag/) and [Building RAG with Open-Source and Custom AI Models](https://www.bentoml.com/blog/building-rag-with-open-source-and-custom-ai-models)
 
-## SLIDE
+## Retrieval-Augmented Generation
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+**RAG** is an application pattern for LLMS. 
 
-## SLIDE
+It uses information retrieval systems to give LLMs extra context.
 
-# SLIDE SECTION
+Allows the LLM to answer user queries not covered in its training data
 
-## SLIDE
+![RAG](images/ch29_rag.png) 
 
-## SLIDE
+
+## Stages:
+
+1. **Chunking**: Turn your dataset into text documents and break it down into small pieces.
+
+2. **Embed documents**: Turn each chunk into vectors representing their semantic meaning.
+
+3. **VectorDB**: Store embeddings in a vector database.
+
+4. **Retrieval**: Upon receiving a user query, retrieve chunks relevant to the user's request.
+
+5. **Response Generation**: Add chunks to the context and use the LLM.
+
+
+## Challenges in retrieval
+
+
+- **Recall**: not all relevant chunks are retrieve.
+- **Precision**: not all chunks retrieved are relevant
+- **Data**: complex documents, semi-structured and unstructured data
+
+
+## Query transformations
+
+How can we make retrieval robust to variability in user input? 
+
+Approaches:
+
+- Query expansion: decomposes the input into sub-questions.
+- Query re-writing: re-write user questions to improve retrieval.
+- Query compression: A chat conversation is compress into a final question for retrieval. 
+
+## Query construction
+
+Where does the data live? what syntax is needed to query the data? 
+
+![Query construction](images/ch29_query.jpg) 
+
+## The retrieval process
+
+- Indexing: how do I desing the index in the vector database?
+
+- Chunk size: it controls how much information we load into the context window.
+
+- Document embedding strategy
+
+- Post-processing: how to combine the documents that I have retrieved?
+
+## Challenges in response
+
+In response synthesis.
+
+- **Safeguarding**.
+- **Tool use**: tools used to assit the response generation.
+
+In response evaluation.
+
+- **Synthetic dataset for evaluation**
+- **LLMs as evaluators**
+
+##
+
+> In production RAG systems are a group of AI models, each playing its part in the workflow of data processing and response generation.
+
+![RAG systems](images/ch29_ragsystems.png) 

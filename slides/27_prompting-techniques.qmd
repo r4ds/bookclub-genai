@@ -6,26 +6,84 @@ title: "27. Prompting Techniques"
 # Learning objectives
 
 ::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+- Understand what is prompt engineering and the most common techniques
 :::
 
-::: notes
-- You can add notes on each slide with blocks like this!
-- Load a deck in the browser and type "s" to see these notes.
+# Prompting
+From [Prompt Engineering](https://lilianweng.github.io/posts/2023-03-15-prompt-engineering/) by Lilian Weng
+
+## Prompt Engineering
+
+Also known as In-Context Prompting
+
+How to communicate with LLM  to steer its behavior for desired outcomes **without** updating the model weights.
+
+It is an empirical task (science?) and varies among models.
+
+## Techniques
+
+- **Zero-shot**: Feed the task text to the model and ask for results. 
+
+- **Few-shot**: Input/output of high quality examples on the target task. 
+    - More token consumption.
+    - Choice of prompt format, training examples, and order leads to different performance. 
+    - The selection of examples should be diverse and relevant. 
+    - Be careful of majority label bias and recency bias
+
+## 
+
+- **Instruction prompting**: Finetune technique on a pretrained model.
+    - Instructed LM Training with tuples of (`task instruction`, `input`, `ground truth output`) 
+    - RLHF (Reinforcement Learning from Human Feedback) is a common method.
+    - It improves the model to be more aligned with human intention.
+
+![Instruction prompting](images/ch27_instruction.png)
+
+##
+
+- **Self-Consistency Sampling**:  Sample multiple outputs with `temperature > 0` and select the best.
+    - The criteria for selecting the best candidate can vary from task to task. General solution: majority vote.
+
+- **Chain-of-Thought (CoT)**: Generates a sequence describing reasoning logics step by step. 
+    - Steps also known as reasoning chains or rationales.
+    - For complicated reasoning tasks.
+        - Few-shot CoT: give examples
+        - Zero shot: Use statements like `Let's think step by step`
+
+## Other techniques
+
+:::: {.columns}
+
+::: {.column width="60%"}
+- **Self-Ask**: Prompt the model to ask following-up to build the thought process iteratively. 
+- **IRCoT** (Interleaving Retrieval CoT) and **ReAct** (Reason + Act) combine iterative CoT prompting with queries to Wikipedia APIs to add to the context.
+:::
+::: {.column width="40%"}
+
+![Self Ask](images/ch27_selfask.png)
+:::
+::::
+
+## Automatic Prompt Design
+
+`Input`: prompt (sequence of prefix tokens).
+
+`Optimization task`: probability of getting a desired output given input.
+
+`How?` Prefix tokens are optimized on the embedding space via gradient descent
+
+:::{style="font-size:80%;margin-top:50px"}
+Multiple methods: **AutoPrompt** (Shin et al., 2020), **Prefix-Tuning** (Li & Liang (2021), **P-tuning** (Liu et al. 2021), **Prompt-Tuning** (Lester et al. 2021).
+
+**APE** (Automatic Prompt Engineer; Zhou et al. 2022): It uses a score function to select the best candidate over a pool of model-generated instruction candidates.
 :::
 
-# SLIDE SECTION
+## Other examples
 
-## SLIDE
+- **PAL** (Program-aided language models; Gao et al. 2022) and **PoT** (Program of Thoughts prompting; Chen et al. 2022): ask LLM to generate programming language statements.
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+![PoT](images/ch27_PoT.png) 
 
-## SLIDE
-
-# SLIDE SECTION
-
-## SLIDE
-
-## SLIDE
+##
+- **TALM** (Tool Augmented Language Models; Parisi et al. 2022): model augmented with text-to-text API calls. It builds API requests and calls them to append the result.
+![TALM](images/ch27_TALM.png){width="80%" style="margin-top:50px"}

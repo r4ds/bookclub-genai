@@ -6,26 +6,133 @@ title: "26. Sampling and Structured Outputs"
 # Learning objectives
 
 ::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+- Understand how token distribution modifies the responses
 :::
+
+# Sampling
+From [Decoding Strategies in Large Language Models](https://towardsdatascience.com/decoding-strategies-in-large-language-models-9733a8f70539/) by Maxime Labonne.
+
+## Why is sampling important?
+
+LLMs don't directly produce text.
+
+They calculate logits: scores assigned to every possible token. 
+
+![Logits in LLMS](images/ch26_tokens_sampling.png)
+
+How do these probabilities generate text? With **decoding methods**
+
+## Greedy search
+
+It takes the most probable token at each step as the next token in the sequence. 
+
+It discard all other potential options. 
+
+It can miss out on better overall sequences.
+
+
 
 ::: notes
-- You can add notes on each slide with blocks like this!
-- Load a deck in the browser and type "s" to see these notes.
+It sounds intuitive but it is short-sighted: it doesn’t consider the overall effect on the sequence. It can miss out on better sequences that might have appeared with slightly less probable next tokens. 
+::: 
+:::: {.columns}
+
+::: {.column width="50%"}
+
+:::{style="font-size:60%"}
+Step 1: Input: *I have a dream* →  " of"
+
+Step 2: Input: *I have a dream of* → " being"
+
+Step 3: Input: *I have a dream of being* → " a"
+
+Step 4: Input: *I have a dream of being a* → " doctor"
+
+Step 5: Input: *I have a dream of being a doctor* →  "."
 :::
 
-# SLIDE SECTION
+```
+Generated text: I have a dream of being a doctor.
+```
 
-## SLIDE
+:::
+:::{.column width="50%"}
+![Greedy decoding](images/ch26_greedy.png){width="90%"}
+:::
+::::
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
 
-## SLIDE
 
-# SLIDE SECTION
+## Beam search 
 
-## SLIDE
+It takes the `n` most likely tokens (number of beams) 
 
-## SLIDE
+It repeats until max length or end-of-sequence token
+
+![Beam decoding](images/ch26_beam.png)
+
+It chooses the beam or sequence with the highest overall score. 
+
+```
+Generated text: I have a dream. I have a dream
+```
+
+## Top-k sampling
+
+It uses the probability distribution to select a token from the `k` most likely options. 
+
+It introduces randomness in the selection process.
+
+![Top-k distribution](images/ch26_topk1.webp)
+
+It can use the `temperature` parameter
+
+
+:::notes
+Temperature alters the probability distribution (1.0 is no temperature). It controls the level of creativity.
+:::
+
+
+## Top-k sampling 
+
+![Top-k](images/ch26_topk2.png)
+
+```
+Generated text: I have a dream job and I want to
+```
+
+## Nucleus sampling or Top-p sampling
+
+It chooses a cutoff value `p` such as the sum of the probabilities of the selected tokens exceeds `p`.
+
+It forms a nucleus of tokens from which to randomly choose the next token. 
+
+![Top-p distribution](images/ch26_topp1.webp)
+
+The number of tokens on the nucleus can vary from step to step.
+
+## 
+ If the generated probability distributions vary considerably, the selection of tokens might not be always among the most probable ones. 
+ 
+Generation of unique and varied sequences. 
+
+![Top-p](images/ch26_topp2.png)
+
+```
+Generated text: I have a dream. I'm going to
+```
+
+# Structured Outputs
+
+
+## Structured Outputs
+
+If the LMM is a component of a larger system or pipeline, we need a way to pass the output as an input of another component. 
+
+We need to work with schemas such as:
+
+- JSON
+- [Pydantic](https://docs.pydantic.dev/latest/): data validation library for Ptyhion. 
+    - It ensures data from LLM is accurate and valid
+- [Outlines](https://github.com/dottxt-ai/outlines): make the LLMs speak the language of every application.
+

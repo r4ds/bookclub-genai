@@ -285,88 +285,176 @@
     ]
   },
   {
-    "objectID": "slides/27_prompting-techniques.html#slide",
-    "href": "slides/27_prompting-techniques.html#slide",
+    "objectID": "slides/27_prompting-techniques.html#prompt-engineering",
+    "href": "slides/27_prompting-techniques.html#prompt-engineering",
     "title": "27. Prompting Techniques",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "section": "Prompt Engineering",
+    "text": "Prompt Engineering\nAlso known as In-Context Prompting\nHow to communicate with LLM to steer its behavior for desired outcomes without updating the model weights.\nIt is an empirical task (science?) and varies among models.",
     "crumbs": [
       "Section V: LLM Evaluations and Applications",
       "27. Prompting Techniques"
     ]
   },
   {
-    "objectID": "slides/27_prompting-techniques.html#slide-1",
-    "href": "slides/27_prompting-techniques.html#slide-1",
+    "objectID": "slides/27_prompting-techniques.html#techniques",
+    "href": "slides/27_prompting-techniques.html#techniques",
     "title": "27. Prompting Techniques",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Techniques",
+    "text": "Techniques\n\nZero-shot: Feed the task text to the model and ask for results.\nFew-shot: Input/output of high quality examples on the target task.\n\nMore token consumption.\nChoice of prompt format, training examples, and order leads to different performance.\nThe selection of examples should be diverse and relevant.\nBe careful of majority label bias and recency bias",
     "crumbs": [
       "Section V: LLM Evaluations and Applications",
       "27. Prompting Techniques"
     ]
   },
   {
-    "objectID": "slides/27_prompting-techniques.html#slide-2",
-    "href": "slides/27_prompting-techniques.html#slide-2",
+    "objectID": "slides/27_prompting-techniques.html#section",
+    "href": "slides/27_prompting-techniques.html#section",
     "title": "27. Prompting Techniques",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "",
+    "text": "Instruction prompting: Finetune technique on a pretrained model.\n\nInstructed LM Training with tuples of (task instruction, input, ground truth output)\nRLHF (Reinforcement Learning from Human Feedback) is a common method.\nIt improves the model to be more aligned with human intention.\n\n\n\nInstruction prompting",
     "crumbs": [
       "Section V: LLM Evaluations and Applications",
       "27. Prompting Techniques"
     ]
   },
   {
-    "objectID": "slides/27_prompting-techniques.html#slide-3",
-    "href": "slides/27_prompting-techniques.html#slide-3",
+    "objectID": "slides/27_prompting-techniques.html#section-1",
+    "href": "slides/27_prompting-techniques.html#section-1",
     "title": "27. Prompting Techniques",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "",
+    "text": "Self-Consistency Sampling: Sample multiple outputs with temperature &gt; 0 and select the best.\n\nThe criteria for selecting the best candidate can vary from task to task. General solution: majority vote.\n\nChain-of-Thought (CoT): Generates a sequence describing reasoning logics step by step.\n\nSteps also known as reasoning chains or rationales.\nFor complicated reasoning tasks.\n\nFew-shot CoT: give examples\nZero shot: Use statements like Let's think step by step",
     "crumbs": [
       "Section V: LLM Evaluations and Applications",
       "27. Prompting Techniques"
     ]
   },
   {
-    "objectID": "slides/26_sampling-and-structured-outputs.html#slide",
-    "href": "slides/26_sampling-and-structured-outputs.html#slide",
+    "objectID": "slides/27_prompting-techniques.html#other-techniques",
+    "href": "slides/27_prompting-techniques.html#other-techniques",
+    "title": "27. Prompting Techniques",
+    "section": "Other techniques",
+    "text": "Other techniques\n\n\n\nSelf-Ask: Prompt the model to ask following-up to build the thought process iteratively.\nIRCoT (Interleaving Retrieval CoT) and ReAct (Reason + Act) combine iterative CoT prompting with queries to Wikipedia APIs to add to the context.\n\n\n\n\n\nSelf Ask",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "27. Prompting Techniques"
+    ]
+  },
+  {
+    "objectID": "slides/27_prompting-techniques.html#automatic-prompt-design",
+    "href": "slides/27_prompting-techniques.html#automatic-prompt-design",
+    "title": "27. Prompting Techniques",
+    "section": "Automatic Prompt Design",
+    "text": "Automatic Prompt Design\nInput: prompt (sequence of prefix tokens).\nOptimization task: probability of getting a desired output given input.\nHow? Prefix tokens are optimized on the embedding space via gradient descent\n\nMultiple methods: AutoPrompt (Shin et al., 2020), Prefix-Tuning (Li & Liang (2021), P-tuning (Liu et al. 2021), Prompt-Tuning (Lester et al. 2021).\nAPE (Automatic Prompt Engineer; Zhou et al. 2022): It uses a score function to select the best candidate over a pool of model-generated instruction candidates.",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "27. Prompting Techniques"
+    ]
+  },
+  {
+    "objectID": "slides/27_prompting-techniques.html#other-examples",
+    "href": "slides/27_prompting-techniques.html#other-examples",
+    "title": "27. Prompting Techniques",
+    "section": "Other examples",
+    "text": "Other examples\n\nPAL (Program-aided language models; Gao et al. 2022) and PoT (Program of Thoughts prompting; Chen et al. 2022): ask LLM to generate programming language statements.\n\n\nPoT",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "27. Prompting Techniques"
+    ]
+  },
+  {
+    "objectID": "slides/27_prompting-techniques.html#section-2",
+    "href": "slides/27_prompting-techniques.html#section-2",
+    "title": "27. Prompting Techniques",
+    "section": "",
+    "text": "TALM (Tool Augmented Language Models; Parisi et al. 2022): model augmented with text-to-text API calls. It builds API requests and calls them to append the result.",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "27. Prompting Techniques"
+    ]
+  },
+  {
+    "objectID": "slides/26_sampling-and-structured-outputs.html#why-is-sampling-important",
+    "href": "slides/26_sampling-and-structured-outputs.html#why-is-sampling-important",
     "title": "26. Sampling and Structured Outputs",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "section": "Why is sampling important?",
+    "text": "Why is sampling important?\nLLMs don’t directly produce text.\nThey calculate logits: scores assigned to every possible token.\n\nLogits in LLMSHow do these probabilities generate text? With decoding methods",
     "crumbs": [
       "Section V: LLM Evaluations and Applications",
       "26. Sampling and Structured Outputs"
     ]
   },
   {
-    "objectID": "slides/26_sampling-and-structured-outputs.html#slide-1",
-    "href": "slides/26_sampling-and-structured-outputs.html#slide-1",
+    "objectID": "slides/26_sampling-and-structured-outputs.html#greedy-search",
+    "href": "slides/26_sampling-and-structured-outputs.html#greedy-search",
     "title": "26. Sampling and Structured Outputs",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Greedy search",
+    "text": "Greedy search\nIt takes the most probable token at each step as the next token in the sequence.\nIt discard all other potential options.\nIt can miss out on better overall sequences.\n\nIt sounds intuitive but it is short-sighted: it doesn’t consider the overall effect on the sequence. It can miss out on better sequences that might have appeared with slightly less probable next tokens.\n\n\n\n\nStep 1: Input: I have a dream → ” of”\nStep 2: Input: I have a dream of → ” being”\nStep 3: Input: I have a dream of being → ” a”\nStep 4: Input: I have a dream of being a → ” doctor”\nStep 5: Input: I have a dream of being a doctor → “.”\n\nGenerated text: I have a dream of being a doctor.\n\n\n\n\nGreedy decoding",
     "crumbs": [
       "Section V: LLM Evaluations and Applications",
       "26. Sampling and Structured Outputs"
     ]
   },
   {
-    "objectID": "slides/26_sampling-and-structured-outputs.html#slide-2",
-    "href": "slides/26_sampling-and-structured-outputs.html#slide-2",
+    "objectID": "slides/26_sampling-and-structured-outputs.html#beam-search",
+    "href": "slides/26_sampling-and-structured-outputs.html#beam-search",
     "title": "26. Sampling and Structured Outputs",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Beam search",
+    "text": "Beam search\nIt takes the n most likely tokens (number of beams)\nIt repeats until max length or end-of-sequence token\n\nBeam decodingIt chooses the beam or sequence with the highest overall score.\nGenerated text: I have a dream. I have a dream",
     "crumbs": [
       "Section V: LLM Evaluations and Applications",
       "26. Sampling and Structured Outputs"
     ]
   },
   {
-    "objectID": "slides/26_sampling-and-structured-outputs.html#slide-3",
-    "href": "slides/26_sampling-and-structured-outputs.html#slide-3",
+    "objectID": "slides/26_sampling-and-structured-outputs.html#top-k-sampling",
+    "href": "slides/26_sampling-and-structured-outputs.html#top-k-sampling",
     "title": "26. Sampling and Structured Outputs",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Top-k sampling",
+    "text": "Top-k sampling\nIt uses the probability distribution to select a token from the k most likely options.\nIt introduces randomness in the selection process.\n\nTop-k distributionIt can use the temperature parameter\n\nTemperature alters the probability distribution (1.0 is no temperature). It controls the level of creativity.",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "26. Sampling and Structured Outputs"
+    ]
+  },
+  {
+    "objectID": "slides/26_sampling-and-structured-outputs.html#top-k-sampling-1",
+    "href": "slides/26_sampling-and-structured-outputs.html#top-k-sampling-1",
+    "title": "26. Sampling and Structured Outputs",
+    "section": "Top-k sampling",
+    "text": "Top-k sampling\n\nTop-kGenerated text: I have a dream job and I want to",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "26. Sampling and Structured Outputs"
+    ]
+  },
+  {
+    "objectID": "slides/26_sampling-and-structured-outputs.html#nucleus-sampling-or-top-p-sampling",
+    "href": "slides/26_sampling-and-structured-outputs.html#nucleus-sampling-or-top-p-sampling",
+    "title": "26. Sampling and Structured Outputs",
+    "section": "Nucleus sampling or Top-p sampling",
+    "text": "Nucleus sampling or Top-p sampling\nIt chooses a cutoff value p such as the sum of the probabilities of the selected tokens exceeds p.\nIt forms a nucleus of tokens from which to randomly choose the next token.\n\nTop-p distributionThe number of tokens on the nucleus can vary from step to step.",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "26. Sampling and Structured Outputs"
+    ]
+  },
+  {
+    "objectID": "slides/26_sampling-and-structured-outputs.html#section",
+    "href": "slides/26_sampling-and-structured-outputs.html#section",
+    "title": "26. Sampling and Structured Outputs",
+    "section": "",
+    "text": "If the generated probability distributions vary considerably, the selection of tokens might not be always among the most probable ones.\nGeneration of unique and varied sequences.\n\nTop-pGenerated text: I have a dream. I'm going to",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "26. Sampling and Structured Outputs"
+    ]
+  },
+  {
+    "objectID": "slides/26_sampling-and-structured-outputs.html#structured-outputs-1",
+    "href": "slides/26_sampling-and-structured-outputs.html#structured-outputs-1",
+    "title": "26. Sampling and Structured Outputs",
+    "section": "Structured Outputs",
+    "text": "Structured Outputs\nIf the LMM is a component of a larger system or pipeline, we need a way to pass the output as an input of another component.\nWe need to work with schemas such as:\n\nJSON\nPydantic: data validation library for Ptyhion.\n\nIt ensures data from LLM is accurate and valid\n\nOutlines: make the LLMs speak the language of every application.",
     "crumbs": [
       "Section V: LLM Evaluations and Applications",
       "26. Sampling and Structured Outputs"
@@ -1162,44 +1250,88 @@
     ]
   },
   {
-    "objectID": "slides/29_retrieval-augmented-generation.html#slide",
-    "href": "slides/29_retrieval-augmented-generation.html#slide",
+    "objectID": "slides/29_retrieval-augmented-generation.html#retrieval-augmented-generation",
+    "href": "slides/29_retrieval-augmented-generation.html#retrieval-augmented-generation",
     "title": "29. Retrieval-Augmented Generation",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "section": "Retrieval-Augmented Generation",
+    "text": "Retrieval-Augmented Generation\nRAG is an application pattern for LLMS.\nIt uses information retrieval systems to give LLMs extra context.\nAllows the LLM to answer user queries not covered in its training data\n\nRAG",
     "crumbs": [
       "Section V: LLM Evaluations and Applications",
       "29. Retrieval-Augmented Generation"
     ]
   },
   {
-    "objectID": "slides/29_retrieval-augmented-generation.html#slide-1",
-    "href": "slides/29_retrieval-augmented-generation.html#slide-1",
+    "objectID": "slides/29_retrieval-augmented-generation.html#stages",
+    "href": "slides/29_retrieval-augmented-generation.html#stages",
     "title": "29. Retrieval-Augmented Generation",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Stages:",
+    "text": "Stages:\n\nChunking: Turn your dataset into text documents and break it down into small pieces.\nEmbed documents: Turn each chunk into vectors representing their semantic meaning.\nVectorDB: Store embeddings in a vector database.\nRetrieval: Upon receiving a user query, retrieve chunks relevant to the user’s request.\nResponse Generation: Add chunks to the context and use the LLM.",
     "crumbs": [
       "Section V: LLM Evaluations and Applications",
       "29. Retrieval-Augmented Generation"
     ]
   },
   {
-    "objectID": "slides/29_retrieval-augmented-generation.html#slide-2",
-    "href": "slides/29_retrieval-augmented-generation.html#slide-2",
+    "objectID": "slides/29_retrieval-augmented-generation.html#challenges-in-retrieval",
+    "href": "slides/29_retrieval-augmented-generation.html#challenges-in-retrieval",
     "title": "29. Retrieval-Augmented Generation",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Challenges in retrieval",
+    "text": "Challenges in retrieval\n\nRecall: not all relevant chunks are retrieve.\nPrecision: not all chunks retrieved are relevant\nData: complex documents, semi-structured and unstructured data",
     "crumbs": [
       "Section V: LLM Evaluations and Applications",
       "29. Retrieval-Augmented Generation"
     ]
   },
   {
-    "objectID": "slides/29_retrieval-augmented-generation.html#slide-3",
-    "href": "slides/29_retrieval-augmented-generation.html#slide-3",
+    "objectID": "slides/29_retrieval-augmented-generation.html#query-transformations",
+    "href": "slides/29_retrieval-augmented-generation.html#query-transformations",
     "title": "29. Retrieval-Augmented Generation",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Query transformations",
+    "text": "Query transformations\nHow can we make retrieval robust to variability in user input?\nApproaches:\n\nQuery expansion: decomposes the input into sub-questions.\nQuery re-writing: re-write user questions to improve retrieval.\nQuery compression: A chat conversation is compress into a final question for retrieval.",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "29. Retrieval-Augmented Generation"
+    ]
+  },
+  {
+    "objectID": "slides/29_retrieval-augmented-generation.html#query-construction",
+    "href": "slides/29_retrieval-augmented-generation.html#query-construction",
+    "title": "29. Retrieval-Augmented Generation",
+    "section": "Query construction",
+    "text": "Query construction\nWhere does the data live? what syntax is needed to query the data?\n\nQuery construction",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "29. Retrieval-Augmented Generation"
+    ]
+  },
+  {
+    "objectID": "slides/29_retrieval-augmented-generation.html#the-retrieval-process",
+    "href": "slides/29_retrieval-augmented-generation.html#the-retrieval-process",
+    "title": "29. Retrieval-Augmented Generation",
+    "section": "The retrieval process",
+    "text": "The retrieval process\n\nIndexing: how do I desing the index in the vector database?\nChunk size: it controls how much information we load into the context window.\nDocument embedding strategy\nPost-processing: how to combine the documents that I have retrieved?",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "29. Retrieval-Augmented Generation"
+    ]
+  },
+  {
+    "objectID": "slides/29_retrieval-augmented-generation.html#challenges-in-response",
+    "href": "slides/29_retrieval-augmented-generation.html#challenges-in-response",
+    "title": "29. Retrieval-Augmented Generation",
+    "section": "Challenges in response",
+    "text": "Challenges in response\nIn response synthesis.\n\nSafeguarding.\nTool use: tools used to assit the response generation.\n\nIn response evaluation.\n\nSynthetic dataset for evaluation\nLLMs as evaluators",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "29. Retrieval-Augmented Generation"
+    ]
+  },
+  {
+    "objectID": "slides/29_retrieval-augmented-generation.html#section",
+    "href": "slides/29_retrieval-augmented-generation.html#section",
+    "title": "29. Retrieval-Augmented Generation",
+    "section": "",
+    "text": "In production RAG systems are a group of AI models, each playing its part in the workflow of data processing and response generation.\n\n\n\n\nRAG systems",
     "crumbs": [
       "Section V: LLM Evaluations and Applications",
       "29. Retrieval-Augmented Generation"
@@ -1404,44 +1536,44 @@
     ]
   },
   {
-    "objectID": "slides/25_benchmarking.html#slide",
-    "href": "slides/25_benchmarking.html#slide",
+    "objectID": "slides/25_benchmarking.html#examples-of-evaluation-benchmarks",
+    "href": "slides/25_benchmarking.html#examples-of-evaluation-benchmarks",
     "title": "25. Benchmarking",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "section": "Examples of evaluation benchmarks",
+    "text": "Examples of evaluation benchmarks\nHugginFace OpenLLM Leaderboard\n\nROUGE (Recall-Oriented Understudy for Gisting Evaluation) and BLEU (Bilingual Evaluation Understudy): Traditional metrics to evaluate the quality of text generated by LLMs.\nGLUE/SuperGLUE (General Language Understanding Evaluation). Evaluation on tasks that require deeper understanding of the language: text similarity, natural language inference, and sentiment analysis.",
     "crumbs": [
       "Section V: LLM Evaluations and Applications",
       "25. Benchmarking"
     ]
   },
   {
-    "objectID": "slides/25_benchmarking.html#slide-1",
-    "href": "slides/25_benchmarking.html#slide-1",
+    "objectID": "slides/25_benchmarking.html#section",
+    "href": "slides/25_benchmarking.html#section",
     "title": "25. Benchmarking",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "",
+    "text": "MMLU (Massive Multi-task Language Understanding). Favorite eval of DeepMind and Google.\n\nIt tests the model’s ability to generalize across different fields: maths, science, history, etc.\nHow well the model que transfer knowledge cross different domains.\n\nGSM8K (Grade School Math 8K). To eval reasoning combined with chain-of-thought.\n\nDataset of 8,500 high-quality, linguistically diverse grade school math word problems.",
     "crumbs": [
       "Section V: LLM Evaluations and Applications",
       "25. Benchmarking"
     ]
   },
   {
-    "objectID": "slides/25_benchmarking.html#slide-2",
-    "href": "slides/25_benchmarking.html#slide-2",
+    "objectID": "slides/25_benchmarking.html#section-1",
+    "href": "slides/25_benchmarking.html#section-1",
     "title": "25. Benchmarking",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "",
+    "text": "MATH. Used in most LLM papers.\n\n12,500 problems sourced from high school math competition.\n\nHumanEval. For coding. Developed by OpenAI.\n\nIt focuses on the models’ ability to comprehend language, reason, and solve problems related to algorithms and simple mathematics.",
     "crumbs": [
       "Section V: LLM Evaluations and Applications",
       "25. Benchmarking"
     ]
   },
   {
-    "objectID": "slides/25_benchmarking.html#slide-3",
-    "href": "slides/25_benchmarking.html#slide-3",
+    "objectID": "slides/25_benchmarking.html#what-makes-a-good-eval",
+    "href": "slides/25_benchmarking.html#what-makes-a-good-eval",
     "title": "25. Benchmarking",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "What makes a good eval?",
+    "text": "What makes a good eval?\n\nThey should measure things central to intelligence, be on a meaningful task.\nIt should be easy to understand.\nIt shouldn’t fluctuate based on the prompt.\nIt shouldn’t make mistakes.\nIt shouldn’t take too much work to run.\nThe grading should be correct.\nIt should provide examples.",
     "crumbs": [
       "Section V: LLM Evaluations and Applications",
       "25. Benchmarking"
@@ -2420,7 +2552,7 @@
     "href": "slides/22_direct-preference-optimization-methods.html#learning-objectives",
     "title": "22. Direct Preference Optimization Methods",
     "section": "Learning objectives",
-    "text": "Learning objectives\n\n\nContinue discussing fine tuning\nIntroduce Direct Preference Optimzation\nMove beyond RLHF\n\n\n\n\nI wish there was a concrete example of what DPO does",
+    "text": "Learning objectives\n\nContinue discussing fine tuning\nIntroduce Direct Preference Optimzation\nMove beyond RLHF\n\n\n\nI wish there was a concrete example of what DPO does",
     "crumbs": [
       "Section IV: Finetuning Methods for LLMs",
       "22. Direct Preference Optimization Methods"
@@ -2493,44 +2625,66 @@
     ]
   },
   {
-    "objectID": "slides/28_vector-databases-and-reranking.html#slide",
-    "href": "slides/28_vector-databases-and-reranking.html#slide",
+    "objectID": "slides/28_vector-databases-and-reranking.html#vector-databases-1",
+    "href": "slides/28_vector-databases-and-reranking.html#vector-databases-1",
     "title": "28. Vector Databases and Reranking",
-    "section": "SLIDE",
-    "text": "SLIDE\n\nDENOTE MAJOR SECTIONS WITH # TITLE (eg # Installation)\nADD INDIVIDUAL SLIDES WITH ## (eg ## rustup on Linux/macOS)\nKEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.",
+    "section": "Vector databases",
+    "text": "Vector databases\nVector databases facilitate semantic search on your data.\n\nEmbedding models return vectors and LLM understand context from those vectors.\nUsed for Retrieval-Augmented Generation systems to query documents.\n\n\nVector database\nImage from What is a Vector Database & How Does it Work?",
     "crumbs": [
       "Section V: LLM Evaluations and Applications",
       "28. Vector Databases and Reranking"
     ]
   },
   {
-    "objectID": "slides/28_vector-databases-and-reranking.html#slide-1",
-    "href": "slides/28_vector-databases-and-reranking.html#slide-1",
+    "objectID": "slides/28_vector-databases-and-reranking.html#indexes-and-distances",
+    "href": "slides/28_vector-databases-and-reranking.html#indexes-and-distances",
     "title": "28. Vector Databases and Reranking",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Indexes and distances",
+    "text": "Indexes and distances\n\n\nDistance (far) or similarity (close):\n\nEuclidean distance\nCosine similarity\nHamming\nManhattan\n\n\nIndexing algorithms:\n\nExact nearest neighbor: linear search, k-nearest neighbors, space partitioning.\nApproximate nearest neighbor:\n\nIVFFFlat Inverted file with flat compression.\nLocality-sensitive hashing (LSH)\nApproximate Nearest Neighbors Oh yeah (ANNOY)\nHierarchical Navigable Small World (HNSW)",
     "crumbs": [
       "Section V: LLM Evaluations and Applications",
       "28. Vector Databases and Reranking"
     ]
   },
   {
-    "objectID": "slides/28_vector-databases-and-reranking.html#slide-2",
-    "href": "slides/28_vector-databases-and-reranking.html#slide-2",
+    "objectID": "slides/28_vector-databases-and-reranking.html#some-popular-vector-databases",
+    "href": "slides/28_vector-databases-and-reranking.html#some-popular-vector-databases",
     "title": "28. Vector Databases and Reranking",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "Some popular vector databases",
+    "text": "Some popular vector databases\n\nVector databases\nImage from What are Vector Databases? A Beginner’s Guide?",
     "crumbs": [
       "Section V: LLM Evaluations and Applications",
       "28. Vector Databases and Reranking"
     ]
   },
   {
-    "objectID": "slides/28_vector-databases-and-reranking.html#slide-3",
-    "href": "slides/28_vector-databases-and-reranking.html#slide-3",
+    "objectID": "slides/28_vector-databases-and-reranking.html#section",
+    "href": "slides/28_vector-databases-and-reranking.html#section",
     "title": "28. Vector Databases and Reranking",
-    "section": "SLIDE",
-    "text": "SLIDE",
+    "section": "",
+    "text": "Retrieval Augmented Generation (RAG) is more than putting documents into a vector DB and adding an LLM on top.\n\n\nRecall: how many of the relevant documents are we retrieving.\nLLM recall : the ability of an LLM to find information from the text placed within its context window (its RAM).\n\nMore tokens in the context window, less LLM recall.\n\n\n\n\nRecall and context window\n\nWe cannot return everything because of context window.",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "28. Vector Databases and Reranking"
+    ]
+  },
+  {
+    "objectID": "slides/28_vector-databases-and-reranking.html#section-1",
+    "href": "slides/28_vector-databases-and-reranking.html#section-1",
+    "title": "28. Vector Databases and Reranking",
+    "section": "",
+    "text": "Maximize retrieval recall by retrieving plenty of documents and then maximize LLM recall by minimizing the number of documents that make it to the LLM\n\nSolution: Reranker model\n\nReranker",
+    "crumbs": [
+      "Section V: LLM Evaluations and Applications",
+      "28. Vector Databases and Reranking"
+    ]
+  },
+  {
+    "objectID": "slides/28_vector-databases-and-reranking.html#reranker-model",
+    "href": "slides/28_vector-databases-and-reranking.html#reranker-model",
+    "title": "28. Vector Databases and Reranking",
+    "section": "Reranker model",
+    "text": "Reranker model\nGiven a query and document pair, the reranker reorders the documents by relevance to our query using a similarity score.\nTwo stages:\n\nEmbedding model/retriever: Fast.\n\nRetrieves a set of relevant documents from a larger datase\n\nReranker: Slow.\n\nReranks the documents retrieved by the first-stage model.",
     "crumbs": [
       "Section V: LLM Evaluations and Applications",
       "28. Vector Databases and Reranking"
@@ -2706,7 +2860,7 @@
     "href": "slides/02_statistical-prediction-and-supervised-learning.html#regularization",
     "title": "2. Statistical Prediction and Supervised Learning",
     "section": "Regularization",
-    "text": "Regularization\n\n\nLoss function \\[L(\\vec{\\beta}) = \\text{argmin}_{\\vec{\\beta}} \\sum_{i=1}^{N} \\left(y_{i} - \\beta_{0} - \\sum_{j=1}^{k} \\beta_{j}x_{ij}\\right)^{2}\\]\nL1 Regularization \\[L(\\vec{\\beta}, \\lambda) = \\text{argmin}_{\\vec{\\beta}} \\left[\\sum_{i=1}^{N} \\left(y_{i} - \\beta_{0} - \\sum_{j=1}^{k} \\beta_{j}x_{ij}\\right)^{2} + \\lambda\\sum_{j=i}^{k}|\\beta_{j}|\\right]\\]\nL2 Regularization \\[L(\\vec{\\beta}, \\lambda) = \\text{argmin}_{\\vec{\\beta}} \\left[\\sum_{i=1}^{N} \\left(y_{i} - \\beta_{0} - \\sum_{j=1}^{k} \\beta_{j}x_{ij}\\right)^{2} + \\lambda\\sum_{j=i}^{k}\\beta_{j}^{2}\\right]\\]",
+    "text": "Regularization\n\nLoss function \\[L(\\vec{\\beta}) = \\text{argmin}_{\\vec{\\beta}} \\sum_{i=1}^{N} \\left(y_{i} - \\beta_{0} - \\sum_{j=1}^{k} \\beta_{j}x_{ij}\\right)^{2}\\]\nL1 Regularization \\[L(\\vec{\\beta}, \\lambda) = \\text{argmin}_{\\vec{\\beta}} \\left[\\sum_{i=1}^{N} \\left(y_{i} - \\beta_{0} - \\sum_{j=1}^{k} \\beta_{j}x_{ij}\\right)^{2} + \\lambda\\sum_{j=i}^{k}|\\beta_{j}|\\right]\\]\nL2 Regularization \\[L(\\vec{\\beta}, \\lambda) = \\text{argmin}_{\\vec{\\beta}} \\left[\\sum_{i=1}^{N} \\left(y_{i} - \\beta_{0} - \\sum_{j=1}^{k} \\beta_{j}x_{ij}\\right)^{2} + \\lambda\\sum_{j=i}^{k}\\beta_{j}^{2}\\right]\\]",
     "crumbs": [
       "Section I: Foundations of Sequential Prediction",
       "2. Statistical Prediction and Supervised Learning"
@@ -2926,7 +3080,7 @@
     "href": "slides/15_pretraining-recipes.html#optimization-strategies",
     "title": "15. Pretraining Recipes",
     "section": "Optimization Strategies",
-    "text": "Optimization Strategies\n\nKey components:\n\nOptimizer choice\nLearning rate scheduling\nWeight decay\nGradient clipping",
+    "text": "Optimization Strategies\nKey components:\n\nOptimizer choice\nLearning rate scheduling\nWeight decay\nGradient clipping",
     "crumbs": [
       "Section III: Foundations for Modern Language Modeling",
       "15. Pretraining Recipes"
@@ -3047,7 +3201,7 @@
     "href": "slides/15_pretraining-recipes.html#resources",
     "title": "15. Pretraining Recipes",
     "section": "Resources",
-    "text": "Resources\n\n\nA Recipe for Training Neural Networks by Andrej Karpathy\nThe Novice’s LLM Training Guide by Alpin Dale\nNavigating the Attention Landscape by Shobhit Agarwal\nChinchilla scaling laws paper",
+    "text": "Resources\n\nA Recipe for Training Neural Networks by Andrej Karpathy\nThe Novice’s LLM Training Guide by Alpin Dale\nNavigating the Attention Landscape by Shobhit Agarwal\nChinchilla scaling laws paper",
     "crumbs": [
       "Section III: Foundations for Modern Language Modeling",
       "15. Pretraining Recipes"
@@ -3058,7 +3212,7 @@
     "href": "slides/15_pretraining-recipes.html#key-takeaways",
     "title": "15. Pretraining Recipes",
     "section": "Key Takeaways",
-    "text": "Key Takeaways\n\n\nMany architectural and training choices affect LLM performance\nModern defaults have emerged through industry experimentation\nBalancing compute efficiency and model quality is crucial\nBoth architecture and optimization strategy matter significantly\nNo single “best recipe” - depends on resources and goals",
+    "text": "Key Takeaways\n\nMany architectural and training choices affect LLM performance\nModern defaults have emerged through industry experimentation\nBalancing compute efficiency and model quality is crucial\nBoth architecture and optimization strategy matter significantly\nNo single “best recipe” - depends on resources and goals",
     "crumbs": [
       "Section III: Foundations for Modern Language Modeling",
       "15. Pretraining Recipes"
@@ -3289,7 +3443,7 @@
     "href": "slides/24_distillation-and-merging.html#learning-objectives",
     "title": "24. Distillation and Merging",
     "section": "Learning objectives",
-    "text": "Learning objectives\n\n\nFinish module on fine tuning\nLearn to train a “student” with a “teacher”\n\n\n\n\nIt would be nice to have a simple tutorial here",
+    "text": "Learning objectives\n\nFinish module on fine tuning\nLearn to train a “student” with a “teacher”\n\n\n\nIt would be nice to have a simple tutorial here",
     "crumbs": [
       "Section IV: Finetuning Methods for LLMs",
       "24. Distillation and Merging"
@@ -3410,7 +3564,7 @@
     "href": "slides/23_context-scaling.html#learning-objectives",
     "title": "23. Context Scaling",
     "section": "Learning objectives",
-    "text": "Learning objectives\n\n\nAdapt to long context inputs\nReview RoPE\n\n\n\n\nnot a long section?",
+    "text": "Learning objectives\n\nAdapt to long context inputs\nReview RoPE\n\n\n\nnot a long section?",
     "crumbs": [
       "Section IV: Finetuning Methods for LLMs",
       "23. Context Scaling"
@@ -3531,7 +3685,7 @@
     "href": "slides/21_reward-models-and-rlhf.html#learning-objectives",
     "title": "21. Reward Models and RLHF",
     "section": "Learning objectives",
-    "text": "Learning objectives\n\n\nContinue discussing fine tuning\nMotivate reward models\nElaborate on RLHF’s role in AI history\n\n\n\n\nIf this book club is repeated in the future, readers might be even less interested in benchmarks from a few years ago",
+    "text": "Learning objectives\n\nContinue discussing fine tuning\nMotivate reward models\nElaborate on RLHF’s role in AI history\n\n\n\nIf this book club is repeated in the future, readers might be even less interested in benchmarks from a few years ago",
     "crumbs": [
       "Section IV: Finetuning Methods for LLMs",
       "21. Reward Models and RLHF"

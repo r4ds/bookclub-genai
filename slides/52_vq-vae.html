@@ -6,8 +6,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.29">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.31">
 
   <title>Generative AI Handbook Book Club – 52. VQ-VAE</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -135,7 +135,7 @@
 <section id="learning-objectives" class="title-slide slide level1 center">
 <h1>Learning objectives</h1>
 <ul>
-<li>THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY</li>
+<li>Introduce VQ-VAE</li>
 </ul>
 <aside class="notes">
 <ul>
@@ -156,31 +156,47 @@
 </section>
 
 <section>
-<section id="slide-section" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
+<section id="variational-auto-encoders" class="title-slide slide level1 center">
+<h1>Variational Auto-Encoders</h1>
 
 </section>
-<section id="slide" class="slide level2">
-<h2>SLIDE</h2>
-<ul>
-<li>DENOTE MAJOR SECTIONS WITH <code># TITLE</code> (eg <code># Installation</code>)</li>
-<li>ADD INDIVIDUAL SLIDES WITH <code>##</code> (eg <code>## rustup on Linux/macOS</code>)</li>
-<li>KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
+<section id="variational-auto-encoders-1" class="slide level2">
+<h2>Variational Auto-Encoders</h2>
+<p>In AI architecture, <strong>variational autoencoders</strong> simulate the latent space (between the encoder and decoder)—usually with a mixture of Gaussian functions—to maximize the ELBO (<strong>evidence lower bound</strong>)</p>
+
+<img data-src="images/VAE_gaussians.png" class="r-stretch quarto-figure-center"><p class="caption">VAE Gaussians</p><ul>
+<li><a href="https://www.researchgate.net/publication/379478988_HGMVAE_hierarchical_disentanglement_in_Gaussian_mixture_variational_autoencoder">image source</a></li>
 </ul>
 </section>
-<section id="slide-1" class="slide level2">
-<h2>SLIDE</h2>
+<section id="without" class="slide level2">
+<h2>without</h2>
+
+<img data-src="images/VAE_before.png" class="r-stretch quarto-figure-center"><p class="caption">without VAE</p><ul>
+<li>image source: <a href="https://www.youtube.com/watch?v=FSBLj74Qy4I">Jeff Orchard</a></li>
+</ul>
+</section>
+<section id="with" class="slide level2">
+<h2>with</h2>
+
+<img data-src="images/VAE_after.png" class="r-stretch quarto-figure-center"><p class="caption">with VAE</p><ul>
+<li>image source: <a href="https://www.youtube.com/watch?v=FSBLj74Qy4I">Jeff Orchard</a></li>
+</ul>
 </section></section>
 <section>
-<section id="slide-section-1" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
+<section id="vq-vae" class="title-slide slide level1 center">
+<h1>VQ-VAE</h1>
 
 </section>
-<section id="slide-2" class="slide level2">
-<h2>SLIDE</h2>
-</section>
-<section id="slide-3" class="slide level2">
-<h2>SLIDE</h2>
+<section id="vq-vae-1" class="slide level2">
+<h2>VQ-VAE</h2>
+<p><strong>Vector quantized variational autoencoders</strong> (VQ-VAE) utilize an <em>discrete embedding space</em></p>
+<ul>
+<li>for example: 32x32 embedding space of vectors</li>
+</ul>
+
+<img data-src="images/VQ_VAE.png" class="r-stretch quarto-figure-center"><p class="caption">VQ-VAE</p><ul>
+<li><a href="https://www.researchgate.net/publication/370101880_DL-based_Generation_of_facial_portraits_from_diverse_data_sources">image source</a></li>
+</ul>
 
 
 </section></section>

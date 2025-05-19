@@ -6,8 +6,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.29">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.31">
 
   <title>Generative AI Handbook Book Club – 47. Generative Adversarial Nets</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -132,10 +132,11 @@
 </div>
 
 </section>
+<section>
 <section id="learning-objectives" class="title-slide slide level1 center">
 <h1>Learning objectives</h1>
 <ul>
-<li>THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY</li>
+<li>Introduce generative adversarial networks</li>
 </ul>
 <aside class="notes">
 <ul>
@@ -154,36 +155,72 @@
           display:block!important;
       }</style></aside>
 </section>
-
-<section>
-<section id="slide-section" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
-
-</section>
-<section id="slide" class="slide level2">
-<h2>SLIDE</h2>
+<section id="definition" class="slide level2">
+<h2>Definition</h2>
 <ul>
-<li>DENOTE MAJOR SECTIONS WITH <code># TITLE</code> (eg <code># Installation</code>)</li>
-<li>ADD INDIVIDUAL SLIDES WITH <code>##</code> (eg <code>## rustup on Linux/macOS</code>)</li>
-<li>KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
+<li>“Generative AI is a form of artificial intelligence that is designed to generate content, including text, images, video and music. It uses large language models and algorithms to analyze patterns in datasets to mimic the style or structure of specific types of content.”</li>
+</ul>
+
+<img data-src="images/generative_ai.png" class="r-stretch quarto-figure-center"><p class="caption">generative AI</p><ul>
+<li><a href="https://www.eweek.com/artificial-intelligence/generative-ai-vs-machine-learning/">quote and image source</a></li>
 </ul>
 </section>
-<section id="slide-1" class="slide level2">
-<h2>SLIDE</h2>
+<section id="dall-e" class="slide level2">
+<h2>Dall-E</h2>
+
+<img data-src="images/Dall_e_cheeseburgers.png" class="r-stretch quarto-figure-center"><p class="caption">June 2022</p><p><a href="https://www.onefootdown.com/2022/6/21/23175949/notre-dame-football-immersive-and-horrifying-dall-e-mini-art-experience-gumbo-pitbull-cheeseburgers">image source</a></p>
+</section>
+<section id="stable-diffusion" class="slide level2">
+<h2>Stable Diffusion</h2>
+
+<img data-src="images/stable_diffusion.png" class="r-stretch quarto-figure-center"><p class="caption">August 2023</p><p><a href="https://www.geeky-gadgets.com/stable-diffusion-sdxl-beginners-guide/">image source</a></p>
 </section></section>
 <section>
-<section id="slide-section-1" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
+<section id="gans" class="title-slide slide level1 center">
+<h1>GANS</h1>
 
 </section>
-<section id="slide-2" class="slide level2">
-<h2>SLIDE</h2>
+<section id="overview" class="slide level2">
+<h2>Overview</h2>
+
+<img data-src="images/DLI_fig_12_1.png" class="r-stretch quarto-figure-center"><p class="caption">GANs overview</p><ul>
+<li>image source: <a href="https://www.deeplearningillustrated.com/">Deep Learning Illustrated</a></li>
+</ul>
 </section>
-<section id="slide-3" class="slide level2">
-<h2>SLIDE</h2>
+<section id="discriminator" class="slide level2">
+<h2>Discriminator</h2>
+
+<img data-src="images/DLI_fig_12_2.png" class="r-stretch quarto-figure-center"><p class="caption">Training the discriminator</p><ul>
+<li>image source: <a href="https://www.deeplearningillustrated.com/">Deep Learning Illustrated</a></li>
+</ul>
+</section>
+<section id="generator" class="slide level2">
+<h2>Generator</h2>
+
+<img data-src="images/DLI_fig_12_3.png" class="r-stretch quarto-figure-center"><p class="caption">Training the generator</p><ul>
+<li>image source: <a href="https://www.deeplearningillustrated.com/">Deep Learning Illustrated</a></li>
+</ul>
+</section>
+<section id="gan-objectives" class="slide level2">
+<h2>GAN Objectives</h2>
+<ul>
+<li>the goal of a generator is to create better fake images</li>
+<li>the goal of a discriminator is to better classify fake images</li>
+</ul>
+</section>
+<section id="adversarial-network" class="slide level2">
+<h2>Adversarial Network</h2>
+
+<img data-src="images/DLI_fig_12_4.png" class="r-stretch quarto-figure-center"><p class="caption">Adversarial network</p><ul>
+<li>image source: <a href="https://www.deeplearningillustrated.com/">Deep Learning Illustrated</a></li>
+</ul>
+</section>
+<section id="initial-results" class="slide level2">
+<h2>Initial Results</h2>
 
 
-</section></section>
+
+<img data-src="images/Goodfellow_2014.png" class="r-stretch quarto-figure-center"><p class="caption">Goodfellow, et al., 2014</p></section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

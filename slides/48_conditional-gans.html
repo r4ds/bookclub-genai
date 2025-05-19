@@ -6,8 +6,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.29">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.31">
 
   <title>Generative AI Handbook Book Club – 48. Conditional GANs</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -135,7 +135,7 @@
 <section id="learning-objectives" class="title-slide slide level1 center">
 <h1>Learning objectives</h1>
 <ul>
-<li>THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY</li>
+<li>Introduce Conditional Generative Adversarial Networks</li>
 </ul>
 <aside class="notes">
 <ul>
@@ -156,31 +156,84 @@
 </section>
 
 <section>
-<section id="slide-section" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
+<section id="conditional-gans" class="title-slide slide level1 center">
+<h1>Conditional GANs</h1>
 
 </section>
-<section id="slide" class="slide level2">
-<h2>SLIDE</h2>
+<section id="cgans" class="slide level2">
+<h2>cGANs</h2>
+<p>“We investigate conditional adversarial networks as a general-purpose solution to image-to-image translation problems. These networks not only learn the mapping from input image to output image, but also <strong>learn a loss function</strong> to train this mapping. This makes it possible to apply the same generic approach to problems that traditionally would require very different loss formulations.”</p>
 <ul>
-<li>DENOTE MAJOR SECTIONS WITH <code># TITLE</code> (eg <code># Installation</code>)</li>
-<li>ADD INDIVIDUAL SLIDES WITH <code>##</code> (eg <code>## rustup on Linux/macOS</code>)</li>
-<li>KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
+<li><a href="https://phillipi.github.io/pix2pix/">Isola, et al.</a></li>
 </ul>
 </section>
-<section id="slide-1" class="slide level2">
-<h2>SLIDE</h2>
+<section id="example" class="slide level2">
+<h2>example</h2>
+
+<img data-src="images/cGAN_ecology.png" class="r-stretch quarto-figure-center"><p class="caption">cGAN in ecology</p><ul>
+<li>image source: <a href="https://www.mdpi.com/2072-4292/11/19/2193#">Hayatbini, et al.</a></li>
+</ul>
+</section>
+<section id="activity-pix2pix-image-to-image" class="slide level2">
+<h2>Activity: Pix2Pix Image-to-Image</h2>
+
+<img data-src="images/pix2pix_shoes.png" class="r-stretch quarto-figure-center"><p class="caption">image-to-image</p><ul>
+<li><a href="https://affinelayer.com/pixsrv/">app (link)</a> by Christopher Hesse</li>
+<li><a href="https://github.com/affinelayer/pix2pix-tensorflow">GitHub repo</a></li>
+</ul>
+</section>
+<section id="activity-pix2pix-instruct" class="slide level2">
+<h2>Activity: Pix2Pix Instruct</h2>
+
+<img data-src="images/pix2pix.png" class="r-stretch quarto-figure-center"><p class="caption">pix2pix</p><ul>
+<li><a href="https://huggingface.co/spaces/timbrooks/instruct-pix2pix">app (link)</a> by Tim Brooks</li>
+<li><a href="https://github.com/timothybrooks/instruct-pix2pix">GitHub repo</a></li>
+</ul>
 </section></section>
 <section>
-<section id="slide-section-1" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
+<section id="stacked-gans" class="title-slide slide level1 center">
+<h1>Stacked GANs</h1>
 
 </section>
-<section id="slide-2" class="slide level2">
-<h2>SLIDE</h2>
+<section id="stacked-gans-1" class="slide level2">
+<h2>Stacked GANs</h2>
+<ul>
+<li>“Stage-I GAN sketches the primitive shape and colors of the object based on the given text description, yielding Stage-I low-resolution images”</li>
+<li>” Stage-II GAN takes Stage-I results and text descriptions as inputs, and generates high-resolution images with photo-realistic details”</li>
+</ul>
+
+<img data-src="images/stackGAN_stages.png" class="r-stretch quarto-figure-center"><p class="caption">Zhang, et al., 2016</p></section>
+<section id="architecture" class="slide level2">
+<h2>Architecture</h2>
+
+<img data-src="images/stackGAN_architecture.png" class="r-stretch quarto-figure-center"><p class="caption">Zhang, et al., 2016</p></section>
+<section id="scaling" class="slide level2">
+<h2>Scaling</h2>
+
+<img data-src="images/stackGAN_scaling.png" class="r-stretch quarto-figure-center"><p class="caption">Zhang, et al., 2016</p></section></section>
+<section>
+<section id="cycle-gans" class="title-slide slide level1 center">
+<h1>Cycle GANs</h1>
+
 </section>
-<section id="slide-3" class="slide level2">
-<h2>SLIDE</h2>
+<section id="cgans-1" class="slide level2">
+<h2>cGANs</h2>
+<ul>
+<li>“… learning to translate an image from a source domain <span class="math inline">\(X\)</span> to a target domain <span class="math inline">\(Y\)</span> in the absence of paired examples …” — <a href="https://junyanz.github.io/CycleGAN/">Jun-Yan Zhu, et al., 2017</a></li>
+</ul>
+
+<img data-src="images/cycle_GAN_splash.png" class="r-stretch quarto-figure-center"><p class="caption">cycle GAN possibilities</p></section>
+<section id="architecture-1" class="slide level2">
+<h2>Architecture</h2>
+
+<img data-src="images/cycle_GAN_architecture_A2B.png" class="r-stretch"></section>
+<section id="cgan-objective" class="slide level2">
+<h2>cGAN Objective</h2>
+<p>In a cyclic GAN, the generator and discriminator converge toward a Nash equilibrium.</p>
+
+<img data-src="images/cycle_GAN_architecture_B2A.png" class="r-stretch quarto-figure-center"><p class="caption">cycle GAN architecture</p><ul>
+<li>images source: <a href="images/https://hardikbansal.github.io/CycleGANBlog/">Bansal and Rathore</a></li>
+</ul>
 
 
 </section></section>

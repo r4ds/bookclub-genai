@@ -6,8 +6,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.29">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.31">
 
   <title>Generative AI Handbook Book Club – 51. Tokenization Beyond Text</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -135,7 +135,7 @@
 <section id="learning-objectives" class="title-slide slide level1 center">
 <h1>Learning objectives</h1>
 <ul>
-<li>THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY</li>
+<li>Talk about tokenization beyond text</li>
 </ul>
 <aside class="notes">
 <ul>
@@ -156,31 +156,76 @@
 </section>
 
 <section>
-<section id="slide-section" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
+<section id="tokenization-beyond-text" class="title-slide slide level1 center">
+<h1>Tokenization Beyond Text</h1>
 
 </section>
-<section id="slide" class="slide level2">
-<h2>SLIDE</h2>
-<ul>
-<li>DENOTE MAJOR SECTIONS WITH <code># TITLE</code> (eg <code># Installation</code>)</li>
-<li>ADD INDIVIDUAL SLIDES WITH <code>##</code> (eg <code>## rustup on Linux/macOS</code>)</li>
-<li>KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
+<section id="text" class="slide level2">
+<h2>Text</h2>
+
+<img data-src="images/tokenization_text.png" class="r-stretch quarto-figure-center"><p class="caption">tokenization of text</p><ul>
+<li>image source: <a href="https://medium.com/data-science/the-art-of-tokenization-breaking-down-text-for-ai-43c7bccaed25">Murilo Gustineli</a></li>
 </ul>
-</section>
-<section id="slide-1" class="slide level2">
-<h2>SLIDE</h2>
 </section></section>
 <section>
-<section id="slide-section-1" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
+<section id="images" class="title-slide slide level1 center">
+<h1>Images</h1>
 
 </section>
-<section id="slide-2" class="slide level2">
-<h2>SLIDE</h2>
+<section id="vectorization" class="slide level2">
+<h2>Vectorization</h2>
+
+<img data-src="images/tokenization_images_vectorization.png" class="r-stretch quarto-figure-center"><p class="caption">tokenization of images</p><ul>
+<li><p>images are partitioned into <strong>patches</strong></p></li>
+<li><p>each patch is flattened into a vector</p></li>
+<li><p>image source: <a href="https://github.com/wangshusen/DeepLearning/blob/master/Slides/10_ViT.pdf">Shusen Wang</a></p></li>
+</ul>
 </section>
-<section id="slide-3" class="slide level2">
-<h2>SLIDE</h2>
+<section id="positional-encoding" class="slide level2">
+<h2>Positional Encoding</h2>
+
+<img data-src="images/tokenization_images_pe.png" class="r-stretch quarto-figure-center"><p class="caption">positional encoding of patches</p><ul>
+<li>image source: <a href="https://github.com/wangshusen/DeepLearning/blob/master/Slides/10_ViT.pdf">Shusen Wang</a></li>
+</ul>
+</section></section>
+<section>
+<section id="audio" class="title-slide slide level1 center">
+<h1>Audio</h1>
+
+</section>
+<section id="abstraction" class="slide level2">
+<h2>Abstraction</h2>
+
+<img data-src="images/tokenization_audio_abstraction.png" class="r-stretch quarto-figure-center"><p class="caption">audio abstraction</p><ul>
+<li>image source: <a href="https://www.youtube.com/playlist?list=PL-wATfeyAMNqIee7cH3q1bh4QJFAaeNv0">Valerio Velardo</a></li>
+</ul>
+</section>
+<section id="music" class="slide level2">
+<h2>Music</h2>
+<ul>
+<li><p>beat</p></li>
+<li><p>timbre</p></li>
+<li><p>pitch</p></li>
+<li><p>harmony</p></li>
+<li><p>…</p></li>
+<li><p>source: <a href="https://www.youtube.com/playlist?list=PL-wATfeyAMNqIee7cH3q1bh4QJFAaeNv0">Valerio Velardo</a></p></li>
+</ul>
+</section>
+<section id="fourier" class="slide level2">
+<h2>Fourier</h2>
+
+<img data-src="images/tokenization_audio_Fourier.png" class="r-stretch quarto-figure-center"><p class="caption">signal domain</p><ul>
+<li>image source: <a href="https://www.youtube.com/playlist?list=PL-wATfeyAMNqIee7cH3q1bh4QJFAaeNv0">Valerio Velardo</a></li>
+</ul>
+</section>
+<section id="trends" class="slide level2">
+<h2>Trends</h2>
+<ul>
+<li><p>digital signal processing <span class="math inline">\(\rightarrow\)</span> rule-based systems</p></li>
+<li><p>traditional ML <span class="math inline">\(\rightarrow\)</span> feature engineering</p></li>
+<li><p>deep learning <span class="math inline">\(\rightarrow\)</span> automatic feature engineering</p></li>
+<li><p>source: <a href="https://www.youtube.com/playlist?list=PL-wATfeyAMNqIee7cH3q1bh4QJFAaeNv0">Valerio Velardo</a></p></li>
+</ul>
 
 
 </section></section>

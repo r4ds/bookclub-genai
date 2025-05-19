@@ -6,8 +6,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.29">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.31">
 
   <title>Generative AI Handbook Book Club – 50. Diffusion Models</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -135,7 +135,7 @@
 <section id="learning-objectives" class="title-slide slide level1 center">
 <h1>Learning objectives</h1>
 <ul>
-<li>THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY</li>
+<li>Introduce Diffusion Models</li>
 </ul>
 <aside class="notes">
 <ul>
@@ -156,31 +156,60 @@
 </section>
 
 <section>
-<section id="slide-section" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
+<section id="unsupervised-representation-learning" class="title-slide slide level1 center">
+<h1>Unsupervised Representation Learning</h1>
 
 </section>
-<section id="slide" class="slide level2">
-<h2>SLIDE</h2>
-<ul>
-<li>DENOTE MAJOR SECTIONS WITH <code># TITLE</code> (eg <code># Installation</code>)</li>
-<li>ADD INDIVIDUAL SLIDES WITH <code>##</code> (eg <code>## rustup on Linux/macOS</code>)</li>
-<li>KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
+<section id="rooms" class="slide level2">
+<h2>rooms</h2>
+
+<img data-src="images/radford_rooms.png" class="r-stretch quarto-figure-center"><p class="caption">modifications to pictures</p><ul>
+<li>image source: <a href="https://arxiv.org/abs/1511.06434">Radford, et al, 2016</a></li>
 </ul>
 </section>
-<section id="slide-1" class="slide level2">
-<h2>SLIDE</h2>
+<section id="filters" class="slide level2">
+<h2>filters</h2>
+
+<img data-src="images/radford_filters.png" class="r-stretch quarto-figure-center"><p class="caption">trained filters</p><ul>
+<li>image source: <a href="https://arxiv.org/abs/1511.06434">Radford, et al, 2016</a></li>
+</ul>
+</section>
+<section id="image-space" class="slide level2">
+<h2>Image Space</h2>
+
+<img data-src="images/image space.png" class="r-stretch quarto-figure-center"><p class="caption">vector space of images</p><ul>
+<li>image source: <a href="https://www.deeplearningillustrated.com/">Deep Learning Illustrated</a></li>
+</ul>
+</section>
+<section id="ex1" class="slide level2">
+<h2>ex1</h2>
+
+<img data-src="images/image_space_ex1.png" class="r-stretch quarto-figure-center"><p class="caption">image space</p><ul>
+<li>image source: <a href="https://arxiv.org/abs/1511.06434">Radford, et al, 2016</a></li>
+</ul>
+</section>
+<section id="ex2" class="slide level2">
+<h2>ex2</h2>
+
+<img data-src="images/image_space_ex2.png" class="r-stretch quarto-figure-center"><p class="caption">image space</p><ul>
+<li>image source: <a href="https://arxiv.org/abs/1511.06434">Radford, et al, 2016</a></li>
+</ul>
 </section></section>
 <section>
-<section id="slide-section-1" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
+<section id="diffusion-models" class="title-slide slide level1 center">
+<h1>Diffusion Models</h1>
 
 </section>
-<section id="slide-2" class="slide level2">
-<h2>SLIDE</h2>
-</section>
-<section id="slide-3" class="slide level2">
-<h2>SLIDE</h2>
+<section id="diffusion-models-1" class="slide level2">
+<h2>Diffusion Models</h2>
+<blockquote>
+<p>A (denoising) <strong>diffusion model</strong> isn’t that complex if you compare it to other generative models such as Normalizing Flows, GANs or VAEs: they all convert noise from some simple distribution to a data sample. This is also the case here where <em>a neural network learns to gradually denoise data</em> starting from pure noise.</p>
+</blockquote>
+<p>—<a href="https://huggingface.co/blog/annotated-diffusion">HuggingFace</a></p>
+
+<img data-src="unet_architecture.png" class="r-stretch quarto-figure-center"><p class="caption">U-net architecture</p><ul>
+<li>image source: <a href="https://huggingface.co/blog/annotated-diffusion">HuggingFace</a></li>
+</ul>
 
 
 </section></section>

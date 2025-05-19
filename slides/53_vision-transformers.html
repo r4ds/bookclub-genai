@@ -6,8 +6,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.29">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.31">
 
   <title>Generative AI Handbook Book Club – 53. Vision Transformers</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -135,7 +135,7 @@
 <section id="learning-objectives" class="title-slide slide level1 center">
 <h1>Learning objectives</h1>
 <ul>
-<li>THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY</li>
+<li>Conclude multimodal models</li>
 </ul>
 <aside class="notes">
 <ul>
@@ -156,31 +156,81 @@
 </section>
 
 <section>
-<section id="slide-section" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
+<section id="multimodal-models" class="title-slide slide level1 center">
+<h1>Multimodal Models</h1>
 
 </section>
-<section id="slide" class="slide level2">
-<h2>SLIDE</h2>
-<ul>
-<li>DENOTE MAJOR SECTIONS WITH <code># TITLE</code> (eg <code># Installation</code>)</li>
-<li>ADD INDIVIDUAL SLIDES WITH <code>##</code> (eg <code>## rustup on Linux/macOS</code>)</li>
-<li>KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
+<section id="clip" class="slide level2">
+<h2>CLIP</h2>
+<p><strong>Contrastive Language Image Pre-Training</strong></p>
+
+<img data-src="images/7-clip.png" class="r-stretch quarto-figure-center"><p class="caption">CLIP architecture</p><ul>
+<li>image source: <a href="https://huyenchip.com/2023/10/10/multimodal.html">Chip Huyen</a></li>
 </ul>
 </section>
-<section id="slide-1" class="slide level2">
-<h2>SLIDE</h2>
+<section id="vision-neurons" class="slide level2">
+<h2>Vision Neurons</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/vision_neurons.png"></p>
+<figcaption>vision neurons</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/vision_neuron_grid.png"></p>
+<figcaption>vision neurons</figcaption>
+</figure>
+</div>
+<ul>
+<li>image source: <a href="https://distill.pub/2021/multimodal-neurons/">dstill.pub</a></li>
+</ul>
 </section></section>
 <section>
-<section id="slide-section-1" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
+<section id="quo-vadimus" class="title-slide slide level1 center">
+<h1>Quo Vadimus?</h1>
+<p>Presently, here are some more applications of multimodal models.</p>
+</section>
+<section id="home" class="slide level2">
+<h2>home</h2>
 
+<img data-src="images/receipts.png" class="r-stretch quarto-figure-center"><p class="caption">receipt bookkeeping</p><ul>
+<li><p>image source: <a href="https://recyclethispgh.com/item/paper-receipts/">Recycle This Pittsburgh</a></p></li>
+<li><p>scan grocery receipts</p></li>
+<li><p>OCR</p></li>
+<li><p>AI text decoding</p></li>
+<li><p>code expense report</p></li>
+</ul>
 </section>
-<section id="slide-2" class="slide level2">
-<h2>SLIDE</h2>
+<section id="pedagogy" class="slide level2">
+<h2>pedagogy</h2>
+
+<img data-src="images/copus.png" class="r-stretch quarto-figure-center"><p class="caption">COPUS</p><ul>
+<li>image source: <a href="https://www.lifescied.org/doi/10.1187/cbe.13-08-0154">COPUS</a></li>
+</ul>
 </section>
-<section id="slide-3" class="slide level2">
-<h2>SLIDE</h2>
+<section id="software-dev" class="slide level2">
+<h2>software dev</h2>
+<p><strong>Vision Question Answering</strong></p>
+
+<img data-src="images/vqa_examples.png" class="r-stretch quarto-figure-center"><p class="caption">VQA</p><ul>
+<li>image source: <a href="https://arxiv.org/pdf/1612.00837">paper</a></li>
+</ul>
+</section>
+<section id="comp-bio" class="slide level2">
+<h2>comp bio</h2>
+<p><em>transfer learning</em> between RNA and ATAC sequencing</p>
+
+<img data-src="images/scButterfly.png" class="r-stretch quarto-figure-center"><p class="caption">scButterfly</p><ul>
+<li>image source: <a href="https://www.nature.com/articles/s41467-024-47418-x?fromPaywallRec=false">scButterfly</a></li>
+</ul>
+</section>
+<section id="medicine" class="slide level2">
+<h2>medicine</h2>
+
+<img data-src="images/multimodel_models_for_medicine.png" class="r-stretch quarto-figure-center"><p class="caption">data types</p><ul>
+<li>image source: <a href="https://www.sciencedirect.com/science/article/pii/S1566253524004688">Science Direct</a></li>
+</ul>
 
 
 </section></section>

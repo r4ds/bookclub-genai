@@ -6,7 +6,7 @@ title: "52. VQ-VAE"
 # Learning objectives
 
 ::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+- Introduce VQ-VAE
 :::
 
 ::: notes
@@ -14,18 +14,36 @@ title: "52. VQ-VAE"
 - Load a deck in the browser and type "s" to see these notes.
 :::
 
-# SLIDE SECTION
+# Variational Auto-Encoders
 
-## SLIDE
+## Variational Auto-Encoders
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+In AI architecture, **variational autoencoders** simulate the latent space (between the encoder and decoder)---usually with a mixture of Gaussian functions---to maximize the ELBO (**evidence lower bound**)	
 
-## SLIDE
+![VAE Gaussians](images/VAE_gaussians.png)
 
-# SLIDE SECTION
+* [image source](https://www.researchgate.net/publication/379478988_HGMVAE_hierarchical_disentanglement_in_Gaussian_mixture_variational_autoencoder)
 
-## SLIDE
+## without
 
-## SLIDE
+![without VAE](images/VAE_before.png)
+
+* image source: [Jeff Orchard](https://www.youtube.com/watch?v=FSBLj74Qy4I)
+
+## with
+
+![with VAE](images/VAE_after.png)
+
+* image source: [Jeff Orchard](https://www.youtube.com/watch?v=FSBLj74Qy4I)
+
+# VQ-VAE
+
+## VQ-VAE
+
+**Vector quantized variational autoencoders** (VQ-VAE) utilize an *discrete embedding space*
+
+* for example: 32x32 embedding space of vectors
+
+![VQ-VAE](images/VQ_VAE.png)
+
+* [image source](https://www.researchgate.net/publication/370101880_DL-based_Generation_of_facial_portraits_from_diverse_data_sources)

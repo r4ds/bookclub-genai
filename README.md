@@ -11,7 +11,7 @@ As we read, we are producing [slides for the book](https://dslc.io/genai).
 
 If you would like to present, please see the sign-up sheet for your cohort (linked below, and pinned in the [#book_club-genai](https://dslcio.slack.com/archives/C086ZN9P58X) channel on Slack)!
 
-- [Cohort 1](https://docs.google.com/spreadsheets/d/1U3Jj4WovLDBvf0dSoDBetLd_qMoHO9JrHAHI9PgGGnE/edit?usp=sharing) (started 2025-02-02, facilitated by Derek Sollberger): [Sundays, 2:00 PM CST/CDT](https://www.timeanddate.com/worldclock/converter.html?iso=20250202T200000&p1=24&p2=1440) | [meeting videos](https://www.youtube.com/playlist?list=PL3x6DOfs2NGivdWYQXgxTuAY6P5rFLmYH)
+- Cohort 1 (started 2025-02-02, finished 2025-05-11): [meeting videos](https://www.youtube.com/playlist?list=PL3x6DOfs2NGivdWYQXgxTuAY6P5rFLmYH)
 
 <hr>
 

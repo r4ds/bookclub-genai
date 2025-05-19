@@ -6,7 +6,7 @@ title: "47. Generative Adversarial Nets"
 # Learning objectives
 
 ::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+- Introduce generative adversarial networks
 :::
 
 ::: notes
@@ -14,18 +14,57 @@ title: "47. Generative Adversarial Nets"
 - Load a deck in the browser and type "s" to see these notes.
 :::
 
-# SLIDE SECTION
+## Definition
 
-## SLIDE
+* "Generative AI is a form of artificial intelligence that is designed to generate content, including text, images, video and music. It uses large language models and algorithms to analyze patterns in datasets to mimic the style or structure of specific types of content."
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+![generative AI](images/generative_ai.png)
 
-## SLIDE
+* [quote and image source](https://www.eweek.com/artificial-intelligence/generative-ai-vs-machine-learning/)
 
-# SLIDE SECTION
+## Dall-E
 
-## SLIDE
+![June 2022](images/Dall_e_cheeseburgers.png)
 
-## SLIDE
+[image source](https://www.onefootdown.com/2022/6/21/23175949/notre-dame-football-immersive-and-horrifying-dall-e-mini-art-experience-gumbo-pitbull-cheeseburgers)
+
+## Stable Diffusion
+
+![August 2023](images/stable_diffusion.png)
+
+[image source](https://www.geeky-gadgets.com/stable-diffusion-sdxl-beginners-guide/)
+
+# GANS
+
+## Overview
+
+![GANs overview](images/DLI_fig_12_1.png)
+
+* image source: [Deep Learning Illustrated](https://www.deeplearningillustrated.com/)
+
+## Discriminator
+
+![Training the discriminator](images/DLI_fig_12_2.png)
+
+* image source: [Deep Learning Illustrated](https://www.deeplearningillustrated.com/)
+
+## Generator
+
+![Training the generator](images/DLI_fig_12_3.png)
+
+* image source: [Deep Learning Illustrated](https://www.deeplearningillustrated.com/)
+
+## GAN Objectives
+
+* the goal of a generator is to create better fake images
+* the goal of a discriminator is to better classify fake images
+
+## Adversarial Network
+
+![Adversarial network](images/DLI_fig_12_4.png)
+
+* image source: [Deep Learning Illustrated](https://www.deeplearningillustrated.com/)
+
+## Initial Results
+
+![Goodfellow, et al., 2014](images/Goodfellow_2014.png)

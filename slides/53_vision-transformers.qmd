@@ -6,7 +6,7 @@ title: "53. Vision Transformers"
 # Learning objectives
 
 ::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+- Conclude multimodal models
 :::
 
 ::: notes
@@ -14,18 +14,66 @@ title: "53. Vision Transformers"
 - Load a deck in the browser and type "s" to see these notes.
 :::
 
-# SLIDE SECTION
+# Multimodal Models
 
-## SLIDE
+## CLIP
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+**Contrastive Language Image Pre-Training**
 
-## SLIDE
+![CLIP architecture](images/7-clip.png)
 
-# SLIDE SECTION
+* image source: [Chip Huyen](https://huyenchip.com/2023/10/10/multimodal.html)
 
-## SLIDE
+## Vision Neurons
 
-## SLIDE
+![vision neurons](images/vision_neurons.png)
+
+![vision neurons](images/vision_neuron_grid.png)
+
+* image source: [dstill.pub](https://distill.pub/2021/multimodal-neurons/)
+
+# Quo Vadimus?
+
+Presently, here are some more applications of multimodal models.
+
+## home
+
+![receipt bookkeeping](images/receipts.png)
+
+* image source: [Recycle This Pittsburgh](https://recyclethispgh.com/item/paper-receipts/)
+
+* scan grocery receipts
+* OCR
+* AI text decoding
+* code expense report
+
+## pedagogy
+
+![COPUS](images/copus.png)
+
+* image source: [COPUS](https://www.lifescied.org/doi/10.1187/cbe.13-08-0154)
+
+## software dev
+
+**Vision Question Answering**
+
+![VQA](images/vqa_examples.png)
+
+* image source: [paper](https://arxiv.org/pdf/1612.00837)
+
+## comp bio
+
+*transfer learning* between RNA and ATAC sequencing
+
+![scButterfly](images/scButterfly.png)
+
+* image source: [scButterfly](https://www.nature.com/articles/s41467-024-47418-x?fromPaywallRec=false)
+
+## medicine
+
+![data types](images/multimodel_models_for_medicine.png)
+
+* image source: [Science Direct](https://www.sciencedirect.com/science/article/pii/S1566253524004688)
+
+
+

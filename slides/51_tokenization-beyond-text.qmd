@@ -6,7 +6,7 @@ title: "51. Tokenization Beyond Text"
 # Learning objectives
 
 ::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+- Talk about tokenization beyond text
 :::
 
 ::: notes
@@ -14,18 +14,69 @@ title: "51. Tokenization Beyond Text"
 - Load a deck in the browser and type "s" to see these notes.
 :::
 
-# SLIDE SECTION
+# Tokenization Beyond Text
 
-## SLIDE
+## Text
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+![tokenization of text](images/tokenization_text.png)
 
-## SLIDE
+* image source: [Murilo Gustineli](https://medium.com/data-science/the-art-of-tokenization-breaking-down-text-for-ai-43c7bccaed25)
 
-# SLIDE SECTION
+# Images
 
-## SLIDE
+## Vectorization
 
-## SLIDE
+![tokenization of images](images/tokenization_images_vectorization.png)
+
+* images are partitioned into **patches**
+* each patch is flattened into a vector
+
+* image source: [Shusen Wang](https://github.com/wangshusen/DeepLearning/blob/master/Slides/10_ViT.pdf)
+
+## Positional Encoding
+
+![positional encoding of patches](images/tokenization_images_pe.png)
+
+* image source: [Shusen Wang](https://github.com/wangshusen/DeepLearning/blob/master/Slides/10_ViT.pdf)
+
+# Audio
+
+## Abstraction
+
+![audio abstraction](images/tokenization_audio_abstraction.png)
+
+* image source: [Valerio Velardo](https://www.youtube.com/playlist?list=PL-wATfeyAMNqIee7cH3q1bh4QJFAaeNv0)
+
+## Music
+
+* beat
+* timbre
+* pitch
+* harmony
+* ...
+
+* source: [Valerio Velardo](https://www.youtube.com/playlist?list=PL-wATfeyAMNqIee7cH3q1bh4QJFAaeNv0)
+
+## Fourier
+
+![signal domain](images/tokenization_audio_Fourier.png)
+
+* image source: [Valerio Velardo](https://www.youtube.com/playlist?list=PL-wATfeyAMNqIee7cH3q1bh4QJFAaeNv0)
+
+## Trends
+
+* digital signal processing $\rightarrow$ rule-based systems
+* traditional ML $\rightarrow$ feature engineering
+* deep learning $\rightarrow$ automatic feature engineering
+
+* source: [Valerio Velardo](https://www.youtube.com/playlist?list=PL-wATfeyAMNqIee7cH3q1bh4QJFAaeNv0)
+
+
+
+
+
+
+
+
+
+

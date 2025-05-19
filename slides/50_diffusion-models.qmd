@@ -6,7 +6,7 @@ title: "50. Diffusion Models"
 # Learning objectives
 
 ::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+- Introduce Diffusion Models
 :::
 
 ::: notes
@@ -14,18 +14,63 @@ title: "50. Diffusion Models"
 - Load a deck in the browser and type "s" to see these notes.
 :::
 
-# SLIDE SECTION
+# Unsupervised Representation Learning
 
-## SLIDE
+## rooms
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+![modifications to pictures](images/radford_rooms.png)
 
-## SLIDE
+* image source: [Radford, et al, 2016](https://arxiv.org/abs/1511.06434)
 
-# SLIDE SECTION
+## filters
 
-## SLIDE
+![trained filters](images/radford_filters.png)
 
-## SLIDE
+* image source: [Radford, et al, 2016](https://arxiv.org/abs/1511.06434)
+
+## Image Space
+
+![vector space of images](images/image space.png)
+
+* image source: [Deep Learning Illustrated](https://www.deeplearningillustrated.com/)
+
+## ex1
+
+![image space](images/image_space_ex1.png)
+
+* image source: [Radford, et al, 2016](https://arxiv.org/abs/1511.06434)
+
+## ex2
+
+![image space](images/image_space_ex2.png)
+
+* image source: [Radford, et al, 2016](https://arxiv.org/abs/1511.06434)
+
+# Diffusion Models
+
+## Diffusion Models
+
+> A (denoising) **diffusion model** isn't that complex if you compare it to other generative models such as Normalizing Flows, GANs or VAEs: they all convert noise from some simple distribution to a data sample. This is also the case here where *a neural network learns to gradually denoise data* starting from pure noise. 
+
+---[HuggingFace](https://huggingface.co/blog/annotated-diffusion)
+
+![U-net architecture](unet_architecture.png)
+
+* image source: [HuggingFace](https://huggingface.co/blog/annotated-diffusion)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

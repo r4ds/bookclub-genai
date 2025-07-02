@@ -6,9 +6,10 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.31">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.32">
 
+  <meta name="author" content="David Lohmann">
   <title>Generative AI Handbook Book Club – 10. Embeddings and Topic Modeling</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -28,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-5fa723a4ee799f64e44b6fe0747a0a63.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-a307367f18dc81d48b2d91538162f63f.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -121,7 +122,7 @@
     }
   </style>
 </head>
-<body class="quarto-dark">
+<body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
@@ -129,19 +130,196 @@
   <h1 class="title">10. Embeddings and Topic Modeling</h1>
 
 <div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+David Lohmann 
+</div>
+</div>
 </div>
 
 </section>
-<section id="learning-objectives" class="title-slide slide level1 center">
-<h1>Learning objectives</h1>
-<ul>
-<li>THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY</li>
-</ul>
+<section id="embeddings-topic-modeling---ch-10" class="title-slide slide level1 center">
+<h1>Embeddings &amp; Topic Modeling - Ch 10</h1>
+
+</section>
+
+<section id="genai-handbook-reading-club" class="title-slide slide level1 center">
+<h1>GenAI Handbook reading club</h1>
+<p><a href="https://docs.google.com/presentation/d/1qb_XIhQEOGwSUXsepAnSJ6Dafkak5SrgTkhIebJQxUw/edit?usp=sharing">Original Google Slides (well-formatted)</a> <em>Quarto version may have some slides missing or poorly formatted</em></p>
+</section>
+
+<section id="one-hot-encoding" class="title-slide slide level1 center">
+<h1>One Hot Encoding</h1>
+<p><strong>Encode N categories as a sparse, N-dimensional vector, where each column corresponds to a category. The data’s vector </strong> <strong>encoding</strong> __ is such that each element is 1 if the data s that category, and 0 otherwise.__</p>
+<p><img data-src="images/Ch_10_GenAI_Book_Club_David_Slides_0.png"></p>
 <aside class="notes">
-<ul>
-<li>You can add notes on each slide with blocks like this!</li>
-<li>Load a deck in the browser and type “s” to see these notes.</li>
-</ul>
+<p>https://www.kaggle.com/code/taha07/fundamental-feature-engineering-techniques</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p><strong>“In statistics, __ <strong>latent variables</strong> __ ... are variables that can only be __ <em>inferred indirectly</em> __ through a mathematical model from other observable variables that can be directly observed or measured.” - </strong> <em><a href="https://en.wikipedia.org/wiki/Latent_and_observable_variables">Wikipedia</a></em></p>
+<p><img data-src="images/Ch_10_GenAI_Book_Club_David_Slides_1.png"></p>
+</section>
+
+<section id="topic-modeling" class="title-slide slide level1 center">
+<h1>Topic Modeling</h1>
+<p><strong>Background</strong> <strong>: We have a lot of unstructured text documents, consisting of words.</strong></p>
+<p><strong>Problem</strong> <strong>: We want to establish what the topic of each document is. This is unsupervised learning because we do not know have the labeled topics beforehand. For example, we want to organize a library of digital books by topic, without reading every single book.</strong></p>
+<p><strong>Document: Text</strong></p>
+<p><strong>“A whopping 96.5 percent of water on Earth is in our oceans, covering 71 percent of the surface of our planet. And at any given time, about 0.001 percent is floating above us in the atmosphere. If all of that water fell as rain at once, the whole planet would get about 1 inch of rain.”</strong></p>
+<p><strong>“One-third of your life is spent sleeping. Sleeping 7-9 hours each night should help your body heal itself, activate the immune system, and give your heart a break. Beyond that--sleep experts are still trying to learn more about what happens once we fall asleep.”</strong></p>
+<p><strong>“A newborn baby is 78 percent water. Adults are 55-60 percent water. Water is involved in just about everything our body does.”</strong></p>
+<p><strong>corpus = [doc_1, doc_2, doc_3]</strong></p>
+<p><strong>End Result:</strong></p>
+<p><strong>(1, ‘0.071*“water” + 0.025*“state” + 0.025*“three”, …’), </strong></p>
+<p><strong>(2, ‘0.030*“still” + 0.028*“hour” + 0.026*“sleeping”’, …), </strong></p>
+<p><strong>(3, ‘0.073*“percent” + 0.069*“water” + 0.031*“rain”’, …)</strong></p>
+<aside class="notes">
+<p>https://www.datacamp.com/tutorial/what-is-topic-modeling</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p><strong>Background</strong> <strong>: We have a lot of unstructured text documents, consisting of words.</strong></p>
+<p><strong>Problem</strong> <strong>: We want to establish what the topic of each document is. This is unsupervised learning because we do not know have the labeled topics beforehand. For example, we want to organize a library of digital books by topic, without reading every single book.</strong></p>
+<p><strong>Solution: We can:</strong></p>
+<p><strong>1) First “clean” and normalize the text to a standard form to make it easier for natural language processing.</strong></p>
+<p><strong>2) Count the number of times each word appears in each document, without regard for word order (ie a bag-of-words).</strong></p>
+<p><strong>3) Statistically model how the difference in word frequencies in each document represents the topic. There are 2 main algorithms for this: </strong> <strong>Latent Semantic Analysis</strong> __ (LSA) and __ <strong>Latent Dirichlet Allocation</strong> __ (LDA).__</p>
+<p><strong>4) For each document, return a vector representing the main words associated with the document’s topic, and how strongly each word associates with the document’s topic. This identifies the main topics in each document.</strong></p>
+<aside class="notes">
+<p>Explanation: https://www.datacamp.com/tutorial/what-is-topic-modeling</p>
+<p>https://www.ibm.com/think/topics/topic-modeling</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p><strong>Normalization</strong></p>
+<p><strong>1) Removing stopper words and punctuation.</strong></p>
+<p><strong>2) Perform lemmatization on the words to replace all the variations of a word with it’s normal, basic form.</strong></p>
+<p><strong>“Lemmatization (or less commonly </strong> <strong>lemmatization</strong> <strong>) in linguistics is the process of grouping together the inflected forms of a word so they can be analysed as a single item, identified by the word’s lemma, or dictionary form.” - https://en.wikipedia.org/wiki/Lemmatization</strong></p>
+<p><strong>ran, runs, running -&gt; run</strong></p>
+<p><strong>better -&gt; good</strong></p>
+<p><strong>“A whopping 96.5 percent of water on Earth is in our oceans, covering 71 percent of the surface of our planet. And at any given time, about 0.001 percent is floating above us in the atmosphere. If all of that water fell as rain at once, the whole planet would get about 1 inch of rain.” -&gt; [‘whopping’,‘965’,‘percent’,‘water’,‘earth’,‘ocean’,‘covering’,‘71’,‘percent’,‘surface’,‘planet’,‘given’,‘time’,‘0001’,‘percent’,‘floating’,‘u’,‘atmosphere’,‘water’,‘fell’,‘rain’,‘once’,‘whole’,‘planet’,‘would’,‘get’,‘1’,‘inch’,‘rain’]</strong></p>
+<p><em><a href="https://en.wikipedia.org/wiki/Lemmatization">https://en.wikipedia.org/wiki/Lemmatization</a></em></p>
+<p><strong>Create document-word matrix.</strong></p>
+<p><img data-src="images/Ch_10_GenAI_Book_Club_David_Slides_2.png"></p>
+<aside class="notes">
+<p>https://msail.github.io/talk/lsa_102521/</p>
+<p>https://en.wikipedia.org/wiki/Latent_semantic_analysis</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p><strong>Latent Semantic Analysis</strong> __ (LSA)__</p>
+<p><strong>Create document-word matrix.</strong></p>
+<p><strong>Do Singular Value Decomposition to reduce the dimensionality using cosine similarity.</strong></p>
+<aside class="notes">
+<p>Explanation: https://citeseerx.ist.psu.edu/document?repid=rep1&amp;type=pdf&amp;doi=0d11ecc52070b913cb0fc51f5a64d3e53f3bbc81</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p><strong>Latent Semantic Analysis</strong> __ (LSA)__</p>
+<p><strong>Create document-word matrix.</strong></p>
+<p><strong>Do Singular Value Decomposition to reduce the dimensionality using cosine similarity.</strong></p>
+<p><strong>LSA assumes words with similar meanings will appear in similar documents. It does so by constructing a matrix containing the word counts per document, where each row represents a unique word, and columns represent each document, and then using a Singular Value Decomposition (SVD) to reduce the number of rows while preserving the similarity structure among columns. SVD is a mathematical method that simplifies data while keeping its important features. It’s used here to maintain the relationships between words and documents.</strong></p>
+<p><strong>To determine the similarity between documents, cosine similarity is used. This is a measure that calculates the cosine of the angle between two vectors, in this case, representing documents. A value close to 1 means the documents are very similar based on the words in them, whereas a value close to 0 means they’re quite different.</strong></p>
+<aside class="notes">
+<p>https://www.datacamp.com/tutorial/what-is-topic-modeling</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p><strong>Latent Semantic Analysis</strong> __ (LSA)__</p>
+<p><strong>Create document-word matrix.</strong></p>
+<p><strong>Do Singular Value Decomposition to reduce the dimensionality using cosine similarity.</strong></p>
+<p><strong>LSA assumes words with similar meanings will appear in similar documents. It does so by constructing a matrix containing the word counts per document, where each row represents a unique word, and columns represent each document, and then using a Singular Value Decomposition (SVD) to reduce the number of rows while preserving the similarity structure among columns. SVD is a mathematical method that simplifies data while keeping its important features. It’s used here to maintain the relationships between words and documents.</strong></p>
+<p><strong>To determine the similarity between documents, cosine similarity is used. This is a measure that calculates the cosine of the angle between two vectors, in this case, representing documents. A value close to 1 means the documents are very similar based on the words in them, whereas a value close to 0 means they’re quite different.</strong></p>
+<p><img data-src="images/Ch_10_GenAI_Book_Club_David_Slides_3.png"></p>
+<p><img data-src="images/Ch_10_GenAI_Book_Club_David_Slides_4.png"></p>
+<aside class="notes">
+<p>https://www.datacamp.com/tutorial/what-is-topic-modeling</p>
+<p>https://en.wikipedia.org/wiki/Singular_value_decomposition</p>
+<p>https://en.wikipedia.org/wiki/Cosine_similarity</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p><img data-src="images/Ch_10_GenAI_Book_Club_David_Slides_5.png"></p>
+<aside class="notes">
+<p>https://citeseerx.ist.psu.edu/document?repid=rep1&amp;type=pdf&amp;doi=0d11ecc52070b913cb0fc51f5a64d3e53f3bbc81</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p><strong>Latent Dirichlet Allocation</strong> __ (LDA)__</p>
+<p><strong>LDA is a Bayesian network, meaning it’s a generative statistical model that assumes documents are made up of words that aid in determining the topics. Thus, documents are mapped to a list of topics by assigning each word in the document to different topics. This model ignores the order of words occurring in a document and treats them as a bag of words.</strong></p>
+<p><strong>Randomly map each word to a topic.</strong></p>
+<p><strong>Bayesian update to improve guess on each iteration.</strong></p>
+<p><strong>Stop when objective function stops decreasing.</strong></p>
+<aside class="notes">
+<p>Explanation: https://www.datacamp.com/tutorial/what-is-topic-modeling</p>
+<p>https://www.ibm.com/think/topics/latent-dirichlet-allocation</p>
+<p>Topic modeling demo: https://www.kaggle.com/code/hamditarek/get-started-with-nlp-lda-lsa</p>
+<p>https://colab.research.google.com/drive/10RVlWS3vdiTJAxH7IGzPWa88fNAkuSo8#scrollTo=iQuNLsFpLTRt</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -155,35 +333,242 @@
       }</style></aside>
 </section>
 
-<section>
-<section id="slide-section" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
+<section id="embeddings" class="title-slide slide level1 center">
+<h1>Embeddings</h1>
+<p><strong>A way to assign each word to a vector of real numbers, such that each vector has the same length, and so that the relative locations of each vector in the multidimensional space encode information about the relations between words.</strong></p>
+<p><strong>More similar data has vectors located closer together.</strong></p>
+<aside class="notes">
+<p>Demo: https://www.kaggle.com/code/dlohmann/word2vec-embedding-using-gensim-and-nltk/edit</p>
+<p>https://colab.research.google.com/drive/1N7HELWImK9xCYheyozVP3C_McbiRo1nb#scrollTo=knWTPeFGvCVr</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p><img data-src="images/Ch_10_GenAI_Book_Club_David_Slides_6.png"></p>
+<aside class="notes">
+<p>https://www.scaler.com/topics/tensorflow/tensorflow-word-embeddings/</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p><strong>Why is more dimensions better? Each dimension may encode different meaning.</strong></p>
+<p><img data-src="images/Ch_10_GenAI_Book_Club_David_Slides_7.png"></p>
+<aside class="notes">
+<p>https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/tutorial.html</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p><strong>Why is more dimensions better? Each dimension may encode different meaning.</strong></p>
+<p><img data-src="images/Ch_10_GenAI_Book_Club_David_Slides_8.png"></p>
+<aside class="notes">
+<p>https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/tutorial.html</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p><strong>Why is more dimensions better? Each dimension may encode different meaning.</strong></p>
+<p><img data-src="images/Ch_10_GenAI_Book_Club_David_Slides_9.png"></p>
+<aside class="notes">
+<p>https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/tutorial.html</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p><strong>Word2Vec</strong></p>
+<p><em><a href="https://www.tensorflow.org/text/tutorials/word2vec">https://www.tensorflow.org/text/tutorials/word2vec</a></em></p>
+<p><strong>Demo time:</strong></p>
+<p><em><a href="https://www.kaggle.com/code/dlohmann/word2vec-embedding-using-gensim-and-nltk/edit">https://www.kaggle.com/code/dlohmann/word2vec-embedding-using-gensim-and-nltk/edit</a></em></p>
+<aside class="notes">
+
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+
+<section id="how-do-we-determine-the-embedding" class="title-slide slide level1 center">
+<h1>How do we determine the Embedding?</h1>
+<p><strong>Embedding algorithms:</strong></p>
+<p><strong>Latent semantic analysis</strong> <strong>: “count-based” method that involves finding term frequency–inverse document frequency (TF-IDF) co-</strong> <strong>occurrence</strong> __ matrix, then doing singular value decomposition (SVD) dimensionality reduction.__</p>
+<p><strong>Word2Vec</strong> <strong>: Models using s</strong> <strong>hallow, two-layer neural networks that are trained to reconstruct linguistic contexts of words. Word2vec takes as its input a large corpus of text and produces a mapping of the set of words to a vector space</strong> <strong>.</strong></p>
+<p><strong>GloVe</strong> <strong>: GLObal VEctors for word representation. Based on co-occurrence of words in a corpus. Essentially a log-bilinear regression model with a weighted least-squares objective. Trained on the non-zero entries of a global word-word co-occurrence sparse matrix, which tabulates how frequently words co-occur with one another in a given corpus. Like LDA, but uses a model instead of matrix factorization to generate its end representation.</strong></p>
+<p><strong>ELMO</strong> <strong>: Embeddings from Language MOdel.</strong></p>
+<p><strong>BERT</strong> <strong>: Bidirectional Encoder Representations from Transformers.</strong></p>
+<aside class="notes">
+<p>LSA: https://en.wikipedia.org/wiki/Latent_semantic_analysis</p>
+<p>Word2Vec: https://www.tensorflow.org/text/tutorials/word2vec</p>
+<p>GloVe: https://nlp.stanford.edu/projects/glove/ https://en.wikipedia.org/wiki/GloVe</p>
+<p>ELMO: https://en.wikipedia.org/wiki/ELMo</p>
+<p>BERT: https://en.wikipedia.org/wiki/BERT_(language_model)</p>
+<p>Overview of Embedding Algorithms: https://www.kaggle.com/code/residentmario/notes-on-word-embedding-algorithms</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+
+<section id="word2vec-algorithm" class="title-slide slide level1 center">
+<h1>Word2Vec Algorithm</h1>
+<p><strong>Model predicting some of the words within a window in a corpus based on other words in the window.</strong></p>
+<p><strong>Represents input words and output words as one-hot encoded vectors.</strong></p>
+<p><strong>Uses a simple feed-forward neural network with 1 hidden layer. </strong></p>
+<p><strong>The size of the hidden layer is the size of the </strong> <strong>output</strong> __ embedding.__</p>
+<aside class="notes">
+<p>https://www.tensorflow.org/text/tutorials/word2vec</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p><strong>2 Methods:</strong></p>
+<p><strong>Continuous bag-of-words</strong> __ model: predicts the middle word based on surrounding context words. The context consists of a few words before and after the current (middle) word. This architecture is called a bag-of-words model as the order of words in the context is not important.__</p>
+<p><strong>Continuous skip-gram</strong> __ model: Given a word, predicts all words within a certain range before and after the current word in the same sentence.__</p>
+<p><strong>The </strong> <strong>wide </strong> <strong>road </strong> <strong>shimmered in the hot sun.</strong></p>
+
+<img data-src="images/Ch_10_GenAI_Book_Club_David_Slides_10.png" class="r-stretch"><aside class="notes">
+<p>https://www.tensorflow.org/text/tutorials/word2vec</p>
+<p>https://www.researchgate.net/figure/Continuous-bag-of-words-CBOW-and-Skip-gram-model-architecture-The-Word2Vec-technique_fig3_344966541</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+
+<section id="word2vec-with-skip-gram" class="title-slide slide level1 center">
+<h1>Word2Vec with skip-gram</h1>
+<p><strong>For a word-window of size N. generate embeddings of size E.</strong></p>
+<p><strong>Create a neural network with:</strong></p>
+<p><strong>1 input (the target word, one-hot encoded)</strong></p>
+<p><strong>1 hidden layer (size of the output embedding, E).</strong></p>
+<p><strong>2*N outputs (each predicted word, one-hot encoded).</strong></p>
+<p><strong>The network must, given a target word, predict the N words before, and the N words after.</strong></p>
+<p><strong>The skip-grams are </strong> <strong>used</strong> __ to train the neural network.__</p>
+<p><img data-src="images/Ch_10_GenAI_Book_Club_David_Slides_11.png"></p>
+<aside class="notes">
+<p>https://www.tensorflow.org/text/tutorials/word2vec</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<p><strong>The training objective of the skip-gram model is to maximize the probability of predicting context words given the target word.</strong></p>
+<p><strong>For a sequence of words w1, w2, ... wT, the objective can be written as the average log probability</strong></p>
+<p><strong>where c is the size of the training context.</strong></p>
+<p><strong>The basic skip-gram formulation defines this probability using the softmax function. where v and v’ are target and context vector representations of words and W is vocabulary size.</strong></p>
+<p><strong>Computing the denominator of this formulation involves performing a full softmax over the entire vocabulary words, which are often large (105-107) terms.</strong></p>
+<p><img data-src="images/Ch_10_GenAI_Book_Club_David_Slides_12.png"></p>
+<p><img data-src="images/Ch_10_GenAI_Book_Club_David_Slides_13.png"></p>
+<aside class="notes">
+<p>https://www.tensorflow.org/text/tutorials/word2vec</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+
+<section id="word2vec-with-continuous-bag-of-words" class="title-slide slide level1 center">
+<h1>Word2Vec with Continuous Bag-of-Words</h1>
+<p><strong>For a word-window of size N. generate embeddings of size E.</strong></p>
+<p><strong>Create a neural network with:</strong></p>
+<p><strong>2*N inputs (the target word, one-hot encoded)</strong></p>
+<p><strong>1 hidden layer (size of the output embedding, E).</strong></p>
+<p><strong>1 output (predicted word, one-hot encoded).</strong></p>
+<p><strong>The network must, given the N words before, and the N words after, predict the target word.</strong></p>
+<p><strong>The word pairings are used to train the neural network:</strong></p>
+<p><strong>([she, a], is), ([is, great], a) ([a, dancer], great)</strong></p>
+
+<img data-src="images/Ch_10_GenAI_Book_Club_David_Slides_14.png" class="r-stretch"><aside class="notes">
+<p>https://www.geeksforgeeks.org/continuous-bag-of-words-cbow-in-nlp/</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+
 
 </section>
-<section id="slide" class="slide level2">
-<h2>SLIDE</h2>
-<ul>
-<li>DENOTE MAJOR SECTIONS WITH <code># TITLE</code> (eg <code># Installation</code>)</li>
-<li>ADD INDIVIDUAL SLIDES WITH <code>##</code> (eg <code>## rustup on Linux/macOS</code>)</li>
-<li>KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
-</ul>
-</section>
-<section id="slide-1" class="slide level2">
-<h2>SLIDE</h2>
-</section></section>
-<section>
-<section id="slide-section-1" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
-
-</section>
-<section id="slide-2" class="slide level2">
-<h2>SLIDE</h2>
-</section>
-<section id="slide-3" class="slide level2">
-<h2>SLIDE</h2>
-
-
-</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
@@ -240,7 +625,7 @@
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -365,9 +750,9 @@
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1050,
+        width: 1600,
 
-        height: 700,
+        height: 900,
 
         // Factor of the display size that should remain empty around the content
         margin: 0.1,

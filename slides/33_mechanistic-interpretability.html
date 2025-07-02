@@ -6,9 +6,10 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ef56b68f8fa1e9d2ba328e99e439f80.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.31">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.32">
 
+  <meta name="author" content="David Lohmann">
   <title>Generative AI Handbook Book Club – 33. Mechanistic Interpretability</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -28,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-5fa723a4ee799f64e44b6fe0747a0a63.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-a307367f18dc81d48b2d91538162f63f.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -121,7 +122,7 @@
     }
   </style>
 </head>
-<body class="quarto-dark">
+<body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
@@ -129,19 +130,20 @@
   <h1 class="title">33. Mechanistic Interpretability</h1>
 
 <div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+David Lohmann 
+</div>
+</div>
 </div>
 
 </section>
-<section id="learning-objectives" class="title-slide slide level1 center">
-<h1>Learning objectives</h1>
-<ul>
-<li>THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY</li>
-</ul>
+<section id="ch-33-mechanistic-interpretability-10-min" class="title-slide slide level1 center">
+<h1>Ch 33: Mechanistic Interpretability (10 min)</h1>
+<p><a href="https://docs.google.com/presentation/d/1qb_XIhQEOGwSUXsepAnSJ6Dafkak5SrgTkhIebJQxUw/edit?usp=sharing">Original Google Slides (well-formatted)</a> <em>Quarto version may have some slides missing or poorly formatted</em></p>
+<p><strong>Mechanistic Interpretability</strong> __ - Understanding the inner workings of LLMs by identifying sparse representations of “features” or “circuits” encoded in model weights.__</p>
 <aside class="notes">
-<ul>
-<li>You can add notes on each slide with blocks like this!</li>
-<li>Load a deck in the browser and type “s” to see these notes.</li>
-</ul>
+<p>Mechanistic Interpretability: https://www.youtube.com/watch?v=UGO_Ehywuxc</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -153,37 +155,9 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section>
-
-<section>
-<section id="slide-section" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
-
-</section>
-<section id="slide" class="slide level2">
-<h2>SLIDE</h2>
-<ul>
-<li>DENOTE MAJOR SECTIONS WITH <code># TITLE</code> (eg <code># Installation</code>)</li>
-<li>ADD INDIVIDUAL SLIDES WITH <code>##</code> (eg <code>## rustup on Linux/macOS</code>)</li>
-<li>KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
-</ul>
-</section>
-<section id="slide-1" class="slide level2">
-<h2>SLIDE</h2>
-</section></section>
-<section>
-<section id="slide-section-1" class="title-slide slide level1 center">
-<h1>SLIDE SECTION</h1>
-
-</section>
-<section id="slide-2" class="slide level2">
-<h2>SLIDE</h2>
-</section>
-<section id="slide-3" class="slide level2">
-<h2>SLIDE</h2>
 
 
-</section></section>
+</section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
@@ -240,7 +214,7 @@
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -365,9 +339,9 @@
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1050,
+        width: 1600,
 
-        height: 700,
+        height: 900,
 
         // Factor of the display size that should remain empty around the content
         margin: 0.1,

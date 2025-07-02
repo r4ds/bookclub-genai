@@ -1,31 +1,162 @@
 ---
 engine: knitr
 title: "31. LLMs for Synthetic Data"
+author: "David Lohmann"
+format: 
+  revealjs:
+    slide-number: c/t
+    width: 1600
+    height: 900
+    incremental: true
+    theme: [simple]
 ---
+# Ch 31: LLMs for Synthetic Data (10 min)
 
-# Learning objectives
+[Original Google Slides (well-formatted)](https://docs.google.com/presentation/d/1qb_XIhQEOGwSUXsepAnSJ6Dafkak5SrgTkhIebJQxUw/edit?usp=sharing)
+*Quarto version may have some slides missing or poorly formatted*
 
-::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+__“__  __Synthetic data__  __ are artificially generated rather than produced by real\-world events\. Typically created using algorithms … __  __\.” \- __  _[Wikipedia](https://en.wikipedia.org/wiki/Synthetic_data)_
+
+__Distillation __  __\- Distillation is a technique in LLM training where a smaller\, more efficient “student” model is trained to mimic the behavior and knowledge of a larger\, more complex “teacher” model\. \(__  _[Datacamp](https://www.datacamp.com/blog/distillation-llm)_  __\)__
+
+__Basically\, using the inputs to and outputs from a trained LLM as training data for another LLM\.__
+
+![](images/Ch_31_GenAI_Book_Club_David_Slides_36.png)
+
+::: {.notes}
+
+https://www.datacamp.com/blog/distillation-llm
+
+https://en.wikipedia.org/wiki/Knowledge_distillation
+
+
 :::
 
-::: notes
-- You can add notes on each slide with blocks like this!
-- Load a deck in the browser and type "s" to see these notes.
+__Distillation __  __\- Distillation is a technique in LLM training where a smaller\, more efficient “student” model is trained to mimic the behavior and knowledge of a larger\, more complex “teacher” model\. \(__  _[Datacamp](https://www.datacamp.com/blog/distillation-llm)_  __\)__
+
+__Basically\, using the inputs to and outputs from a trained LLM as training data for another LLM\.__
+
+_Advantages_  __:__
+
+__Small\, fast models\. Train and inference with less computation\, sometimes on more resource\-constrained hardware\.__
+
+_Disadvantages_  __:__
+
+__Copyright issues\. Simpler student model\. Knowledge loss from teacher models\. __
+
+::: {.notes}
+
+https://www.datacamp.com/blog/distillation-llm
+
+
+
 :::
 
-# SLIDE SECTION
+__Distillation Methods__
 
-## SLIDE
+_Knowledge Distillation_  __ \- The teacher models output token probability distribution and ground truth label\, for each output\, is used to train __  __the__  __ student model\. The teacher models output probabilities are known as __  _soft targets_  __\, and __  __allow__  __ the student a nuanced information about all possible outputs instead of a single correct answer\. The teacher models ground truth labels are known as __  _hard targets_  __\, and provide a single correct answer\. Both the soft and hard targets are used to train the student model\.__
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+__Most important technique\.__
 
-## SLIDE
+::: {.notes}
 
-# SLIDE SECTION
+https://www.datacamp.com/blog/distillation-llm
 
-## SLIDE
 
-## SLIDE
+:::
+
+__Other __  __Distillation Methods__
+
+_Data Augmentation_  __ \- Using the teacher models input and output generated data as the training data for the student model to train on\. This allows student to be trained on a broader range of examples\, and critical cases\, improving student model generalization to other cases\.__
+
+_Intermediate layer distillation_  __ \- Transfer knowledge from the teacher models middle layers\, instead of outputs\. So the student can receive more detailed structural knowledge instead of just the final output\.__
+
+_Multi\-teacher distillation_  __ \- Knowledge from multiple teacher models is used to train the student model\, allowing the student to receive and integrate an aggregation of different knowledge\.__
+
+::: {.notes}
+
+https://www.datacamp.com/blog/distillation-llm
+
+
+:::
+
+![](images/Ch_31_GenAI_Book_Club_David_Slides_37.png)
+
+__Distillation Example: Allegations that Deepseek R1 was distilled from OpenAI ChatGPT\, in violation of OpenAI’s terms and conditions\.__
+
+__Ironically\, OpenAI’s __  __Chat GPT__  __ was trained on large amounts of internet content which may have been in violation of those __  __contents’__  __ terms and conditions\.__
+
+__And DeepSeek R1 is open source while OpenAI ChatGPT is closed source\.__
+
+__DeepSeek R1 __  __release__  __ page advertises “⚡ Performance on par with OpenAI\-o1” and usage screenshots indicate Deepseek claims to be ChatGPT__
+
+__Similar performance using much less money and computation\, and trained on worse hardware\.__
+
+![](images/Ch_31_GenAI_Book_Club_David_Slides_38.png)
+
+![](images/Ch_31_GenAI_Book_Club_David_Slides_39.png)
+
+::: {.notes}
+
+
+
+https://community.openai.com/t/looks-like-deep-seek-r1-v3-was-distilled-from-gpt-4-3-5-can-anyone-confirm/1106952
+
+https://api-docs.deepseek.com/news/news250120
+
+https://youtu.be/hpwoGjpYygI
+
+
+:::
+
+__Reinforcement learning from AI feedback \(RLAIF\)__  __ \- Machine learning technique in which AI models provide feedback to other AI models during the reinforcement learning process\.__
+
+__Reinforcement Learning from Human Feedback \(RLHF\)__  __ \- Machine learning technique in which a human rater assesses an AI model’s performance through reinforcement learning\.__
+
+::: {.notes}
+
+https://www.datacamp.com/blog/rlaif-reinforcement-learning-from-ai-feedback
+
+
+:::
+
+| <span style="color:#05192d"> __Feature__ </span> | <span style="color:#05192d"> __RLHF \(Reinforcement Learning from Human Feedback\)__ </span> | <span style="color:#05192d"> __RLAIF \(Reinforcement Learning from AI Feedback\)__ </span> |
+| :-: | :-: | :-: |
+| <span style="color:#05192d"> __Feedback Source__ </span> | <span style="color:#05192d">Human annotators</span> | <span style="color:#05192d">Existing AI models \(e\.g\.\, LLMs\)</span> |
+| <span style="color:#05192d"> __Scalability__ </span> | <span style="color:#05192d">Limited by the availability and cost of human labor</span> | <span style="color:#05192d">Highly scalable due to automation</span> |
+| <span style="color:#05192d"> __Feedback Quality__ </span> | <span style="color:#05192d">High potential for capturing nuanced human preferences</span> | <span style="color:#05192d">Dependent on the capabilities of the AI model providing feedback</span> |
+| <span style="color:#05192d"> __Cost__ </span> | <span style="color:#05192d">Can be expensive due to the need for human labor</span> | <span style="color:#05192d">Potentially more cost\-effective due to automation</span> |
+| <span style="color:#05192d"> __Speed__ </span> | <span style="color:#05192d">Slower due to the time required for human annotation</span> | <span style="color:#05192d">Faster due to automated feedback generation</span> |
+| <span style="color:#05192d"> __Bias__ </span> | <span style="color:#05192d">Can be subject to human biases</span> | <span style="color:#05192d">Can inherit biases from the AI model providing feedback</span> |
+
+::: {.notes}
+
+https://www.datacamp.com/blog/rlaif-reinforcement-learning-from-ai-feedback
+
+
+:::
+
+__“__  __Synthetic data__  __ are artificially generated rather than produced by real\-world events\. Typically created using algorithms … \.” \- __  _[Wikipedia](https://en.wikipedia.org/wiki/Synthetic_data)_
+
+__Dai et al\. \(2022\) proposed a method __  __… __  __with only 8 manually labeled examples and a large corpus of unlabeled data __  __… __  __can achieve a near State\-of\-the\-Art performance\. This research confirms that synthetically generated data facilitates training task\-specific retrievers for tasks where supervised in\-domain fine\-tuning is a challenge due to data scarcity\.__
+
+::: {.notes}
+
+https://www.promptingguide.ai/applications/synthetic_rag
+
+
+:::
+
+__Model Collapse __  __\- When machine learning models degrade due to training on the outputs of another model\, including prior versions of itself\. Such outputs are known as synthetic data\.__
+
+__Model collapse can occur because of functional approximation errors\, sampling errors\, and learning errors\. Importantly\, it happens in even the simplest of models\, where not all of the error sources are present\. In more complex models the errors often compound\, leading to faster collapse\.__
+
+::: {.notes}
+
+https://en.wikipedia.org/wiki/Model_collapse
+
+https://www.nature.com/articles/s41586-024-07566-y
+
+
+:::
+

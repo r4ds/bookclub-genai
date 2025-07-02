@@ -1,31 +1,294 @@
 ---
 engine: knitr
 title: "11. Encoders and Decoders"
+author: "David Lohmann"
+format: 
+  revealjs:
+    slide-number: c/t
+    width: 1600
+    height: 900
+    incremental: true
+    theme: [simple]
 ---
+# Encoders and Decoders - Ch 11
 
-# Learning objectives
+# GenAI Handbook reading club
 
-::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+[Original Google Slides (well-formatted)](https://docs.google.com/presentation/d/1qb_XIhQEOGwSUXsepAnSJ6Dafkak5SrgTkhIebJQxUw/edit?usp=sharing)
+*Quarto version may have some slides missing or poorly formatted*
+
+# Bidirectional Recurrent Neural Networks
+
+__Background__  __: Unidirectional recurrent neural networks can take in a variable\-length sequence and predict an output\.__
+
+_“I am \_\_\_\.”_
+
+__Problem__  __: Sometimes it may be __  __necessary__  __ to take in a variable\-length sequence\, with one element missing\, and predict that element\.__
+
+_“I am \_\_\_ hungry\.”_
+
+_“I am \_\_\_ hungry\, and I can eat half a pig\.”_
+
+__In the first sentence “happy” seems to be a likely candidate\. The words “not” and “very” seem plausible in the second sentence\, but “not” seems incompatible with the third sentences\.__
+
+__Solution__  __: Use an RNN in each direction\. One RNN predicts forwards\. The other predicts backwards\. The outputs of the 2 RNN’s are concatenated together\.__
+
+::: {.notes}
+
+https://d2l.ai/chapter_recurrent-modern/bi-rnn.html
+
+
+
 :::
 
-::: notes
-- You can add notes on each slide with blocks like this!
-- Load a deck in the browser and type "s" to see these notes.
+![](images/Ch_11_GenAI_Book_Club_David_Slides_15.png)
+
+_“I am \_\_\_ hungry\.”_
+
+_“I am \_\_\_ hungry\, and I can eat half a pig\.”_
+
+__Solution__  __: Use an RNN in each direction\. One RNN predicts forwards\. The other predicts backwards\. The outputs of the 2 RNN’s are concatenated together\.__
+
+::: {.notes}
+
+https://d2l.ai/chapter_recurrent-modern/bi-rnn.html
+
+
+
 :::
 
-# SLIDE SECTION
+# The Encoder–Decoder Architecture
 
-## SLIDE
+![](images/Ch_11_GenAI_Book_Club_David_Slides_16.png)
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+__Sequence                              __  __Fixed Size__  __                              Sequence__
 
-## SLIDE
+__Can handle inputs and outputs that both consist of variable\-length sequences and thus are suitable for sequence\-to\-sequence problems such as machine translation\.__
 
-# SLIDE SECTION
+__The encoder takes a variable\-length sequence as input and transforms it into a state with a fixed shape\. __
 
-## SLIDE
+__The decoder maps the encoded state of a fixed shape to a variable\-length sequence\.__
 
-## SLIDE
+::: {.notes}
+
+https://d2l.ai/chapter_recurrent-modern/encoder-decoder.html
+
+https://en.wikipedia.org/wiki/Seq2seq
+
+
+
+
+
+
+
+
+:::
+
+![](images/Ch_11_GenAI_Book_Club_David_Slides_17.png)
+
+::: {.notes}
+
+https://github.com/tensorflow/nmt
+
+
+:::
+
+# Sequence-to-Sequence Learning for Translation
+
+![](images/Ch_11_GenAI_Book_Club_David_Slides_18.png)
+
+__The special “\<eos>” token marks the end of the sequence\. Our model can stop making predictions once this token is generated\. Also “\<bos>” is beginning\.__
+
+__Embedding layer \(one\-hot encoding to embedding encoder\, and embedding to on\-hot encoding decoder\, not shown\)__
+
+__Teacher forcing can be used in training \(decoder uses correct\, not predicted\, output in LSTM cells\)\. Teacher forcing means\, during encoder\-decoder LSTM training\, instead of using predicted item \(word\) as input to next LSTM\, use correct item \(word\) as input to next LSTM\.__
+
+::: {.notes}
+
+https://d2l.ai/chapter_recurrent-modern/seq2seq.html
+
+Seq2seq Encoder-decoder statquest
+
+* Word may go through embedding layer, to convert from one-hot encoding to embedding, before LSTM.
+* For better fit, may input word embedding into multiple LSTM cells. So part of word embedding may go into each cell?
+
+https://youtu.be/L0sut0EL0mM?si=ax9Monuog2vdmdXU
+
+
+
+
+:::
+
+# Sequence-to-Sequence (seq2seq) Encoder-Decoder
+
+__After __  __receiving__  __ the \<end of sequence> token we stop iterating the decoder\.__
+
+![](images/Ch_11_GenAI_Book_Club_David_Slides_19.png)
+
+::: {.notes}
+
+
+Gif:
+https://github.com/google/seq2seq
+
+https://research.google/blog/a-neural-network-for-machine-translation-at-production-scale/
+
+
+:::
+
+![](images/Ch_11_GenAI_Book_Club_David_Slides_20.png)
+
+::: {.notes}
+
+https://github.com/tensorflow/nmt
+
+
+:::
+
+# Attention
+
+__The key idea of the attention mechanism is to establish direct short\-cut connections between the target and the source by paying "attention" to relevant source content as we translate\.__
+
+__When translating each word in the output \(decoder\) we want to “pay attention” to the most currently relevant word in from the input \(encoder\)\.__
+
+__Seq2Sec                                                                       Attention__
+
+![](images/Ch_11_GenAI_Book_Club_David_Slides_21.png)
+
+![](images/Ch_11_GenAI_Book_Club_David_Slides_22.png)
+
+::: {.notes}
+
+https://github.com/tensorflow/nmt?tab=readme-ov-file#intermediate
+
+
+:::
+
+__Attention__
+
+__Decoder can “peek” at previous encoder hidden states \(treating them as a dynamic memory of the source information\)\. Improves the translation of longer sentences\.__
+
+__Seq2Sec__
+
+__Passes the last source state from the encoder to the decoder when starting the decoding process\. For long sentences\, the single fixed\-size hidden state becomes an information bottleneck\. Discards all of the hidden states computed in the source RNN__
+
+![](images/Ch_11_GenAI_Book_Club_David_Slides_23.png)
+
+![](images/Ch_11_GenAI_Book_Club_David_Slides_24.png)
+
+::: {.notes}
+
+https://github.com/tensorflow/nmt?tab=readme-ov-file#intermediate
+
+
+:::
+
+__Decoder can “peek” at previous encoder hidden states \(treating them as a dynamic memory of the source information\)\. Improves the translation of longer sentences\.__
+
+![](images/Ch_11_GenAI_Book_Club_David_Slides_25.png)
+
+::: {.notes}
+
+https://github.com/tensorflow/nmt?tab=readme-ov-file#intermediate
+
+
+:::
+
+__M__  __ethod to determine the __  __relative importance__  __ of each component in a sequence relative to the other components in that sequence\.__
+
+__Importance is represented by "soft" weights assigned to each word in a sentence\.__
+
+__Attention encodes a fixed\-width __  __context vector__  __ at each stage a sequence\.__
+
+__Unlike "hard" weights\, which are computed during the backwards training pass\, "soft" weights exist only in the forward pass and therefore change with every step of the input\.__
+
+__In the Encoder\-Decoder Architecture\, the context vector is the weighted sum of the input hidden states and is generated for every time instance in the output sequences\.__
+
+__Context vector is trained using 3 vectors: key\, query\, and value__
+
+![](images/Ch_11_GenAI_Book_Club_David_Slides_26.png)
+
+::: {.notes}
+
+https://en.wikipedia.org/wiki/Attention_(machine_learning)
+
+
+:::
+
+__See gif at __  _[https://jalammar\.github\.io/visualizing\-neural\-machine\-translation\-mechanics\-of\-seq2seq\-models\-with\-attention/](https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/)_
+
+::: {.notes}
+
+https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/
+
+
+:::
+
+![](images/Ch_11_GenAI_Book_Club_David_Slides_27.png)
+
+__Attention mechanism selects which hidden state from a cell in the encoder to input to a cell in the decoder\.__
+
+__You can see how the model paid attention correctly when outputing "European Economic Area"\. In French\, the order of these words is reversed \("européenne économique zone"\) as compared to English\. Every other word in the sentence is in similar order\.__
+
+::: {.notes}
+
+https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/
+
+
+:::
+
+# “Attention is All You Need” paper
+
+![](images/Ch_11_GenAI_Book_Club_David_Slides_28.png)
+
+__The dominant sequence transduction models are … recurrent or convolutional … encoder\-decoder configuration\. The best … models also __  __connect the encoder and decoder__  __ through an __  __attention __  __mechanism\. We propose a new simple network architecture\, the __  __Transformer__  __\, based solely on __  __attention __  __mechanisms\, …\. Experiments on two machine translation tasks show these models to be superior in quality … more parallelizable and requiring significantly less time to train\. … We show that the Transformer generalizes well to other tasks …__
+
+__TL;DR Proposed transformers\, using attention mechanism to connect encoder and decoder\.__
+
+::: {.notes}
+
+https://arxiv.org/abs/1706.03762
+
+
+
+
+
+
+
+
+:::
+
+__Instead of using a single word vector embedding only\, we should also include that __  __particular__  __ word token in the context of the surrounding words\.__
+
+__Uses attention layer to mix the context\.__
+
+__Does not need additional __  __recurrence__  __ or convolutions\.__
+
+::: {.notes}
+
+https://arxiv.org/abs/1706.03762
+
+
+
+
+
+
+
+
+:::
+
+![](images/Ch_11_GenAI_Book_Club_David_Slides_29.png)
+
+__Instead of using a single word vector embedding only\, we should also include that particular word token in the context of the surrounding words\.__
+
+__Uses attention layer to mix the context\.__
+
+__Does not need additional recurrence or convolutions\.__
+
+::: {.notes}
+
+https://nlp.seas.harvard.edu/annotated-transformer/
+
+
+:::
+

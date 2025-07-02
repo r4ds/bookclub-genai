@@ -1,31 +1,26 @@
 ---
 engine: knitr
 title: "34. Linear Representation Hypotheses"
+author: "David Lohmann"
+format: 
+  revealjs:
+    slide-number: c/t
+    width: 1600
+    height: 900
+    incremental: true
+    theme: [simple]
 ---
+# Ch 34: Linear Representation Hypotheses (10 min)
 
-# Learning objectives
+[Original Google Slides (well-formatted)](https://docs.google.com/presentation/d/1qb_XIhQEOGwSUXsepAnSJ6Dafkak5SrgTkhIebJQxUw/edit?usp=sharing)
+*Quarto version may have some slides missing or poorly formatted*
 
-::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+__The "linear representation hypothesis" in language models suggests that high\-level semantic concepts are represented as directions in a model's representation space\. This implies that understanding and manipulating these concepts might be achieved by moving along these directions\. For example\, if a model understands the concept of "gender\," it might represent "king" and "queen" as points in a space where the difference between them is a linear direction corresponding to the concept of "gender"\. __
+
+::: {.notes}
+
+Description from Google search (Gemeni)
+
+
 :::
 
-::: notes
-- You can add notes on each slide with blocks like this!
-- Load a deck in the browser and type "s" to see these notes.
-:::
-
-# SLIDE SECTION
-
-## SLIDE
-
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
-
-## SLIDE
-
-# SLIDE SECTION
-
-## SLIDE
-
-## SLIDE

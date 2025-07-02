@@ -1,31 +1,50 @@
 ---
 engine: knitr
 title: "12. Decoder-Only Transformers"
+author: "David Lohmann"
+format: 
+  revealjs:
+    slide-number: c/t
+    width: 1600
+    height: 900
+    incremental: true
+    theme: [simple]
 ---
+# Decoder-Only Transformers - Ch 12
 
-# Learning objectives
+# GenAI Handbook reading club
 
-::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+[Original Google Slides (well-formatted)](https://docs.google.com/presentation/d/1qb_XIhQEOGwSUXsepAnSJ6Dafkak5SrgTkhIebJQxUw/edit?usp=sharing)
+*Quarto version may have some slides missing or poorly formatted*
+
+# Decoder-Only Transformers
+
+__Most modern LLMs\, which are typically “decoder\-only”__
+
+# Multi-Head Attention
+
+__The paper further refined the self\-attention layer by adding a mechanism called “multi\-headed” attention\. This improves the performance of the attention layer in two ways:__
+
+__It expands the model’s ability to focus on different positions\. Yes\, in the example above\, z1 contains a little bit of every other encoding\, but it could be dominated by the actual word itself\. If we’re translating a sentence like “The animal didn’t cross the street because it was too tired”\, it would be useful to know which word “it” refers to\.__
+
+__It gives the attention layer multiple “representation subspaces”\. As we’ll see next\, with multi\-headed attention we have not only one\, but multiple sets of Query/Key/Value weight matrices \(the Transformer uses eight attention heads\, so we end up with eight sets for each encoder/decoder\)\. Each of these sets is randomly initialized\. Then\, after training\, each set is used to project the input embeddings \(or vectors from lower encoders/decoders\) into a different representation subspace\.__
+
+::: {.notes}
+
+https://jalammar.github.io/illustrated-transformer/
+
+
 :::
 
-::: notes
-- You can add notes on each slide with blocks like this!
-- Load a deck in the browser and type "s" to see these notes.
-:::
+# Skip Connections
 
-# SLIDE SECTION
+__Most modern LLMs\, which are typically “decoder\-only”__
 
-## SLIDE
+# Positional Encoding
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+__Most modern LLMs\, which are typically “decoder\-only”__
 
-## SLIDE
+# Decoder-Only Architecture
 
-# SLIDE SECTION
+__Most modern LLMs\, which are typically “decoder\-only”__
 
-## SLIDE
-
-## SLIDE

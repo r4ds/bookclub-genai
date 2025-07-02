@@ -1,31 +1,140 @@
 ---
 engine: knitr
 title: "32. Representation Engineering"
+author: "David Lohmann"
+format: 
+  revealjs:
+    slide-number: c/t
+    width: 1600
+    height: 900
+    incremental: true
+    theme: [simple]
 ---
+# Ch 32: Representation Engineering (10 min)
 
-# Learning objectives
+[Original Google Slides (well-formatted)](https://docs.google.com/presentation/d/1qb_XIhQEOGwSUXsepAnSJ6Dafkak5SrgTkhIebJQxUw/edit?usp=sharing)
+*Quarto version may have some slides missing or poorly formatted*
 
-::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+__Representation Engineering__  __ \- Detecting how LLM activations vary along a characteristic of interest \(such as honesty\, humor\, power\, kindness\, sarcasm\, etc\)\, or then adding calculated “control vectors” to manipulate model activations to “steer” the model to modify the output in a particular way\.__
+
+__Observing and manipulating the internal representations \- weights or activations \- that AI uses to understand and process information\. __  __Identifying__  __ and controlling specific sets of activations within an AI system that correspond to a model’s behavior\.__
+
+__Typically requires no extra LLM training\, and can increase or reduce a natural\-language trait such as honesty\, skepticism\, humility\, power\, etc\. Typically relies on using prompt engineering to make a model generate output that varies across the desired trait of interest\, measuring the activations\, and subtracting their difference\.__
+
+__Pioneered by the Center for AI Safety\.__
+
+::: {.notes}
+
+Representation Engineering by Center for AI Safety:
+https://www.youtube.com/watch?v=2U5NNiGC9yk
+
+https://www.safe.ai/blog/representation-engineering-a-new-way-of-understanding-models
+
+
+
+
+
 :::
 
-::: notes
-- You can add notes on each slide with blocks like this!
-- Load a deck in the browser and type "s" to see these notes.
+__2 Rival Approaches__  __ to Understanding how Neural Networks Work\, by reverse engineering to understand how internal workings affect LLM output\.__
+
+__In “__  _Representation Engineering_  _:_  __ A __  __Top\-Down__  __ Approach to AI Transparency”\, Zou et borrowed from research in cognitive neuroscience and found that a “top down” approach to understanding a particular LLM phenomena\, measured in an appropriate unit of analysis\, in terms of a neural representation could reveal __  __generalizable rules at the level of that phenomena\.__
+
+__The “top down” representation engineering approach of detects how LLM outputs correspond to and are affected by internal LLM representations\. Figures out how a change in the internal representation affects a change in output\.__
+
+__By contrast to the “__  __bottom up__  __” __  _mechanistic interpretability_  __ approach seeking to detect how neuron to neuron connections and circuits correspond to and affect more complex phenomena\. Studies individual neurons or features\. Specific circuits have been identified for various capabilities\, including vision\, learning\, and language\.__
+
+::: {.notes}
+
+Representation Engineering by Center for AI Safety:
+https://www.youtube.com/watch?v=2U5NNiGC9yk
+
+https://www.safe.ai/blog/representation-engineering-a-new-way-of-understanding-models
+
+https://arxiv.org/pdf/2310.01405
+
+
+
+
 :::
 
-# SLIDE SECTION
+![](images/Ch_32_GenAI_Book_Club_David_Slides_40.png)
 
-## SLIDE
+::: {.notes}
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+https://github.com/andyzoujm/representation-engineering
 
-## SLIDE
 
-# SLIDE SECTION
+:::
 
-## SLIDE
+__Linear Artificial Tomography \(LAT\): Algorithm to determine what weight and activation patterns represent a given concept\. Design stimulus prompts that cause LLM output that varies in terms of a given concept \(ie honesty\)\. Then “scan” the weights to detect differences in the weight and activation representations when the LLM processes this concept\.__
 
-## SLIDE
+__The LAT measures neural activity related to the target concept or function \(“honesty” in this example\)\. The__
+
+__reading vectors acquired be used to extract and monitor model internals for the target concept or function\.__
+
+![](images/Ch_32_GenAI_Book_Club_David_Slides_41.png)
+
+::: {.notes}
+
+Representation Engineering by Center for AI Safety:
+https://www.youtube.com/watch?v=2U5NNiGC9yk
+
+https://www.safe.ai/blog/representation-engineering-a-new-way-of-understanding-models
+
+https://arxiv.org/pdf/2310.01405
+
+
+
+
+:::
+
+__Reading vector: The vector associated with a difference in the neural activation associated with a particular concept\. Can be used to__
+
+__Measure \(“read”\) how the LLM is activating for a particular concept\.__
+
+__Boost \(“control”\) how the much neural network activates for a particular concept\.__
+
+__With the reading vector for neural __  __activity__  __ of a particular concept represented in the LLM\, we can detect how the specific pattern of neural activations relates to a concept through:__
+
+__Correlation __  __between__  __ reading vector activation and concept\.__
+
+__Causation __  __between__  __ manipulating neural activity and affecting the output response\.__
+
+__Necessity when removing the neural activity affects the output response\. __
+
+__Sufficiency when removing a concept or function from the LLM\, and then reintroducing the neural activity to assess the output response\.__
+
+__This is measured relative to a baseline LLM activation\.__
+
+::: {.notes}
+
+Representation Engineering by Center for AI Safety:
+https://www.youtube.com/watch?v=2U5NNiGC9yk
+
+https://www.safe.ai/blog/representation-engineering-a-new-way-of-understanding-models
+
+https://arxiv.org/pdf/2310.01405
+
+
+
+
+:::
+
+![](images/Ch_32_GenAI_Book_Club_David_Slides_42.png)
+
+__With the reading vector we can measure how much the LLM activity in terms of a particular concept\. Then we can increase or decrease the activity for that concept\.__
+
+![](images/Ch_32_GenAI_Book_Club_David_Slides_43.png)
+
+![](images/Ch_32_GenAI_Book_Club_David_Slides_44.png)
+
+![](images/Ch_32_GenAI_Book_Club_David_Slides_45.png)
+
+::: {.notes}
+
+https://www.ai-transparency.org/
+
+
+:::
+

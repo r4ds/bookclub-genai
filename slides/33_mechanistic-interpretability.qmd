@@ -1,31 +1,27 @@
 ---
 engine: knitr
 title: "33. Mechanistic Interpretability"
+author: "David Lohmann"
+format: 
+  revealjs:
+    slide-number: c/t
+    width: 1600
+    height: 900
+    incremental: true
+    theme: [simple]
 ---
+# Ch 33: Mechanistic Interpretability (10 min)
 
-# Learning objectives
+[Original Google Slides (well-formatted)](https://docs.google.com/presentation/d/1qb_XIhQEOGwSUXsepAnSJ6Dafkak5SrgTkhIebJQxUw/edit?usp=sharing)
+*Quarto version may have some slides missing or poorly formatted*
 
-::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+__Mechanistic Interpretability__  __ \- Understanding the inner workings of LLMs by identifying sparse representations of “features” or “circuits” encoded in model weights\.__
+
+::: {.notes}
+
+Mechanistic Interpretability:
+https://www.youtube.com/watch?v=UGO_Ehywuxc
+
+
 :::
 
-::: notes
-- You can add notes on each slide with blocks like this!
-- Load a deck in the browser and type "s" to see these notes.
-:::
-
-# SLIDE SECTION
-
-## SLIDE
-
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
-
-## SLIDE
-
-# SLIDE SECTION
-
-## SLIDE
-
-## SLIDE

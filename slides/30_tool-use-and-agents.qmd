@@ -1,31 +1,303 @@
 ---
 engine: knitr
 title: "30. Tool Use and 'Agents'"
+author: "David Lohmann"
+format: 
+  revealjs:
+    slide-number: c/t
+    width: 1600
+    height: 900
+    incremental: true
+    theme: [simple]
 ---
+# Ch 30: Tool Use and "Agents" (10 min)
 
-# Learning objectives
+[Original Google Slides (well-formatted)](https://docs.google.com/presentation/d/1qb_XIhQEOGwSUXsepAnSJ6Dafkak5SrgTkhIebJQxUw/edit?usp=sharing)
+*Quarto version may have some slides missing or poorly formatted*
 
-::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+__An agent__  __ may external APIs for extra information that is missing from the model weights \(often hard to change after pre\-training\)\, including current information\, code execution capability\, access to proprietary information sources and more\.__
+
+![](images/Ch_30_GenAI_Book_Club_David_Slides_30.png)
+
+::: {.notes}
+
+https://lilianweng.github.io/posts/2023-06-23-agent/#component-three-tool-use
+
+
+
 :::
 
-::: notes
-- You can add notes on each slide with blocks like this!
-- Load a deck in the browser and type "s" to see these notes.
+__Modular Reasoning\, Knowledge and Language \(MRKL\) __  __\- A neuro\-symbolic architecture for autonomous agents\. A MRKL system is proposed to contain a collection of “expert” modules and the general\-purpose LLM works as a router to route inquiries to the best suitable expert module\. These modules can be neural \(e\.g\. deep learning models\) or symbolic \(e\.g\. math calculator\, currency converter\, weather API\)\.__
+
+__Demonstrated that the LLM knowing when to and how to use the tools are crucial\.__
+
+__Tool Augmented Language Models \(TALM\)__  __ \- Fine\-tuned LLM to call tools\. Mentioned in Ch 27\.__
+
+__ __  __Toolformer __  __\- Fine\-tuned LLM to call tools\.__
+
+__ChatGPT Plugins__  __ and __  __OpenAI API function calling__  __ are good examples of LLMs augmented with tool use capability working in practice\. The collection of tool APIs can be provided by other developers \(as in Plugins\) or self\-defined \(as in function calls\)\.__
+
+__HuggingGPT __  __\- Framework using ChatGPT for Task Planning\, Expert Model selection\, Task Execution\, and Response Generation\.__
+
+::: {.notes}
+
+https://lilianweng.github.io/posts/2023-06-23-agent/#component-three-tool-use
+
+
+
 :::
 
-# SLIDE SECTION
+![](images/Ch_30_GenAI_Book_Club_David_Slides_31.png)
 
-## SLIDE
+__API\-Bank__  __ \- Benchmark to evaluating the performance of tool\-augmented LLMs\. Uses many commonly used API tools\, tool\-augmented LLM workflow\, annotated dialogues\, API calls\, etc\. __
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+__Includes tools such as search engines\, calculator\, calendar queries\, smart home control\, schedule management\, health data management\, account authentication workflow and more\.__
 
-## SLIDE
+__Because there are a large number of APIs\, LLM first has access to __  _API search engine_  __ to find the right API to call and then uses the corresponding documentation to make a call\.__
 
-# SLIDE SECTION
+::: {.notes}
 
-## SLIDE
+https://lilianweng.github.io/posts/2023-06-23-agent/#component-three-tool-use
 
-## SLIDE
+
+
+:::
+
+__LLM’s can output tokens that can be parsed by other programs\, such as JSON\.__
+
+__A program can recognize the tokens\, and use this as a trigger to call another software tool\.__
+
+__Example of LLM \(ChatGPT\) output instructions used to control a robot:__
+
+![](images/Ch_30_GenAI_Book_Club_David_Slides_32.jpg)
+
+# DSPy - Declarative Self-improving Python
+
+__Lets say you want to build an LLM app:__
+
+__Write a template with a prompt\, and a section to take a certain input\.__
+
+__Ie “Your are a helpful search engine\. Summarise this search result page in less than 10 words\.”__
+
+__Make changes to app\. Test different LLM parameters\.__
+
+_It's _  _frustrating_  _\, takes up a lot of time\, and often requires lots of _  _trial and error_  _ to achieve _  _optimal _  _results\._
+
+__Check if result is still good\. If not\, then modify prompt\.__
+
+__Repeat until all outputs are good\.__
+
+::: {.notes}
+
+https://github.com/stanfordnlp/dspy
+
+https://dspy.ai/
+
+Berkeley Lecture:
+https://www.youtube.com/watch?v=JEMYuzrKLUw
+
+DSPy Explained:
+https://www.youtube.com/watch?v=41EfOY0Ldkc
+
+
+
+
+:::
+
+![](images/Ch_30_GenAI_Book_Club_David_Slides_33.png)
+
+::: {.notes}
+
+https://huyenchip.com/2023/04/11/llm-engineering.html
+
+
+:::
+
+![](images/Ch_30_GenAI_Book_Club_David_Slides_34.png)
+
+::: {.notes}
+
+https://huyenchip.com/2023/04/11/llm-engineering.html
+
+
+:::
+
+__Lets say you want to build an LLM app:__
+
+__Write a template with a prompt\, and a section to take a certain input\.__
+
+__Ie “Your are a helpful search engine\. Summarise this search result page in less than 10 words\.”__
+
+__Make changes to app\. Test different LLM parameters\.__
+
+_It's _  _frustrating_  _\, takes up a lot of time\, and often requires lots of _  _trial and error_  _ to achieve _  _optimal _  _results\._
+
+__Check if result is still good\. If not\, then modify prompt\.__
+
+__Repeat until all outputs are good\.__
+
+__LLM output can vary widely based on:__
+
+__Random number generator\, and word chosen \(stochastic unless temperature = 0\)\.__
+
+__LLM training\.__
+
+__Prompt wording \(small changes can give very different results\)\.__
+
+::: {.notes}
+
+https://github.com/stanfordnlp/dspy
+
+https://dspy.ai/
+
+Berkeley Lecture:
+https://www.youtube.com/watch?v=JEMYuzrKLUw
+
+DSPy Explained:
+https://www.youtube.com/watch?v=41EfOY0Ldkc
+
+
+
+
+:::
+
+Write Prompt
+
+__Clearly state instructions so the LLM will give the output correctly\.__
+
+Make changes
+
+__Change the LLM\, data\, use cases\, parameters\, etc\.__
+
+__Consider example input and output\, and how the output will affect the use case\.__
+
+__Prompt Engineering__
+
+Assess Results
+
+__Compare to example desired inputs and outputs\, and make any __  __relevant__  __ metrics\.__
+
+::: {.notes}
+
+https://github.com/stanfordnlp/dspy
+
+https://dspy.ai/
+
+Berkeley Lecture:
+https://www.youtube.com/watch?v=JEMYuzrKLUw
+
+DSPy Explained:
+https://www.youtube.com/watch?v=41EfOY0Ldkc
+
+
+
+
+:::
+
+__Instead of\, when changes are made\, trying different prompts many times to get a certain output\, and rewriting prompts to get better results\, what if we could automate this process?__
+
+__Why don’t we specify examples of input and output\, and define a metric for how good the results are\. Then we can use an automated system to try different prompts and pick the best one\.__
+
+__DSPy can __  __automate __  __the process of __  __trial and error__  __ to find test various prompts\, and use an optimization metric or examples to determine which prompt is best\. This can occur every time the LLM is called\.__
+
+__On every LLM call__  __\, in addition to the regular output\, DSPy can assess how good the output is\, and __  __write a better prompt__  __ based on the examples or quality metrics\.__
+
+__DSPy abstracts the prompt so the programmer does not have to write the prompt\. DSPy writes\, manages\, and improves the prompt automatically based on a specified syntax\. Prompts may be improved automatically based on a quality metric or examples\.__
+
+::: {.notes}
+
+https://github.com/stanfordnlp/dspy
+
+https://dspy.ai/
+
+Berkeley Lecture:
+https://www.youtube.com/watch?v=JEMYuzrKLUw
+
+DSPy Explained:
+https://www.youtube.com/watch?v=41EfOY0Ldkc
+
+
+
+
+:::
+
+__Let’s say you're building a customer support chatbot\. Instead of writing specific prompts\, with DSPy you might define your intent like this:__
+
+__Understand the customer's question\.__
+
+__Retrieve relevant information from the knowledge base\.__
+
+__Generate a helpful\, empathetic response\.__
+
+__Check if the response answers the original question\.__
+
+__If not\, refine the answer\.__
+
+__DSPy would then handle:__
+
+__Crafting optimal prompts for each step\.__
+
+__Managing the flow of information between steps\.__
+
+__Optimizing the overall process for accuracy and consistency\.__
+
+::: {.notes}
+
+https://www.datacamp.com/blog/dspy-introduction
+
+
+:::
+
+__Code__  __:__
+
+__math = dspy\.ChainOfThought\("question \-> answer: float"\)__
+
+__math\(question="Two dice are tossed\. What is the probability that the sum equals two?"\)__
+
+__Possible output:__
+
+__Prediction\(__
+
+__    reasoning='When two dice are tossed\, each die has 6 faces\, resulting in a total of 6 x 6 = 36 possible outcomes\. The sum of the numbers on the two dice equals two only when both dice show a 1\. This is just one specific outcome: \(1\, 1\)\. Therefore\, there is only 1 favorable outcome\. The probability of the sum being two is the number of favorable outcomes divided by the total number of possible outcomes\, which is 1/36\.'\,__
+
+__    answer=0\.0277776__
+
+__\)__
+
+__Prompt is handled automatically\, and can be improved on each call based on given metrics\.__
+
+::: {.notes}
+
+https://dspy.ai/#__tabbed_2_1
+
+
+:::
+
+# Langchain
+
+__Langchain __  __\- Framework for building LLM\-powered applications\. Provides abstractions to chain together interoperable components and third\-party integrations to simplify AI application development\, for modular and maintainable LLM programs\.__
+
+::: {.notes}
+
+https://github.com/langchain-ai/langchain
+
+
+:::
+
+__Demo:__  __ __  _[https://www\.kaggle\.com/code/ritvik1909/dspy\-langchain](https://www.kaggle.com/code/ritvik1909/dspy-langchain)_
+
+::: {.notes}
+
+https://www.kaggle.com/code/ritvik1909/dspy-langchain
+
+
+:::
+
+# Devin AI Software Engineer
+
+__Cognition AI is a company that is building an AI system that can control a computer and software engineering tools to perform software engineering tasks\. The AI software engineer is called Devin\.__
+
+__I feel that software engineering will slowly decrease significantly as a profession over several years\.__
+
+![](images/Ch_30_GenAI_Book_Club_David_Slides_35.jpg)
+

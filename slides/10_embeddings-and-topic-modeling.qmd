@@ -1,31 +1,465 @@
 ---
 engine: knitr
 title: "10. Embeddings and Topic Modeling"
+author: "David Lohmann"
+format: 
+  revealjs:
+    slide-number: c/t
+    width: 1600
+    height: 900
+    incremental: true
+    theme: [simple]
 ---
+# Embeddings & Topic Modeling - Ch 10
 
-# Learning objectives
+# GenAI Handbook reading club
 
-::: nonincremental
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+[Original Google Slides (well-formatted)](https://docs.google.com/presentation/d/1qb_XIhQEOGwSUXsepAnSJ6Dafkak5SrgTkhIebJQxUw/edit?usp=sharing)
+*Quarto version may have some slides missing or poorly formatted*
+
+# One Hot Encoding
+
+__Encode N categories as a sparse\, N\-dimensional vector\, where each column corresponds to a category\. The data’s vector __  __encoding__  __ is such that each element is 1 if the data s that category\, and 0 otherwise\.__
+
+![](images/Ch_10_GenAI_Book_Club_David_Slides_0.png)
+
+::: {.notes}
+
+https://www.kaggle.com/code/taha07/fundamental-feature-engineering-techniques
+
+
 :::
 
-::: notes
-- You can add notes on each slide with blocks like this!
-- Load a deck in the browser and type "s" to see these notes.
+__"In statistics\, __  __latent variables__  __ \.\.\. are variables that can only be __  _inferred indirectly_  __ through a mathematical model from other observable variables that can be directly observed or measured\." \- __  _[Wikipedia](https://en.wikipedia.org/wiki/Latent_and_observable_variables)_
+
+![](images/Ch_10_GenAI_Book_Club_David_Slides_1.png)
+
+# Topic Modeling
+
+__Background__  __: We have a lot of unstructured text documents\, consisting of words\.__
+
+__Problem__  __: We want to establish what the topic of each document is\. This is unsupervised learning because we do not know have the labeled topics beforehand\. For example\, we want to organize a library of digital books by topic\, without reading every single book\.__
+
+__Document: Text__
+
+__"A whopping 96\.5 percent of water on Earth is in our oceans\, covering 71 percent of the surface of our planet\. And at any given time\, about 0\.001 percent is floating above us in the atmosphere\. If all of that water fell as rain at once\, the whole planet would get about 1 inch of rain\."__
+
+__"One\-third of your life is spent sleeping\. Sleeping 7\-9 hours each night should help your body heal itself\, activate the immune system\, and give your heart a break\. Beyond that\-\-sleep experts are still trying to learn more about what happens once we fall asleep\."__
+
+__"A newborn baby is 78 percent water\. Adults are 55\-60 percent water\. Water is involved in just about everything our body does\."__
+
+__corpus = \[doc\_1\, doc\_2\, doc\_3\]__
+
+__End Result:__
+
+__\(1\, '0\.071\*"water" \+ 0\.025\*"state" \+ 0\.025\*"three"\, …'\)\, __
+
+__\(2\, '0\.030\*"still" \+ 0\.028\*"hour" \+ 0\.026\*"sleeping"'\, …\)\, __
+
+__\(3\, '0\.073\*"percent" \+ 0\.069\*"water" \+ 0\.031\*"rain"'\, …\)__
+
+::: {.notes}
+
+https://www.datacamp.com/tutorial/what-is-topic-modeling
+
+
 :::
 
-# SLIDE SECTION
+__Background__  __: We have a lot of unstructured text documents\, consisting of words\.__
 
-## SLIDE
+__Problem__  __: We want to establish what the topic of each document is\. This is unsupervised learning because we do not know have the labeled topics beforehand\. For example\, we want to organize a library of digital books by topic\, without reading every single book\.__
 
-- DENOTE MAJOR SECTIONS WITH `# TITLE` (eg `# Installation`)
-- ADD INDIVIDUAL SLIDES WITH `##` (eg `## rustup on Linux/macOS`)
-- KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+__Solution: We can:__
 
-## SLIDE
+__1\) First "clean" and normalize the text to a standard form to make it easier for natural language processing\.__
 
-# SLIDE SECTION
+__2\) Count the number of times each word appears in each document\, without regard for word order \(ie a bag\-of\-words\)\.__
 
-## SLIDE
+__3\) Statistically model how the difference in word frequencies in each document represents the topic\. There are 2 main algorithms for this: __  __Latent Semantic Analysis__  __ \(LSA\) and __  __Latent Dirichlet Allocation__  __ \(LDA\)\.__
 
-## SLIDE
+__4\) For each document\, return a vector representing the main words associated with the document's topic\, and how strongly each word associates with the document's topic\. This identifies the main topics in each document\.__
+
+::: {.notes}
+
+
+Explanation:
+https://www.datacamp.com/tutorial/what-is-topic-modeling
+
+https://www.ibm.com/think/topics/topic-modeling
+
+
+:::
+
+__Normalization__
+
+__1\) Removing stopper words and punctuation\.__
+
+__2\) Perform lemmatization on the words to replace all the variations of a word with it's normal\, basic form\.__
+
+__"Lemmatization \(or less commonly __  __lemmatization__  __\) in linguistics is the process of grouping together the inflected forms of a word so they can be analysed as a single item\, identified by the word's lemma\, or dictionary form\." \- https://en\.wikipedia\.org/wiki/Lemmatization__
+
+__ran\, runs\, running \-> run__
+
+__better \-> good__
+
+__"A whopping 96\.5 percent of water on Earth is in our oceans\, covering 71 percent of the surface of our planet\. And at any given time\, about 0\.001 percent is floating above us in the atmosphere\. If all of that water fell as rain at once\, the whole planet would get about 1 inch of rain\." \-> \['whopping'\,'965'\,'percent'\,'water'\,'earth'\,'ocean'\,'covering'\,'71'\,'percent'\,'surface'\,'planet'\,'given'\,'time'\,'0001'\,'percent'\,'floating'\,'u'\,'atmosphere'\,'water'\,'fell'\,'rain'\,'once'\,'whole'\,'planet'\,'would'\,'get'\,'1'\,'inch'\,'rain'\]__
+
+_[https://en\.wikipedia\.org/wiki/Lemmatization](https://en.wikipedia.org/wiki/Lemmatization)_
+
+__Create document\-word matrix\.__
+
+![](images/Ch_10_GenAI_Book_Club_David_Slides_2.png)
+
+::: {.notes}
+
+https://msail.github.io/talk/lsa_102521/
+
+https://en.wikipedia.org/wiki/Latent_semantic_analysis
+
+
+:::
+
+__Latent Semantic Analysis__  __ \(LSA\)__
+
+__Create document\-word matrix\.__
+
+__Do Singular Value Decomposition to reduce the dimensionality using cosine similarity\.__
+
+::: {.notes}
+
+Explanation:
+https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=0d11ecc52070b913cb0fc51f5a64d3e53f3bbc81
+
+
+:::
+
+__Latent Semantic Analysis__  __ \(LSA\)__
+
+__Create document\-word matrix\.__
+
+__Do Singular Value Decomposition to reduce the dimensionality using cosine similarity\.__
+
+__LSA assumes words with similar meanings will appear in similar documents\. It does so by constructing a matrix containing the word counts per document\, where each row represents a unique word\, and columns represent each document\, and then using a Singular Value Decomposition \(SVD\) to reduce the number of rows while preserving the similarity structure among columns\. SVD is a mathematical method that simplifies data while keeping its important features\. It's used here to maintain the relationships between words and documents\.__
+
+__To determine the similarity between documents\, cosine similarity is used\. This is a measure that calculates the cosine of the angle between two vectors\, in this case\, representing documents\. A value close to 1 means the documents are very similar based on the words in them\, whereas a value close to 0 means they're quite different\.__
+
+::: {.notes}
+
+https://www.datacamp.com/tutorial/what-is-topic-modeling
+
+
+:::
+
+__Latent Semantic Analysis__  __ \(LSA\)__
+
+__Create document\-word matrix\.__
+
+__Do Singular Value Decomposition to reduce the dimensionality using cosine similarity\.__
+
+__LSA assumes words with similar meanings will appear in similar documents\. It does so by constructing a matrix containing the word counts per document\, where each row represents a unique word\, and columns represent each document\, and then using a Singular Value Decomposition \(SVD\) to reduce the number of rows while preserving the similarity structure among columns\. SVD is a mathematical method that simplifies data while keeping its important features\. It's used here to maintain the relationships between words and documents\.__
+
+__To determine the similarity between documents\, cosine similarity is used\. This is a measure that calculates the cosine of the angle between two vectors\, in this case\, representing documents\. A value close to 1 means the documents are very similar based on the words in them\, whereas a value close to 0 means they're quite different\.__
+
+![](images/Ch_10_GenAI_Book_Club_David_Slides_3.png)
+
+![](images/Ch_10_GenAI_Book_Club_David_Slides_4.png)
+
+::: {.notes}
+
+https://www.datacamp.com/tutorial/what-is-topic-modeling
+
+https://en.wikipedia.org/wiki/Singular_value_decomposition
+
+https://en.wikipedia.org/wiki/Cosine_similarity
+
+
+
+:::
+
+![](images/Ch_10_GenAI_Book_Club_David_Slides_5.png)
+
+::: {.notes}
+
+https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=0d11ecc52070b913cb0fc51f5a64d3e53f3bbc81
+
+
+:::
+
+__Latent Dirichlet Allocation__  __ \(LDA\)__
+
+__LDA is a Bayesian network\, meaning it’s a generative statistical model that assumes documents are made up of words that aid in determining the topics\. Thus\, documents are mapped to a list of topics by assigning each word in the document to different topics\. This model ignores the order of words occurring in a document and treats them as a bag of words\.__
+
+__Randomly map each word to a topic\.__
+
+__Bayesian update to improve guess on each iteration\.__
+
+__Stop when objective function stops decreasing\.__
+
+::: {.notes}
+
+Explanation:
+https://www.datacamp.com/tutorial/what-is-topic-modeling
+
+https://www.ibm.com/think/topics/latent-dirichlet-allocation
+
+Topic modeling demo:
+https://www.kaggle.com/code/hamditarek/get-started-with-nlp-lda-lsa
+
+https://colab.research.google.com/drive/10RVlWS3vdiTJAxH7IGzPWa88fNAkuSo8#scrollTo=iQuNLsFpLTRt
+
+
+
+
+:::
+
+# Embeddings
+
+__A way to assign each word to a vector of real numbers\, such that each vector has the same length\, and so that the relative locations of each vector in the multidimensional space encode information about the relations between words\.__
+
+__More similar data has vectors located closer together\.__
+
+::: {.notes}
+
+
+Demo:
+https://www.kaggle.com/code/dlohmann/word2vec-embedding-using-gensim-and-nltk/edit
+
+https://colab.research.google.com/drive/1N7HELWImK9xCYheyozVP3C_McbiRo1nb#scrollTo=knWTPeFGvCVr
+
+
+
+
+
+:::
+
+![](images/Ch_10_GenAI_Book_Club_David_Slides_6.png)
+
+::: {.notes}
+
+https://www.scaler.com/topics/tensorflow/tensorflow-word-embeddings/
+
+
+:::
+
+__Why is more dimensions better? Each dimension may encode different meaning\.__
+
+![](images/Ch_10_GenAI_Book_Club_David_Slides_7.png)
+
+::: {.notes}
+
+https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/tutorial.html
+
+
+:::
+
+__Why is more dimensions better? Each dimension may encode different meaning\.__
+
+![](images/Ch_10_GenAI_Book_Club_David_Slides_8.png)
+
+::: {.notes}
+
+https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/tutorial.html
+
+
+:::
+
+__Why is more dimensions better? Each dimension may encode different meaning\.__
+
+![](images/Ch_10_GenAI_Book_Club_David_Slides_9.png)
+
+::: {.notes}
+
+https://www.cs.cmu.edu/~dst/WordEmbeddingDemo/tutorial.html
+
+
+:::
+
+__Word2Vec__
+
+_[https://www\.tensorflow\.org/text/tutorials/word2vec](https://www.tensorflow.org/text/tutorials/word2vec)_
+
+__Demo time:__
+
+_[https://www\.kaggle\.com/code/dlohmann/word2vec\-embedding\-using\-gensim\-and\-nltk/edit](https://www.kaggle.com/code/dlohmann/word2vec-embedding-using-gensim-and-nltk/edit)_
+
+::: {.notes}
+
+
+
+
+
+
+:::
+
+# How do we determine the Embedding?
+
+__Embedding algorithms:__
+
+__Latent semantic analysis__  __: "count\-based" method that involves finding term frequency–inverse document frequency \(TF\-IDF\) co\-__  __occurrence__  __ matrix\, then doing singular value decomposition \(SVD\) dimensionality reduction\.__
+
+__Word2Vec__  __: Models using s__  __hallow\, two\-layer neural networks that are trained to reconstruct linguistic contexts of words\. Word2vec takes as its input a large corpus of text and produces a mapping of the set of words to a vector space__  __\.__
+
+__GloVe__  __: GLObal VEctors for word representation\. Based on co\-occurrence of words in a corpus\. Essentially a log\-bilinear regression model with a weighted least\-squares objective\. Trained on the non\-zero entries of a global word\-word co\-occurrence sparse matrix\, which tabulates how frequently words co\-occur with one another in a given corpus\. Like LDA\, but uses a model instead of matrix factorization to generate its end representation\.__
+
+__ELMO__  __: Embeddings from Language MOdel\.__
+
+__BERT__  __: Bidirectional Encoder Representations from Transformers\.__
+
+::: {.notes}
+
+LSA:
+https://en.wikipedia.org/wiki/Latent_semantic_analysis
+
+Word2Vec:
+https://www.tensorflow.org/text/tutorials/word2vec
+
+GloVe:
+https://nlp.stanford.edu/projects/glove/
+https://en.wikipedia.org/wiki/GloVe
+
+ELMO:
+https://en.wikipedia.org/wiki/ELMo
+
+BERT:
+https://en.wikipedia.org/wiki/BERT_(language_model)
+
+Overview of Embedding Algorithms:
+https://www.kaggle.com/code/residentmario/notes-on-word-embedding-algorithms
+
+
+
+:::
+
+# Word2Vec Algorithm
+
+__Model predicting some of the words within a window in a corpus based on other words in the window\.__
+
+__Represents input words and output words as one\-hot encoded vectors\.__
+
+__Uses a simple feed\-forward neural network with 1 hidden layer\. __
+
+__The size of the hidden layer is the size of the __  __output__  __ embedding\.__
+
+::: {.notes}
+
+
+https://www.tensorflow.org/text/tutorials/word2vec
+
+
+
+
+
+:::
+
+__2 Methods:__
+
+__Continuous bag\-of\-words__  __ model: predicts the middle word based on surrounding context words\. The context consists of a few words before and after the current \(middle\) word\. This architecture is called a bag\-of\-words model as the order of words in the context is not important\.__
+
+__Continuous skip\-gram__  __ model: Given a word\, predicts all words within a certain range before and after the current word in the same sentence\.__
+
+__The __  __wide __  __road __  __shimmered in the hot sun\.__
+
+![](images/Ch_10_GenAI_Book_Club_David_Slides_10.png)
+
+::: {.notes}
+
+
+https://www.tensorflow.org/text/tutorials/word2vec
+
+https://www.researchgate.net/figure/Continuous-bag-of-words-CBOW-and-Skip-gram-model-architecture-The-Word2Vec-technique_fig3_344966541
+
+
+
+
+
+:::
+
+# Word2Vec with skip-gram
+
+__For a word\-window of size N\. generate embeddings of size E\.__
+
+__Create a neural network with:__
+
+__1 input \(the target word\, one\-hot encoded\)__
+
+__1 hidden layer \(size of the output embedding\, E\)\.__
+
+__2\*N outputs \(each predicted word\, one\-hot encoded\)\.__
+
+__The network must\, given a target word\, predict the N words before\, and the N words after\.__
+
+__The skip\-grams are __  __used__  __ to train the neural network\.__
+
+![](images/Ch_10_GenAI_Book_Club_David_Slides_11.png)
+
+::: {.notes}
+
+
+https://www.tensorflow.org/text/tutorials/word2vec
+
+
+
+
+
+
+:::
+
+__The training objective of the skip\-gram model is to maximize the probability of predicting context words given the target word\.__
+
+__For a sequence of words w1\, w2\, \.\.\. wT\, the objective can be written as the average log probability__
+
+__where c is the size of the training context\.__
+
+__The basic skip\-gram formulation defines this probability using the softmax function\. where v and v' are target and context vector representations of words and W is vocabulary size\.__
+
+__Computing the denominator of this formulation involves performing a full softmax over the entire vocabulary words\, which are often large \(105\-107\) terms\.__
+
+![](images/Ch_10_GenAI_Book_Club_David_Slides_12.png)
+
+![](images/Ch_10_GenAI_Book_Club_David_Slides_13.png)
+
+::: {.notes}
+
+
+https://www.tensorflow.org/text/tutorials/word2vec
+
+
+
+
+
+
+:::
+
+# Word2Vec with Continuous Bag-of-Words
+
+__For a word\-window of size N\. generate embeddings of size E\.__
+
+__Create a neural network with:__
+
+__2\*N inputs \(the target word\, one\-hot encoded\)__
+
+__1 hidden layer \(size of the output embedding\, E\)\.__
+
+__1 output \(predicted word\, one\-hot encoded\)\.__
+
+__The network must\, given the N words before\, and the N words after\, predict the target word\.__
+
+__The word pairings are used to train the neural network:__
+
+__\(\[she\, a\]\, is\)\, \(\[is\, great\]\, a\) \(\[a\, dancer\]\, great\)__
+
+![](images/Ch_10_GenAI_Book_Club_David_Slides_14.png)
+
+::: {.notes}
+
+
+
+https://www.geeksforgeeks.org/continuous-bag-of-words-cbow-in-nlp/
+
+
+
+
+
+
+:::
+
